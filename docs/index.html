@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>YOUR TITLE HERE</title>
-  <meta name="description" content="YOUR TITLE HERE" />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <title>Reading Notes for Regression and Other Stories</title>
+  <meta name="description" content="Reading Notes for Regression and Other Stories" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="YOUR TITLE HERE" />
+  <meta property="og:title" content="Reading Notes for Regression and Other Stories" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Reading Notes for Regression and Other Stories" />
   
   
   
 
-<meta name="author" content="YOUR NAME HERE" />
+<meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2020-08-10" />
+<meta name="date" content="2021-05-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,8 @@
   
   
 
-<link rel="next" href="the-pool-of-tears.html"/>
+<link rel="next" href="data-and-measurement.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -66,12 +67,28 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">GHV</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Down the rabbit-hole</a></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#the-three-challenges-of-statistics"><i class="fa fa-check"></i><b>1.1</b> The three challenges of statistics</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#why-learn-regression"><i class="fa fa-check"></i><b>1.2</b> Why learn regression?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#some-examples-of-regression"><i class="fa fa-check"></i><b>1.3</b> Some examples of regression</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#a-randomized-experiment-on-the-effect-of-an-educational-television-program"><i class="fa fa-check"></i><b>1.3.1</b> A randomized experiment on the effect of an educational television program</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#comparing-the-peacekeeping-and-gun-control-studies"><i class="fa fa-check"></i><b>1.3.2</b> Comparing the peacekeeping and gun-control studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#challenges-in-building-understanding-and-interpreting-regressions"><i class="fa fa-check"></i><b>1.4</b> Challenges in building, understanding, and interpreting regressions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#regression-to-estimate-a-relationship-of-interest"><i class="fa fa-check"></i><b>1.4.1</b> Regression to estimate a relationship of interest</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#regression-to-adjust-for-differences-between-treatment-and-control-groups"><i class="fa fa-check"></i><b>1.4.2</b> Regression to adjust for differences between treatment and control groups</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-measurement.html"><a href="data-and-measurement.html"><i class="fa fa-check"></i><b>2</b> Data and Measurement</a></li>
+<li class="chapter" data-level="3" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html"><i class="fa fa-check"></i><b>3</b> Some Basic Methods in Mathematics and Probability</a></li>
+<li class="chapter" data-level="4" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>4</b> Statistical Inference</a></li>
+<li class="chapter" data-level="5" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>5</b> Simulation</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -83,7 +100,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reading Notes for Regression and Other Stories</a>
           </h1>
         </div>
 
@@ -92,13 +109,124 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">YOUR TITLE HERE</h1>
-<p class="author"><em>YOUR NAME HERE</em></p>
-<p class="date"><em>2020-08-10</em></p>
+<h1 class="title">Reading Notes for Regression and Other Stories</h1>
+<h2 class="subtitle"><em>Authored by Andrew Gelman, Jeniffer Hill and Aki Vehtari</em></h2>
+<p class="author"><em>Sanghoon Park</em></p>
+<p class="date"><em>2021-05-11</em></p>
 </div>
-<div id="down-the-rabbit-hole" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Down the rabbit-hole</h1>
+<div id="overview" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Overview</h1>
+<p>이 책(이하 GHV)은 예측모형을 만들고, 이해하고, 사용하는 데 있어서 마주할 수 있는 문제들을 다루고 있다. 우선 데이터, 측정, 그리고 통계치(statistics)에 관한 기본적인 개념들을 앞의 다섯개 챕터에서 검토하고, 하나의 예측변수와 여러개의 예측변수를 가지는 선형 회귀모델을 다룬다. 뒷 부분에서는 로지스틱 회귀모델을 포함한 일반화 선형모델들을 살펴보게 될 것이다.</p>
+<p>저자들이 말하는 것처럼 이 책의 장점 중 하나는 단순히 기법적인 것들을 설명하는 것이 아닌, 이러한 모델들을 이용해서 어떻게 가지고 있는 데이터로부터 인과추론에 이르기까지 일반화를 할 수 있는지에 대한 회귀모델 “적용”의 문제를 다루고 있다는 것이다.</p>
+<div id="the-three-challenges-of-statistics" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> The three challenges of statistics</h2>
+<p>통계적 추론(statistical inference)에 있어서 마주할 수 있는 세 가지 문제는 다음과 같다:</p>
+<ol style="list-style-type: decimal">
+<li><p><em>표본을 가지고 모집단 수준으로 일반화를 해야하는 문제</em>. 이 문제는 설문 표집(survey sampling)과 관련되어 있지만, 사실 모든 통계 추론을 적용할 때 제기될 수 있는 문제이다. 왜냐하면 우리가 가진 데이터는 그것이 설문 데이터이건 아니건 간에 모두 하나의 표본(sample)이기 때문이다.</p></li>
+<li><p><em>처치집단의 결과를 가지고 통제집단까지 일반화를 해야하는 문제</em>. 거의 대부분의 회귀모델을 해석하는데 있어서 야기되는 인과추론과 관련된 문제이다. 결국 회귀모델도, 통계모델도 일종의 준실험적(quasi-experimental)이라고 불리는 만큼, 어떻게 관계에 영향을 미치는 잡음(noise)과 체계적 요인(systematic factors)을 구분해 우리가 관심을 가지고 있는 관계를 드러낼 것인가에 대한 “통제”의 문제와 밀접하게 관련을 가진다.</p></li>
+<li><p><em>관측된 측정지표를 가지고 우리가 관심을 가지고 있는, 그 측정지표 너머의(기저의) 구성개념으로 일반화를 해야하는 문제</em>. 대부분의 경우, 우리가 가지고 있는 데이터가 완벽하게 혹은 정확하게 우리가 이상적으로 연구하고자 하는 대상을 기록하고 있다고 보기는 어렵다. 예를 들어, 민주주의를 측정한다고 할 때, 우리가 개념적으로 기대하는 민주주의를 실제 측정지표로 완벽하게 포착하기는 어렵다. 따라서 우리는 일종의 조작화(operationalization)라는 과정을 거치게 되는데, 이때 우리의 개념화(conceptualization)와 조작화(operationalization) 간에는 필연적으로 간극이 생길 수 밖에 없게 된다. 이 간극을 어떻게 좁힐 것인가에 대한 문제라고도 이해할 수 있다.</p></li>
+</ol>
+<p>위의 세 문제들은 “예측의 문제”(problems of prediction)라는 한 울타리 안에 담을 수 있다. 예를 들어, 새로운 사람들을 대상으로 했을 때, 변화한 표본이 이전의 표본과 마찬가지로 모집단 수준에서 일반화를 하기에 적절한지, 처치(treatment)가 달라졌을 때 이전과 이후의 결과가 어떻게 달라질지, 그리고 앞으로도 우리가 조작화한 측정지표가 우리가 기대한 개념을 정확하게 측정할지 등에 대한 문제가 산적해있는 것이다. 이런 점들을 고려하여 GHV는 이 책을 통해 다음과 같은 핵심 역량을 기르기를 주문한다.</p>
+<ul>
+<li><p><em>회귀모델을 이해하는 것</em>. 회귀모델이란 결국 일련의 예측변수들을 이용해서 결과과 어떠할 것이라고 예측하는 수리적 모델이다. 이 책은 그 예측을 일종의 선형(linear) 관계로 바라보는 것으로부터 다양한 비선형(non-linear) 관계로 일반화할 수 있는 단계로까지 이해할 수 있는 내용을 다룬다.</p></li>
+<li><p><em>회귀모델을 구성하는 것</em>. 회귀모델에 어떤 변수를 선택해서 포함시키고, 혹은 변수를 어떻게 변형시킬지 등은 연구자에게 주어진 선택지이다. 동일한 결과를 회귀모델로 분석하고자 하더라도 연구자마다 다른 변수들을 사용하여 분석할 수 있다.</p></li>
+<li><p><em>데이터에 회귀모델을 적합시키는 것</em>. R과 Stan이라는 소프트웨어를 이용하여 데이터로부터 회귀모델을 적합, 그 분석 결과를 도출할 수 있는 스킬을 배우게 된다.</p></li>
+<li><p><em>회귀보델의 결과를 보여주고 해석하는 것</em>. 단순히 통계 분석을 수행하는 것이 아니라 그 결과가 가지는 의미를 다른 사람들이 이해할 수 있는 방식으로 보여주고 해석하는 것이 중요하다. 이를 위해서 통계 분석 이상의 프로그래밍 스킬과 수학적 이해를 요구한다.</p></li>
+</ul>
+<p>마지막으로 이 책의 핵심 주제는 바로 <em>추론 (inference)</em>이다. 우리가 손에 넣은 특정한 데이터로부터 수리적 모델을 이용해 (모집단에서 통용되는) 일반화된 주장을 할 수 있는 능력을 의미한다.</p>
+</div>
+<div id="why-learn-regression" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Why learn regression?</h2>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="regression_hgv_files/figure-html/unnamed-chunk-1-1.png" alt="Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x." width="672" />
+<p class="caption">
+Figure 1.1: Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x.
+</p>
+</div>
+<p>회귀모델은 일련의 <em>예측변수</em>들로 정의된 개별 개체들에 따라서 <em>결과</em>의 평균적인 값, 혹은 예측이 어떻게 될 것이라는 걸 보여주는 방법이다. 예를 들어, Figure 1.1a는 미국 대선에서의 집권당의 득표율과 각 선거가 있었던 해에 경제성장률의 측정지표를 그래프로 보여주고 있다. Figure 1.1b는 그 데이터에 적합하는 선형 회귀모델의 결과를 보여준다. 회귀모델은 비록 어느정도의 불확실성은 존재하지만 변화하는 경제성장률에 따라 득표율이 어떻게 될 것이라는 예측이 가능하게 해주며, 그러한 가정 하에서 미래의 선거도 과거와 비슷하다면 어떻게 전개될 것이라고 기대할 수 있게 해준다.</p>
+<p>GHV는 Stan을 이용해 베이지안 통계 패키지를 이용해 회귀모델을 분석하고 있지만, 여기서는 일반적인 패키지를 이용해 분석한다. 회귀분석에 대한 자세한 내용은 이후의 챕터들에서 다루게 될 것이다.</p>
+<p>회귀모델이 주요하게 사용되는 것은 다음과 같다:</p>
+<ul>
+<li><p><em>예측</em>: 가지고 있는 데이터를 모델링하거나 새로운 데이터를 예측하는 것을 의미힌다.</p></li>
+<li><p><em>관계의 탐색</em>: 얼마나 변수들이 결과를 잘 예측하는지를 보여주는 것이 필요하다.</p></li>
+<li><p><em>외삽(extrapolation)</em>: 여기서는 외삽이라는 개념을 사용했는데, 그보다는 일반화(generalization)라는 표현이 좀 더 이해하기 쉬울 듯 하다. <em>표본</em>과 <em>모집단</em>의 차이를 알아야 한다는 것에서 시작한다. 현실세계의 표본은 결코 모집단을 완벽하게 대표할 수 없기 때문에, 우리는 표본을 통해서 얻은 결과를 모집단의 수준에서 일반화하는 과정에서 일종의 조정 과정을 거치게 되는데, 이를 외삽이라고 표현한 것이다. 회귀분석은 Figure 1.1b에서 보았듯 일종의 예측을 제시하지만 어디까지나 주어진 표본 하에서 그 선은 그어진 것이고, 앞으로도 계속 그 추세가 이어질지는 알지 못한다. 그럼에도 불구하고 우리는 주어진 데이터에서 모델을 이용한 예측을 일반화화된 진술로 표현하게 된다.</p></li>
+<li><p><em>인과추론</em>: <strong>회귀모델에서 가장 중요한 부분으로, 처치효과(treatment effects)를 추정하는 것에 관련된 것</strong>이다. 즉, 우리가 기대하는 어떠한 변수가 진짜로 결과의 차이를 가져오는 데 기여하였는가, 그렇다면 얼마나 기여하였는가를 추정하는 것이다. 인과추론은 평균적으로 얼마나 처치 이전에 처치군과 통제군이 유사하였는지, 그리고 처치 이후에 두 집단의 차이가 존재하였는지를 확실히 보여주는가에 그 성패가 달려있다고 할 수 있다.</p></li>
+</ul>
+</div>
+<div id="some-examples-of-regression" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Some examples of regression</h2>
+<div id="a-randomized-experiment-on-the-effect-of-an-educational-television-program" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> A randomized experiment on the effect of an educational television program</h3>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="regression_hgv_files/figure-html/unnamed-chunk-2-1.png" alt="Post-treatment classroom-average test scores from an experiment measuring the effect of an educational television program, The Electric Company, on children’s reading abilities. The dark vertical line in each histogram shows the average for the corresponding group of classrooms." width="672" />
+<p class="caption">
+Figure 1.2: Post-treatment classroom-average test scores from an experiment measuring the effect of an educational television program, The Electric Company, on children’s reading abilities. The dark vertical line in each histogram shows the average for the corresponding group of classrooms.
+</p>
+</div>
+<p>1970년대 새로운 TV 교육 프로그램(<code>The Electric Company</code>)이 어린이들의 독해력에 미치는 효과를 측정하기 위해 수행된 연구를 살펴보자.</p>
+<ul>
+<li><p>실험대상은 미국의 두 작은 도시에 1-4학년 사이의 아이들이었다.</p></li>
+<li><p>각 도시와 학년에 따라서 10개부터 20개 사이의 학교가 선택되었고, 각 학교는 독해력 시험 점수가 가장 낮은 해당 학년의 두개 학급씩을 선정하였다.</p></li>
+<li><p>각 2개 학급별로 한 학급은 무작위로 정규 독해 강의를 듣게 했고, 다른 학급은 TV 프로그램을 시청하게 하였다.</p>
+<ul>
+<li>즉, 성적이 최하위인 <code>A</code>와 <code>B</code>라는 같은 학년의 두 학급을 선정 후, <code>A</code>에서 무작위로 뽑은 학생들은 정규 독해 강의를 듣고, <code>B</code>에서 무작위로 뽑은 학생들은 TV 프로그램을 보게 한 것이다. 따라서 <code>A</code>는 강의를 들은 학생들과 듣지 않은 학생, <code>B</code>는 TV 프로그램을 본 학생과 보지 않은 학생으로 구분할 수 있다.</li>
+</ul></li>
+<li><p>각 학생들은 학년이 시작하기 전에 사전 테스트를 쳤고, 학년 말에 사후 테스트를 쳤다.</p></li>
+</ul>
+<p>Figure 1.2는 각 학년별 통제 학급과 처치 학급의 사후 테스트 결과를 보여준다. 각 행을 비교하면 통제 학급에 비해 처치 학급이 저학년(Grade 1, Grade 2)의 경우 TV 프로그램을 시청하였을 때 더 높은 독해력을 보여주는 것을 확인할 수 있고, 그 차이는 고학년(Grade 3, Grade 4)으로 가면 줄어드는 것을 확인할 수 있다. 물론, 더 자세한 처치 효과를 추정하기 위해서는 통계적 분석이 필요하다(제19장에서 다시 살펴본다).</p>
+</div>
+<div id="comparing-the-peacekeeping-and-gun-control-studies" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Comparing the peacekeeping and gun-control studies</h3>
+<p>GHV는 UN의 평화유지군 파병이 내전이 발생했던 국가가 다시 내전에 재돌입하는 것에 미치는 효과를 본 연구와 일련의 총기 관련 정책이 가지는 효과를 두루 살펴본 연구를 비교하면서 다음과 같은 함의를 이끌어내고 있다.</p>
+<ul>
+<li><p>보고자 하는 것이 무엇인지(연구문제)를 명확히 하고, 그에 맞는 연구설계를 할 필요가 있다. 그 경우에 보다 믿을 수 있고 설득력 있는 결과를 제시할 수 있다.</p></li>
+<li><p>한 번에 하나의 모델에서 너무 많은 인과관계를 보여줄 필요는 없다. 변수를 많이 추가할수록 조건이 추가되는 것이다. 즉, <code>A</code>가 일정할 때, <code>B</code>가 결과에 미치는 효과는 어떠할 것이다라는 진술과 <code>A</code>부터 <code>G</code>까지의 변수들이 일정할 때, <code>H</code>가 변수에 미치는 효과는 어떠할 것이다라는 진술은 현실 세계에서 우리가 그 결과를 직관적으로 이해할 수 있는가에 영향을 미칠 수 있다.</p></li>
+<li><p>마찬가지로 비교하고자 하는 대상–분석 단위에 대한 고민도 필요하다. 분석 단위들 간에 존재할 수 있는 체계적 차이를 어떻게 고려하느냐도 우리의 결과가 가지는 신빙성에 영향을 미칠 수 있기 때문이다.</p></li>
+</ul>
+</div>
+</div>
+<div id="challenges-in-building-understanding-and-interpreting-regressions" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Challenges in building, understanding, and interpreting regressions</h2>
+<p>인과추론을 위한 회귀모델에 있어서 두 가지를 구분할 수 있다: 관계를 추정하는 것과 비교하고자 하는 대상들의 기저에 놓인 변수들을 조정(adjusting)하는 것이다.</p>
+<div id="regression-to-estimate-a-relationship-of-interest" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Regression to estimate a relationship of interest</h3>
+<p>어떤 처치군과 통제군을 비교한다고 가정해보자. 일단 첫 번째 생각해야할 조건은 처치군과 통제군에 들어갈 사람들이 무작위로 배정되었는지(randomly assigned)에 대한, <em>“무작위화”(randomization)</em>이다. 혹은 배정이 두 집단 간의 균형을 고려한 보다 복잡한 설계를 바탕으로 이루어졌을 수도 있다. 처치군과 통제군을 대략적으로(완벽하게 동일한 개체가 될 수는 없으니까) 비교가능한 집단으로 만드는 것과 이 두 집단 간에 알려진, 혹은 모델에 포함된 차이를 조정하는 방법은 다양하게 존재한다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="regression_hgv_files/figure-html/unnamed-chunk-4-1.png" alt="Regression to estimate a causal effect with (a) simple comparison of treatment and control, or (b) a range of treatment levels." width="768" />
+<p class="caption">
+Figure 1.3: Regression to estimate a causal effect with (a) simple comparison of treatment and control, or (b) a range of treatment levels.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="regression_hgv_files/figure-html/unnamed-chunk-5-1.png" alt="(a) Hypothetical data in which the causal effect is a nonlinear function of the treatment level; (b) same data with a linear effect estimated. It is always possible to estimate a linear model, even if it does not fit the data." width="768" />
+<p class="caption">
+Figure 1.4: (a) Hypothetical data in which the causal effect is a nonlinear function of the treatment level; (b) same data with a linear effect estimated. It is always possible to estimate a linear model, even if it does not fit the data.
+</p>
+</div>
+<p>만약 처치, <span class="math inline">\(x\)</span>가 결과, <span class="math inline">\(y\)</span>에 미치는 효과에 관심이 있고 가지고 있는 데이터가 무작위화 혹은 다른 처치군과 통제군 간의 균형을 고려한 실험설계 방법을 통해 얻어졌다면 우리는 회귀모델을 데이터에 적합하여 불확실성을 포함해 <span class="math inline">\(x\)</span>로부터 <span class="math inline">\(y\)</span>를 예측할 수 있다.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>만약 <span class="math inline">\(x\)</span>가 이항변수(통제일 경우 <span class="math inline">\(x=0\)</span>, 처치가 이루어졌을 경우 <span class="math inline">\(x=1\)</span>)라면 회귀모델 분석의 결과는 Figure 1.3a와 같이 나타날 것이고, 만약 <span class="math inline">\(x\)</span>가 연속적인 값을 같는 변수라면 Figure 1.3b와 같은 결과를 확인할 수 있을 것이다.</p>
+<p>실험방법을 통해 두 집단 간의 비교가능성이 확보된 상황이라면 주어진 처치에 대해 결과를 예측한 회귀분석 결과는 인과효과(causal effect)를 직접적으로 추정한 것이라고 할 수 있다.</p>
+<p>하지만 데이터를 더 잘 설명하기 위해, 혹은 더 정확하게 예측하기 위해 더 정교한 모델링을 할 수도 있다. 예를 들어, 연속형 변수의 처치효과가 결과에 비선형적인 관계를 가지는 경우를 생각해볼 수 있다. Figure 1.4a가 바로 그런 경우이다. Figure 1.4a와 Figure 1.4b 모두 같은 데이터를 예측하지만 처치 효과의 관계가 선형적이냐, 비선형적이냐에 따라 다른 기대를 가지고 있는 모델이다.</p>
+<p>혹은 모델 내 서로 다른 예측변수들 간의 함수적 관계에 따라 처치효과가 다르게 나타나는 상호작용(interactions)을 모델에 포함할 것을 고려해볼 수 있다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="regression_hgv_files/figure-html/unnamed-chunk-6-1.png" alt="Lifetime added risk of lung cancer for men, as a function of average radon exposure in picocuries per liter (pCi/L). The relation between cancer rate and radon is different for smokers and nonsmokers." width="672" />
+<p class="caption">
+Figure 1.5: Lifetime added risk of lung cancer for men, as a function of average radon exposure in picocuries per liter (pCi/L). The relation between cancer rate and radon is different for smokers and nonsmokers.
+</p>
+</div>
+<p>Figure 1.5은 라돈 가스가 남성의 폐암 발병률에 미치는 효과를 추정한 것을 보여준다. 라돈은 폐암을 발병시키고, 그 효과는 비흡연자에 비해 흡연자들에게서 더 크게 나타난다. 이 모델은 라돈의 효과가 선형적이라고 가정하며 동시에 흡연과 상호작용할 것이라는 가정을 하고 있다.</p>
+</div>
+<div id="regression-to-adjust-for-differences-between-treatment-and-control-groups" class="section level3" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Regression to adjust for differences between treatment and control groups</h3>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>당연히 불확실성이 나타날 수밖에 없다. 회귀모델은 어디까지나 “평균적인” 결과를 예측하는 것이니까.<a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -106,7 +234,7 @@
         </div>
       </div>
 
-<a href="the-pool-of-tears.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-and-measurement.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -137,7 +265,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/master/index.Rmd",
+"link": "https://github.com/pherephobia/regression_hgv/edit/master/index.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -145,7 +273,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/master/index.Rmd",
+"link": "https://github.com/pherephobia/regression_hgv/blob/master/index.Rmd",
 "text": null
 },
 "download": null,
@@ -156,6 +284,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
