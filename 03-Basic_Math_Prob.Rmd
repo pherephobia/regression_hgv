@@ -1,1 +1,39 @@
 # Some Basic Methods in Mathematics and Probability
+
+## Weighted averages
+
+## Vectors and matrices
+
+## Graphing a line
+
+## Exponential and power-law growth and decline; logarithmic and log-log relationships
+
+## Probability distributions
+
+### Mean and standard deviation of a probability distribution
+
+### Normal distribution; mean and standard deviation
+
+### Linear transformations
+
+### Mean and standard deviation of the sum of correlated random variables
+
+### Lognormal distribution
+
+### Binomial distribution
+
+### Poisson distribution
+
+### Unclassified probability distribution
+
+### Probability distributions for error
+
+### Comparing distributions
+
+## Probability modeling
+
+### Using an empirical forecast
+
+### Using an reasonable-seeming but inappropriate probability model
+
+### General lessons for probability modeling

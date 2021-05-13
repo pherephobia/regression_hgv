@@ -1,1 +1,83 @@
 # Statistical Inference
+
+## Sampling distributions and generative models
+
+### Sampling, measurement error, and model error
+
+### The sampling distribution
+
+## Estimates, standard errors, and confidence intervals
+
+### Parameters, estimands, and estimates
+
+### Standard errors, inferential uncertainty, and confidence intervals
+
+### Standard errors and confidence intervals for average and proportions
+
+### Standard error and confidence interval for a proportion when $y = 0$ or $y = n$
+
+### Standard error for a comparison
+
+### Sampling distribution of the sample mean and standard deviation; normal and $\chi^2$ distributions
+
+### Degrees of freedom
+
+### Confidence intervals from the $t$ distribution
+
+### Inference for discrete data
+
+### Linear transformations
+
+### Comparisons, visual and numerical
+
+### Weighted averages
+
+## Bias and unmodeled uncertainty
+
+### Bias in estimation
+
+### Adjusting inferences to account for bias and unmodeled uncertainty
+
+## Statistical significance, hypothesis testing, and statistical errors
+
+### Statistical significance
+
+### Hypothesis testing for simple comparisons
+
+#### Estimate, standard error, and degrees of freedom
+
+#### Null and alternative hypotheses
+
+### Hypothesis testing: general formulation
+
+### Comparisons of parameters to fixed values and each other: interpreting confidence intervals as hypothesis tests
+
+### Type 1 and type 2 errors and why we don’t like talking about them
+
+### Type M (magnitude) and type S (sign) errors
+
+### Hypothesis testing and statistical practice
+
+## Problems with the concept of statistical significance
+
+### Statistical significance is not the same as practical importance
+
+### Non-significance is not the same as zero
+
+### The difference between “significant” and “not significant” is not itself statistically significant
+
+### Researcher degrees of freedom, $p$-hacking, and forking paths
+
+### The statistical significance filter
+
+### Example: A flawed study of ovulation and political attitudes
+
+## Example of hypothesis testing: 55,000 residents need your help!
+
+## Moving beyond hypothesis testing
+
+
+
+
+
+
