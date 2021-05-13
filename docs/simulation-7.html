@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Statistical Inference | Reading Notes for Regression and Other Stories</title>
-  <meta name="description" content="Chapter 4 Statistical Inference | Reading Notes for Regression and Other Stories" />
+  <title>Chapter 12 Simulation | Reading Notes for Regression and Other Stories</title>
+  <meta name="description" content="Chapter 12 Simulation | Reading Notes for Regression and Other Stories" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Statistical Inference | Reading Notes for Regression and Other Stories" />
+  <meta property="og:title" content="Chapter 12 Simulation | Reading Notes for Regression and Other Stories" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Statistical Inference | Reading Notes for Regression and Other Stories" />
+  <meta name="twitter:title" content="Chapter 12 Simulation | Reading Notes for Regression and Other Stories" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="some-basic-methods-in-mathematics-and-probability.html"/>
-<link rel="next" href="simulation.html"/>
+<link rel="prev" href="simulation-6.html"/>
+<link rel="next" href="simulation-8.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -499,121 +499,46 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistical-inference" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Statistical Inference</h1>
-<div id="sampling-distributions-and-generative-models" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Sampling distributions and generative models</h2>
-<div id="sampling-measurement-error-and-model-error" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Sampling, measurement error, and model error</h3>
+<div id="simulation-7" class="section level1" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Simulation</h1>
+<div id="simulation-of-discrete-probability-models-7" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Simulation of discrete probability models</h2>
+<div id="how-many-girls-in-400-births-7" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> How many girls in 400 births?</h3>
 </div>
-<div id="the-sampling-distribution" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> The sampling distribution</h3>
-</div>
-</div>
-<div id="estimates-standard-errors-and-confidence-intervals" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Estimates, standard errors, and confidence intervals</h2>
-<div id="parameters-estimands-and-estimates" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Parameters, estimands, and estimates</h3>
-</div>
-<div id="standard-errors-inferential-uncertainty-and-confidence-intervals" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Standard errors, inferential uncertainty, and confidence intervals</h3>
-</div>
-<div id="standard-errors-and-confidence-intervals-for-average-and-proportions" class="section level3" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> Standard errors and confidence intervals for average and proportions</h3>
-</div>
-<div id="standard-error-and-confidence-interval-for-a-proportion-when-y-0-or-y-n" class="section level3" number="4.2.4">
-<h3><span class="header-section-number">4.2.4</span> Standard error and confidence interval for a proportion when <span class="math inline">\(y = 0\)</span> or <span class="math inline">\(y = n\)</span></h3>
-</div>
-<div id="standard-error-for-a-comparison" class="section level3" number="4.2.5">
-<h3><span class="header-section-number">4.2.5</span> Standard error for a comparison</h3>
-</div>
-<div id="sampling-distribution-of-the-sample-mean-and-standard-deviation-normal-and-chi2-distributions" class="section level3" number="4.2.6">
-<h3><span class="header-section-number">4.2.6</span> Sampling distribution of the sample mean and standard deviation; normal and <span class="math inline">\(\chi^2\)</span> distributions</h3>
-</div>
-<div id="degrees-of-freedom" class="section level3" number="4.2.7">
-<h3><span class="header-section-number">4.2.7</span> Degrees of freedom</h3>
-</div>
-<div id="confidence-intervals-from-the-t-distribution" class="section level3" number="4.2.8">
-<h3><span class="header-section-number">4.2.8</span> Confidence intervals from the <span class="math inline">\(t\)</span> distribution</h3>
-</div>
-<div id="inference-for-discrete-data" class="section level3" number="4.2.9">
-<h3><span class="header-section-number">4.2.9</span> Inference for discrete data</h3>
-</div>
-<div id="linear-transformations-1" class="section level3" number="4.2.10">
-<h3><span class="header-section-number">4.2.10</span> Linear transformations</h3>
-</div>
-<div id="comparisons-visual-and-numerical" class="section level3" number="4.2.11">
-<h3><span class="header-section-number">4.2.11</span> Comparisons, visual and numerical</h3>
-</div>
-<div id="weighted-averages-1" class="section level3" number="4.2.12">
-<h3><span class="header-section-number">4.2.12</span> Weighted averages</h3>
+<div id="accounting-for-twins-7" class="section level3" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Accounting for twins</h3>
 </div>
 </div>
-<div id="bias-and-unmodeled-uncertainty" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Bias and unmodeled uncertainty</h2>
-<div id="bias-in-estimation" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Bias in estimation</h3>
-</div>
-<div id="adjusting-inferences-to-account-for-bias-and-unmodeled-uncertainty" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Adjusting inferences to account for bias and unmodeled uncertainty</h3>
+<div id="simulation-of-continuous-and-mixed-discretecontinuous-models-7" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Simulation of continuous and mixed discrete/continuous models</h2>
+<div id="simulation-in-r-using-custom-made-functions-7" class="section level3" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> Simulation in R using custom-made functions</h3>
 </div>
 </div>
-<div id="statistical-significance-hypothesis-testing-and-statistical-errors" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Statistical significance, hypothesis testing, and statistical errors</h2>
-<div id="statistical-significance" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Statistical significance</h3>
+<div id="summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Summarizing a set of simulations using median and median absolute deviation</h2>
 </div>
-<div id="hypothesis-testing-for-simple-comparisons" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Hypothesis testing for simple comparisons</h3>
-<div id="estimate-standard-error-and-degrees-of-freedom" class="section level4" number="4.4.2.1">
-<h4><span class="header-section-number">4.4.2.1</span> Estimate, standard error, and degrees of freedom</h4>
+<div id="bootstrapping-to-simulate-a-sampling-distribution-7" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Bootstrapping to simulate a sampling distribution</h2>
+<div id="choices-in-defining-the-bootstrap-distribution-7" class="section level3" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> Choices in defining the bootstrap distribution</h3>
+<div id="time-series-7" class="section level4" number="12.4.1.1">
+<h4><span class="header-section-number">12.4.1.1</span> Time series</h4>
 </div>
-<div id="null-and-alternative-hypotheses" class="section level4" number="4.4.2.2">
-<h4><span class="header-section-number">4.4.2.2</span> Null and alternative hypotheses</h4>
+<div id="multilevel-structure-7" class="section level4" number="12.4.1.2">
+<h4><span class="header-section-number">12.4.1.2</span> Multilevel structure</h4>
 </div>
-</div>
-<div id="hypothesis-testing-general-formulation" class="section level3" number="4.4.3">
-<h3><span class="header-section-number">4.4.3</span> Hypothesis testing: general formulation</h3>
-</div>
-<div id="comparisons-of-parameters-to-fixed-values-and-each-other-interpreting-confidence-intervals-as-hypothesis-tests" class="section level3" number="4.4.4">
-<h3><span class="header-section-number">4.4.4</span> Comparisons of parameters to fixed values and each other: interpreting confidence intervals as hypothesis tests</h3>
-</div>
-<div id="type-1-and-type-2-errors-and-why-we-dont-like-talking-about-them" class="section level3" number="4.4.5">
-<h3><span class="header-section-number">4.4.5</span> Type 1 and type 2 errors and why we don’t like talking about them</h3>
-</div>
-<div id="type-m-magnitude-and-type-s-sign-errors" class="section level3" number="4.4.6">
-<h3><span class="header-section-number">4.4.6</span> Type M (magnitude) and type S (sign) errors</h3>
-</div>
-<div id="hypothesis-testing-and-statistical-practice" class="section level3" number="4.4.7">
-<h3><span class="header-section-number">4.4.7</span> Hypothesis testing and statistical practice</h3>
+<div id="discrete-data-7" class="section level4" number="12.4.1.3">
+<h4><span class="header-section-number">12.4.1.3</span> Discrete data</h4>
 </div>
 </div>
-<div id="problems-with-the-concept-of-statistical-significance" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Problems with the concept of statistical significance</h2>
-<div id="statistical-significance-is-not-the-same-as-practical-importance" class="section level3" number="4.5.1">
-<h3><span class="header-section-number">4.5.1</span> Statistical significance is not the same as practical importance</h3>
-</div>
-<div id="non-significance-is-not-the-same-as-zero" class="section level3" number="4.5.2">
-<h3><span class="header-section-number">4.5.2</span> Non-significance is not the same as zero</h3>
-</div>
-<div id="the-difference-between-significant-and-not-significant-is-not-itself-statistically-significant" class="section level3" number="4.5.3">
-<h3><span class="header-section-number">4.5.3</span> The difference between “significant” and “not significant” is not itself statistically significant</h3>
-</div>
-<div id="researcher-degrees-of-freedom-p-hacking-and-forking-paths" class="section level3" number="4.5.4">
-<h3><span class="header-section-number">4.5.4</span> Researcher degrees of freedom, <span class="math inline">\(p\)</span>-hacking, and forking paths</h3>
-</div>
-<div id="the-statistical-significance-filter" class="section level3" number="4.5.5">
-<h3><span class="header-section-number">4.5.5</span> The statistical significance filter</h3>
-</div>
-<div id="example-a-flawed-study-of-ovulation-and-political-attitudes" class="section level3" number="4.5.6">
-<h3><span class="header-section-number">4.5.6</span> Example: A flawed study of ovulation and political attitudes</h3>
+<div id="limitations-of-bootstrapping-7" class="section level3" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> Limitations of bootstrapping</h3>
 </div>
 </div>
-<div id="example-of-hypothesis-testing-55000-residents-need-your-help" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Example of hypothesis testing: 55,000 residents need your help!</h2>
-</div>
-<div id="moving-beyond-hypothesis-testing" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Moving beyond hypothesis testing</h2>
+<div id="fake-data-simulation-as-a-way-of-life-7" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Fake-data simulation as a way of life</h2>
 
 </div>
 </div>
@@ -622,8 +547,8 @@
           </div>
         </div>
       </div>
-<a href="some-basic-methods-in-mathematics-and-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="simulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="simulation-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simulation-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -654,7 +579,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pherephobia/regression_hgv/edit/master/04-Statistical_Inference.Rmd",
+"link": "https://github.com/pherephobia/regression_hgv/edit/master/12-Transformations.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -662,7 +587,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/pherephobia/regression_hgv/blob/master/04-Statistical_Inference.Rmd",
+"link": "https://github.com/pherephobia/regression_hgv/blob/master/12-Transformations.Rmd",
 "text": null
 },
 "download": null,

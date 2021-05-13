@@ -333,7 +333,7 @@ Figure 2.5에서 상호작용은 데이터를 해석하는데 매우 중요하�
 이처럼 시각화한 결과는 우리가 가진 데이터의 정보를 직관적으로 이해하도록 돕는다.
 
 ```{r, echo = F, fig.width=5, fig.height=5, fig.cap = "Effect of redistricting on partisan bias in U.S. state legislative elections. Each symbol represents a state and election year, with solid circles, open circles, and crosses representing Democratic, bipartisan, and Republican redistricting, respectively. The small dots are the control cases—state-years that did not immediately follow a redistricting. Lines show fit from a regression model. Redistricting tends to make elections less biased, but small partisan biases remain based on the party controlling the redistricting."}
-knitr::include_graphics("data/ROS-Examples-master/Redistricting/redistrict.png")
+knitr::include_graphics("fig/redistrict.png")
 ```
 
 ### Multiple plots
