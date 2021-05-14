@@ -368,7 +368,7 @@ boys_last_letter %>% group_by(last_letter) %>%
   ggplot(aes(year, prop, color = last_letter)) +
   geom_line(show.legend = F) +
   scale_y_continuous(labels = scales::label_percent(accuracy = 1)) +
-  ggrepel::geom_label_repel(aes(x = label$year, y = prop + 0.04, label = label$last_letter), color = "black", data = label, show.legend = F) + 
+  ggrepel::geom_label_repel(aes(x = year, y = prop + 0.04, label = last_letter), color = "black", data = label, show.legend = F) + 
  # facet_wrap(facets = vars(last_letter), ncol = 5) +
   labs(
     #title = "Last letter of boys' names by year",

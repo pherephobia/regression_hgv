@@ -63,13 +63,16 @@ height_women_sd <- sqrt(Hmisc::wtd.var(heights$height, heights$women))
 
 norm_approx <- 
   tibble(
-    x = seq_range(c(min(heights$height), max(heights$height))),
+    x = prediction::seq_range(c(min(heights$height), max(heights$height))),
     y_men = 
       dnorm(x, mean = height_men_mean, sd = height_men_sd) * sum(heights$men),
     y_women = 
       dnorm(x, mean = height_women_mean, sd = height_women_sd) *
       sum(heights$women)
   )
+
+
+
 ```
 
 Heights of women.
