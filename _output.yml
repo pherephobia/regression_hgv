@@ -1,6 +1,9 @@
 bookdown::gitbook:
+  includes:
+    in_header: [hypothesis.html, google_analytics.html]
   css: style.css
   config:
+    sharing: null
     toc:
       before: |
         <li><a href="./">GHV</a></li>

@@ -4,11 +4,30 @@ subtitle: "by Andrew Gelman, Jeniffer Hill and Aki Vehtari"
 author: "Sanghoon Park"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: book.bib
+biblio-style: apsr
+link-citations: yes
+github-repo: pherephobia/regression_hgv
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = TRUE, echo = FALSE,
+                      warning = FALSE, message = FALSE,
+                      fig.align = "center")
+library(tidyverse);library(patchwork);library(knitr)
+```
 
 # Overview
 
-이 책(이하 GHV)은 예측모형을 만들고, 이해하고, 사용하는 데 있어서 마주할 수 있는 문제들을 다루고 있다. 우선 데이터, 측정, 그리고 통계치(statistics)에 관한 기본적인 개념들을 앞의 다섯개 챕터에서 검토하고, 하나의 예측변수와 여러개의 예측변수를 가지는 선형 회귀모델을 다룬다. 뒷 부분에서는 로지스틱 회귀모델을 포함한 일반화 선형모델들을 살펴보게 될 것이다.
+<br>
+```{r, out.width="50%"}
+include_graphics("fig/cover.png")
+```
+<br>
+
+이 책(이하 @ghv2020)은 예측모형을 만들고, 이해하고, 사용하는 데 있어서 마주할 수 있는 문제들을 다루고 있다. 우선 데이터, 측정, 그리고 통계치(statistics)에 관한 기본적인 개념들을 앞의 다섯개 챕터에서 검토하고, 하나의 예측변수와 여러개의 예측변수를 가지는 선형 회귀모델을 다룬다. 뒷 부분에서는 로지스틱 회귀모델을 포함한 일반화 선형모델들을 살펴보게 될 것이다.
 
 저자들이 말하는 것처럼 이 책의 장점 중 하나는 단순히 기법적인 것들을 설명하는 것이 아닌, 이러한 모델들을 이용해서 어떻게 가지고 있는 데이터로부터 인과추론에 이르기까지 일반화를 할 수 있는지에 대한 회귀모델 "적용"의 문제를 다루고 있다는 것이다.
 
@@ -37,13 +56,6 @@ GHV를 읽고 정리한 이 리딩노트는 모든 내용을 요약하지 않고
 마지막으로 이 책의 핵심 주제는 바로 *추론 (inference)*이다. 우리가 손에 넣은 특정한 데이터로부터 수리적 모델을 이용해 (모집단에서 통용되는) 일반화된 주장을 할 수 있는 능력을 의미한다.
 
 ## Why learn regression?
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(error = TRUE, echo = FALSE,
-                      warning = FALSE, message = FALSE,
-                      fig.align = "center")
-library(tidyverse);library(patchwork)
-```
 
 ```{r, echo = F, fig.cap="Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x."}
 # Parameters

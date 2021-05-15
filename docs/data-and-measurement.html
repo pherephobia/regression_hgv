@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Data and Measurement | Reading Notes for Regression and Other Stories</title>
   <meta name="description" content="Chapter 2 Data and Measurement | Reading Notes for Regression and Other Stories" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Data and Measurement | Reading Notes for Regression and Other Stories" />
   <meta property="og:type" content="book" />
   
   
   
-  
+  <meta name="github-repo" content="pherephobia/regression_hgv" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Data and Measurement | Reading Notes for Regression and Other Stories" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-05-14" />
+<meta name="date" content="2021-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="some-basic-methods-in-mathematics-and-probability.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,20 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script async defer src="https://hypothes.is/embed.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88838732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 
 <style type="text/css">
@@ -116,6 +130,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -544,6 +581,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="19.5" data-path="simulation-14.html"><a href="simulation-14.html#fake-data-simulation-as-a-way-of-life-14"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -568,14 +606,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>모델을 적합하기에 앞서, 모델에 사용할 데이터와 측정지표를 탐색하고 이해할 필요가 있다.</p>
 <div id="examining-where-data-come-from" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Examining where data come from</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-8-1.png" alt="Map that appeared on the internet of the so-called ``Human Development Index,'' ranking the 50 states and Washington, D.C., from PlatypeanArchcow (2009)." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-9-1.png" alt="Map that appeared on the internet of the so-called ``Human Development Index,'' ranking the 50 states and Washington, D.C., from PlatypeanArchcow (2009)." width="672" />
 <p class="caption">
 Figure 2.1: Map that appeared on the internet of the so-called ``Human Development Index,’’ ranking the 50 states and Washington, D.C., from PlatypeanArchcow (2009).
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-9-1.png" alt="Graphing the Human Development Index versus average income by state: (a) scatterplot of the data, (b) scatterplot of ranks." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-10-1.png" alt="Graphing the Human Development Index versus average income by state: (a) scatterplot of the data, (b) scatterplot of ranks." width="768" />
 <p class="caption">
 Figure 2.2: Graphing the Human Development Index versus average income by state: (a) scatterplot of the data, (b) scatterplot of ranks.
 </p>
@@ -597,8 +635,8 @@ Figure 2.2: Graphing the Human Development Index versus average income by state:
 <li><p>Figure 2.3b는 당파성에 있어서 소득 수준이 적어도 2008년 기준으로는 공화당 당파성과 강한 관계가 있음을 보여준다.</p></li>
 </ul>
 <p>회귀모델은 데이터를 요약하고, 데이터로부터 추론을 도출하는 방법이다. 따라서 회귀모델은 분석하고자 하는 데이터의 질(quality of data)과 연구문제에 대한 데이터의 적실성에 좌우된다. 측정지표와 현실 간 간극은 과학적 연구에 있어서 일반적인 문제이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-10-1.png" alt="Distribution of (a) political ideology and (b) party identification, by income, from a survey conducted during the 2008 U.S. election campaign." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-11-1.png" alt="Distribution of (a) political ideology and (b) party identification, by income, from a survey conducted during the 2008 U.S. election campaign." width="768" />
 <p class="caption">
 Figure 2.3: Distribution of (a) political ideology and (b) party identification, by income, from a survey conducted during the 2008 U.S. election campaign.
 </p>
@@ -635,8 +673,8 @@ Figure 2.3: Distribution of (a) political ideology and (b) party identification,
 <div id="simple-scatterplots" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Simple scatterplots</h3>
 <p>Figure 2.4는 보건지출과 기대수명 간의 관계를 보여주는데, 미국이 다른 국가에 비하여 그다지 기대수명에 눈에 보이는 진전이 나타나지 않는데도 불구하고 높은 수준의 일인당 보건지출을 하고 있다는 것을 확인할 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-11-1.png" alt="Health care spending and life expectancy in several countries. This scatterplot shows two things: the generally positive correlation between spending and lifespan, and the extreme position of the United States." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-12-1.png" alt="Health care spending and life expectancy in several countries. This scatterplot shows two things: the generally positive correlation between spending and lifespan, and the extreme position of the United States." width="672" />
 <p class="caption">
 Figure 2.4: Health care spending and life expectancy in several countries. This scatterplot shows two things: the generally positive correlation between spending and lifespan, and the extreme position of the United States.
 </p>
@@ -656,7 +694,7 @@ Figure 2.4: Health care spending and life expectancy in several countries. This 
 <li><p>선거구 재획정의 가장 큰 효과는 당파성 편향을 0에 보다 가깝게 만든다는 것이다.</p></li>
 </ol>
 <p>이처럼 시각화한 결과는 우리가 가진 데이터의 정보를 직관적으로 이해하도록 돕는다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
 <img src="fig/redistrict.png" alt="Effect of redistricting on partisan bias in U.S. state legislative elections. Each symbol represents a state and election year, with solid circles, open circles, and crosses representing Democratic, bipartisan, and Republican redistricting, respectively. The small dots are the control cases&lt;U+2014&gt;state-years that did not immediately follow a redistricting. Lines show fit from a regression model. Redistricting tends to make elections less biased, but small partisan biases remain based on the party controlling the redistricting." width="1100" />
 <p class="caption">
 Figure 2.5: Effect of redistricting on partisan bias in U.S. state legislative elections. Each symbol represents a state and election year, with solid circles, open circles, and crosses representing Democratic, bipartisan, and Republican redistricting, respectively. The small dots are the control cases&lt;U+2014&gt;state-years that did not immediately follow a redistricting. Lines show fit from a regression model. Redistricting tends to make elections less biased, but small partisan biases remain based on the party controlling the redistricting.
@@ -666,20 +704,20 @@ Figure 2.5: Effect of redistricting on partisan bias in U.S. state legislative e
 <div id="multiple-plots" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Multiple plots</h3>
 <p>데이터를 기대하지 않은 방식으로 바라보는 것도 때로는 새로운 것을 발견하는 단초가 될 수 있다. 자세한 내용은 GHV의 27-28 페이지의 예제를 참고. 간단히 말하면, 데이터를 가지고 여러 플롯으로 쪼개서 다각적으로 살펴보면 새로운 것을 발견할 수도 있다는 조언이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-13-1.png" alt="Distribution of last letters of boys’ names from a database of American babies born in 1906, 1956m and 2006. Redrawn from a graph by Laura Wattenberg." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-14-1.png" alt="Distribution of last letters of boys’ names from a database of American babies born in 1906, 1956m and 2006. Redrawn from a graph by Laura Wattenberg." width="768" />
 <p class="caption">
 Figure 2.6: Distribution of last letters of boys’ names from a database of American babies born in 1906, 1956m and 2006. Redrawn from a graph by Laura Wattenberg.
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-14-1.png" alt="Trends in percentage of boys’ names ending in each letter. This graph has 26 lines, with the lines for N, D, and Y in bold to show the different trends in different-sounding names. Compare to Figures 2.6 and 2.7, which show snapshots of the last-letter distribution in 1906, 1956, and 2006." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-15-1.png" alt="Trends in percentage of boys’ names ending in each letter. This graph has 26 lines, with the lines for N, D, and Y in bold to show the different trends in different-sounding names. Compare to Figures 2.6 and 2.7, which show snapshots of the last-letter distribution in 1906, 1956, and 2006." width="672" />
 <p class="caption">
 Figure 2.7: Trends in percentage of boys’ names ending in each letter. This graph has 26 lines, with the lines for N, D, and Y in bold to show the different trends in different-sounding names. Compare to Figures 2.6 and 2.7, which show snapshots of the last-letter distribution in 1906, 1956, and 2006.
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-15-1.png" alt="Trends in concentration of boys’ and girls’ names. In the late 1800s, and then again at different periods since 1950, there have been steep declines in the percentage of babies given the most popular names, so that now the top 10 names of each sex represent only about 10% of baby names. Thus, even as the sounds of boys’ names have become more uniform (as indicated by the pattern of last letters shown in Figure 2.6), the particular names chosen have become more varied." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-16-1.png" alt="Trends in concentration of boys’ and girls’ names. In the late 1800s, and then again at different periods since 1950, there have been steep declines in the percentage of babies given the most popular names, so that now the top 10 names of each sex represent only about 10% of baby names. Thus, even as the sounds of boys’ names have become more uniform (as indicated by the pattern of last letters shown in Figure 2.6), the particular names chosen have become more varied." width="672" />
 <p class="caption">
 Figure 2.8: Trends in concentration of boys’ and girls’ names. In the late 1800s, and then again at different periods since 1950, there have been steep declines in the percentage of babies given the most popular names, so that now the top 10 names of each sex represent only about 10% of baby names. Thus, even as the sounds of boys’ names have become more uniform (as indicated by the pattern of last letters shown in Figure 2.6), the particular names chosen have become more varied.
 </p>
@@ -688,8 +726,8 @@ Figure 2.8: Trends in concentration of boys’ and girls’ names. In the late 1
 <div id="grids-of-plots" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Grids of plots</h3>
 <p>산포도는 두 개의 연속형 변수, <span class="math inline">\(y\)</span>와 <span class="math inline">\(x_1\)</span> 간의 관계를 보여준다. 만약 <span class="math inline">\(x_2\)</span>라는 추가적인 변수가 있고, 이것이 이산형(discrete)라고 하면 산포도에서 점의 색 등을 <span class="math inline">\(x_2\)</span>의 카테고리별로 다르게 출력하는 등으로 보여줄 수 있다. <span class="math inline">\(x_2\)</span>가 연속형일 경우도 색의 진하기로 표현할 수 있지만, 시각적으로 뚜렷하게 구분하기가 어려워 추천하지는 않는다. 또는 <span class="math inline">\(x_2\)</span>, <span class="math inline">\(x_3\)</span> 등을 추가적인 기준점으로 산포도 자체를 세분화해 쪼개는 방법(grid)이 있다(<em>small multiples</em>). Figure 2.9에서도 확인할 수 있듯, 산포도를 통해 우리는 연속형 종속변수인 <span class="math inline">\(y\)</span>를 연속형 예측변수인 <span class="math inline">\(x_1\)</span>과 대응되도록 그래프를 그린 후, 이산형 예측변수인 <span class="math inline">\(x_2\)</span>, <span class="math inline">\(x_3\)</span>, <span class="math inline">\(x_4\)</span>를 레이어를 덧씌우듯 (마커에 색을 추가하는 등) 시각화할 수 있다. 또한, 각각의 플롯에 <span class="math inline">\(x_2, \cdot x_4\)</span>의 예측변수들의 서로 다른 고정된 값에서 <span class="math inline">\(x_1\)</span>와 <span class="math inline">\(y\)</span> 간의 함수적 관계에 따른 <span class="math inline">\(y\)</span>의 기대값을 보여주는 예측선을 그리는 것 등도 가능하다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-16-1.png" alt="Swings in U.S. congressional elections in three different periods. This grid of plots demonstrates how we can display an outcome (in this case, the swing toward the Democrats or Republicans between two elections in a congressional district) as a function of four predictors: previous Democratic vote share, incumbency status (gray for incumbents running for reelection, black for open seats), region of the country, and time period. Uncontested and landslide elections have been excluded." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-17-1.png" alt="Swings in U.S. congressional elections in three different periods. This grid of plots demonstrates how we can display an outcome (in this case, the swing toward the Democrats or Republicans between two elections in a congressional district) as a function of four predictors: previous Democratic vote share, incumbency status (gray for incumbents running for reelection, black for open seats), region of the country, and time period. Uncontested and landslide elections have been excluded." width="864" />
 <p class="caption">
 Figure 2.9: Swings in U.S. congressional elections in three different periods. This grid of plots demonstrates how we can display an outcome (in this case, the swing toward the Democrats or Republicans between two elections in a congressional district) as a function of four predictors: previous Democratic vote share, incumbency status (gray for incumbents running for reelection, black for open seats), region of the country, and time period. Uncontested and landslide elections have been excluded.
 </p>
@@ -722,23 +760,23 @@ Figure 2.9: Swings in U.S. congressional elections in three different periods. T
 <h2><span class="header-section-number">2.4</span> Data and adjustment: trends in mortality rates</h2>
 <p>GHV는 사망률(mortality rates)의 예제를 통해 특정 연령집단에서의 집합적인 사망률의 증가가 45세부터 54세 연령 집단의 구성이 1990년부터 2013년 사이에 크게 변화하였기 때문인지를 분석한다. 만약 45세부터 54세 연령집단의 구성이 시간에 따라 변화하여 사망률의 차이가 나타났다면, 그 집단의 시간에 따른 사망률의 변화는 연령에 특정한 사망률의 변화는 반영하고 있지 않는다고 볼 수 있다. 즉, 연도-시간의 변화가 주요 요인이라면 45세부터 54세라는 이 중장년층이라는 연령 자체의 특정한 효과는 사망률의 변화에 큰 영향을 미치지 않앗을 것이라고 볼 수 있다는 것이다.</p>
 <p>이를 확인하기 위해서 GHV는 이 연령 집단의 순수한 사망률의 변화도 보고, 평균 연령의 변화, 나아가 그 두 패턴을 비교해본다. Figure 2.10이 바로 그것이다. Figure 2.10은 해당 연령 집단의 사망률 변화를 이해하기 위해서는 연령에 대한 조정이 필요하다는 것을 보여준다(연령 그 자체가 사망률에 영향을 미칠 수 있음). 왜냐면 시간적 추이에 따라서 사망률이 계속 증가하는 것은 맞지만 동시에 평균 연령도 증가하고 있기 때문에 평균연령의 증가가 사망률의 증가로 이어졋을 가능성을 배제할 수 없기 때문이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-17-1.png" alt="(a) Observed increase in raw mortality rate among 45-to-54-year-old non-Hispanic whites, unadjusted for age; (b) increase in average age of this group as the baby boom generation moves through; (c) raw death rate, along with trend in death rate attributable by change in age distribution alone, had age-specific mortality rates been at the 2013 level throughout." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-18-1.png" alt="(a) Observed increase in raw mortality rate among 45-to-54-year-old non-Hispanic whites, unadjusted for age; (b) increase in average age of this group as the baby boom generation moves through; (c) raw death rate, along with trend in death rate attributable by change in age distribution alone, had age-specific mortality rates been at the 2013 level throughout." width="864" />
 <p class="caption">
 Figure 2.10: (a) Observed increase in raw mortality rate among 45-to-54-year-old non-Hispanic whites, unadjusted for age; (b) increase in average age of this group as the baby boom generation moves through; (c) raw death rate, along with trend in death rate attributable by change in age distribution alone, had age-specific mortality rates been at the 2013 level throughout.
 </p>
 </div>
 <p>Figure 2.11a은 연령에 대해 조정한 경향성이 그다지 사망률의 증가에 민감한 영향을 미치지 않는다는 것을 보여준다. 반면에 성별로 연령대별 조정한 사망률을 분리해서 살펴보면 Figure 2.11b와 같은 결과를 얻을 수 있는데, 1999년부터 2013년까지 여성의 사망률이 증가한 반면, 남성의 사망률은 1999년부터 2005년까지 증가하지만 2005년부터 2013년까지는 반전하는 것을 확인할 수 있는 것이다.</p>
 <p>이처럼 데이터가 가지고 있는 정보는 그것을 어떻게 집약(aggregation)하고, 또는 해체(disaggregation)하느냐에 따라서 다른 결과를 보여줄 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-19"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-19-1.png" alt="(a) Age-adjusted death rates among 45-to-54-year-old non-Hispanic whites, showing an increase from 1999 to 2005 and a steady pattern since 2005; (b) comparison of two different age adjustments; (c) trends in age-adjusted death rates broken down by sex. The three graphs are on different scales." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-20"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-20-1.png" alt="(a) Age-adjusted death rates among 45-to-54-year-old non-Hispanic whites, showing an increase from 1999 to 2005 and a steady pattern since 2005; (b) comparison of two different age adjustments; (c) trends in age-adjusted death rates broken down by sex. The three graphs are on different scales." width="672" />
 <p class="caption">
 Figure 2.11: (a) Age-adjusted death rates among 45-to-54-year-old non-Hispanic whites, showing an increase from 1999 to 2005 and a steady pattern since 2005; (b) comparison of two different age adjustments; (c) trends in age-adjusted death rates broken down by sex. The three graphs are on different scales.
 </p>
 </div>
 <p>마지막으로 Figre 2.12는 셩별에 따른 미국의 지역별 연령 조정된 사망률의 추이를 보여주는데, 특기할 것은 남부 지역의 여성의 사망률이 눈에 띄는 증가세를 보인다는 점이다. 반면에 두 성별 모두 북동부에서는 사망률이 감소하는 모습을 보였고, 가장 낮은 추이를 보였다. 이같은 일련의 그래프들은 데이터 탐색(data exploration)이 얼마나 중요한지를 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-20"></span>
-<img src="regression_hgv_files/figure-html/unnamed-chunk-20-1.png" alt="Age-adjusted death rates among 45-to-54-year-old non-Hispanic white men and women, broken down by region of the country. The most notable pattern has been an increase in death rates among women in the South. In contrast, death rates for both sexes have been declining in the Northeast. The graphs are on different scales; as can be seen from the y-axes, death rates are lower for women than for men." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-21"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-21-1.png" alt="Age-adjusted death rates among 45-to-54-year-old non-Hispanic white men and women, broken down by region of the country. The most notable pattern has been an increase in death rates among women in the South. In contrast, death rates for both sexes have been declining in the Northeast. The graphs are on different scales; as can be seen from the y-axes, death rates are lower for women than for men." width="768" />
 <p class="caption">
 Figure 2.12: Age-adjusted death rates among 45-to-54-year-old non-Hispanic white men and women, broken down by region of the country. The most notable pattern has been an increase in death rates among women in the South. In contrast, death rates for both sexes have been declining in the Northeast. The graphs are on different scales; as can be seen from the y-axes, death rates are lower for women than for men.
 </p>
@@ -767,31 +805,22 @@ Figure 2.12: Age-adjusted death rates among 45-to-54-year-old non-Hispanic white
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pherephobia/regression_hgv/edit/master/02-Data_Measurement.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
 "view": {
-"link": "https://github.com/pherephobia/regression_hgv/blob/master/02-Data_Measurement.Rmd",
+"link": null,
 "text": null
 },
 "download": null,

@@ -1,8 +1,6 @@
-book_filename: "regression_hgv"
-output_dir: docs
-delete_merged_file: true
-edit: https://github.com/pherephobia/regression_hgv/edit/master/%s
-view: https://github.com/pherephobia/regression_hgv/blob/master/%s
+book_filename: "regression-ghv"
 language:
   ui:
     chapter_name: "Chapter "
+output_dir: "docs"
+download: no
