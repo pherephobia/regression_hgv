@@ -1,0 +1,28 @@
+# Simulation
+
+## Simulation of discrete probability models
+
+### How many girls in 400 births?
+
+### Accounting for twins
+
+## Simulation of continuous and mixed discrete/continuous models
+
+### Simulation in R using custom-made functions
+
+## Summarizing a set of simulations using median and median absolute deviation
+
+## Bootstrapping to simulate a sampling distribution
+
+### Choices in defining the bootstrap distribution
+
+#### Time series
+
+#### Multilevel structure
+
+#### Discrete data
+
+### Limitations of bootstrapping
+
+## Fake-data simulation as a way of life
+
