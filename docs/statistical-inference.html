@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-05-20" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="some-basic-methods-in-mathematics-and-probability.html"/>
 <link rel="next" href="simulation.html"/>
-<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -653,6 +653,19 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="23.5.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example"><i class="fa fa-check"></i><b>23.5.1</b> Working through your own example</a></li>
 </ul></li>
+<li class="chapter" data-level="23.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#some-basic-methods-in-mathematics-and-probability-1"><i class="fa fa-check"></i><b>23.6</b> Some basic methods in mathematics and probability</a>
+<ul>
+<li class="chapter" data-level="23.6.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-2"><i class="fa fa-check"></i><b>23.6.1</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-3"><i class="fa fa-check"></i><b>23.6.2</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-1"><i class="fa fa-check"></i><b>23.6.3</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-2"><i class="fa fa-check"></i><b>23.6.4</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-3"><i class="fa fa-check"></i><b>23.6.5</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-2"><i class="fa fa-check"></i><b>23.6.6</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.7" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-3"><i class="fa fa-check"></i><b>23.6.7</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.8" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#correlated-random-variables"><i class="fa fa-check"></i><b>23.6.8</b> Correlated random variables</a></li>
+<li class="chapter" data-level="23.6.9" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#comparison-of-distributions"><i class="fa fa-check"></i><b>23.6.9</b> Comparison of distributions</a></li>
+<li class="chapter" data-level="23.6.10" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example-1"><i class="fa fa-check"></i><b>23.6.10</b> Working through your own example</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -734,12 +747,12 @@ y_i = a + bx_i + \epsilon_i, \: \epsilon \sim \mathrm{N}(0, \sigma).
 <div id="standard-error-and-confidence-interval-for-a-proportion-when-y-0-or-y-n" class="section level3" number="4.2.4">
 <h3><span class="header-section-number">4.2.4</span> Standard error and confidence interval for a proportion when <span class="math inline">\(y = 0\)</span> or <span class="math inline">\(y = n\)</span></h3>
 <p><span class="math inline">\(y=0\)</span>이거나 <span class="math inline">\(n-y = 0\)</span>인 극단적인 경우, 표준오차의 추정값은 0이되며, 신뢰구간의 너비도 0이 된다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statistical-inference.html#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb5-2"><a href="statistical-inference.html#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb5-3"><a href="statistical-inference.html#cb5-3" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> y<span class="sc">/</span>n</span>
-<span id="cb5-4"><a href="statistical-inference.html#cb5-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(estimate<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>estimate)<span class="sc">/</span>n)</span>
-<span id="cb5-5"><a href="statistical-inference.html#cb5-5" aria-hidden="true" tabindex="-1"></a>int_95 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="sc">*</span> se</span>
-<span id="cb5-6"><a href="statistical-inference.html#cb5-6" aria-hidden="true" tabindex="-1"></a>int_95</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="statistical-inference.html#cb8-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb8-2"><a href="statistical-inference.html#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="statistical-inference.html#cb8-3" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> y<span class="sc">/</span>n</span>
+<span id="cb8-4"><a href="statistical-inference.html#cb8-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(estimate<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>estimate)<span class="sc">/</span>n)</span>
+<span id="cb8-5"><a href="statistical-inference.html#cb8-5" aria-hidden="true" tabindex="-1"></a>int_95 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="sc">*</span> se</span>
+<span id="cb8-6"><a href="statistical-inference.html#cb8-6" aria-hidden="true" tabindex="-1"></a>int_95</span></code></pre></div>
 <pre><code>## [1] 0 0</code></pre>
 </div>
 <div id="standard-error-for-a-comparison" class="section level3" number="4.2.5">
@@ -766,13 +779,13 @@ y_i = a + bx_i + \epsilon_i, \: \epsilon \sim \mathrm{N}(0, \sigma).
 <h3><span class="header-section-number">4.2.8</span> Confidence intervals from the <span class="math inline">\(t\)</span> distribution</h3>
 <p><span class="math inline">\(t\)</span> 분포는 정규분포와 비슷하지만 양 끝 꼬리가 조금 더 두터운 분포를 말한다. 관측치의 개수가 많아지면 (자유도가 커질수록) <span class="math inline">\(t\)</span> 분포는 정규분포에 수렴하게 된다.</p>
 <p>만약 표준오차가 <span class="math inline">\(n\)</span>개의 데이터로 추정된다면, 우리는 <span class="math inline">\(n-1\)</span>의 자유도를 가진 <span class="math inline">\(t\)</span> 분포를 이용해 그 불확실성을 설명할 수 있다. 정규분포와 <span class="math inline">\(t\)</span> 분포의 차이는 자유도의 크기 차이라고 봐도 무방하다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="statistical-inference.html#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">34</span>, <span class="dv">38</span>, <span class="dv">35</span>, <span class="dv">37</span>)</span>
-<span id="cb7-2"><a href="statistical-inference.html#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
-<span id="cb7-3"><a href="statistical-inference.html#cb7-3" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb7-4"><a href="statistical-inference.html#cb7-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(y)<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
-<span id="cb7-5"><a href="statistical-inference.html#cb7-5" aria-hidden="true" tabindex="-1"></a>int_50 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qt</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), n<span class="dv">-1</span>)<span class="sc">*</span>se</span>
-<span id="cb7-6"><a href="statistical-inference.html#cb7-6" aria-hidden="true" tabindex="-1"></a>int_95 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qt</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), n<span class="dv">-1</span>)<span class="sc">*</span>se</span>
-<span id="cb7-7"><a href="statistical-inference.html#cb7-7" aria-hidden="true" tabindex="-1"></a>int_50;int_95</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statistical-inference.html#cb10-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">34</span>, <span class="dv">38</span>, <span class="dv">35</span>, <span class="dv">37</span>)</span>
+<span id="cb10-2"><a href="statistical-inference.html#cb10-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
+<span id="cb10-3"><a href="statistical-inference.html#cb10-3" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
+<span id="cb10-4"><a href="statistical-inference.html#cb10-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(y)<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb10-5"><a href="statistical-inference.html#cb10-5" aria-hidden="true" tabindex="-1"></a>int_50 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qt</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), n<span class="dv">-1</span>)<span class="sc">*</span>se</span>
+<span id="cb10-6"><a href="statistical-inference.html#cb10-6" aria-hidden="true" tabindex="-1"></a>int_95 <span class="ot">&lt;-</span> estimate <span class="sc">+</span> <span class="fu">qt</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), n<span class="dv">-1</span>)<span class="sc">*</span>se</span>
+<span id="cb10-7"><a href="statistical-inference.html#cb10-7" aria-hidden="true" tabindex="-1"></a>int_50;int_95</span></code></pre></div>
 <pre><code>## [1] 35.2557 36.3443</code></pre>
 <pre><code>## [1] 33.75974 37.84026</code></pre>
 </div>
@@ -809,8 +822,8 @@ y_i = a + bx_i + \epsilon_i, \: \epsilon \sim \mathrm{N}(0, \sigma).
 <div id="comparisons-visual-and-numerical" class="section level3" number="4.2.11">
 <h3><span class="header-section-number">4.2.11</span> Comparisons, visual and numerical</h3>
 <p>Figure 4.2는 표본 별 불확실성을 시각적으로 비교할 수 있도록 만든 플롯이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-37"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-37-1.png" alt="Simulation of coverage of confidence intervals: the horizontal line shows the true parameter value, and dots and vertical lines show estimates and confidence intervals obtained from 100 random simulations from the sampling distribution. If the model is correct, 50% of the 50% intervals and 95% of the 95% intervals should contain the true parameter value, in the long run." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-178"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-178-1.png" alt="Simulation of coverage of confidence intervals: the horizontal line shows the true parameter value, and dots and vertical lines show estimates and confidence intervals obtained from 100 random simulations from the sampling distribution. If the model is correct, 50% of the 50% intervals and 95% of the 95% intervals should contain the true parameter value, in the long run." width="768" />
 <p class="caption">
 Figure 4.1: Simulation of coverage of confidence intervals: the horizontal line shows the true parameter value, and dots and vertical lines show estimates and confidence intervals obtained from 100 random simulations from the sampling distribution. If the model is correct, 50% of the 50% intervals and 95% of the 95% intervals should contain the true parameter value, in the long run.
 </p>
@@ -844,16 +857,16 @@ Figure 4.1: Simulation of coverage of confidence intervals: the horizontal line 
 <h3><span class="header-section-number">4.4.1</span> Statistical significance</h3>
 <p>통계적 유의성은 통상적으로 가설검정의 맥락에서 <em>영가설(null hypothesis)</em>, 또는 효과가 없을 것이라는 것을 보여주는 특정한 값(prespecified value)에 비해 <span class="math inline">\(p\)</span>-값이 0.05보다 작은지로 정의된다. 적합된 회귀모델로 얘기하자면, 이러한 논리는 회귀계수의 추정치가 효과가 없을 것이라는 의미의 0과 비교하여 최소 2 표준오차만큼 차이가 나는지 여부를 가지고 통계적 유의성이 존재하는지를 판단하는 것이다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 57)</span>.</p>
 <p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020</a>)</span> 은 동전을 20번 던졌을 때, 8번 앞면이 나오는 사건을 예시로 제시한다. 기존의 영가설은 앞면과 뒷면이 나올 확률이 각각 <span class="math inline">\(p = 0.5\)</span>라고 할 때, 20번 중에서 8번, 즉 관측한 <span class="math inline">\(\hat p = 0.4\)</span>가 통계적으로 <span class="math inline">\(p = 0.5\)</span>와 유의미한 차이인지를 표준오차를 통해 <span class="math inline">\(\sqrt{\hat p (1 - \hat p) / n}\)</span>로 계산하는 방식이다.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statistical-inference.html#cb10-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb10-2"><a href="statistical-inference.html#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb10-3"><a href="statistical-inference.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the estimated probability</span></span>
-<span id="cb10-4"><a href="statistical-inference.html#cb10-4" aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> y <span class="sc">/</span> n)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="statistical-inference.html#cb13-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb13-2"><a href="statistical-inference.html#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb13-3"><a href="statistical-inference.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the estimated probability</span></span>
+<span id="cb13-4"><a href="statistical-inference.html#cb13-4" aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> y <span class="sc">/</span> n)</span></code></pre></div>
 <pre><code>## [1] 0.4</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statistical-inference.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the standard error</span></span>
-<span id="cb12-2"><a href="statistical-inference.html#cb12-2" aria-hidden="true" tabindex="-1"></a>(se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="statistical-inference.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the standard error</span></span>
+<span id="cb15-2"><a href="statistical-inference.html#cb15-2" aria-hidden="true" tabindex="-1"></a>(se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n))</span></code></pre></div>
 <pre><code>## [1] 0.1095445</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="statistical-inference.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% CIs</span></span>
-<span id="cb14-2"><a href="statistical-inference.html#cb14-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> se, <span class="dv">2</span> <span class="sc">*</span> se)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="statistical-inference.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% CIs</span></span>
+<span id="cb17-2"><a href="statistical-inference.html#cb17-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> se, <span class="dv">2</span> <span class="sc">*</span> se)</span></code></pre></div>
 <pre><code>## [1] 0.180911 0.619089</code></pre>
 <p>이렇게 계산했을 때, 신뢰구간은 <span class="math inline">\(p = 0.5\)</span>를 보함하고, 우리는 관측한 결과가 영가설과 통계적으로 유의미하게 다르지 않다고 결론을 내리게 된다.</p>
 </div>
@@ -872,7 +885,7 @@ Figure 4.1: Simulation of coverage of confidence intervals: the horizontal line 
 <div id="p-value." class="section level4" number="4.4.2.3">
 <h4><span class="header-section-number">4.4.2.3</span> <span class="math inline">\(p\)</span>-value.</h4>
 <p>가설검정에서 데이터가 영가설로부터 얼마나 떨어져 있는지는 <span class="math inline">\(p\)</span>-값을 통해서도 볼 수 있다. <span class="math inline">\(p\)</span>-값은 우리가 얼마나 극단적인 관측값을 확인할 수 있는지를 확률적으로 보여주는 수치이다. <span class="math inline">\(p\)</span>-값은 <span class="math inline">\(\nu\)</span>의 자유도를 가진 <span class="math inline">\(t\)</span>-분포에서 영가설로부터 극단적으로 떨어진 값을 관측할 확률을 의미한다. R에서 <code>theta_hat</code> = <span class="math inline">\(\hat \theta\)</span>, <code>se_theta</code> = <span class="math inline">\(\text{se}(\hat \theta)\)</span> <code>n_C</code> = <span class="math inline">\(n_C\)</span>, 그리고 <code>n_T</code> = <span class="math inline">\(n_T\)</span>라고 할 때, <span class="math inline">\(p\)</span>-값은 다음과 같이 구할 수 있다.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="statistical-inference.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(theta_hat) <span class="sc">/</span> se_theta, <span class="at">df =</span> n_C <span class="sc">+</span> n_T, <span class="at">ncp =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="statistical-inference.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(theta_hat) <span class="sc">/</span> se_theta, <span class="at">df =</span> n_C <span class="sc">+</span> n_T, <span class="at">ncp =</span> <span class="dv">2</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="hypothesis-testing-general-formulation." class="section level3" number="4.4.3">

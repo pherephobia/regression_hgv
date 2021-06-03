@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-05-20" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="simulation-17.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -653,6 +653,19 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="23.5.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example"><i class="fa fa-check"></i><b>23.5.1</b> Working through your own example</a></li>
 </ul></li>
+<li class="chapter" data-level="23.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#some-basic-methods-in-mathematics-and-probability-1"><i class="fa fa-check"></i><b>23.6</b> Some basic methods in mathematics and probability</a>
+<ul>
+<li class="chapter" data-level="23.6.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-2"><i class="fa fa-check"></i><b>23.6.1</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-3"><i class="fa fa-check"></i><b>23.6.2</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-1"><i class="fa fa-check"></i><b>23.6.3</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-2"><i class="fa fa-check"></i><b>23.6.4</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-3"><i class="fa fa-check"></i><b>23.6.5</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-2"><i class="fa fa-check"></i><b>23.6.6</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.7" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-3"><i class="fa fa-check"></i><b>23.6.7</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.8" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#correlated-random-variables"><i class="fa fa-check"></i><b>23.6.8</b> Correlated random variables</a></li>
+<li class="chapter" data-level="23.6.9" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#comparison-of-distributions"><i class="fa fa-check"></i><b>23.6.9</b> Comparison of distributions</a></li>
+<li class="chapter" data-level="23.6.10" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example-1"><i class="fa fa-check"></i><b>23.6.10</b> Working through your own example</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -691,179 +704,72 @@ Andy proposes to use an index card to make a template for folding the base into 
 After practicing, we decided to switch jobs. It worked better with Yee timing and John dropping. 3 –
 2 – 1 – GO.</p>
 </blockquote>
-<p>Your instructor will hand out 25 half-sheets of paper and 2 paper clips to each group of students.
-The body width will be one-third of the width of the sheets, so the wing width can be anywhere
-from <span class="math inline">\(\frac{1}{6}\)</span> to <span class="math inline">\(\frac{1}{2}\)</span> of the body width; see Figure 1.9a. The body length will be specified by the instructor. For example, if the sheets are U.S.-sized (<span class="math inline">\(8.5\times5.5\)</span> inches) and the body length is set to 3 inches, then the wing width could be anywhere from 0.91 to 2.75 inches and the wing length could be anywhere from 0 to 5.5 inches.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-40"></span>
-<img src="fig/exercise1_fig1.9.jpg" alt="Diagram for making a ``helicopter'' from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped." width="309" />
+<p>Your instructor will hand out 25 half-sheets of paper and 2 paper clips to each group of students. The body width will be one-third of the width of the sheets, so the wing width can be anywhere from <span class="math inline">\(\frac{1}{6}\)</span> to <span class="math inline">\(\frac{1}{2}\)</span> of the body width; see Figure 1.9a. The body length will be specified by the instructor. For example, if the sheets are U.S.-sized (<span class="math inline">\(8.5\times5.5\)</span> inches) and the body length is set to 3 inches, then the wing width could be anywhere from 0.91 to 2.75 inches and the wing length could be anywhere from 0 to 5.5 inches. In this assignment you can experiment using your 25 half-sheets and 10 paper clips. You can make each half-sheet into only one helicopter. But you are allowed to design sequentially, setting the wing width and body length for each helicopter given the data you have already recorded. Take a few measurements using each helicopter, each time dropping it from the required height and timing how long it takes to land.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-196"></span>
+<img src="fig/exercise1_fig1.9.jpg" alt="(a) Diagram for making a “helicopter” from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped. (b) Data file showing flight times, in seconds, for 5 flights each of two identical helicopters with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From Gelman and Nolan (2017)." width="714" />
 <p class="caption">
-Figure 23.1: Diagram for making a ``helicopter’’ from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped.
+Figure 23.1: (a) Diagram for making a “helicopter” from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped. (b) Data file showing flight times, in seconds, for 5 flights each of two identical helicopters with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From Gelman and Nolan (2017).
 </p>
 </div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="exercises-of-regression-and-other-stories.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb17-2"><a href="exercises-of-regression-and-other-stories.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb17-3"><a href="exercises-of-regression-and-other-stories.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># U.S. Presidential election results and GDP growth</span></span>
-<span id="cb17-4"><a href="exercises-of-regression-and-other-stories.html#cb17-4" aria-hidden="true" tabindex="-1"></a>file_helicopters <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/ros-master/Helicopters/data/helicopters.txt&quot;</span>)</span>
-<span id="cb17-5"><a href="exercises-of-regression-and-other-stories.html#cb17-5" aria-hidden="true" tabindex="-1"></a>helicopters <span class="ot">&lt;-</span> </span>
-<span id="cb17-6"><a href="exercises-of-regression-and-other-stories.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  file_helicopters <span class="sc">%&gt;%</span> </span>
-<span id="cb17-7"><a href="exercises-of-regression-and-other-stories.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.table</span>(<span class="at">header =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-8"><a href="exercises-of-regression-and-other-stories.html#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> str_to_lower)</span>
-<span id="cb17-9"><a href="exercises-of-regression-and-other-stories.html#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="exercises-of-regression-and-other-stories.html#cb17-10" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> </span>
-<span id="cb17-11"><a href="exercises-of-regression-and-other-stories.html#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot;Data file showing flight times, in seconds, for 5 flights each of two identical helicopters</span></span>
-<span id="cb17-12"><a href="exercises-of-regression-and-other-stories.html#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="st">with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From</span></span>
-<span id="cb17-13"><a href="exercises-of-regression-and-other-stories.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="st">Gelman and Nolan (2017).&quot;</span>)</span></code></pre></div>
-<table>
-<caption><span id="tab:unnamed-chunk-41">Table 23.1: </span>Data file showing flight times, in seconds, for 5 flights each of two identical helicopters
-with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From
-Gelman and Nolan (2017).</caption>
-<thead>
-<tr class="header">
-<th align="right">helicopter_id</th>
-<th align="right">width_cm</th>
-<th align="right">length_cm</th>
-<th align="right">time_sec</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.64</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.74</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.68</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.62</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.68</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.70</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.62</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.66</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.69</td>
-</tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.62</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.62</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.65</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.66</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.63</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.66</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.71</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.64</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.69</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.59</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4.6</td>
-<td align="right">8.2</td>
-<td align="right">1.61</td>
-</tr>
-</tbody>
-</table>
-<p>In this assignment you can experiment using your 25 half-sheets and 10 paper clips. You can
-make each half-sheet into only one helicopter. But you are allowed to design sequentially, setting
-the wing width and body length for each helicopter given the data you have already recorded.
-Take a few measurements using each helicopter, each time dropping it from the required height
-and timing how long it takes to land.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="exercises-of-regression-and-other-stories.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb39-2"><a href="exercises-of-regression-and-other-stories.html#cb39-2" aria-hidden="true" tabindex="-1"></a>file_helicopters <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/ros-master/Helicopters/data/helicopters.txt&quot;</span>)</span>
+<span id="cb39-3"><a href="exercises-of-regression-and-other-stories.html#cb39-3" aria-hidden="true" tabindex="-1"></a>helicopters <span class="ot">&lt;-</span> </span>
+<span id="cb39-4"><a href="exercises-of-regression-and-other-stories.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  file_helicopters <span class="sc">%&gt;%</span> </span>
+<span id="cb39-5"><a href="exercises-of-regression-and-other-stories.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.table</span>(<span class="at">header =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-6"><a href="exercises-of-regression-and-other-stories.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> str_to_lower)</span></code></pre></div>
 <div id="a" class="section level4" number="23.1.1.1">
 <h4><span class="header-section-number">23.1.1.1</span> (a)</h4>
-<p>Record the wing width and body length for each of your 25 helicopters along with your time measurements, all in a file in which each observation is in its own row, following the pattern of helicopters.txt in the folder Helicopters, also shown in Figure 1.9b.</p>
+<p>Record the wing width and body length for each of your 25 helicopters along with your time measurements, all in a file in which each observation is in its own row, following the pattern of <code>helicopters.txt</code> in the folder Helicopters, also shown in Figure 1.9b.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exercises-of-regression-and-other-stories.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The wing length and the wing width of the helicopter are the only two design variables, that is, the only two measurements on the helicopter that can be changed. The body width and length must remain the same for all helicopters. </span></span>
+<span id="cb40-2"><a href="exercises-of-regression-and-other-stories.html#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="exercises-of-regression-and-other-stories.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># wing width 4.6 centimeters and wing length 8.2 centimeters</span></span>
+<span id="cb40-4"><a href="exercises-of-regression-and-other-stories.html#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="exercises-of-regression-and-other-stories.html#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="exercises-of-regression-and-other-stories.html#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="exercises-of-regression-and-other-stories.html#cb40-7" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(time_sec) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb40-8"><a href="exercises-of-regression-and-other-stories.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_width =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fl">0.91</span>, <span class="fl">2.75</span>, <span class="fl">0.1</span>), <span class="fl">2.75</span>),</span>
+<span id="cb40-9"><a href="exercises-of-regression-and-other-stories.html#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_length =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="fl">5.5</span>, <span class="dv">20</span>, <span class="at">replace=</span><span class="cn">TRUE</span>),</span>
+<span id="cb40-10"><a href="exercises-of-regression-and-other-stories.html#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">body_length =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-11"><a href="exercises-of-regression-and-other-stories.html#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(helicopter_id, time_sec, wing_width, </span>
+<span id="cb40-12"><a href="exercises-of-regression-and-other-stories.html#cb40-12" aria-hidden="true" tabindex="-1"></a>         body_length, <span class="fu">everything</span>())<span class="ot">-&gt;</span> helicopters</span></code></pre></div>
 </div>
 <div id="b" class="section level4" number="23.1.1.2">
 <h4><span class="header-section-number">23.1.1.2</span> (b)</h4>
 <p>Graph your data in a way that seems reasonable to you.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exercises-of-regression-and-other-stories.html#cb41-1" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb41-2"><a href="exercises-of-regression-and-other-stories.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">helicopter_id =</span> <span class="fu">as.factor</span>(helicopter_id)) <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="exercises-of-regression-and-other-stories.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> time_sec, <span class="at">x =</span>  wing_width,</span>
+<span id="cb41-4"><a href="exercises-of-regression-and-other-stories.html#cb41-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> helicopter_id,</span>
+<span id="cb41-5"><a href="exercises-of-regression-and-other-stories.html#cb41-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> helicopter_id, </span>
+<span id="cb41-6"><a href="exercises-of-regression-and-other-stories.html#cb41-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> helicopter_id)) <span class="sc">+</span> </span>
+<span id="cb41-7"><a href="exercises-of-regression-and-other-stories.html#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb41-8"><a href="exercises-of-regression-and-other-stories.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-199-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="c" class="section level4" number="23.1.1.3">
 <h4><span class="header-section-number">23.1.1.3</span> (c)</h4>
 <p>Given your results, propose a design (wing width and length) that you think will maximize the helicopter’s expected time aloft. It is not necessary for you to fit a formal regression model here, but you should think about the general concerns of regression. The above description is adapted from Gelman and Nolan (2017, section 20.4). See Box, Hunter, and Hunter (2005) for a more advanced statistical treatment of this sort of problem.</p>
+<pre><code>## 
+## Call:
+## lm(formula = time_sec ~ width_cm + length_cm + helicopter_id, 
+##     data = helicopters)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.0560 -0.0285 -0.0005  0.0175  0.0750 
+## 
+## Coefficients: (2 not defined because of singularities)
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    1.68400    0.02713  62.080   &lt;2e-16 ***
+## width_cm            NA         NA      NA       NA    
+## length_cm           NA         NA      NA       NA    
+## helicopter_id -0.01900    0.01716  -1.107    0.283    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.03836 on 18 degrees of freedom
+## Multiple R-squared:  0.06379,    Adjusted R-squared:  0.01178 
+## F-statistic: 1.227 on 1 and 18 DF,  p-value: 0.2827</code></pre>
 </div>
 </div>
 <div id="sketching-a-regression-model-and-data" class="section level3" number="23.1.2">
@@ -872,10 +778,46 @@ and timing how long it takes to land.</p>
 <div id="a-1" class="section level4" number="23.1.2.1">
 <h4><span class="header-section-number">23.1.2.1</span> (a)</h4>
 <p>Sketch hypothetical data with the same range of x but corresponding to the line <span class="math inline">\(y = 30 + 10x\)</span> with residual standard deviation 3.9.</p>
+<pre><code>## 
+## Call:
+## lm(formula = vote_est1 ~ growth_est1, data = q1.2)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -24.7516  -9.4162   0.6608   8.5081  27.4256 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  43.2875     4.6106   9.389 2.03e-07 ***
+## growth_est1   1.6909     0.9402   1.798   0.0937 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 13.25 on 14 degrees of freedom
+## Multiple R-squared:  0.1877, Adjusted R-squared:  0.1297 
+## F-statistic: 3.235 on 1 and 14 DF,  p-value: 0.09369</code></pre>
 </div>
 <div id="b-1" class="section level4" number="23.1.2.2">
 <h4><span class="header-section-number">23.1.2.2</span> (b)</h4>
 <p>Sketch hypothetical data with the same range of x but corresponding to the line <span class="math inline">\(y = 30 + 10x\)</span> with residual standard deviation 10.</p>
+<pre><code>## 
+## Call:
+## lm(formula = vote_est2 ~ growth_est2, data = q1.2)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -38.710  -7.164  -0.585  10.464  28.731 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  48.2929     5.0604   9.543 1.66e-07 ***
+## growth_est2   0.3281     0.5132   0.639    0.533    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 18.64 on 14 degrees of freedom
+## Multiple R-squared:  0.02836,    Adjusted R-squared:  -0.04105 
+## F-statistic: 0.4086 on 1 and 14 DF,  p-value: 0.533</code></pre>
 </div>
 </div>
 <div id="goals-of-regression" class="section level3" number="23.1.3">
@@ -883,6 +825,7 @@ and timing how long it takes to land.</p>
 <p>Download some data on a topic of interest to you. Without graphing the data or performing any statistical analysis, discuss how you might use these data to do the following things:</p>
 <div id="a-fit-a-regression-to-estimate-a-relationship-of-interest." class="section level4" number="23.1.3.1">
 <h4><span class="header-section-number">23.1.3.1</span> (a) Fit a regression to estimate a relationship of interest.</h4>
+<p>With <code>V-Dem</code> dataset, I will fit the model, <span class="math inline">\(\text{EDI} \sim \beta X\)</span>, which <span class="math inline">\(X\)</span> includes various covariates that can affect the levels of democracy, which existing studies have found.</p>
 </div>
 <div id="b-use-regression-to-adjust-for-differences-between-treatment-and-control-groups." class="section level4" number="23.1.3.2">
 <h4><span class="header-section-number">23.1.3.2</span> (b) Use regression to adjust for differences between treatment and control groups.</h4>
@@ -967,6 +910,89 @@ and timing how long it takes to land.</p>
 <div id="working-through-your-own-example" class="section level3" number="23.5.1">
 <h3><span class="header-section-number">23.5.1</span> Working through your own example</h3>
 <p>Download or collect some data on a topic of interest of to you. You can use this example to work though the concepts and methods covered in the book, so the example should be worth your time and should have some complexity. This assignment continues throughout the book as the final exercise of each chapter. For this first exercise, discuss your applied goals in studying this example and how the data can address these goals.</p>
+</div>
+</div>
+<div id="some-basic-methods-in-mathematics-and-probability-1" class="section level2" number="23.6">
+<h2><span class="header-section-number">23.6</span> Some basic methods in mathematics and probability</h2>
+<div id="weighted-averages-2" class="section level3" number="23.6.1">
+<h3><span class="header-section-number">23.6.1</span> Weighted averages</h3>
+<p>A survey is conducted in a certain city regarding support for increased property taxes to fund schools. In this survey, higher taxes are supported by 50% of respondents aged 18–29, 60% of respondents aged 30–44, 40% of respondents aged 45–64, and 30% of respondents aged 65 and up. Assume there is no nonresponse.Suppose the sample includes 200 respondents aged 18–29, 250 aged 30–44, 300 aged 45–64, and 250 aged 65+. Use the weighted average formula to compute the proportion of respondents in the sample who support higher taxes.</p>
+<pre><code>## # A tibble: 4 x 6
+##   age       support     n total weight supportweighted
+##   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;
+## 1 18-29         0.5   200  1000   0.2            0.1  
+## 2 30-44         0.6   250  1000   0.25           0.15 
+## 3 45-64         0.4   300  1000   0.3            0.12 
+## 4 65 and up     0.3   250  1000   0.25           0.075</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##     sum
+##   &lt;dbl&gt;
+## 1 0.445</code></pre>
+</div>
+<div id="weighted-averages-3" class="section level3" number="23.6.2">
+<h3><span class="header-section-number">23.6.2</span> Weighted averages</h3>
+<p>Continuing the previous exercise, suppose you would like to estimate the proportion of all adults in the population who support higher taxes, so you take a weighted average as in Section 3.1. Give a set of weights for the four age categories so that the estimated proportion who support higher taxes for all adults in the city is 40%.</p>
+<pre><code>## # A tibble: 1 x 1
+##     sum
+##   &lt;dbl&gt;
+## 1 0.405</code></pre>
+</div>
+<div id="probability-distributions-1" class="section level3" number="23.6.3">
+<h3><span class="header-section-number">23.6.3</span> Probability distributions</h3>
+<p>Using R, graph probability densities for the normal distribution, plotting several different curves corresponding to different choices of mean and standard deviation parameters.</p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-206-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="probability-distributions-2" class="section level3" number="23.6.4">
+<h3><span class="header-section-number">23.6.4</span> Probability distributions</h3>
+<p>Using a bar plot in R, graph the Poisson distribution with parameter 3.5.</p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-207-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="probability-distributions-3" class="section level3" number="23.6.5">
+<h3><span class="header-section-number">23.6.5</span> Probability distributions</h3>
+<p>Using a bar plot in R, graph the binomial distribution with n = 20 and p = 0.3.</p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-208-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="linear-transformations-2" class="section level3" number="23.6.6">
+<h3><span class="header-section-number">23.6.6</span> Linear transformations</h3>
+<p>A test is graded from 0 to 50, with an average score of 35 and a standard deviation of 10. For comparison to other tests, it would be convenient to rescale to a mean of 100 and standard deviation of 15.</p>
+<div id="a-2" class="section level4" number="23.6.6.1">
+<h4><span class="header-section-number">23.6.6.1</span> (a)</h4>
+<p>Labeling the original test scores as x and the desired rescaled test score as <span class="math inline">\(y\)</span>, come up with a linear transformation, that is, values of a and b so that the rescaled scores <span class="math inline">\(y = a + bx\)</span> have a mean of 100 and a standard deviation of 15.</p>
+</div>
+<div id="b-2" class="section level4" number="23.6.6.2">
+<h4><span class="header-section-number">23.6.6.2</span> (b)</h4>
+<p>What is the range of possible values of this rescaled score <span class="math inline">\(y\)</span>?</p>
+</div>
+<div id="c-1" class="section level4" number="23.6.6.3">
+<h4><span class="header-section-number">23.6.6.3</span> (c)</h4>
+<p>Plot the line showing y vs. x.</p>
+</div>
+</div>
+<div id="linear-transformations-3" class="section level3" number="23.6.7">
+<h3><span class="header-section-number">23.6.7</span> Linear transformations</h3>
+<p>Continuing the previous exercise, there is another linear transformation
+that also rescales the scores to have mean 100 and standard deviation 15. What is it, and why
+would you not want to use it for this purpose?</p>
+</div>
+<div id="correlated-random-variables" class="section level3" number="23.6.8">
+<h3><span class="header-section-number">23.6.8</span> Correlated random variables</h3>
+<p>Suppose that the heights of husbands and wives have a correlation
+of 0.3, husbands’ heights have a distribution with mean 69.1 and standard deviation 2.9 inches,
+and wives’ heights have mean 63.7 and standard deviation 2.7 inches. Let x and y be the heights
+of a married couple chosen at random. What are the mean and standard deviation of the average
+height, (x + y)/2?</p>
+</div>
+<div id="comparison-of-distributions" class="section level3" number="23.6.9">
+<h3><span class="header-section-number">23.6.9</span> Comparison of distributions</h3>
+<p>Find an example in the scientific literature of the effect of treatment
+on some continuous outcome, and make a graph similar to Figure 3.9 showing the estimated
+population shift in the potential outcomes under a constant treatment effect.</p>
+</div>
+<div id="working-through-your-own-example-1" class="section level3" number="23.6.10">
+<h3><span class="header-section-number">23.6.10</span> Working through your own example</h3>
+<p>Continuing the example from Exercises 1.10 and 2.10,
+consider a deterministic model on the linear or logarithmic scale that would arise in this topic.
+Graph the model and discuss its relevance to your problem.</p>
 
 </div>
 </div>

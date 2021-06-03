@@ -4,6 +4,10 @@
 
 Data for examples and assignments in this and other chapters are at `www.stat.columbia.edu/~gelman/regression/`. See Appendix A for an introduction to R, the software you will use for computing.
 
+```{r, echo = T}
+
+```
+
 ### From design to decision
 
 Figure 1.9 displays the prototype for a paper “helicopter.” The goal of this assignment is to design a helicopter that takes as long as possible to reach the floor when dropped from a fixed height, for example 8 feet. The helicopters are restricted to have the general form shown in the sketch. No additional folds, creases, or perforations are allowed. The wing length and the wing width of the helicopter are the only two design parameters, that is, the only two aspects of the helicopter that can be changed. The body width and length must remain the same for all helicopters. A metal paper clip is attached to the bottom of the helicopter. Here are some comments from previous students who were given this assignment:
@@ -16,65 +20,153 @@ Andy proposes to use an index card to make a template for folding the base into 
 After practicing, we decided to switch jobs. It worked better with Yee timing and John dropping. 3 –
 2 – 1 – GO.
 
-Your instructor will hand out 25 half-sheets of paper and 2 paper clips to each group of students.
-The body width will be one-third of the width of the sheets, so the wing width can be anywhere
-from $\frac{1}{6}$ to $\frac{1}{2}$ of the body width; see Figure 1.9a. The body length will be specified by the instructor. For example, if the sheets are U.S.-sized ($8.5\times5.5$ inches) and the body length is set to  3 inches, then the wing width could be anywhere from 0.91 to 2.75 inches and the wing length could be anywhere  from 0 to 5.5 inches.
+Your instructor will hand out 25 half-sheets of paper and 2 paper clips to each group of students. The body width will be one-third of the width of the sheets, so the wing width can be anywhere from $\frac{1}{6}$ to $\frac{1}{2}$ of the body width; see Figure 1.9a. The body length will be specified by the instructor. For example, if the sheets are U.S.-sized ($8.5\times5.5$ inches) and the body length is set to  3 inches, then the wing width could be anywhere from 0.91 to 2.75 inches and the wing length could be anywhere  from 0 to 5.5 inches. \newline In this assignment you can experiment using your 25 half-sheets and 10 paper clips. You can make each half-sheet into only one helicopter. But you are allowed to design sequentially, setting the wing width and body length for each helicopter given the data you have already recorded. Take a few measurements using each helicopter, each time dropping it from the required height and timing how long it takes to land.
 
-```{r, fig.cap = "Diagram for making a ``helicopter'' from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped."}
+```{r, fig.cap = "(a) Diagram for making a “helicopter” from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped. (b) Data file showing flight times, in seconds, for 5 flights each of two identical helicopters with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From Gelman and Nolan (2017)."}
 knitr::include_graphics("fig/exercise1_fig1.9.jpg")
 ```
 
 ```{r, echo = T, results='asis'}
 library(tidyverse)
-# Parameters
-  # U.S. Presidential election results and GDP growth
 file_helicopters <- here::here("data/ros-master/Helicopters/data/helicopters.txt")
 helicopters <- 
   file_helicopters %>% 
   read.table(header = TRUE) %>% 
   as_tibble(.name_repair = str_to_lower)
-
-helicopters %>% 
-  kable(caption = "Data file showing flight times, in seconds, for 5 flights each of two identical helicopters
-with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From
-Gelman and Nolan (2017).")
 ```
 
-In this assignment you can experiment using your 25 half-sheets and 10 paper clips. You can
-make each half-sheet into only one helicopter. But you are allowed to design sequentially, setting
-the wing width and body length for each helicopter given the data you have already recorded.
-Take a few measurements using each helicopter, each time dropping it from the required height
-and timing how long it takes to land.
 
 #### (a)
 
-Record the wing width and body length for each of your 25 helicopters along with your time measurements, all in a file in which each observation is in its own row, following the pattern of helicopters.txt in the folder Helicopters, also shown in Figure 1.9b.
+Record the wing width and body length for each of your 25 helicopters along with your time measurements, all in a file in which each observation is in its own row, following the pattern of `helicopters.txt` in the folder Helicopters, also shown in Figure 1.9b.
+
+```{r, echo = T}
+# The wing length and the wing width of the helicopter are the only two design variables, that is, the only two measurements on the helicopter that can be changed. The body width and length must remain the same for all helicopters. 
+
+# wing width 4.6 centimeters and wing length 8.2 centimeters
+
+
+
+helicopters %>% arrange(time_sec) %>% mutate(
+  wing_width = c(seq(0.91, 2.75, 0.1), 2.75),
+  wing_length = sample(0:5.5, 20, replace=TRUE),
+  body_length = 3) %>%
+  select(helicopter_id, time_sec, wing_width, 
+         body_length, everything())-> helicopters
+```
 
 #### (b)
 
 Graph your data in a way that seems reasonable to you.
 
+```{r, echo = T}
+
+helicopters %>% mutate(
+  helicopter_id = as.factor(helicopter_id)) %>%
+  ggplot(aes(y = time_sec, x =  wing_width,
+             group = helicopter_id,
+             color = helicopter_id, 
+             fill = helicopter_id)) + 
+  geom_point() + theme_bw() + 
+  theme(legend.position = "bottom")
+
+```
+
 #### (c)
 
 Given your results, propose a design (wing width and length) that you think will maximize the helicopter’s expected time aloft. It is not necessary for you to fit a formal regression model here, but you should think about the general concerns of regression. The above description is adapted from Gelman and Nolan (2017, section  20.4). See Box, Hunter, and Hunter (2005) for a more advanced statistical treatment of this sort of problem.
+
+```{r}
+model1c <- lm(time_sec ~ width_cm + length_cm + helicopter_id, 
+              data = helicopters)
+summary(model1c)
+```
 
 ### Sketching a regression model and data
 
 Figure 1.1b shows data corresponding to the fitted line y = 46.3 + 3.0x with residual standard deviation 3.9, and values of x ranging roughly from 0 to 4%.
 
+```{r, echo = F}
+file_hibbs <- here::here("data/ros-master/ElectionsEconomy/data/hibbs.dat")
+hibbs <- 
+  file_hibbs %>% 
+  read.table(header = TRUE) %>% 
+  as_tibble()
+
+fit <- lm(vote ~ growth, data = hibbs)
+intercept <- coef(fit)[["(Intercept)"]]
+slope <- coef(fit)[["growth"]]
+eqn <- 
+  str_glue(
+    "y = {format(intercept, digits = 1, nsmall = 1)} + ",
+    "{format(slope, digits = 1, nsmall = 1)} x"
+  )
+
+fig1.1b <- hibbs %>% 
+  ggplot(aes(growth, vote)) +
+  geom_hline(yintercept = 50, color = "grey60") +
+  geom_abline(slope = slope, intercept = intercept) +
+  geom_point() +
+  annotate("text", x = 3.05, y = 53.75, label = eqn, hjust = 0) +
+  scale_x_continuous(labels = scales::label_percent(accuracy = 1, scale = 1)) +
+  scale_y_continuous(labels = scales::label_percent(accuracy = 1, scale = 1)) +
+  labs(
+    title = "Data and linear fit",
+    x = "Average recent growth in personal income",
+    y = "Incumbent party's vote share"
+  ) + theme_bw()
+```
+
+
 #### (a)
 
 Sketch hypothetical data with the same range of x but corresponding to the line $y = 30 + 10x$ with residual standard deviation 3.9.
 
+```{r}
+file_hibbs <- here::here("data/ros-master/ElectionsEconomy/data/hibbs.dat")
+hibbs <- 
+   file_hibbs %>% 
+   read.table(header = TRUE) %>% 
+   as_tibble()
+
+hibbs %>% mutate(
+  growth_est1 = growth + rnorm(16, mean = 0, 3.9),
+  growth_est2 = growth + rnorm(16, mean = 0, 10),
+  vote_est1 = 30 + 10*growth + rnorm(16, mean = 0, 3.9),
+  vote_est2 = 30 + 10*growth + rnorm(16, mean = 0, 10)) -> q1.2
+summary(model1a <- lm(vote_est1 ~ growth_est1, data = q1.2))
+
+q1.2 %>% select(growth_est1, growth_est2, vote_est1, vote_est2) %>%
+  ggplot(aes(x = growth_est1, y = vote_est1)) + 
+  geom_point() + 
+  geom_smooth(formula = y ~ x, method = "lm", 
+              se = F, fullrange = T, color = "red") + 
+  theme_bw() -> q1.2p1
+```
+
 #### (b)
 
 Sketch hypothetical data with the same range of x but corresponding to the line $y = 30 + 10x$ with residual standard deviation 10.
+
+```{r}
+summary(model1b <- lm(vote_est2 ~ growth_est2, data = q1.2))
+
+q1.2 %>% select(growth_est1, growth_est2, vote_est1, vote_est2) %>%
+  ggplot(aes(x = growth_est2, y = vote_est2)) + 
+  geom_point() + 
+  geom_smooth(formula = y ~ x, method = "lm", 
+              se = F, fullrange = T, color = "blue") + 
+  theme_bw() -> q1.2p2
+
+```
 
 ### Goals of regression
 
 Download some data on a topic of interest to you. Without graphing the data or performing any statistical analysis, discuss how you might use these data to do the following things:
 
 #### (a) Fit a regression to estimate a relationship of interest.
+
+With `V-Dem` dataset, I will fit the model, $\text{EDI} \sim \beta X$, which $X$ includes various covariates that can affect the levels of democracy, which existing studies have found.
 
 #### (b) Use regression to adjust for differences between treatment and control groups.
 
@@ -141,3 +233,165 @@ $$
 ### Working through your own example
 
 Download or collect some data on a topic of interest of to you. You can use this example to work though the concepts and methods covered in the book, so the example should be worth your time and should have some complexity. This assignment continues throughout the book as the final exercise of each chapter. For this first exercise, discuss your applied goals in studying this example and how the data can address these goals.
+
+
+## Some basic methods in mathematics and probability
+
+### Weighted averages
+
+A survey is conducted in a certain city regarding support for increased property taxes to fund schools. In this survey, higher taxes are supported by 50% of respondents aged 18–29, 60% of respondents aged 30–44, 40% of respondents aged 45–64, and 30% of respondents aged 65 and up. Assume there is no nonresponse.\newline Suppose the sample includes 200 respondents aged 18–29, 250 aged 30–44, 300 aged 45–64, and 250 aged 65+. Use the weighted average formula to compute the proportion of respondents in the sample who support higher taxes.
+
+```{r}
+ex3.1 <- tibble(
+  age = c("18-29", "30-44", "45-64", "65 and up"),
+  support = c(0.5, 0.6, 0.4, 0.3),
+  n = c(200, 250, 300, 250),
+  total = 200 + 250 + 300 + 250,
+  weight = n/total,
+  supportweighted = support * weight
+)
+ex3.1
+
+# Weighted averages
+
+ex3.1 %>% summarize(sum = sum(supportweighted))
+           
+```
+
+
+### Weighted averages
+
+Continuing the previous exercise, suppose you would like to estimate the proportion of all adults in the population who support higher taxes, so you take a weighted average as in Section 3.1. Give a set of weights for the four age categories so that the estimated proportion who support higher taxes for all adults in the city is 40%.
+
+```{r}
+tibble(
+  age = c("18-29", "30-44", "45-64", "65 and up"),
+  support = c(0.5, 0.6, 0.4, 0.3),
+  n = c(200, 250, 300, 250),
+  # change the 0.4 and 0.3 supporters' weights
+  total = 200 + 200 + 400 + 300, 
+  weight = n/total,
+  supportweighted = support * weight
+) %>% summarize(sum = sum(supportweighted))
+
+```
+
+
+### Probability distributions
+
+Using R, graph probability densities for the normal distribution, plotting several different curves corresponding to different choices of mean and standard deviation parameters.
+
+```{r}
+library(futurevisions)
+normal5 <- rnorm(n = 10000, mean = 5, sd = 3)
+normal50 <- rnorm(n = 10000, mean = 50, sd = 10)
+normal20 <- rnorm(n = 10000, mean = 20, sd = 1)
+norm <- bind_rows(tibble(x = normal5, Mean = 5, SD = 3),
+                  tibble(x = normal50, Mean = 50, SD = 10),
+                  tibble(x = normal20, Mean = 20, SD = 1))
+norm <- norm %>% mutate(
+  Mean = as.factor(Mean))
+
+ggplot(norm, aes(x = x, fill = factor(Mean))) +
+  geom_density(adjust = 4, alpha = 1/2) +
+  guides(color=guide_legend(title = "Mean, SD")) +
+  guides(fill=guide_legend(title = "Mean, SD")) +
+  scale_fill_manual(values = futurevisions("mars")) + 
+  scale_color_manual(values = futurevisions("mars")) + 
+  labs(x = "") + 
+  theme(legend.position = "top")
+```
+
+
+### Probability distributions
+
+Using a bar plot in R, graph the Poisson distribution with parameter 3.5.
+
+```{r}
+pois5 <- rpois(n = 10000, lambda = 5)
+pois50 <- rpois(n = 10000, lambda = 50)
+pois20 <- rpois(n = 10000, lambda = 20)
+
+pois <- tibble(Lambda.5 = pois5, 
+               Lambda.50 = pois50,
+               Lambda.20 = pois20)
+pois <- pois %>% tidyr::gather("Lambda", "x")
+
+pois <- pois %>% mutate(
+  Lambda = Lambda %>% 
+    str_remove("Lambda.") %>%
+    parse_factor(., 
+                 levels = c("5", "50", "20"), 
+                 ordered = T, include_na = F)
+)
+
+ggplot(pois, aes(x = x)) +
+  geom_bar(aes(group = Lambda, 
+                   color = Lambda, 
+                   fill = Lambda), 
+               adjust = 4, alpha = 1/2) +
+  scale_color_manual(values = futurevisions("mars")) + 
+  scale_fill_manual(values = futurevisions("mars")) + 
+  labs(x = "") + 
+  theme(legend.position = "top")
+```
+
+
+### Probability distributions
+
+Using a bar plot in R, graph the binomial distribution with n = 20 and p = 0.3.
+
+```{r}
+binorm <- rbinom(n = 20, size = 1, prob = 0.3) %>% as_tibble() %>%
+  count(value) %>% 
+  mutate(perc = n / 20) -> binorm2
+binorm2 %>% ggplot(aes(x = value, y = perc)) + 
+  geom_bar(stat = "identity",
+    color = "black", fill = "white") + 
+  scale_x_continuous(breaks = c(0, 1)) + 
+  ggrepel::geom_text_repel(aes(value, perc, label=n))
+```
+
+### Linear transformations
+
+A test is graded from 0 to 50, with an average score of 35 and a standard deviation of 10. For comparison to other tests, it would be convenient to rescale to a mean of 100 and standard deviation of 15.
+
+#### (a) 
+
+Labeling the original test scores as x and the desired rescaled test score as $y$, come up with a linear transformation, that is, values of a and b so that the rescaled scores $y = a + bx$ have a mean of 100 and a standard deviation of 15.
+
+
+
+#### (b) 
+
+What is the range of possible values of this rescaled score $y$?
+
+#### (c)
+
+Plot the line showing y vs. x.
+
+### Linear transformations
+
+Continuing the previous exercise, there is another linear transformation
+that also rescales the scores to have mean 100 and standard deviation 15. What is it, and why
+would you not want to use it for this purpose?
+
+### Correlated random variables
+
+Suppose that the heights of husbands and wives have a correlation
+of 0.3, husbands’ heights have a distribution with mean 69.1 and standard deviation 2.9 inches,
+and wives’ heights have mean 63.7 and standard deviation 2.7 inches. Let x and y be the heights
+of a married couple chosen at random. What are the mean and standard deviation of the average
+height, (x + y)/2?
+
+### Comparison of distributions
+
+Find an example in the scientific literature of the effect of treatment
+on some continuous outcome, and make a graph similar to Figure 3.9 showing the estimated
+population shift in the potential outcomes under a constant treatment effect.
+
+### Working through your own example
+
+Continuing the example from Exercises 1.10 and 2.10,
+consider a deterministic model on the linear or logarithmic scale that would arise in this topic.
+Graph the model and discuss its relevance to your problem.
