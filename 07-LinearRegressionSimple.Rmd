@@ -1,28 +1,28 @@
-# Simulation
+# Linear regression with a single predictor
 
-## Simulation of discrete probability models
+## Example: predicting presidential vote share from the economy
 
-### How many girls in 400 births?
+### Fitting a linear model to data
 
-### Accounting for twins
+### Understanding the fitted model
 
-## Simulation of continuous and mixed discrete/continuous models
+### Graphing the fitted regression line
 
-### Simulation in R using custom-made functions
+### Using the model to predict
 
-## Summarizing a set of simulations using median and median absolute deviation
+## Checking the model-fitting procedure using fake-data simulation
 
-## Bootstrapping to simulate a sampling distribution
+### Step 1: Creating the pretend world
 
-### Choices in defining the bootstrap distribution
+### Step 2: Simulating fake data
 
-#### Time series
+### Step 3: Fitting the model and comparing fitted to assumed values
 
-#### Multilevel structure
+### Step 4: Embedding the simulation in a loop
 
-#### Discrete data
+## Formulating comparisons as regression models
 
-### Limitations of bootstrapping
+### Estimating the mean is the same as regressing on a constant term
 
-## Fake-data simulation as a way of life
+### Estimating a difference is the same as regressing on an indicator variable
 
