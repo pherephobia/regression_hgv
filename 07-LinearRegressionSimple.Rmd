@@ -124,7 +124,7 @@ Figure 7.3은 예측 결과가 52.3을 평균으로 하고 3.8을 표준편차�
 
 힐러리가 대중 투표에서 이길 확률을 추정하기 위해서 우리는 득표율에 대한 예측결과를 사용할 수 있다. 힐러리는 50% 이상의 표를 얻으면 승리한다. Figure 7.3에서 음영처리된 부분이 바로 그 확률을 보여준다. R에서도 주어진 통계치로 다음과 같이 확률을 구할 수 있다: `1 - pnorm(50, 52.3, 3.8)`. 결과인 0.72는 2016년 경제성장률이 2%라고 할 때, 힐러리가 대중투표에서 이길 확률이 약 72%라는 것을 의미한다.
 
-```{r, fig.cap = "Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of $46.3 + 3.0 \times 2.0 = 52.3$ and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is `1-pnorm(50, 52.3, 3.9)`, or 0.72."}
+```{r, fig.cap = "Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of $46.3 + 3.0 \\times 2.0 = 52.3$ and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is `1-pnorm(50, 52.3, 3.9)`, or 0.72."}
 growth <- 2
 model7.3 <- lm(vote ~ growth, data = hibbs)
 vote_pred <- predict(model7.3, newdata = tibble(growth = growth))
