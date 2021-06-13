@@ -1,28 +1,30 @@
-# Simulation
+# Fitting regression models
 
-## Simulation of discrete probability models
+## Least squares, maximum likelihood, and Bayesian inference
 
-### How many girls in 400 births?
+### Least squares
 
-### Accounting for twins
+### Estimation of residual standard deviation $\sigma$
 
-## Simulation of continuous and mixed discrete/continuous models
+### Computing the sum of squares directly
 
-### Simulation in R using custom-made functions
+### Maximum likelihood
 
-## Summarizing a set of simulations using median and median absolute deviation
+### Where do the standard errors come from? Using the likelihood surface to assess uncertainty in the parameter estimates
 
-## Bootstrapping to simulate a sampling distribution
+### Bayesian inference
 
-### Choices in defining the bootstrap distribution
+### Point estimate, mode-based approximation, and posterior simulations
 
-#### Time series
+## Influence of individual points in a fitted regression
 
-#### Multilevel structure
+## Least squares slope as a weighted average of slopes of pairs
 
-#### Discrete data
+## Comparing two fitting functions: lm and stan_glm
 
-### Limitations of bootstrapping
+### Reproducing maximum likelihood using stan_glm with flat priors and optimization
 
-## Fake-data simulation as a way of life
+### Running lm
+
+### Confidence intervals, uncertainty intervals, compatibility intervals
 

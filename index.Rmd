@@ -5,6 +5,8 @@ author: "Sanghoon Park"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+header-include:
+  - \usepackage{amsmath}
 documentclass: book
 bibliography: book.bib
 biblio-style: apsr

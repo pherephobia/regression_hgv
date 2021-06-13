@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-06-08" />
+<meta name="date" content="2021-06-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,8 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -716,8 +718,8 @@ div.csl-indent {
 <span id="cb22-9"><a href="simulation.html#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb22-10"><a href="simulation.html#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;n_girls&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb22-11"><a href="simulation.html#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-41"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-41-1.png" alt="Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-49"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-49-1.png" alt="Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins." width="672" />
 <p class="caption">
 Figure 5.1: Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins.
 </p>
@@ -826,8 +828,8 @@ Figure 5.1: Histogram of 1000 simulated values for the number of girls born in a
 <span id="cb27-45"><a href="simulation.html#cb27-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
 <span id="cb27-46"><a href="simulation.html#cb27-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-47"><a href="simulation.html#cb27-47" aria-hidden="true" tabindex="-1"></a>panel1 <span class="sc">+</span> panel2 <span class="sc">+</span> panel3 <span class="sc">+</span> panel4 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-45"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-45-1.png" alt="Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-53"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-53-1.png" alt="Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R." width="672" />
 <p class="caption">
 Figure 5.2: Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R.
 </p>
@@ -865,7 +867,7 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <span id="cb31-16"><a href="simulation.html#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of avg height of 10 adults&quot;</span>, </span>
 <span id="cb31-17"><a href="simulation.html#cb31-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb31-18"><a href="simulation.html#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-48-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-56-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>무작위로 추출한 10명의 성인 중 가장 키가 큰 사람은 몇 인치일까?</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="simulation.html#cb32-1" aria-hidden="true" tabindex="-1"></a>max_height <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
 <span id="cb32-2"><a href="simulation.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
@@ -886,7 +888,7 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <span id="cb32-17"><a href="simulation.html#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(max_height), </span>
 <span id="cb32-18"><a href="simulation.html#cb32-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb32-19"><a href="simulation.html#cb32-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-49-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-57-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="simulation-in-r-using-custom-made-functions" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Simulation in R using custom-made functions</h3>
 <p>위에서 사용한 <code>loop</code> 반복문을 커스텀된 함수를 이용해서 간단하게 재현할 수 있다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 72</a>)</span> 는 <code>replicate()</code> 함수를 소개하고 있다. 먼저 우리가 특정 함수를 지정하고, 그 함수를 <code>replicate()</code>가 정해진 횟수만큼 반복하는 것이다.</p>
@@ -908,7 +910,7 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <span id="cb33-16"><a href="simulation.html#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(avg_height), </span>
 <span id="cb33-17"><a href="simulation.html#cb33-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb33-18"><a href="simulation.html#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-50-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-58-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation" class="section level2" number="5.3">
@@ -998,7 +1000,7 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <span id="cb38-39"><a href="simulation.html#cb38-39" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;Median =&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(output), <span class="dv">2</span>)), </span>
 <span id="cb38-40"><a href="simulation.html#cb38-40" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb38-41"><a href="simulation.html#cb38-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>))</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-53-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-61-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>부트스트랩 분포의 표준편차는 0.03이다. 따라서 우리는 추정된 중위값의 비율이 0.6, 표준오차는 0.03이라고 말할 수 있다.</p>
 <div id="choices-in-defining-the-bootstrap-distribution" class="section level3" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Choices in defining the bootstrap distribution</h3>

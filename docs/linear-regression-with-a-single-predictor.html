@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-06-08" />
+<meta name="date" content="2021-06-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,8 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -695,46 +697,310 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="linear-regression-with-a-single-predictor" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Linear regression with a single predictor</h1>
+<p>회귀분석이란 본질적으로 주어진 설명변수들, <span class="math inline">\(x_1, x_2, \dots, x_n\)</span>로부터 결과변수 <span class="math inline">\(y\)</span>를 예측하는 기법이다. 이 챕터에서는 하나의 연속형 확률변수 <span class="math inline">\(x\)</span>로 연속형 확률변수 <span class="math inline">\(y\)</span>를 예측하는 선형모델 <span class="math inline">\(y_i = a + bx_i + \text{error}\)</span>을 데이터 <span class="math inline">\((x_i, y_i), i=1, \cdots, n\)</span>에 적합하는 절차에 대해서 살펴본다.</p>
+<p><img src="fig/ch7fig1png.png" width="797" style="display: block; margin: auto;" /></p>
 <div id="example-predicting-presidential-vote-share-from-the-economy" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Example: predicting presidential vote share from the economy</h2>
+<p>Figure 7.1은 선거와 경제에 관한 에피소드를 보여준다. 정치학자 Douglas Hibbs가 경제성장 하나만 가지고 선거를 예측하고자 했던 “빵과 평화” 모델에 바탕을 둔 에피소드이다. 추가적인 정보가 더해진다면 더 나은 예측이 가능하겠지만 이 예제는 단순한 모델이 가지는 일종의 미학을 보여준다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-80-1.png" alt="Douglas Hibbs’s “bread and peace” model of voting and the economy. Presidential elections since 1952 are listed in order of the economic performance at the end of the preceding administration (as measured by inflation-adjusted growth in average personal income). Matchups are listed as incumbent party’s candidate versus other party’s candidate. The better the economy was performing, the better the incumbent party’s candidate did, with the biggest exceptions being 1952 (Korean War) and 1968 (Vietnam War)." width="864" />
+<p class="caption">
+Figure 7.1: Douglas Hibbs’s “bread and peace” model of voting and the economy. Presidential elections since 1952 are listed in order of the economic performance at the end of the preceding administration (as measured by inflation-adjusted growth in average personal income). Matchups are listed as incumbent party’s candidate versus other party’s candidate. The better the economy was performing, the better the incumbent party’s candidate did, with the biggest exceptions being 1952 (Korean War) and 1968 (Vietnam War).
+</p>
+</div>
 <div id="fitting-a-linear-model-to-data" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Fitting a linear model to data</h3>
+<p>Figure 7.2는 경제와 선거 데이터를 예측의 문제로서 보여준다. 두 정당 중 집권당의 득표율을 <code>vote</code>로, 이전 연도의 개인의 평균 소득 성장을 <code>growth</code>로 코딩한 데이터이다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-81-1.png" alt="(a) Predicting elections from the economy: the data in Figure 7.1 expressed as a scatterplot, with one data point for each year, (b) the data with the linear fit, $y = 46.3 + 3.0x$. Repeated from Figure 1.1." width="864" />
+<p class="caption">
+Figure 7.2: (a) Predicting elections from the economy: the data in Figure 7.1 expressed as a scatterplot, with one data point for each year, (b) the data with the linear fit, <span class="math inline">\(y = 46.3 + 3.0x\)</span>. Repeated from Figure 1.1.
+</p>
+</div>
 </div>
 <div id="understanding-the-fitted-model" class="section level3" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Understanding the fitted model</h3>
+<p><code>lm()</code> 함수로 추정한 모델의 결과는 다음과 같다:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="linear-regression-with-a-single-predictor.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model7<span class="fl">.2</span>);</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = I(vote * 0.01) ~ I(growth * 0.01), data = hibbs)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.089929 -0.006674  0.002556  0.023225  0.053094 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       0.46248    0.01622  28.514 8.41e-14 ***
+## I(growth * 0.01)  3.06053    0.69627   4.396  0.00061 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.03763 on 14 degrees of freedom
+## Multiple R-squared:  0.5798, Adjusted R-squared:  0.5498 
+## F-statistic: 19.32 on 1 and 14 DF,  p-value: 0.00061</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="linear-regression-with-a-single-predictor.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sigma</span>(model7<span class="fl">.2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.03763288</code></pre>
+<p>결과적으로 회귀선은 <span class="math inline">\(y = 46.3 + 3.0x\)</span>로 표현할 수 있다.</p>
+<ul>
+<li><p><span class="math inline">\(x=0\)</span>일 때(경제성장이 0일 때), 집권당의 후보는 약 46.3%의 득표율을 보일 것으로 예측된다(진다는 뜻; 50% 아래니까).</p>
+<ul>
+<li>경제성장이 0이라는 얘기는 집권당이 형편없는 성과를 냈다는 뜻이므로 일종의 경제투표가 이루어졌다고 이해할 수 있다.</li>
+</ul></li>
+<li><p>0보다 큰 경제성장의 각 퍼센트마다 집권당의 기대득표율은 46.3%보다 3%p씩 높아진다.</p></li>
+<li><p>계수에 대한 표준오차의 크기가 작다.</p>
+<ul>
+<li><p>일반적으로 절편값에 대한 표준오차는 크게 신경쓰지 않지만 기울기에 대한 표준오차는 추정값의 불확실성에 대한 측정지표이므로 중요하게 간주된다.</p></li>
+<li><p>계수값의 불확실성이 크다면, 표본을 새롭게 뽑을 때마다 그 결과가 크게 달라질 가능성이 크다는 것을 의미한다.</p></li>
+</ul></li>
+<li><p>추정된 잔차의 표준편차는 약 0.038로 이 선형 모델이 선겨 결과를 약 3.8%p 내에서 예측한다는 것을 의미한다.</p>
+<ul>
+<li>이는 모델을 통한 예측이 어느 정도 불확실성을 내포하고 있음을 의미한다.</li>
+</ul></li>
+</ul>
 </div>
 <div id="graphing-the-fitted-regression-line" class="section level3" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Graphing the fitted regression line</h3>
+<p>위의 Figure 7.2b와 같이 산포도와 함께 회귀선을 같이 보여줄 수 있다. <code>coef()</code> 함수는 선형모델의 추정된 계수값을 반환한다.</p>
 </div>
 <div id="using-the-model-to-predict" class="section level3" number="7.1.4">
 <h3><span class="header-section-number">7.1.4</span> Using the model to predict</h3>
+<p>위의 모델을 가지고 2016년 민주당의 힐러리 클린턴과 공화당의 도널드 트럼프의 대선에 적용해볼 수 있다. 선형모델은 <span class="math inline">\(46.3 + 3.0 * 2.0 = 52.3\)</span>을 예측한다. 이 예측된 득표율 하나 가지고는 힐러리가 2016년도에 이길 가능성이 얼마나 되는지를 예단하기 힘들다. 우리는 심지어 이 예측 결과에 있어서 존재할 수 있는 불확실성 또한 평가해야 한다.</p>
+<p>Figure 7.3은 예측 결과가 52.3을 평균으로 하고 3.8을 표준편차로 하는 확률분포로부터 도출된 결과라는 것을 보여주고 이를 어떻게 이해하는 것이 바람직한지를 보여준다.</p>
+<p>힐러리가 대중 투표에서 이길 확률을 추정하기 위해서 우리는 득표율에 대한 예측결과를 사용할 수 있다. 힐러리는 50% 이상의 표를 얻으면 승리한다. Figure 7.3에서 음영처리된 부분이 바로 그 확률을 보여준다. R에서도 주어진 통계치로 다음과 같이 확률을 구할 수 있다: <code>1 - pnorm(50, 52.3, 3.8)</code>. 결과인 0.72는 2016년 경제성장률이 2%라고 할 때, 힐러리가 대중투표에서 이길 확률이 약 72%라는 것을 의미한다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-83-1.png" alt="Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of $46.3 + 3.0    imes 2.0 = 52.3$ and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is `1-pnorm(50, 52.3, 3.9)`, or 0.72." width="672" />
+<p class="caption">
+Figure 7.3: Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of <span class="math inline">\(46.3 + 3.0 imes 2.0 = 52.3\)</span> and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is <code>1-pnorm(50, 52.3, 3.9)</code>, or 0.72.
+</p>
+</div>
+<p>왜 우리는 직접적으로 경제 데이터를 이용해서 누가 선거에서 이길지를 예측하는 것이 아니라 간접적으로 주어진 데이터를 이용해 얼만큼 득표할지를 예측한 뒤, 그 득표값이 승리 득표값에 비해 클 확률을 계산하는, 복잡한 접근법을 취하는 것일까? 단순히 선거의 승리자를 예측하지 않는 이유는 다음과 같은 세 가지 종류의 선거를 고려하는 것으로 확인할 수 있다.</p>
+<ul>
+<li><p>1960년 Kennedy 대 Nixon의 선거와 같이 동등하게 나뉘어진 선거.</p>
+<ul>
+<li><p>이런 유형의 선거의 승자를 예측하고자 하는 것은 합당하지도, 의미가 있지도 않다.</p></li>
+<li><p>가장 최선의 방법은 실제 선거에서 나타날 득표율에 가장 가까운 결과를 예측하는 것이다.</p></li>
+</ul></li>
+<li><p>2008년 Obama 대 McCain의 선거와 같이 어느 정도 경쟁적인 선거.</p>
+<ul>
+<li><p>한 쪽이 승리할 것으로 예측되지만, 다른 한 쪽이 뒤집을 수도 있는 경우.</p></li>
+<li><p>이 경우, 어떤 한 쪽이 승리할 것이라는 결정주의적인 선언을 하기보다는 득표 범위(vote margin)와 후보의 승리확률을 예측하게 된다.</p></li>
+</ul></li>
+<li><p>1984년 Reagan 대 Mondale 선거와 같이 한 쪽이 일방적으로 승리하는 선거.</p>
+<ul>
+<li>승자를 예측하는 것에 아무런 의미가 없다. 얼마나 정확하게 예측하는지는 살펴볼만하다.</li>
+</ul></li>
+</ul>
+<p>이 파트를 읽으면서 느낀 점은, 선거는 어떻게 예측하던 앞으로 비슷한 선거에서 참고할만한 시나리오를 만드는 작업으로 귀결되기 마련이라는 것이다. 특정한 시나리오가 맞아 떨어졌다고 해서 그것이 완벽한 예측을 한 것이라 보기는 힘들고, 완전히 다른 예측을 했다고 해서 쓸모없는 시나리오는 아니라는 것이다.</p>
 </div>
 </div>
 <div id="checking-the-model-fitting-procedure-using-fake-data-simulation" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Checking the model-fitting procedure using fake-data simulation</h2>
+<p>우리가 사실이라고 알고 있는 조건들을 통제하는 상황에서 회귀모델을 수행하는 예제를 통해 적합 결과를 확인할 수 있다.</p>
 <div id="step-1-creating-the-pretend-world" class="section level3" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Step 1: Creating the pretend world</h3>
+<p>모델의 모든 파라미터에 대한 값들이 진실값(true values)이라고 가정하는 것에서 시작하자. <span class="math inline">\(y = 46.3 + 3.0x + \text{error}\)</span>라는 관계가 참이며, 오차는 평균 0, 표준편차 3.8을 가진 정규분포를 따른다고 가정하자. 이제 모델을 통해 얻은 <span class="math inline">\(y\)</span>의 분포가 실제 관측된 <span class="math inline">\(y\)</span>의 분포와 일관된지를 분석할 수 있게 된다.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="linear-regression-with-a-single-predictor.html#cb58-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">46.3</span></span>
+<span id="cb58-2"><a href="linear-regression-with-a-single-predictor.html#cb58-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">3.0</span></span>
+<span id="cb58-3"><a href="linear-regression-with-a-single-predictor.html#cb58-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">3.8</span></span>
+<span id="cb58-4"><a href="linear-regression-with-a-single-predictor.html#cb58-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> hibbs<span class="sc">$</span>growth</span>
+<span id="cb58-5"><a href="linear-regression-with-a-single-predictor.html#cb58-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span></code></pre></div>
 </div>
 <div id="step-2-simulating-fake-data" class="section level3" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Step 2: Simulating fake data</h3>
+<p>페이크데이터의 벡터 <span class="math inline">\(y\)</span>를 시뮬레이션하고 데이터프레임으로 만들어 보자:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="linear-regression-with-a-single-predictor.html#cb59-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, sigma)</span>
+<span id="cb59-2"><a href="linear-regression-with-a-single-predictor.html#cb59-2" aria-hidden="true" tabindex="-1"></a>fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span></code></pre></div>
 </div>
 <div id="step-3-fitting-the-model-and-comparing-fitted-to-assumed-values" class="section level3" number="7.2.3">
 <h3><span class="header-section-number">7.2.3</span> Step 3: Fitting the model and comparing fitted to assumed values</h3>
+<p>다음 단계는 데이터에 회귀모델을 적합하는 것이다. 회귀모델 적합은 <span class="math inline">\(\alpha, \beta, \sigma\)</span>로 가정한 진실값들을 사용하지 않는다.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="linear-regression-with-a-single-predictor.html#cb60-1" aria-hidden="true" tabindex="-1"></a>fit7<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> fake)</span>
+<span id="cb60-2"><a href="linear-regression-with-a-single-predictor.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit7<span class="fl">.4</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x, data = fake)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.9143 -3.1267  0.2755  2.9873  5.3633 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  47.9112     1.6207  29.561 5.11e-14 ***
+## x             2.1798     0.6958   3.133  0.00734 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.761 on 14 degrees of freedom
+## Multiple R-squared:  0.4122, Adjusted R-squared:  0.3702 
+## F-statistic: 9.816 on 1 and 14 DF,  p-value: 0.007335</code></pre>
+<p>추정된 계수값을 가정한 진실값, 46.3과 3.0과 비교해면, 적합된 결과가 충분히 합당하다는 것을 할 수 있다. 추정값은 정확하게 들어맞지는 않지만 오차 범위 내에 존재한다.</p>
+<p>회귀분석 결과 객체로부터 계수값에 대한 추정값과 표준오차를 추출해서 비교해보도록 한다.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="linear-regression-with-a-single-predictor.html#cb62-1" aria-hidden="true" tabindex="-1"></a>b_hat <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">1</span>] </span>
+<span id="cb62-2"><a href="linear-regression-with-a-single-predictor.html#cb62-2" aria-hidden="true" tabindex="-1"></a>b_se  <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">2</span>] </span></code></pre></div>
+<p>모수의 진실값 <span class="math inline">\(b\)</span>가 각각 <span class="math inline">\(\pm1\)</span>이나 <span class="math inline">\(\pm2\)</span>의 표준오차로 추정된 68%와 95%의 신뢰구간 내에서 얻을 수 있는지를 확인해보자 (Figure 4.1을 생각해보자):</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="linear-regression-with-a-single-predictor.html#cb63-1" aria-hidden="true" tabindex="-1"></a>cover_68 <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> b_se</span>
+<span id="cb63-2"><a href="linear-regression-with-a-single-predictor.html#cb63-2" aria-hidden="true" tabindex="-1"></a>cover_95 <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> <span class="dv">2</span><span class="sc">*</span>b_se</span>
+<span id="cb63-3"><a href="linear-regression-with-a-single-predictor.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;68% coverage: &quot;</span>, cover_68, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 68% coverage:  FALSE</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="linear-regression-with-a-single-predictor.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;95% coverage: &quot;</span>, cover_95, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 95% coverage:  TRUE</code></pre>
 </div>
 <div id="step-4-embedding-the-simulation-in-a-loop" class="section level3" number="7.2.4">
 <h3><span class="header-section-number">7.2.4</span> Step 4: Embedding the simulation in a loop</h3>
+<p>신뢰구간이 모수의 진실값을 포함하는가? 이를 확인하기 위해서 정규분포를 사용, 우리는 표집분포를 1000회의 반복문을 통해서 데이터 시뮬레이션, 모델 적합, 그리고 신뢰구간의 범주가 모집단을 포함하는지를 컴퓨팅해서 체크할 수 있다.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="linear-regression-with-a-single-predictor.html#cb67-1" aria-hidden="true" tabindex="-1"></a>n_fake <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb67-2"><a href="linear-regression-with-a-single-predictor.html#cb67-2" aria-hidden="true" tabindex="-1"></a>cover_68 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_fake)</span>
+<span id="cb67-3"><a href="linear-regression-with-a-single-predictor.html#cb67-3" aria-hidden="true" tabindex="-1"></a>cover_95 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_fake)</span>
+<span id="cb67-4"><a href="linear-regression-with-a-single-predictor.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_fake){</span>
+<span id="cb67-5"><a href="linear-regression-with-a-single-predictor.html#cb67-5" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, sigma)</span>
+<span id="cb67-6"><a href="linear-regression-with-a-single-predictor.html#cb67-6" aria-hidden="true" tabindex="-1"></a>  fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb67-7"><a href="linear-regression-with-a-single-predictor.html#cb67-7" aria-hidden="true" tabindex="-1"></a>  fit7<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data=</span>fake)</span>
+<span id="cb67-8"><a href="linear-regression-with-a-single-predictor.html#cb67-8" aria-hidden="true" tabindex="-1"></a>  b_hat <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">1</span>] </span>
+<span id="cb67-9"><a href="linear-regression-with-a-single-predictor.html#cb67-9" aria-hidden="true" tabindex="-1"></a>  b_se  <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">2</span>] </span>
+<span id="cb67-10"><a href="linear-regression-with-a-single-predictor.html#cb67-10" aria-hidden="true" tabindex="-1"></a>  cover_68[s] <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> b_se</span>
+<span id="cb67-11"><a href="linear-regression-with-a-single-predictor.html#cb67-11" aria-hidden="true" tabindex="-1"></a>  cover_95[s] <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> <span class="dv">2</span><span class="sc">*</span>b_se</span>
+<span id="cb67-12"><a href="linear-regression-with-a-single-predictor.html#cb67-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb67-13"><a href="linear-regression-with-a-single-predictor.html#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;68% coverage: &quot;</span>, <span class="fu">mean</span>(cover_68), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 68% coverage:  0.628</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="linear-regression-with-a-single-predictor.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;95% coverage: &quot;</span>, <span class="fu">mean</span>(cover_95), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 95% coverage:  0.915</code></pre>
+<p>이 결과는 <code>mean(cover_68) =</code> 67%, <code>mean(cover_95) =</code> 92%로 각 68%, 95%에서 멀리 떨어져 있지 않다는 것을 알 수 있다. 좀 차이가 나는 이유는 표본 규모가 작기 때문이다. 표본 규모를 반영한 자유도 14의 <span class="math inline">\(t\)</span> 분포를 고려해서 추정해보자.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="linear-regression-with-a-single-predictor.html#cb71-1" aria-hidden="true" tabindex="-1"></a>n_fake <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb71-2"><a href="linear-regression-with-a-single-predictor.html#cb71-2" aria-hidden="true" tabindex="-1"></a>cover_68 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_fake)</span>
+<span id="cb71-3"><a href="linear-regression-with-a-single-predictor.html#cb71-3" aria-hidden="true" tabindex="-1"></a>cover_95 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_fake)</span>
+<span id="cb71-4"><a href="linear-regression-with-a-single-predictor.html#cb71-4" aria-hidden="true" tabindex="-1"></a>t_68 <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.84</span>, n <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb71-5"><a href="linear-regression-with-a-single-predictor.html#cb71-5" aria-hidden="true" tabindex="-1"></a>t_95 <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, n <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb71-6"><a href="linear-regression-with-a-single-predictor.html#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_fake){</span>
+<span id="cb71-7"><a href="linear-regression-with-a-single-predictor.html#cb71-7" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, sigma)</span>
+<span id="cb71-8"><a href="linear-regression-with-a-single-predictor.html#cb71-8" aria-hidden="true" tabindex="-1"></a>  fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb71-9"><a href="linear-regression-with-a-single-predictor.html#cb71-9" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data=</span>fake)</span>
+<span id="cb71-10"><a href="linear-regression-with-a-single-predictor.html#cb71-10" aria-hidden="true" tabindex="-1"></a>  b_hat <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">1</span>] </span>
+<span id="cb71-11"><a href="linear-regression-with-a-single-predictor.html#cb71-11" aria-hidden="true" tabindex="-1"></a>  b_se  <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit7<span class="fl">.4</span>)<span class="sc">$</span>coef[<span class="dv">2</span>,<span class="dv">2</span>] </span>
+<span id="cb71-12"><a href="linear-regression-with-a-single-predictor.html#cb71-12" aria-hidden="true" tabindex="-1"></a>  cover_68[s] <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> t_68 <span class="sc">*</span> b_se</span>
+<span id="cb71-13"><a href="linear-regression-with-a-single-predictor.html#cb71-13" aria-hidden="true" tabindex="-1"></a>  cover_95[s] <span class="ot">&lt;-</span> <span class="fu">abs</span>(b <span class="sc">-</span> b_hat) <span class="sc">&lt;</span> t_95 <span class="sc">*</span> b_se</span>
+<span id="cb71-14"><a href="linear-regression-with-a-single-predictor.html#cb71-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb71-15"><a href="linear-regression-with-a-single-predictor.html#cb71-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;68% coverage: &quot;</span>, <span class="fu">mean</span>(cover_68), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 68% coverage:  1</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="linear-regression-with-a-single-predictor.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;95% coverage: &quot;</span>, <span class="fu">mean</span>(cover_95), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## 95% coverage:  1</code></pre>
+<p>위의 시뮬레이션 결과는 95% 신뢰구간이 모수의 진리값을 포함하고 있다(<code>TRUE</code>)는 결과를 반환한다.</p>
 </div>
 </div>
 <div id="formulating-comparisons-as-regression-models" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Formulating comparisons as regression models</h2>
+<p>회귀분석으로 비교하기 위해서는 더미변수(dummy variable)<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>의 개념이 필요하다. 더미변수는 어떤 데이터가 특정한 카테고리에 속하냐 속하지 않느냐에 따라 1 또는 0으로 나타내는 예측변수를 의미한다.</p>
 <div id="estimating-the-mean-is-the-same-as-regressing-on-a-constant-term" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Estimating the mean is the same as regressing on a constant term</h3>
+<p>평균이 2.0, 표준편차가 5.0인 모집단으로부터 20개의 관측치를 시뮬레이션해보자. 소수점 둘째자리로 반올림한 시뮬레이션 결과는 다음과 같다:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="linear-regression-with-a-single-predictor.html#cb75-1" aria-hidden="true" tabindex="-1"></a>n_0 <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb75-2"><a href="linear-regression-with-a-single-predictor.html#cb75-2" aria-hidden="true" tabindex="-1"></a>y_0 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_0, <span class="fl">2.0</span>, <span class="fl">5.0</span>)</span>
+<span id="cb75-3"><a href="linear-regression-with-a-single-predictor.html#cb75-3" aria-hidden="true" tabindex="-1"></a>fake_0 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y_0)</span>
+<span id="cb75-4"><a href="linear-regression-with-a-single-predictor.html#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(y_0, <span class="dv">2</span>))</span></code></pre></div>
+<pre><code>##  [1] -0.43  0.27 10.66  7.22  1.14  4.33  3.74 -1.02 -5.09 -1.53  8.59  4.76
+## [13]  4.33  4.57  8.41  0.37 -2.74  3.09 -2.04 -1.84</code></pre>
+<p>무작위 표본이라는 것을 고려하면 모집단의 평균을 <code>mean(y_0)</code>, 표준오차를 <code>sd(y_0)/sqrt(n_0)</code>으로 추정할 수 있다.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="linear-regression-with-a-single-predictor.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y_0); <span class="co">#2.3</span></span></code></pre></div>
+<pre><code>## [1] 2.339922</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="linear-regression-with-a-single-predictor.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(y_0)<span class="sc">/</span><span class="fu">sqrt</span>(n_0) <span class="co"># 1.07</span></span></code></pre></div>
+<pre><code>## [1] 0.9617659</code></pre>
+<p>절편에 대한 최소자승 회귀분석을 이용하여 동일한 결과를 얻을 수도 있다.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="linear-regression-with-a-single-predictor.html#cb81-1" aria-hidden="true" tabindex="-1"></a>fit7<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(y_0 <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data=</span>fake_0)</span>
+<span id="cb81-2"><a href="linear-regression-with-a-single-predictor.html#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit7<span class="fl">.5</span>);<span class="fu">sigma</span>(fit7<span class="fl">.5</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y_0 ~ 1, data = fake_0)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -7.4343 -3.4854 -0.2231  2.2792  8.3225 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)   2.3399     0.9618   2.433    0.025 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.301 on 19 degrees of freedom</code></pre>
+<pre><code>## [1] 4.301148</code></pre>
+<p>모수로서 절편이 2.0, 잔차의 표준편차인 <span class="math inline">\(\sigma\)</span>가 5.0이라는 것을 아는 상태에서 시뮬레이션을 했지만 작은 표본 규모는 불확실한 추정값(noisy estimates)을 산출한다. 추정값 2.35<span class="math inline">\((\beta)\)</span>, 4.78<span class="math inline">\((\sigma)\)</span>는 주어진 표준오차 하에서 모수값을 포함한다는 것을 알 수 있다.</p>
 </div>
 <div id="estimating-a-difference-is-the-same-as-regressing-on-an-indicator-variable" class="section level3" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Estimating a difference is the same as regressing on an indicator variable</h3>
+<p>이번에는 새로운 그룹을 추가한다. 평균 8.0, 표준편차 5.0인 모집단으로부터 30개의 관측치를 추출한 집단이다.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="linear-regression-with-a-single-predictor.html#cb84-1" aria-hidden="true" tabindex="-1"></a>n_1 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb84-2"><a href="linear-regression-with-a-single-predictor.html#cb84-2" aria-hidden="true" tabindex="-1"></a>y_1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_1, <span class="fl">8.0</span>, <span class="fl">5.0</span>)</span></code></pre></div>
+<p>각 집단의 평균을 직접 비교하고 표준오차도 컴퓨팅 할 수 있다:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="linear-regression-with-a-single-predictor.html#cb85-1" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="fu">mean</span>(y_1) <span class="sc">-</span> <span class="fu">mean</span>(y_0)</span>
+<span id="cb85-2"><a href="linear-regression-with-a-single-predictor.html#cb85-2" aria-hidden="true" tabindex="-1"></a>se_0 <span class="ot">&lt;-</span> <span class="fu">sd</span>(y_0)<span class="sc">/</span><span class="fu">sqrt</span>(n_0)</span>
+<span id="cb85-3"><a href="linear-regression-with-a-single-predictor.html#cb85-3" aria-hidden="true" tabindex="-1"></a>se_1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(y_1)<span class="sc">/</span><span class="fu">sqrt</span>(n_1)</span>
+<span id="cb85-4"><a href="linear-regression-with-a-single-predictor.html#cb85-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(se_0<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> se_1<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
+<p>시뮬레이션에 있어서 두 집단의 평균 차이는 6.13, 그 평균 차이의 표준오차는 1.12이다. 이 결과는 실제 모집단에서의 평균 차이인 6.0에 근접한 것이다.</p>
+<p>데이터로부터 <span class="math inline">\(y\)</span>라는 하나의 벡터와 더미변수 <span class="math inline">\(x\)</span>를 합쳐서 회귀분석 프레임으로 재구성할 수 있다. 이때, 더미변수 <span class="math inline">\(x\)</span>는 집단 0에 관측치가 속할 경우에 0, 집단 1에 관측치가 속할 때는 1로 코딩되어 있는 변수이다.</p>
+<p><span class="math display">\[
+x_i = 
+\begin{cases}
+  0 &amp; \text{if observation $i$ is in group 0}\\
+  1 &amp; \text{if observation $i$ is in group 1}.
+\end{cases}       
+\]</span></p>
+<p>R로 나타내면:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="linear-regression-with-a-single-predictor.html#cb86-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n_0 <span class="sc">+</span> n_1</span>
+<span id="cb86-2"><a href="linear-regression-with-a-single-predictor.html#cb86-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(y_0, y_1)</span>
+<span id="cb86-3"><a href="linear-regression-with-a-single-predictor.html#cb86-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, n_0), <span class="fu">rep</span>(<span class="dv">1</span>, n_1))</span>
+<span id="cb86-4"><a href="linear-regression-with-a-single-predictor.html#cb86-4" aria-hidden="true" tabindex="-1"></a>fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb86-5"><a href="linear-regression-with-a-single-predictor.html#cb86-5" aria-hidden="true" tabindex="-1"></a>fit7<span class="fl">.6</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data=</span>fake)</span>
+<span id="cb86-6"><a href="linear-regression-with-a-single-predictor.html#cb86-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit7<span class="fl">.6</span>);<span class="fu">sigma</span>(fit7<span class="fl">.6</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x, data = fake)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -8.4297 -3.2468  0.5283  2.3735  8.7054 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   2.3399     0.9687   2.415 0.019574 *  
+## x             5.0842     1.2506   4.065 0.000177 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.332 on 48 degrees of freedom
+## Multiple R-squared:  0.2561, Adjusted R-squared:  0.2406 
+## F-statistic: 16.53 on 1 and 48 DF,  p-value: 0.0001772</code></pre>
+<pre><code>## [1] 4.332364</code></pre>
+<p>추정된 기울기는 6.13으로 앞에서 살펴본 <span class="math inline">\(\bar y_1 - \bar y_0\)</span>의 차이와 동일하다. 표준오차도 거의 동일하지만 약간 다른데, 왜냐하면 두 평균 차이와 각각의 표준오차를 직접 구해서 비교할 경우 <span class="math inline">\(se_0\)</span>과 <span class="math inline">\(se_1\)</span>이라는 별개의 값을 활용해서 계산을 하는 반면, 회귀모델은 하나의 잔차의 표준오차 모수값을 추정하기 때문이다.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></p>
+<p>Figure 7.4는 앞서 두 집단에 대한 추정치의 차이를 시각적으로 보여준다. 다른 예측변수들이 없을 때, 최소자승 회귀선은 <span class="math inline">\((0, \bar y_0)\)</span>와 <span class="math inline">\((1, \bar y_1)\)</span>의 두 점을 지난다. 회귀선의 기울기는 <span class="math inline">\(\bar y_1 - \bar_0\)</span>의 차이를 보여준다.</p>
+<p>이 챕터의 페이크데이터 시뮬레이션은 다음과 같은 내용을 보여준다:</p>
+<ol style="list-style-type: decimal">
+<li><p>직접 비교와 회귀분석의 결과가 동일한지 여부를 직접적으로 확인할 수 있다.</p></li>
+<li><p>통계적 적합의 특성을 이해할 수 있도록 한다.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-97"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-97-1.png" alt="Simulated-data example showing how regression on an indicator variable is the same as computing the difference in means between two groups." width="672" />
+<p class="caption">
+Figure 7.4: Simulated-data example showing how regression on an indicator variable is the same as computing the difference in means between two groups.
+</p>
+</div>
 
 </div>
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ghv2020" class="csl-entry">
+Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. <em>Regression and Other Stories</em>. Cambridge University Press.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="15">
+<li id="fn15"><p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 99</a>)</span>는 지시변수(indicator variable)이라는 용어를 사용한다.<a href="linear-regression-with-a-single-predictor.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>각 집단 간의 표본 크기가 다를 수 있어서 각 집단의 표준오차를 따로 구해서 그 차이의 표준오차를 구할 때와 회귀모델로 하나의 모델에서 잔차의 표준오차 하나를 추정할 때와 차이가 나타날 수 있다.<a href="linear-regression-with-a-single-predictor.html#fnref16" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
