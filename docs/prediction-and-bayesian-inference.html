@@ -463,9 +463,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predictors"><i class="fa fa-check"></i><b>10.7.1</b> Predictors</a></li>
 <li class="chapter" data-level="10.7.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#regression-in-vector-matrix-notation"><i class="fa fa-check"></i><b>10.7.2</b> Regression in vector-matrix notation</a></li>
 <li class="chapter" data-level="10.7.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#two-ways-of-writing-the-model"><i class="fa fa-check"></i><b>10.7.3</b> Two ways of writing the model</a></li>
-<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#least-squares-maximum-likelihood-and-bayesian-inference-1"><i class="fa fa-check"></i><b>10.7.4</b> Least squares, maximum likelihood, and Bayesian inference</a></li>
-<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.5</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
-<li class="chapter" data-level="10.7.6" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.6</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
+<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.4</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
+<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.5</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#weighted-regression"><i class="fa fa-check"></i><b>10.8</b> Weighted regression</a>
 <ul>
@@ -805,8 +804,8 @@ div.csl-indent {
 <div id="uncertainty-in-the-regression-coefficients-and-implied-uncertainty-in-the-regression-line" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Uncertainty in the regression coefficients and implied uncertainty in the regression line</h3>
 <p>불확실성 분포에 대한 베이지언의 개념을 이해하기 위해서는 계수값의 시뮬레이션 추출을 그래프로 나타내는 것이 도움이 될 수 있다. Figure 9.1은 선거를 예측하는 모델 적합 결과에 대한 절편과 기울기의 사후 시뮬레이션 값의 히스토그램을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-106"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-106-1.png" alt="Posterior simulations of $a$ and $b$ from the regression model, $y = a + bx + \text{error}$. For each parameter, we display the simulation draws produced by `stan_glm` and also the posterior median $\pm 1$ and $2$ mad sd's." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-241"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-241-1.png" alt="Posterior simulations of $a$ and $b$ from the regression model, $y = a + bx + \text{error}$. For each parameter, we display the simulation draws produced by `stan_glm` and also the posterior median $\pm 1$ and $2$ mad sd's." width="864" />
 <p class="caption">
 Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the regression model, <span class="math inline">\(y = a + bx + \text{error}\)</span>. For each parameter, we display the simulation draws produced by <code>stan_glm</code> and also the posterior median <span class="math inline">\(\pm 1\)</span> and <span class="math inline">\(2\)</span> mad sd’s.
 </p>
@@ -937,7 +936,7 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 ## [15] 59.38839 59.74599 51.92007 51.10829 51.82106 47.73279</code></pre>
 <p>이 두 결과 모두 시각적으로 요약하여 제시할 수 있다.</p>
 <div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="prediction-and-bayesian-inference.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y_pred)</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-114-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-249-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>또는 요약통계치를 이용하여 숫자로 보여줄 수도 있다.</p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="prediction-and-bayesian-inference.html#cb124-1" aria-hidden="true" tabindex="-1"></a>y_pred_median <span class="ot">&lt;-</span> <span class="fu">median</span>(y_pred)</span>
 <span id="cb124-2"><a href="prediction-and-bayesian-inference.html#cb124-2" aria-hidden="true" tabindex="-1"></a>y_pred_mad <span class="ot">&lt;-</span> <span class="fu">mad</span>(y_pred)</span>
@@ -1106,8 +1105,8 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <span id="cb140-4"><a href="prediction-and-bayesian-inference.html#cb140-4" aria-hidden="true" tabindex="-1"></a>se_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((y <span class="sc">/</span> n) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> y <span class="sc">/</span> n) <span class="sc">/</span> n)</span></code></pre></div>
 <p>사전 정보와 데이터로부터 사후분포의 값을 컴퓨팅한다.</p>
 <p>Figure 9.3a는 사전 분포와 가능도(데이터로부터 얻은 정보)에 관한 내용을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-129"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-129-1.png" alt="(a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior  distribution." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-264"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-264-1.png" alt="(a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior  distribution." width="768" />
 <p class="caption">
 Figure 9.2: (a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior distribution.
 </p>
@@ -1259,8 +1258,8 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 ## Multiple R-squared:  0.2841, Adjusted R-squared:  0.04545 
 ## F-statistic:  1.19 on 1 and 3 DF,  p-value: 0.355</code></pre>
 <p>데이터와 모델의 관계를 다음과 같은 그래프로 살펴보자.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-137"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-137-1.png" alt="(a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-272"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-272-1.png" alt="(a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit." width="768" />
 <p class="caption">
 Figure 9.3: (a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit.
 </p>
@@ -1313,8 +1312,8 @@ Figure 9.3: (a) Data from a survey showing the percentage of girl births among p
 ## ------
 ## See help(&#39;prior_summary.stanreg&#39;) for more details</code></pre>
 <p>정보량이 충분한 사전분포를 가지고 사후 시뮬레이션을 돌린 결과는 다음과 같다:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-140"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-140-1.png" alt="100 posterior simulations of coefficients and regression lines, $y = a + bx$ for the beauty-and-sex ratio data from Figure 9.5, fitted given two different priors. The top row shows the wide range of parameter values and corresponding regression lines consistent with the data and default prior. The bottom row shows results for the model fit with informative prior, which greatly narrows the range of possibilities. Given this prior, the data supply almost no evidence about $a$ and $b$." width="1152" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-275"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-275-1.png" alt="100 posterior simulations of coefficients and regression lines, $y = a + bx$ for the beauty-and-sex ratio data from Figure 9.5, fitted given two different priors. The top row shows the wide range of parameter values and corresponding regression lines consistent with the data and default prior. The bottom row shows results for the model fit with informative prior, which greatly narrows the range of possibilities. Given this prior, the data supply almost no evidence about $a$ and $b$." width="1152" />
 <p class="caption">
 Figure 9.4: 100 posterior simulations of coefficients and regression lines, <span class="math inline">\(y = a + bx\)</span> for the beauty-and-sex ratio data from Figure 9.5, fitted given two different priors. The top row shows the wide range of parameter values and corresponding regression lines consistent with the data and default prior. The bottom row shows results for the model fit with informative prior, which greatly narrows the range of possibilities. Given this prior, the data supply almost no evidence about <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.
 </p>

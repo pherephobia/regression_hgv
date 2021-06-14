@@ -463,9 +463,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predictors"><i class="fa fa-check"></i><b>10.7.1</b> Predictors</a></li>
 <li class="chapter" data-level="10.7.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#regression-in-vector-matrix-notation"><i class="fa fa-check"></i><b>10.7.2</b> Regression in vector-matrix notation</a></li>
 <li class="chapter" data-level="10.7.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#two-ways-of-writing-the-model"><i class="fa fa-check"></i><b>10.7.3</b> Two ways of writing the model</a></li>
-<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#least-squares-maximum-likelihood-and-bayesian-inference-1"><i class="fa fa-check"></i><b>10.7.4</b> Least squares, maximum likelihood, and Bayesian inference</a></li>
-<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.5</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
-<li class="chapter" data-level="10.7.6" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.6</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
+<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.4</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
+<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.5</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#weighted-regression"><i class="fa fa-check"></i><b>10.8</b> Weighted regression</a>
 <ul>
@@ -796,8 +795,8 @@ div.csl-indent {
 \text{kid_score} = 78 + 12 \times \text{mom_hs} + \text{error}.
 \]</span></p>
 <p>이 모델은 엄마가 고등학교를 졸업한 아이들과 그렇지 않은 아이들 간의 평균 시험 성적의 차이를 보여준다. Figure 10.1은 그 회귀선이 두 집단의 평균을 지나가는지를 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-143"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-143-1.png" alt="Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-278"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-278-1.png" alt="Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other." width="672" />
 <p class="caption">
 Figure 10.1: Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other.
 </p>
@@ -814,8 +813,8 @@ Figure 10.1: Child’s test score plotted versus an indicator for whether mother
 <li><p>만약 우리가 엄마의 IQ가 1점 다른 두 집단에서의 아이들의 인지성적 점수의 평균을 비교한다면, 엄마의 IQ가 더 높은 집단의 아이들이 평균적으로 0.6 높은 인지성적 수준을 보여줄 것이다.</p></li>
 <li><p>그리고 여기에서 절편-상수항을 이해하려면, 모든 예측변수들이 0인 상황을 가정해야 한다.</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-144"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-144-1.png" alt="Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children  with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-279"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-279-1.png" alt="Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children  with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ." width="672" />
 <p class="caption">
 Figure 10.2: Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ.
 </p>
@@ -851,8 +850,8 @@ Figure 10.2: Child’s test score plotted versus maternal IQ with regression lin
 </div>
 <div id="understanding-the-fitted-model-1" class="section level3" number="10.1.4">
 <h3><span class="header-section-number">10.1.4</span> Understanding the fitted model</h3>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-146"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-146-1.png" alt="Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school)." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-281"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-281-1.png" alt="Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school)." width="672" />
 <p class="caption">
 Figure 10.3: Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school).
 </p>
@@ -926,8 +925,8 @@ Figure 10.3: Child’s test score plotted versus maternal IQ. Light dots represe
 \text{kid_score} = −11 + 51 \times \text{mom_hs} + 1.1 \times \text{mom_iq} − 0.5 \times \text{mom_hs}\times \text{mom_iq} + \text{error},
 \]</span></p>
 <p>Figure 10.4a와 같이 엄마의 교육 수준에 따라 정의되는 하위 집단으로 회귀선을 각기 추정할 수 있다. 한편 Figure 10.4b는 절편을 보여주는 <span class="math inline">\(x\)</span> 축이 0까지 확장된 그래프이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-148"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-148-1.png" alt="(a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-283"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-283-1.png" alt="(a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts." width="864" />
 <p class="caption">
 Figure 10.4: (a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts.
 </p>
@@ -954,100 +953,917 @@ Figure 10.4: (a) Regression lines of child’s test score on mother’s IQ with 
 &amp;=40+0.6\times\text{mom_iq}\\
 \end{aligned}
 \]</span></p>
+<p>고등학교를 마치지 못한 엄마를 가진 아이들에 대한 추정된 기울기 1.1과 고등학교를 마친 엄마를 가진 아이들에 대한 추정된 기울기 0.6은 직접적으로 해석이 가능하다.</p>
 <div id="when-should-we-look-for-interactions" class="section level3" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> When should we look for interactions?</h3>
+<p>상호작용은 중요할 수 있다. 우리는 대개 상호작용을 포함하지 않았을 때, 예측변수들의 계수갑싱 매우 크게 나타날 경우에 상호작용이 존재할지 탐색한다.</p>
+<p>상호작용을 포함하는 것은 모델을 또 다른 데이터의 서브셋을 이용해 적합하는 것과 같다. 여기서 두 가지 접근법이 이따: 서로 구별되는 집단에 대해 별도로 모델을 적합하거나 혹은 전체 표본을 대상으로 상호작용을 고려한 모델을 적합하는 것이다.</p>
 </div>
 <div id="interpreting-regression-coefficients-in-the-presence-of-interactions" class="section level3" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Interpreting regression coefficients in the presence of interactions</h3>
+<p>우리는 각 예측변수들을 평균 혹은 용이한 기준점을 가지고 중심화(centering)함으로써 상호작용항을 가진 모델을 보다 쉽게 해석할 수 있게 된다.</p>
 </div>
 </div>
 <div id="indicator-variables" class="section level2" number="10.4">
 <h2><span class="header-section-number">10.4</span> Indicator variables</h2>
+<p>더미변수가 회귀모델에 포함되어 있을 때의 비교를 한 번 살펴보자. 설문 자료에 바탕을 두고 있을 때, 몸무게와 다른 변수들을 가지고 그 사람의 키를 예측하고자 하는 모델이 있다고 하자. 일단 데이터를 살펴보자.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="linear-regression-with-multiple-predictors.html#cb165-1" aria-hidden="true" tabindex="-1"></a>earnings <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 17
+##    height weight  male  earn earnk ethnicity education mother_education
+##     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;            &lt;dbl&gt;
+##  1     74    210     1 50000    50 White            16               16
+##  2     66    125     0 60000    60 White            16               16
+##  3     64    126     0 30000    30 White            16               16
+##  4     65    200     0 25000    25 White            17               17
+##  5     63    110     0 50000    50 Other            16               16
+##  6     68    165     0 62000    62 Black            18               18
+##  7     63    190     0 51000    51 White            17               17
+##  8     64    125     0  9000     9 White            15               15
+##  9     62    200     0 29000    29 White            12               12
+## 10     73    230     1 32000    32 White            17               17
+## # ... with 9 more variables: father_education &lt;dbl&gt;, walk &lt;dbl&gt;,
+## #   exercise &lt;dbl&gt;, smokenow &lt;dbl&gt;, tense &lt;dbl&gt;, angry &lt;dbl&gt;, age &lt;dbl&gt;,
+## #   sex &lt;chr&gt;, c_height &lt;dbl&gt;</code></pre>
+<p>일단 몸무게(파운드)로 키(인치)를 예측해보자.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="linear-regression-with-multiple-predictors.html#cb167-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> height, </span>
+<span id="cb167-2"><a href="linear-regression-with-multiple-predictors.html#cb167-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb167-3"><a href="linear-regression-with-multiple-predictors.html#cb167-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ height
+##  observations: 1789
+##  predictors:   2
+## ------
+##             Median MAD_SD
+## (Intercept) -173.2   11.5
+## height         4.9    0.2
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 28.9    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>적합된 회귀선은 다음과 같이 나타낼 수 있다: <span class="math inline">\(\text{weight} = -172.9 + 4.9 \times \text{hegiht}\)</span>.</p>
+<ul>
+<li><p>키가 1인치 다른 두 사람을 비교했을 때, 그들의 몸무게의 기대된 차이(expected difference)는 4.9 파운드이다.</p></li>
+<li><p>키가 0인치 인 사람의 몸무게 예측값은 -172.9 파운드이다. 하지만 큰 의미는 없는 값이다. 왜냐하면 실제로 키가 0인 사람은 없기 때문이다. 따라서 미국 성인의 평균 키가 66인치라고 할 때의 몸무게의 예측값을 구해보자: <span class="math inline">\(-172.9 + 4.9 \times 66\)</span>.</p></li>
+</ul>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="linear-regression-with-multiple-predictors.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># one-way</span></span>
+<span id="cb169-2"><a href="linear-regression-with-multiple-predictors.html#cb169-2" aria-hidden="true" tabindex="-1"></a>coefs_1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit_1)</span>
+<span id="cb169-3"><a href="linear-regression-with-multiple-predictors.html#cb169-3" aria-hidden="true" tabindex="-1"></a>predicted_1 <span class="ot">&lt;-</span> coefs_1[<span class="dv">1</span>] <span class="sc">+</span> coefs_1[<span class="dv">2</span>]<span class="sc">*</span><span class="dv">66</span></span>
+<span id="cb169-4"><a href="linear-regression-with-multiple-predictors.html#cb169-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-5"><a href="linear-regression-with-multiple-predictors.html#cb169-5" aria-hidden="true" tabindex="-1"></a><span class="co"># another way</span></span>
+<span id="cb169-6"><a href="linear-regression-with-multiple-predictors.html#cb169-6" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">height=</span><span class="dv">66</span>)</span>
+<span id="cb169-7"><a href="linear-regression-with-multiple-predictors.html#cb169-7" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(fit_1, <span class="at">newdata=</span>new)</span></code></pre></div>
+<p>다음과 같은 결과를 얻을 수 있다.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="linear-regression-with-multiple-predictors.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted weight for a 66-inch-tall person is&quot;</span>,</span>
+<span id="cb170-2"><a href="linear-regression-with-multiple-predictors.html#cb170-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(pred)),</span>
+<span id="cb170-3"><a href="linear-regression-with-multiple-predictors.html#cb170-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;pounds with a sd of&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(pred)), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Predicted weight for a 66-inch-tall person is 153 pounds with a sd of 29</code></pre>
 <div id="centering-a-predictor" class="section level3" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Centering a predictor</h3>
+<p>적합된 모델의 더 나은 해석을 위해서 키를 중심화한 변수를 예측변수로 사용해보았다.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="linear-regression-with-multiple-predictors.html#cb172-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>c_height <span class="ot">&lt;-</span> earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="dv">66</span></span>
+<span id="cb172-2"><a href="linear-regression-with-multiple-predictors.html#cb172-2" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height, </span>
+<span id="cb172-3"><a href="linear-regression-with-multiple-predictors.html#cb172-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb172-4"><a href="linear-regression-with-multiple-predictors.html#cb172-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ c_height
+##  observations: 1789
+##  predictors:   2
+## ------
+##             Median MAD_SD
+## (Intercept) 153.4    0.7 
+## c_height      5.0    0.2 
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 29.0    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 </div>
 <div id="including-a-binary-variable-in-a-regression" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> Including a binary variable in a regression</h3>
+<p>이번에는 성별에 관한 더미변수를 포함해보자.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="linear-regression-with-multiple-predictors.html#cb174-1" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height <span class="sc">+</span> male,</span>
+<span id="cb174-2"><a href="linear-regression-with-multiple-predictors.html#cb174-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb174-3"><a href="linear-regression-with-multiple-predictors.html#cb174-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_3)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ c_height + male
+##  observations: 1789
+##  predictors:   3
+## ------
+##             Median MAD_SD
+## (Intercept) 149.6    0.9 
+## c_height      3.9    0.2 
+## male         11.8    2.0 
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 28.7    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>남성일 경우의 계수값 12.0은 이 데이터에서 동일한 키를 가진 여성에 비교했을 때 남성이 12파운드 더 무거울 것이라고 예측된다는 것과 같은 의미를 가진다. 70인치의 키를 가진 여성의 예측된 몸무게를 컴퓨팅하는 것도 같은 방식으로 할 수 있다.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="linear-regression-with-multiple-predictors.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># one-way</span></span>
+<span id="cb176-2"><a href="linear-regression-with-multiple-predictors.html#cb176-2" aria-hidden="true" tabindex="-1"></a>coefs_3 <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit_3)</span>
+<span id="cb176-3"><a href="linear-regression-with-multiple-predictors.html#cb176-3" aria-hidden="true" tabindex="-1"></a>predicted <span class="ot">&lt;-</span> coefs_3[<span class="dv">1</span>] <span class="sc">+</span> coefs_3[<span class="dv">2</span>]<span class="sc">*</span><span class="fl">4.0</span> <span class="sc">+</span> coefs_3[<span class="dv">3</span>]<span class="sc">*</span><span class="dv">0</span></span>
+<span id="cb176-4"><a href="linear-regression-with-multiple-predictors.html#cb176-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-5"><a href="linear-regression-with-multiple-predictors.html#cb176-5" aria-hidden="true" tabindex="-1"></a><span class="co"># another way</span></span>
+<span id="cb176-6"><a href="linear-regression-with-multiple-predictors.html#cb176-6" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">c_height=</span><span class="fl">4.0</span>, <span class="at">male=</span><span class="dv">0</span>)</span>
+<span id="cb176-7"><a href="linear-regression-with-multiple-predictors.html#cb176-7" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(fit_3, <span class="at">newdata=</span>new)</span></code></pre></div>
+<p>그 결과는 다음과 같다:</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="linear-regression-with-multiple-predictors.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted weight for a 70-inch-tall woman is&quot;</span>,</span>
+<span id="cb177-2"><a href="linear-regression-with-multiple-predictors.html#cb177-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(pred)),</span>
+<span id="cb177-3"><a href="linear-regression-with-multiple-predictors.html#cb177-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;pounds with a sd of&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(pred)), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Predicted weight for a 70-inch-tall woman is 165 pounds with a sd of 29</code></pre>
+<p>70인치의 남성의 몸무게에 대한 예측값은 <code>mean(posterior_predict(fit_3, newdata = data.frame(c_height = 4.0, male = 1)))</code>로, 177파운드라는 결과이며 같은 키를 가진 여성에 비해 12 파운드 더 무거운 결과이다.</p>
 </div>
 <div id="using-indicator-variables-for-multiple-levels-of-a-categorical-predictor" class="section level3" number="10.4.3">
 <h3><span class="header-section-number">10.4.3</span> Using indicator variables for multiple levels of a categorical predictor</h3>
+<p>회귀모델에 인종을 포함해보자. 인종은 네 가지 그룹으로 이루어져 있다.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="linear-regression-with-multiple-predictors.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(earnings<span class="sc">$</span>ethnicity) <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Black
+</td>
+<td style="text-align:right;">
+180
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hispanic
+</td>
+<td style="text-align:right;">
+104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+White
+</td>
+<td style="text-align:right;">
+1494
+</td>
+</tr>
+</tbody>
+</table>
+<p>우리는 회귀모델에서 인종을 일종의 요인(factor)으로 포함한다.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="linear-regression-with-multiple-predictors.html#cb180-1" aria-hidden="true" tabindex="-1"></a>fit_4 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height <span class="sc">+</span> male <span class="sc">+</span> </span>
+<span id="cb180-2"><a href="linear-regression-with-multiple-predictors.html#cb180-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">factor</span>(ethnicity), </span>
+<span id="cb180-3"><a href="linear-regression-with-multiple-predictors.html#cb180-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb180-4"><a href="linear-regression-with-multiple-predictors.html#cb180-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_4)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ c_height + male + factor(ethnicity)
+##  observations: 1789
+##  predictors:   6
+## ------
+##                           Median MAD_SD
+## (Intercept)               154.3    2.3 
+## c_height                    3.9    0.3 
+## male                       12.1    2.0 
+## factor(ethnicity)Hispanic  -6.1    3.5 
+## factor(ethnicity)Other    -12.3    5.2 
+## factor(ethnicity)White     -5.1    2.3 
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 28.6    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>인종은 모두 네 가지 수준으로 측정되어 있다. 그런데 분석 결과를 보면 3개의 계수값만이 나타난다. 추정되지 않은 집단은 흑인(Blacks)이다. <code>Black</code>은 기준카테고리로 취급되어 다른 변수들의 비교 대상일 뿐이기에 계수가 추정되지 않은 것이다.</p>
+<p>따라서 히스패닉에 대한 계수값, -5.9는 동일한 키와 성별을 가진 흑인에 비교할 때, 히스패닉이 몸무게가 평균적으로 5.9파운드 덜 나간다는 것을 의미한다.</p>
 </div>
 <div id="changing-the-baseline-factor-level" class="section level3" number="10.4.4">
 <h3><span class="header-section-number">10.4.4</span> Changing the baseline factor level</h3>
+<p>회귀모델의 요인변수는 카테고리 중 어떤 것이든 원하는 것을 기준변수로 삼을 수 있다. R은 알파벳 순서에 따라 기준변수를 삼는다.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="linear-regression-with-multiple-predictors.html#cb182-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>eth <span class="ot">&lt;-</span> <span class="fu">factor</span>(earnings<span class="sc">$</span>ethnicity,</span>
+<span id="cb182-2"><a href="linear-regression-with-multiple-predictors.html#cb182-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, </span>
+<span id="cb182-3"><a href="linear-regression-with-multiple-predictors.html#cb182-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Other&quot;</span>))</span>
+<span id="cb182-4"><a href="linear-regression-with-multiple-predictors.html#cb182-4" aria-hidden="true" tabindex="-1"></a>fit_5 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height <span class="sc">+</span> male <span class="sc">+</span> eth, </span>
+<span id="cb182-5"><a href="linear-regression-with-multiple-predictors.html#cb182-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb182-6"><a href="linear-regression-with-multiple-predictors.html#cb182-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_5)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ c_height + male + eth
+##  observations: 1789
+##  predictors:   6
+## ------
+##             Median MAD_SD
+## (Intercept) 149.2    1.0 
+## c_height      3.9    0.3 
+## male         12.1    2.0 
+## ethBlack      5.2    2.2 
+## ethHispanic  -1.1    2.9 
+## ethOther     -7.0    4.7 
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 28.7    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>변수의 순서를 조정하면 <code>White</code>가 기준 카테고리가 된다.</p>
+<ul>
+<li><p>절편값 154.1은 <code>c_height = 0, male = 0, ethnicity = Black</code>인 사람에 대한 예측된 몸무게라고 할 수 있다. 기준변수를 바꾸었을 경우의 절편 149.1은 <code>c_height = 0, male = 0, ethnicity = White</code>인 사람의 예측된 몸무게이다.</p></li>
+<li><p><code>height</code>와 <code>male</code>에 대한 계수는 변하지 않는다.</p></li>
+<li><p>요인변수에서의 각 카테고리의 계수값은 기준카테고리가 어떻게 되느냐에 따라 달라진다.</p></li>
+</ul>
+<p>한편, 인종 집단을 직접적으로 개별 더미변수로 만들어서 분석에 투입할 수도 있다.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="linear-regression-with-multiple-predictors.html#cb184-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>eth_White <span class="ot">&lt;-</span> </span>
+<span id="cb184-2"><a href="linear-regression-with-multiple-predictors.html#cb184-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(earnings<span class="sc">$</span>ethnicity<span class="sc">==</span><span class="st">&quot;White&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb184-3"><a href="linear-regression-with-multiple-predictors.html#cb184-3" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>eth_Black <span class="ot">&lt;-</span> </span>
+<span id="cb184-4"><a href="linear-regression-with-multiple-predictors.html#cb184-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(earnings<span class="sc">$</span>ethnicity<span class="sc">==</span><span class="st">&quot;Black&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb184-5"><a href="linear-regression-with-multiple-predictors.html#cb184-5" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>eth_Hispanic <span class="ot">&lt;-</span> </span>
+<span id="cb184-6"><a href="linear-regression-with-multiple-predictors.html#cb184-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(earnings<span class="sc">$</span>ethnicity<span class="sc">==</span><span class="st">&quot;Hispanic&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb184-7"><a href="linear-regression-with-multiple-predictors.html#cb184-7" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>eth_Other <span class="ot">&lt;-</span> </span>
+<span id="cb184-8"><a href="linear-regression-with-multiple-predictors.html#cb184-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(earnings<span class="sc">$</span>ethnicity<span class="sc">==</span><span class="st">&quot;Other&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
+<p>이 경우, 기준카테고리로 삼을 변수 하나를 제외하고 회귀모델에 포함, 적합하면 된다.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="linear-regression-with-multiple-predictors.html#cb185-1" aria-hidden="true" tabindex="-1"></a>fit_6 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> height <span class="sc">+</span> male <span class="sc">+</span> </span>
+<span id="cb185-2"><a href="linear-regression-with-multiple-predictors.html#cb185-2" aria-hidden="true" tabindex="-1"></a>                    eth_Black <span class="sc">+</span> eth_Hispanic <span class="sc">+</span></span>
+<span id="cb185-3"><a href="linear-regression-with-multiple-predictors.html#cb185-3" aria-hidden="true" tabindex="-1"></a>                    eth_Other, <span class="at">data=</span>earnings,</span>
+<span id="cb185-4"><a href="linear-regression-with-multiple-predictors.html#cb185-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb185-5"><a href="linear-regression-with-multiple-predictors.html#cb185-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_6)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ height + male + eth_Black + eth_Hispanic + eth_Other
+##  observations: 1789
+##  predictors:   6
+## ------
+##              Median MAD_SD
+## (Intercept)  -105.3   16.0
+## height          3.9    0.2
+## male           12.1    2.0
+## eth_Black       5.2    2.3
+## eth_Hispanic   -1.0    3.0
+## eth_Other      -7.1    4.8
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 28.6    0.5  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 </div>
 <div id="using-an-index-variable-to-access-a-group-level-predictor" class="section level3" number="10.4.5">
 <h3><span class="header-section-number">10.4.5</span> Using an index variable to access a group-level predictor</h3>
+<p>때로 우리는 집단 수준에서의 예측변수를 가지고 개인 수준에서 회귀모델을 적합하기도 한다.</p>
+<ul>
+<li>예를 들면, 학생들의 시험 성적을 개별 학생들의 개인적 배경에 해당하는 변수들, 그리고 그 학생들이 속한 학교의 학부모 평균 소득 수준 등으로 예측하고자 하는 것과 비슷하다.</li>
+</ul>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="linear-regression-with-multiple-predictors.html#cb187-1" aria-hidden="true" tabindex="-1"></a>school_income <span class="ot">&lt;-</span> income[school]</span>
+<span id="cb187-2"><a href="linear-regression-with-multiple-predictors.html#cb187-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-3"><a href="linear-regression-with-multiple-predictors.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stan_glm</span>(score <span class="sc">~</span> pretest <span class="sc">+</span> age <span class="sc">+</span> male <span class="sc">+</span> school_income,</span>
+<span id="cb187-4"><a href="linear-regression-with-multiple-predictors.html#cb187-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data=</span>students)</span></code></pre></div>
 </div>
 </div>
 <div id="formulating-paired-or-blocked-designs-as-a-regression-problem" class="section level2" number="10.5">
 <h2><span class="header-section-number">10.5</span> Formulating paired or blocked designs as a regression problem</h2>
+<p>이제까지 계속해서 회귀계수를 비교로 해석할 수도 있다고 설명해왔다. 이 말은 즉, 회귀분석을 비교로 표현하는 것이 유용하다는 것이다.</p>
 <div id="completely-randomized-experiment" class="section level3" number="10.5.1">
 <h3><span class="header-section-number">10.5.1</span> Completely randomized experiment</h3>
+<p><span class="math inline">\(n\)</span> 명의 사람들이 무작위로 처치집단과 통제집단에 배정되었다는 단순한 실험을 생각해보자. 그리고 각 집단에는 <span class="math inline">\(n/2\)</span>명 씩 속해 있다. 처치효과에 대한 추정량은 <span class="math inline">\(\bar y_T-\bar y_C\)</span>이며, 이때의 표준오차는 <span class="math inline">\(\sqrt{\text{sd}^2_T/(n/2) + \text{sd}^2_C/(n/2)}\)</span>이다.</p>
+<p>집단 더미변수를 예측변수로 사용해서 회귀분석의 틀로 추론을 표현할 수 있다: 계수에 대한 최소자승법을 통한 추정량은 단순하게 차이, <span class="math inline">\(\bar y_T-\bar y_C\)</span>라고 할 수 있고, 표준오차는 평균차(difference-in-means)로부터 얻을 수 있는 값에 가깝다. 이때, 표준오차는 분산 추정량이 전체 집단을 대상으로 하느냐에 따라서 약간 차이가 있을 수 있다.</p>
+<p>매우 단순한 처치-전 예측변수들의 사례에서는 회귀모델을 통한 추론이나 실험설계를 바탕으로 한 평균차에서 도출한 추론이나 크게 다르지 않다. 하지만 회귀분석은 보다 복잡한 조건들을 일반화하는 데 장점이 있다.</p>
 </div>
 <div id="paired-design" class="section level3" number="10.5.2">
 <h3><span class="header-section-number">10.5.2</span> Paired design</h3>
+<p><span class="math inline">\(n\)</span>명의 사람들이 짝지어져 있고, 각 짝마다 두 명의 사람들이 무작위로 처치와 통제집단에 배속된다고 생각해보자. 각 짝에서의 차이를 컴퓨팅하고 이를 <span class="math inline">\(z_i,\:i = 1,\dots,n/2\)</span>라고 할 때, 처치효과는 <span class="math inline">\(\bar z\)</span>로, 표준오차는 <span class="math inline">\(\text{sd}(z)/\sqrt{n/2}\)</span>이다.</p>
+<p>짝을 설계한 데이터는 회귀모델을 통해 분석될 수 있다. 모든 <span class="math inline">\(n\)</span> 개의 데이터에 대해 처치집단 여부를 나타내는 더미변수와 짝을 나타내는 더미변수를 포함하는 모델을 적합함으로써 우리는 보다 복잡한 모델을 추정할 수 있다.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="linear-regression-with-multiple-predictors.html#cb188-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(y <span class="sc">~</span> treatment <span class="sc">+</span> </span>
+<span id="cb188-2"><a href="linear-regression-with-multiple-predictors.html#cb188-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">factor</span>(pairs), </span>
+<span id="cb188-3"><a href="linear-regression-with-multiple-predictors.html#cb188-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>expt, <span class="at">refresh =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>이때, <code>factor()</code> 함수를 사용해서 회귀모델에서 <span class="math inline">\(n/2\)</span>개의 더미변수를 만들어낸다. 따라서 회귀모델은 <span class="math inline">\((n/2) + 1\)</span>개의 예측변수를 갖는다: 상수항, 처치더미(treatment indicator), 그리고 <span class="math inline">\((n/2)-1\)</span>의 짝 집단을 보여주는 카테고리 변수.</p>
 </div>
 <div id="block-design" class="section level3" number="10.5.3">
 <h3><span class="header-section-number">10.5.3</span> Block design</h3>
+<p>일반적인 원칙은 결과변수를 예측하는 데 적절할 수 있는 사전 처치 정보는 가능한한 다 포함하는 것이다.</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span>명의 사람들이 <span class="math inline">\(J\)</span>개의 집단에 속해있고, 각 집단마다 있는 처치집단과 통제집단에 무작위 배정하는 블록 설계를 생각해보자.</p></li>
+<li><p>우리는 기준카테고리가 되는 집단을 제외한 <span class="math inline">\(J-1\)</span>개 집단에 대한 카테고리 변수에 처치더미에 바탕을 두고 결과변수를 예측하는 회귀모델을 적합할 수 있다.</p></li>
+<li><p>처치효과를 추정하기 위해서는 어떠한 집단을 기준집단으로 삼느냐는 중요하지 않다. 만약 다른 사전 처치 변수들이 가용하다면, 회귀모델에 가능한 추가적인 예측변수들을 포함하여 추정하는 것이 바람직하다.</p></li>
+</ul>
 </div>
 </div>
 <div id="example-uncertainty-in-predicting-congressional-elections" class="section level2" number="10.6">
 <h2><span class="header-section-number">10.6</span> Example: uncertainty in predicting congressional elections</h2>
+<p>미 의회에 대한 선거 모델의 맥락에서 시뮬레이션에 기초한 예측값들을 설명해보자. 먼저 1986 선거로부터 1988 선거 결과를 예측하는 모델을 구축하고 1988년 선거로부터 1990년 선거를 예측하는 것에 적용해보자. 그리고 실제 1990년 선거 결과와 예측값을 확인해보자.</p>
 <div id="background" class="section level3" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Background</h3>
+<p>미국은 435개 지역구로 나뉘어 있고, 결과변수 <span class="math inline">\(y_i, \: i = 1, \dots, n = 435\)</span>는 1988년 지역구 <span class="math inline">\(i\)</span>에서의 두 정당의 득표 대비 민주당의 정당득표율을 보여준다. Figure 10.5는 데이터 <span class="math inline">\(y\)</span>에 대한 히스토그램을 보여준다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-299"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-299-1.png" alt="Histogram of congressional election data from 1988. The spikes at the left and right ends represent uncontested Republicans and Democrats, respectively." width="480" />
+<p class="caption">
+Figure 10.5: Histogram of congressional election data from 1988. The spikes at the left and right ends represent uncontested Republicans and Democrats, respectively.
+</p>
+</div>
+<p>데이터의 변동성은 어떻게 이해할 수 있을까? 하원 선거 결과를 예측하는 데 적절한 정보로는 무엇이 있을까? 다음의 예측변수를 포함한 회귀모델을 수립해보자:</p>
+<ul>
+<li><p>상수항(constant term)</p></li>
+<li><p>이전 선거에서 지역구 <span class="math inline">\(i\)</span>의 두 정당 득표에 대한 민주당의 득표율</p></li>
+<li><p>현직-재선(incumbency): 지역구 <span class="math inline">\(i\)</span>가 1988년에 민주당 의원의 것이었고, 그가 재선거에 출마한 것이라면 +1로 코딩, 재선거에 공화당 의원이 출마했다면 -1로 코딩, 만약 누가 출마할 지 모르는 상황이라면 0으로 코딩한다. 즉, 1988년 당시에 해당 의석이 재선거 의석이 아닌 경우를 의미한다.</p></li>
+</ul>
+<p>현직-재선 예측변수는 카테고리칼이다. 따라서 우리는 하나의 산포도에 민주당 현직자와 공화당 현직자, 둘 모두가 다 아닌 경를 각각 다르게 마킹해서 산포도로 그릴 수 있다. Figure 10.6a가 바로 그것이다.</p>
+<p>선형회귀모델을 적합한다고 할 때, 이 변수는 이산형 변수이지만 각 지역구에서의 득표율은 연속형 변수이다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-300"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-300-1.png" alt="(a) Congressional election data from 1986 and 1988. Crosses correspond to elections with Republican incumbents running in 1988, dots correspond to Democratic incumbents, and open circles correspond to open seats. The “incumbency” predictor in the regression model equals 0 for the circles, +1 for the dots, and &lt;U+2212&gt;1 for the crosses. Uncontested election outcomes (at 0 and 1) have been jittered slightly. (b) Data for the regression analysis, with uncontested 1988 elections removed and uncontested 1986 election values replaced by 0.25 and 0.75. The $y = x$ line is included as a comparison on both plots." width="960" />
+<p class="caption">
+Figure 10.6: (a) Congressional election data from 1986 and 1988. Crosses correspond to elections with Republican incumbents running in 1988, dots correspond to Democratic incumbents, and open circles correspond to open seats. The “incumbency” predictor in the regression model equals 0 for the circles, +1 for the dots, and &lt;U+2212&gt;1 for the crosses. Uncontested election outcomes (at 0 and 1) have been jittered slightly. (b) Data for the regression analysis, with uncontested 1988 elections removed and uncontested 1986 election values replaced by 0.25 and 0.75. The <span class="math inline">\(y = x\)</span> line is included as a comparison on both plots.
+</p>
+</div>
 </div>
 <div id="data-issues" class="section level3" number="10.6.2">
 <h3><span class="header-section-number">10.6.2</span> Data issues</h3>
+<p>이전 선거 결과와 재선거에 출마한 현직의원인지 여부를 조건으로 지역구 단위로 결과를 예측해보았다. 이때, 많은 선거들이 비교하고자 하는 두 해 각각에 있어서 경합지역이 아닌 경우가 있다. 즉, 득표율이 0 또는 1로 나타나게 되는 것이다. 하지만 0과 1이 아니라 공화당이 비경합적인 지역에 0.25, 민주당의 비경합적 지역에 0.75라는 값으로 대체한다면, 우리는 약 선거에에서 마치 실제로 경합한 것과 같이 민주당 후보가 받은 표의 비율을 근사하게 되는 것이다. 보다 일반적으로 우리는 비경합지에 앞서 경합지 선거 결과의 분포로부터 무작위 값들을 대체할 수 있다. 이렇게 조정한 결과가 바로 Figure 10.6b이다.</p>
 </div>
 <div id="fitting-the-model" class="section level3" number="10.6.3">
 <h3><span class="header-section-number">10.6.3</span> Fitting the model</h3>
+<p>주어진 <code>past_vote</code>와 <code>incumbency</code>에서 <code>vote</code>를 예측하기 위한 회귀모델을 수립했을 때, 1986년 선거로 1988년 선거를 예측할 때 데이터셋에서 적절한 변수들을 골라보자.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="linear-regression-with-multiple-predictors.html#cb189-1" aria-hidden="true" tabindex="-1"></a>data88 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">vote=</span>congress<span class="sc">$</span>v88_adj,</span>
+<span id="cb189-2"><a href="linear-regression-with-multiple-predictors.html#cb189-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">past_vote=</span>congress<span class="sc">$</span>v86_adj,</span>
+<span id="cb189-3"><a href="linear-regression-with-multiple-predictors.html#cb189-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">inc=</span>congress<span class="sc">$</span>inc88)</span>
+<span id="cb189-4"><a href="linear-regression-with-multiple-predictors.html#cb189-4" aria-hidden="true" tabindex="-1"></a>fit88 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> past_vote <span class="sc">+</span> inc, </span>
+<span id="cb189-5"><a href="linear-regression-with-multiple-predictors.html#cb189-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>data88, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb189-6"><a href="linear-regression-with-multiple-predictors.html#cb189-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit88)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      vote ~ past_vote + inc
+##  observations: 435
+##  predictors:   4
+## ------
+##               Median MAD_SD
+## (Intercept)    0.3    0.0  
+## past_vote      0.5    0.0  
+## incOpen       -0.1    0.0  
+## incRepublican -0.2    0.0  
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.1    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>이 모델에는 약간 문제가 있다. Figure 10.6b의 전후 그래프를 비교해보면, 현직 재선 출마자가 공석인 선거의 경우 대부분이 회귀선에서 빠져나와 있다: 즉, 가능하다면 상호작용항을 포함할 것이 요구된다.</p>
+<ul>
+<li><p>이는 현직 재선 출마자가 나온 선거구와 공석인 선거구 간의 기울기가 다를 것이라는 것을 의미한다.</p></li>
+<li><p>그리고 현직 재선 출마자가 없는 선거구의 비경합적 선거의 투표율의 불확실성을 고려하지 않았다는 문제가 있다.</p></li>
+</ul>
+<p>그럼에도 불구하고 이 예제는 시뮬레이션에 기초한 예측적 추론의 원칙들을 입증하는 데에는 충분하다.</p>
 </div>
 <div id="simulation-for-inferences-and-predictions-of-new-data-points" class="section level3" number="10.6.4">
 <h3><span class="header-section-number">10.6.4</span> Simulation for inferences and predictions of new data points</h3>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-302">Table 10.1: </span>Simulation results for the congressional election forecasting model. The predicted values <span class="math inline">\(\tilde y_i\)</span> correspond to the 1990 election.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+<span class="math inline">\(\beta_0\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\beta_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\beta_2\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\beta_3\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\sigma\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+-0.11
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.21
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.22
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.36
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+<td style="text-align:right;">
+-0.21
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.29
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+<td style="text-align:right;">
+-0.07
+</td>
+<td style="text-align:right;">
+-0.17
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.51
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+-0.09
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+<td style="text-align:right;">
+-0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+</tbody>
+</table>
+<p>위의 표는 시뮬레이션된 파라미터를 보여준다. 시뮬레이션을 이용해서 1988년의 데이터와 1990년 현직-재선 출마자에 대한 정보에 따라 1990년 지역구별 선거결과를 예측할 수 있다. 새로운 예측변수, <span class="math inline">\(\tilde X\)</span>를 만들어보자.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="linear-regression-with-multiple-predictors.html#cb191-1" aria-hidden="true" tabindex="-1"></a>data90 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">past_vote=</span>congress<span class="sc">$</span>v88_adj, </span>
+<span id="cb191-2"><a href="linear-regression-with-multiple-predictors.html#cb191-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">inc=</span>congress<span class="sc">$</span>inc90)</span></code></pre></div>
+<p>새로운 결과의 벡터에 대한 예측 시뮬레이션을 해보자.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="linear-regression-with-multiple-predictors.html#cb192-1" aria-hidden="true" tabindex="-1"></a>pred90 <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(fit88, <span class="at">newdata=</span>data90)</span></code></pre></div>
 </div>
 <div id="predictive-simulation-for-a-nonlinear-function-of-new-data" class="section level3" number="10.6.5">
 <h3><span class="header-section-number">10.6.5</span> Predictive simulation for a nonlinear function of new data</h3>
+<p>1990년에 민주당에 의해 승리한 선거의 수는 <span class="math inline">\(\sum^{\tilde n}_{i=1}I(\tilde y_i &gt; 0.5\)</span>로 나타낼 수 있다.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="linear-regression-with-multiple-predictors.html#cb193-1" aria-hidden="true" tabindex="-1"></a>dems_pred <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(pred90 <span class="sc">&gt;</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p>각 행은 서로 다른 무작위 시뮬레이션의 결과이다:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="linear-regression-with-multiple-predictors.html#cb194-1" aria-hidden="true" tabindex="-1"></a>dems_pred <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
+<span id="cb194-2"><a href="linear-regression-with-multiple-predictors.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims) {</span>
+<span id="cb194-3"><a href="linear-regression-with-multiple-predictors.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  dems_pred[s] <span class="ot">&lt;-</span> <span class="fu">sum</span>(pred90[s,] <span class="sc">&gt;</span> <span class="fl">0.5</span>)</span>
+<span id="cb194-4"><a href="linear-regression-with-multiple-predictors.html#cb194-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb194-5"><a href="linear-regression-with-multiple-predictors.html#cb194-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dems_pred)</span></code></pre></div>
+<pre><code>## [1] 262 261 258 261 262 263</code></pre>
 </div>
 <div id="combining-simulation-and-analytic-calculations" class="section level3" number="10.6.6">
 <h3><span class="header-section-number">10.6.6</span> Combining simulation and analytic calculations</h3>
+<p>몇몇 조건에 있어서는 수학적 분석을 바탕으로 시뮬레이션에 기초한 추론이 큰 도움이 된다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 144)</span>.</p>
 </div>
 </div>
 <div id="mathematical-notation-and-statistical-inference" class="section level2" number="10.7">
 <h2><span class="header-section-number">10.7</span> Mathematical notation and statistical inference</h2>
+<p>특정한 예제를 설명할 때, 기술변수 이름을 사용하는 것이 도움이 된다. 하지만 보다 일반적인 이론과 데이터 관리에 대해 논의하기 위해 여기서는 수학적 용어들을 사용하고자 한다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 144)</span>.</p>
 <div id="predictors" class="section level3" number="10.7.1">
 <h3><span class="header-section-number">10.7.1</span> Predictors</h3>
+<p><span class="math inline">\(X\)</span> 행렬에서 열에 대해 예측변수라는 표현을 사용한다. 예를 들어, 엄마의 교육수준과 IQ 수준의 상호작용을 포함한 모델을 생각해보자.</p>
+<p><span class="math display">\[
+\text{kid_score} = 58 + 16 \times \text{mom_hs} + 0.5 \times \text{mom_iq} − 0.2 \times \text{mom_hs} \times \text{mom_iq} + error.
+\]</span></p>
+<p>여기서 예측변수는 세 개이다: <span class="math inline">\(\text{mom_hs}\)</span>, <span class="math inline">\(\text{mom_iq}\)</span>, 그리고 <span class="math inline">\(\text{mom_hs} \times \text{mom_iq}\)</span>.</p>
 </div>
 <div id="regression-in-vector-matrix-notation" class="section level3" number="10.7.2">
 <h3><span class="header-section-number">10.7.2</span> Regression in vector-matrix notation</h3>
+<p>회귀분석은 벡터-행렬로도 나타낼 수 있다.<span class="math inline">\(y_i\)</span>의 <span class="math inline">\(i^{\text{th}}\)</span> 관측치는 결정주의적 예측으로는 <span class="math inline">\(X_i\beta = \beta_1X_{i1}+\cdots+\beta_kX_{ik}\)</span>로 나타낼 수 있다. 일단 <span class="math inline">\(X_{i1}\)</span>은 상수항으로 절편값을 의미한다.</p>
+<p><span class="math inline">\(\epsilon_i\)</span>은 평균 0에 표준편차 <span class="math inline">\(\sigma\)</span>인 정규분포를 따르며, 오차를 의미한다. 즉, <span class="math inline">\(\mathrm{N}(0, \sigma^2)\)</span>로 나타낼 수 있다. 잔차는 실제 관측치와 추정된 예측값 간의 차이를 보여준다: <span class="math inline">\(y - X \hat \beta\)</span>. 주어진 예측변수의 데이터 <span class="math inline">\(\tilde X\)</span>일 때, 모델로부터 얻은 예측값 <span class="math inline">\(\tilde y\)</span>는 Figure 10.7로 확인할 수 있다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-307"></span>
+<img src="fig/fig10.png" alt="Notation for regression modeling. The model is fit to the observed outcomes $y$ given predictors $X$. As described in the text, the model can then be applied to predict unobserved outcomes $\tilde y$ (indicated by small question marks), given predictors on new data $\tilde X$." width="410" />
+<p class="caption">
+Figure 10.7: Notation for regression modeling. The model is fit to the observed outcomes <span class="math inline">\(y\)</span> given predictors <span class="math inline">\(X\)</span>. As described in the text, the model can then be applied to predict unobserved outcomes <span class="math inline">\(\tilde y\)</span> (indicated by small question marks), given predictors on new data <span class="math inline">\(\tilde X\)</span>.
+</p>
+</div>
 </div>
 <div id="two-ways-of-writing-the-model" class="section level3" number="10.7.3">
 <h3><span class="header-section-number">10.7.3</span> Two ways of writing the model</h3>
+<p>전통적인 선형회귀모델은 수학적으로 다음과 같이 쓸 수 있다:</p>
+<p><span class="math display">\[
+y_i = \beta_1 X_{i1} + \cdots + \beta_k X_{ik} + \epsilon_i
+\]</span></p>
+<p>이때, 오차는 평균이 0이고 표준편차가 <span class="math inline">\(\sigma\)</span>이며 독립적인 정규분포를 따른다.</p>
+<p>행렬을 이용하면,</p>
+<p><span class="math display">\[
+y_i = X_i\beta + \epsilon_i
+\]</span>
+로 나타낼 수 있고, 이때 <span class="math inline">\(X\)</span>는 <span class="math inline">\(n\times k\)</span>의 행렬이라고 할 수 있다. 이는 다음과도 동일하다.</p>
+<p><span class="math display">\[
+y_i \sim \mathrm{N}(X_i\beta, \sigma^2)
+\]</span></p>
+<p>마지막으로 더 축약하면 다음과 같이 쓸 수 있다.</p>
+<p><span class="math display">\[
+y \sim \mathrm{N}(X\beta,\sigma^2I).
+\]</span>
+### Least squares, maximum likelihood, and Bayesian inference</p>
+<p>최소자승법을 통한 추정량은 잔차의 제곱합, <span class="math inline">\(\mathrm{RSS}= \sum^n_{i=1}(y_i-X\hat\beta)^2\)</span>를 최소화하는 <span class="math inline">\(\hat \beta\)</span>의 벡터를 구하는 것에서부터 시작한다.</p>
+<p>여러 개의 예측변수를 가진 표준 선형회귀모델에서는 오차는 독립적이고 등분산(equal variance)을 가지며 정규적으로 분포되어 있다. 그리고 최소자승의 해(solution)은 이때 최대가능도로 구한 추정량과 같다. OLS와 MLE 결과의 차이는 잔차의 표준편차에 대한 추정일 뿐이다.</p>
+<p><span class="math display">\[
+\hat \sigma = \sqrt{\mathrm{RSS}/(n-k)}
+\]</span></p>
+<p>이때, <span class="math inline">\(k\)</span>는 회귀계수의 숫자이다.</p>
 </div>
-<div id="least-squares-maximum-likelihood-and-bayesian-inference-1" class="section level3" number="10.7.4">
-<h3><span class="header-section-number">10.7.4</span> Least squares, maximum likelihood, and Bayesian inference</h3>
+<div id="nonidentified-parameters-collinearity-and-the-likelihood-function" class="section level3" number="10.7.4">
+<h3><span class="header-section-number">10.7.4</span> Nonidentified parameters, collinearity, and the likelihood function</h3>
+<p>최대가능도에서 가능도를 바꾸지 않으면 파라미터는 바뀔 수 있기 때문에 파라미터는 식별되지 않는다. 즉, 만약 단 하나로만 추정될 수 있는 파라미터를 포함하지 않는다면, 모델은 “식별불가능하다(nonidentifiable).” 이후 챕터에서 본격적으로 다룰 내용이다.</p>
 </div>
-<div id="nonidentified-parameters-collinearity-and-the-likelihood-function" class="section level3" number="10.7.5">
-<h3><span class="header-section-number">10.7.5</span> Nonidentified parameters, collinearity, and the likelihood function</h3>
-</div>
-<div id="hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests" class="section level3" number="10.7.6">
-<h3><span class="header-section-number">10.7.6</span> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</h3>
+<div id="hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests" class="section level3" number="10.7.5">
+<h3><span class="header-section-number">10.7.5</span> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</h3>
+<p>간단하게 얘기하면 <span class="math inline">\(t\)</span> 검정은 회귀계수가 0과 유의미하게 통계적으로 다른지를 입증하는 것이며, 명시적으로는 특정한 계수값 <span class="math inline">\(\beta_j\)</span>가 0과 같은지를 의미하는 영가설에 대한 검정을 수행하는 것이다.</p>
+<ul>
+<li>특정한 가정 하에서 표준화 회귀계수인 <span class="math inline">\(\hat \beta_j/\text{s.e.}_j\)</span>는 <span class="math inline">\(t_{n-k}\)</span> 분포를 따른다.</li>
+</ul>
+<p><span class="math inline">\(F\)</span> 검정은 회귀모델 전체에 대한 경험적 근거를 입증하는 데 사용된다. 이때의 영가설은 모델 내 상수항을 제외한 모든 회귀계수의 값이 0과 같을 것이라는 진술이다.</p>
+<ul>
+<li>특정한 가정 하에서 잔차의 제곱합에 대한 전체 변동량의 비율은 <span class="math inline">\(F\)</span> 분포를 따르며, 만약 제곱합의 비율이 어느 수준을 넘으면, 표본 규모 <span class="math inline">\(n\)</span>과 예측변수의 수 <span class="math inline">\(k\)</span>에 따라 영가설은 기각될 수 있다.</li>
+</ul>
 </div>
 </div>
 <div id="weighted-regression" class="section level2" number="10.8">
 <h2><span class="header-section-number">10.8</span> Weighted regression</h2>
+<p>오차가 등분산을 가지고 독립적이고 정규적으로 분포되어 있다고 할 때, 최소자승법을 이용한 회귀모델은 최대가능도 추정법과 같은 결과를 제시한다. 잔차의 제곱합에 있어서 각 항(terms)에는 동일한 가중치가 부여된다.</p>
+<p>그러나 몇몇 조건 하에서 모델을 적합할 때, 일부 데이터 관측치에 가중치를 부여해야할 필요가 있다. 이때, 우리는 가중치를 부여한 최소자승법으로 <span class="math inline">\(\hat \beta_{\text{wls}}\)</span>를 추정하고, 이는 <span class="math inline">\(\sum^n_{i=1}w_i(y_i-X_i\beta)^2\)</span>를 최소화하는 결과이며, 이때 가중치 <span class="math inline">\(w = (w_1, \dots, w_n)\)</span>는 음수가 아닌 가중치이다.</p>
+<p>OLS처럼 행렬대수를 이용해서 가중치를 부여한 최소제곱 추정량을 다음과 같이 구할 수 있다.</p>
+<p><span class="math display">\[
+\hat \beta = (X^tW^{-1}X)^{-1}X^tW^{-1}y
+\]</span></p>
+<p>이때, <span class="math inline">\(W\)</span>는 가중치의 행렬, <span class="math inline">\(W = \text{Diag}(w)\)</span>을 의미한다.</p>
 <div id="three-models-leading-to-weighted-regression" class="section level3" number="10.8.1">
 <h3><span class="header-section-number">10.8.1</span> Three models leading to weighted regression</h3>
+<p>가중치를 부여한 최소자승법은 세 가지의 서로 다른 모델로부터 유도될 수 있다:</p>
+<ol style="list-style-type: decimal">
+<li>관측된 데이터를 이용해 더 큰 모집단을 대표</li>
+</ol>
+<ul>
+<li><p>회귀모델에 가중치를 부여하는 가장 일반적인 방식.</p></li>
+<li><p>전체 모집단에 적합했을 때 얻어지는 가중치가 부여되지 않은(unweighted) 선형모델을 추정하기 위해 표본 데이터에 일정한 가중치를 부여-대표성 있는 표본으로 만들어 적합한 결과</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>중복된 관측치(duplicate observations):</li>
+</ol>
+<ul>
+<li><p>특정한 값이 중복된다는 것은 과대대표된다는 것을 의미.</p></li>
+<li><p>제약이 가해진 데이터셋, <span class="math inline">\((x, y, w)\)</span>에 대한 가중치가 부여된 회귀모델은 원데이터에 대한 가중치가 부여되지 않은 회귀분석과 동등하다.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>이분산(unequal variances)</li>
+</ol>
+<ul>
+<li><p>독립적이고 정규적으로 분포한 오차가 분산이 일정하지 않은 회귀모델에 대한 최대 가능도 추정량은 가중치가 부여된 최소제곱 추정량이라고 할 수 있다. 그리고 이때, 오차의 표준편차, <span class="math inline">\(\text{sd}(\epsilon_i)\)</span>은 <span class="math inline">\(1\sqrt{w_i}\)</span>에 비례한다.</p></li>
+<li><p>모델을 적합할 때, 더 큰 분산을 가질 경우, 작은 가중치를 부여하는 식이다.</p></li>
+</ul>
+<p>위의 세 모델은 동일한 점추정치를 산출하지만 서로 다른 표준 오차와 예측분포를 가진다. 대개의 경우, 가중치는 표본과 모집단 간의 차이를 보정하기 위해 사용되며, 한 번 가중치가 적용되고 나면 가중치를 평균 1을 가지는 벡터로 재정규화한다(R에서는 <code>w &lt;- w/mean(w)</code>로 설정). 그리고 나서 회귀모델에 다음과 같이 가중치를 부여할 수 있다: <code>stan_glm(y ~ x, data = data, weights = w</code>.</p>
 </div>
 <div id="using-a-matrix-of-weights-to-account-for-correlated-errors" class="section level3" number="10.8.2">
 <h3><span class="header-section-number">10.8.2</span> Using a matrix of weights to account for correlated errors</h3>
+<p>가중치 행렬 <span class="math inline">\(W\)</span>를 이용해서 공분산행렬 <span class="math inline">\(W^{-1}\)</span>를 가진 정규적으로 분포된 오차 모델에 대한 최대가능도 추정량을 산출할 수 있고, 이를 일반화 최소자승이라고 불린다.</p>
+<ul>
+<li>상관성을 가지는 모델은 시계열, 공간통계, 클러스터 표본 등 다른 구조화된 데이터에서 찾아볼 수 있다.</li>
+</ul>
 </div>
 </div>
 <div id="fitting-the-same-model-to-many-datasets" class="section level2" number="10.9">
 <h2><span class="header-section-number">10.9</span> Fitting the same model to many datasets</h2>
+<p>회귀모델을 반복적으로 서로 다른 데이터셋에 적합하거나 기존 데이터셋의 서브셋에 적합시키는 것은 흔하다. 이와 같은 반복된 모델링 방법은 거의 사용되지는 않는다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020</a>)</span> 은 그 이유가 교차사례 분석과 같은 자료들에 내재된 문제들을 해결하지 못하기 때문이다. 교차사례나 시계열 등의 자료에서 각 변수들 간의 상관과 같이 동일한 모델을 반복적으로 적용하는 데에는 제약이 있다.</p>
 <div id="predicting-party-identification" class="section level3" number="10.9.1">
 <h3><span class="header-section-number">10.9.1</span> Predicting party identification</h3>
+<p>Figure 10.9는 시간에 따라 추적한 추정된 계수값의 변환을 보여준다. 이념과 인종이 가장 중요하고 그 그 둘의 계수값은 시간이 바뀔 때마 마찬가지로 변화해왔다.</p>
+<p>Figure 10.9는 여러 모델을 추정하는 것이 어떻게 유용한지를 보여준다. 여러 예측변수에 기초해서 모델을 쪼개어보는 결과, 각 패널마다의 평균적인 경향성이 드러나는 것을 확인할 수 있기 때문이다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-309"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-309-1.png" alt="Estimated coefficients $\pm 0.67$ standard errors (thus, 50% intervals) for the regression of party identification on political ideology, ethnicity, and other predictors, as fit separately to poll data from each presidential election campaign from 1976 through 2000. The plots are on different scales, with the predictors ordered roughly in declining order of the magnitudes of their coefficients. The set of plots illustrates the display of inferences from a series of regressions." width="672" />
+<p class="caption">
+Figure 10.8: Estimated coefficients <span class="math inline">\(\pm 0.67\)</span> standard errors (thus, 50% intervals) for the regression of party identification on political ideology, ethnicity, and other predictors, as fit separately to poll data from each presidential election campaign from 1976 through 2000. The plots are on different scales, with the predictors ordered roughly in declining order of the magnitudes of their coefficients. The set of plots illustrates the display of inferences from a series of regressions.
+</p>
+</div>
 
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ghv2020" class="csl-entry">
+Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. <em>Regression and Other Stories</em>. Cambridge University Press.
 </div>
 </div>
             </section>

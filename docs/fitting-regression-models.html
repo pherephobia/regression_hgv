@@ -463,9 +463,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predictors"><i class="fa fa-check"></i><b>10.7.1</b> Predictors</a></li>
 <li class="chapter" data-level="10.7.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#regression-in-vector-matrix-notation"><i class="fa fa-check"></i><b>10.7.2</b> Regression in vector-matrix notation</a></li>
 <li class="chapter" data-level="10.7.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#two-ways-of-writing-the-model"><i class="fa fa-check"></i><b>10.7.3</b> Two ways of writing the model</a></li>
-<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#least-squares-maximum-likelihood-and-bayesian-inference-1"><i class="fa fa-check"></i><b>10.7.4</b> Least squares, maximum likelihood, and Bayesian inference</a></li>
-<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.5</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
-<li class="chapter" data-level="10.7.6" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.6</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
+<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.4</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
+<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.5</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#weighted-regression"><i class="fa fa-check"></i><b>10.8</b> Weighted regression</a>
 <ul>
@@ -883,23 +882,23 @@ y_i = \bar y + \hat b(x_i-\bar x) + r_i
 ## n = 16, k = 2
 ## residual sd = 3.76, R-Squared = 0.58</code></pre>
 <p>Figure 8.1은 계수값 <span class="math inline">\(a\)</span>와 <span class="math inline">\(b\)</span>에 대한 함수로 가능도의 예제를 보여준다. 엄밀하게 말하면, 이 모델은 세 개의 파라미터(<span class="math inline">\(a, b, \sigma\)</span>)를 가지고 있다. 그러나 간명하게 보여주기 위하여 추정된 <span class="math inline">\(\hat \sigma\)</span>의 조건 하에서 <span class="math inline">\(a\)</span>와 <span class="math inline">\(b\)</span>의 가능도를 보여주었다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-93"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-93-1.png" alt="Likelihood function for the parameters $a$ and $b$ in the linear regression $y = a + bx + \text{error}$, of election outcomes, $y_i$ , on economic growth, $x_i$." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-228"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-228-1.png" alt="Likelihood function for the parameters $a$ and $b$ in the linear regression $y = a + bx + \text{error}$, of election outcomes, $y_i$ , on economic growth, $x_i$." width="672" />
 <p class="caption">
 Figure 8.1: Likelihood function for the parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in the linear regression <span class="math inline">\(y = a + bx + \text{error}\)</span>, of election outcomes, <span class="math inline">\(y_i\)</span> , on economic growth, <span class="math inline">\(x_i\)</span>.
 </p>
 </div>
 <p>Figure 8.2a는 <span class="math inline">\((\hat a, \hat b) = (46.2, 3.1)\)</span>가 최대가능도 추정값이라는 것을 보여준다. Figure 8.1에서 가능도가 최고였을 때의 값, <span class="math inline">\(a\)</span>와 <span class="math inline">\(b\)</span>인 것이다. Figure 8.2a는 파마리터에 대해 <span class="math inline">\(\pm 1\)</span> 표준오차에서의 불확실성도 함께 보여주고 있다.</p>
 <p>가능도 함수는 최대값과 범주만 가지는 것이 아니라 상관관계도 가지고 있다. 가장 큰 가능도를 둘러싼 영역(area)은 Figure 8.2b에서와 같이 나타낼 수도 있다. 불확실성의 타원 형태는 우리로 하여금 데이터에 대한 정보나 두 파라미터의 결합에 관한 모델의 정보를 제시한다. 여기에서는 두 파라미터 값은 부의 상관관계를 가진다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-94"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-94-1.png" alt="(a) Mode of the likelihood function (that is, the maximum likelihood estimate $(\hat a, \hat b)$) with $\pm 1$ standard error bars shown for each parameter. (c) Mode of the likelihood function with an ellipse summarizing the inverse-second-derivative-matrix of the log likelihood at the mode." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-229"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-229-1.png" alt="(a) Mode of the likelihood function (that is, the maximum likelihood estimate $(\hat a, \hat b)$) with $\pm 1$ standard error bars shown for each parameter. (c) Mode of the likelihood function with an ellipse summarizing the inverse-second-derivative-matrix of the log likelihood at the mode." width="768" />
 <p class="caption">
 Figure 8.2: (a) Mode of the likelihood function (that is, the maximum likelihood estimate <span class="math inline">\((\hat a, \hat b)\)</span>) with <span class="math inline">\(\pm 1\)</span> standard error bars shown for each parameter. (c) Mode of the likelihood function with an ellipse summarizing the inverse-second-derivative-matrix of the log likelihood at the mode.
 </p>
 </div>
 <p>추론적 상관관계를 이해하기 위해서 산포도와 회귀선을 하나의 플롯으로 그려보았다. Figure 8.3b는 데이터에 따른 선의 가능한 범위를 보여준다. 즉, 시뮬레이션을 통해 표본이 다를 때 나타날 수 있는 선의 가능한 형태들을 함께 보여준다고 이해할 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-95"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-95-1.png" alt="(a) Election data with the linear fit, $y = 46.3 + 3.0x$, repeated from Figure 7.2b. (b) Several lines that are are roughly consistent with the data. Where the slope is higher, the intercept (the value of the line when $x = 0$) is lower; hence there is a negative correlation between a and b in the likelihood." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-230"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-230-1.png" alt="(a) Election data with the linear fit, $y = 46.3 + 3.0x$, repeated from Figure 7.2b. (b) Several lines that are are roughly consistent with the data. Where the slope is higher, the intercept (the value of the line when $x = 0$) is lower; hence there is a negative correlation between a and b in the likelihood." width="768" />
 <p class="caption">
 Figure 8.3: (a) Election data with the linear fit, <span class="math inline">\(y = 46.3 + 3.0x\)</span>, repeated from Figure 7.2b. (b) Several lines that are are roughly consistent with the data. Where the slope is higher, the intercept (the value of the line when <span class="math inline">\(x = 0\)</span>) is lower; hence there is a negative correlation between a and b in the likelihood.
 </p>
@@ -934,8 +933,8 @@ Figure 8.3: (a) Election data with the linear fit, <span class="math inline">\(y
 <li><p><span class="math inline">\(x_i &lt; \bar x\)</span>이면, <span class="math inline">\(i\)</span> 지점에서의 관측치는 부의 영향력(negative influence)을 가지고 있고, <span class="math inline">\(x_i\)</span>가 평균으로부터 멀어질수록 <span class="math inline">\(x_i\)</span>의 절대적인 영향력이 커진다고 할 수 있다.</p></li>
 </ul>
 <p>Figure 8.4는 회귀분석에 있어서 개별 관측치의 영향력을 이해하는 시각화의 방법을 보여준다. 회귀계수 <span class="math inline">\(\hat \beta\)</span>에 대해 추정된 벡터는 데이터 벡터 <span class="math inline">\(y\)</span>와 일반화 선형모델의 선형 함수에 따라 산출된 결과인 것이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-96"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-96-1.png" alt="Understanding the influence of individual data points on the fitted regression line. Picture the vertical lines as rubber bands connecting each data point to the least squares line. Take one of the points on the left side of the graph and move it up, and the slope of the line will decrease. Take one of the points on the right side and move it up, and the slope will increase. Moving the point in the center of the graph up or down will not change the slope of the fitted line." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-231"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-231-1.png" alt="Understanding the influence of individual data points on the fitted regression line. Picture the vertical lines as rubber bands connecting each data point to the least squares line. Take one of the points on the left side of the graph and move it up, and the slope of the line will decrease. Take one of the points on the right side and move it up, and the slope will increase. Moving the point in the center of the graph up or down will not change the slope of the fitted line." width="672" />
 <p class="caption">
 Figure 8.4: Understanding the influence of individual data points on the fitted regression line. Picture the vertical lines as rubber bands connecting each data point to the least squares line. Take one of the points on the left side of the graph and move it up, and the slope of the line will decrease. Take one of the points on the right side and move it up, and the slope will increase. Moving the point in the center of the graph up or down will not change the slope of the fitted line.
 </p>
