@@ -763,8 +763,8 @@ div.csl-indent {
 <div id="example-predicting-presidential-vote-share-from-the-economy" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Example: predicting presidential vote share from the economy</h2>
 <p>Figure 7.1은 선거와 경제에 관한 에피소드를 보여준다. 정치학자 Douglas Hibbs가 경제성장 하나만 가지고 선거를 예측하고자 했던 “빵과 평화” 모델에 바탕을 둔 에피소드이다. 추가적인 정보가 더해진다면 더 나은 예측이 가능하겠지만 이 예제는 단순한 모델이 가지는 일종의 미학을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-80-1.png" alt="Douglas Hibbs’s “bread and peace” model of voting and the economy. Presidential elections since 1952 are listed in order of the economic performance at the end of the preceding administration (as measured by inflation-adjusted growth in average personal income). Matchups are listed as incumbent party’s candidate versus other party’s candidate. The better the economy was performing, the better the incumbent party’s candidate did, with the biggest exceptions being 1952 (Korean War) and 1968 (Vietnam War)." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-72"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-72-1.png" alt="Douglas Hibbs’s “bread and peace” model of voting and the economy. Presidential elections since 1952 are listed in order of the economic performance at the end of the preceding administration (as measured by inflation-adjusted growth in average personal income). Matchups are listed as incumbent party’s candidate versus other party’s candidate. The better the economy was performing, the better the incumbent party’s candidate did, with the biggest exceptions being 1952 (Korean War) and 1968 (Vietnam War)." width="864" />
 <p class="caption">
 Figure 7.1: Douglas Hibbs’s “bread and peace” model of voting and the economy. Presidential elections since 1952 are listed in order of the economic performance at the end of the preceding administration (as measured by inflation-adjusted growth in average personal income). Matchups are listed as incumbent party’s candidate versus other party’s candidate. The better the economy was performing, the better the incumbent party’s candidate did, with the biggest exceptions being 1952 (Korean War) and 1968 (Vietnam War).
 </p>
@@ -772,8 +772,8 @@ Figure 7.1: Douglas Hibbs’s “bread and peace” model of voting and the econ
 <div id="fitting-a-linear-model-to-data" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Fitting a linear model to data</h3>
 <p>Figure 7.2는 경제와 선거 데이터를 예측의 문제로서 보여준다. 두 정당 중 집권당의 득표율을 <code>vote</code>로, 이전 연도의 개인의 평균 소득 성장을 <code>growth</code>로 코딩한 데이터이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-81-1.png" alt="(a) Predicting elections from the economy: the data in Figure 7.1 expressed as a scatterplot, with one data point for each year, (b) the data with the linear fit, $y = 46.3 + 3.0x$. Repeated from Figure 1.1." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-73-1.png" alt="(a) Predicting elections from the economy: the data in Figure 7.1 expressed as a scatterplot, with one data point for each year, (b) the data with the linear fit, $y = 46.3 + 3.0x$. Repeated from Figure 1.1." width="864" />
 <p class="caption">
 Figure 7.2: (a) Predicting elections from the economy: the data in Figure 7.1 expressed as a scatterplot, with one data point for each year, (b) the data with the linear fit, <span class="math inline">\(y = 46.3 + 3.0x\)</span>. Repeated from Figure 1.1.
 </p>
@@ -830,8 +830,8 @@ Figure 7.2: (a) Predicting elections from the economy: the data in Figure 7.1 ex
 <p>위의 모델을 가지고 2016년 민주당의 힐러리 클린턴과 공화당의 도널드 트럼프의 대선에 적용해볼 수 있다. 선형모델은 <span class="math inline">\(46.3 + 3.0 * 2.0 = 52.3\)</span>을 예측한다. 이 예측된 득표율 하나 가지고는 힐러리가 2016년도에 이길 가능성이 얼마나 되는지를 예단하기 힘들다. 우리는 심지어 이 예측 결과에 있어서 존재할 수 있는 불확실성 또한 평가해야 한다.</p>
 <p>Figure 7.3은 예측 결과가 52.3을 평균으로 하고 3.8을 표준편차로 하는 확률분포로부터 도출된 결과라는 것을 보여주고 이를 어떻게 이해하는 것이 바람직한지를 보여준다.</p>
 <p>힐러리가 대중 투표에서 이길 확률을 추정하기 위해서 우리는 득표율에 대한 예측결과를 사용할 수 있다. 힐러리는 50% 이상의 표를 얻으면 승리한다. Figure 7.3에서 음영처리된 부분이 바로 그 확률을 보여준다. R에서도 주어진 통계치로 다음과 같이 확률을 구할 수 있다: <code>1 - pnorm(50, 52.3, 3.8)</code>. 결과인 0.72는 2016년 경제성장률이 2%라고 할 때, 힐러리가 대중투표에서 이길 확률이 약 72%라는 것을 의미한다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-83-1.png" alt="Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of $46.3 + 3.0 \times 2.0 = 52.3$ and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is `1-pnorm(50, 52.3, 3.9)`, or 0.72." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-75-1.png" alt="Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of $46.3 + 3.0 \times 2.0 = 52.3$ and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is `1-pnorm(50, 52.3, 3.9)`, or 0.72." width="672" />
 <p class="caption">
 Figure 7.3: Forecast distribution for Hillary Clinton’s percentage of the two-party vote in 2016 based on an economic growth rate of 2%. The curve shows a normal distribution centered at the point forecast of <span class="math inline">\(46.3 + 3.0 \times 2.0 = 52.3\)</span> and with standard deviation of 3.9, the estimated uncertainty based on the model fit. The shaded area indicates the probability (based on the model) that Clinton wins, which is <code>1-pnorm(50, 52.3, 3.9)</code>, or 0.72.
 </p>
@@ -1040,8 +1040,8 @@ x_i =
 <li><p>직접 비교와 회귀분석의 결과가 동일한지 여부를 직접적으로 확인할 수 있다.</p></li>
 <li><p>통계적 적합의 특성을 이해할 수 있도록 한다.</p></li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-97"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-97-1.png" alt="Simulated-data example showing how regression on an indicator variable is the same as computing the difference in means between two groups." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-89-1.png" alt="Simulated-data example showing how regression on an indicator variable is the same as computing the difference in means between two groups." width="672" />
 <p class="caption">
 Figure 7.4: Simulated-data example showing how regression on an indicator variable is the same as computing the difference in means between two groups.
 </p>

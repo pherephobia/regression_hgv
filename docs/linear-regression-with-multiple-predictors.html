@@ -796,8 +796,8 @@ div.csl-indent {
 \text{kid_score} = 78 + 12 \times \text{mom_hs} + \text{error}.
 \]</span></p>
 <p>이 모델은 엄마가 고등학교를 졸업한 아이들과 그렇지 않은 아이들 간의 평균 시험 성적의 차이를 보여준다. Figure 10.1은 그 회귀선이 두 집단의 평균을 지나가는지를 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-151"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-151-1.png" alt="Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-143"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-143-1.png" alt="Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other." width="672" />
 <p class="caption">
 Figure 10.1: Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other.
 </p>
@@ -814,8 +814,8 @@ Figure 10.1: Child’s test score plotted versus an indicator for whether mother
 <li><p>만약 우리가 엄마의 IQ가 1점 다른 두 집단에서의 아이들의 인지성적 점수의 평균을 비교한다면, 엄마의 IQ가 더 높은 집단의 아이들이 평균적으로 0.6 높은 인지성적 수준을 보여줄 것이다.</p></li>
 <li><p>그리고 여기에서 절편-상수항을 이해하려면, 모든 예측변수들이 0인 상황을 가정해야 한다.</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-152"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-152-1.png" alt="Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children  with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-144"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-144-1.png" alt="Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children  with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ." width="672" />
 <p class="caption">
 Figure 10.2: Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ.
 </p>
@@ -851,8 +851,8 @@ Figure 10.2: Child’s test score plotted versus maternal IQ with regression lin
 </div>
 <div id="understanding-the-fitted-model-1" class="section level3" number="10.1.4">
 <h3><span class="header-section-number">10.1.4</span> Understanding the fitted model</h3>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-154"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-154-1.png" alt="Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school)." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-146"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-146-1.png" alt="Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school)." width="672" />
 <p class="caption">
 Figure 10.3: Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school).
 </p>
@@ -926,12 +926,34 @@ Figure 10.3: Child’s test score plotted versus maternal IQ. Light dots represe
 \text{kid_score} = −11 + 51 \times \text{mom_hs} + 1.1 \times \text{mom_iq} − 0.5 \times \text{mom_hs}\times \text{mom_iq} + \text{error},
 \]</span></p>
 <p>Figure 10.4a와 같이 엄마의 교육 수준에 따라 정의되는 하위 집단으로 회귀선을 각기 추정할 수 있다. 한편 Figure 10.4b는 절편을 보여주는 <span class="math inline">\(x\)</span> 축이 0까지 확장된 그래프이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-156"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-156-1.png" alt="(a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-148"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-148-1.png" alt="(a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts." width="864" />
 <p class="caption">
 Figure 10.4: (a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts.
 </p>
 </div>
+<p>상호작용 모델의 경우에는 계수값 해석에 주의를 기울여야 한다. 특정한 하부집단 내/간(within/across) 평균 또는 예측된 시험 성적을 분석함으로써 우리는 적합한 모델로부터 함의를 이끌어낼 수 있다.</p>
+<ul>
+<li><p>절편: 엄마가 고등학교를 마치지 못했거나 IQ가 0인, 현실적으로 의미없는 시나리오의 경우에 아이들의 예측된 시험 성적을 보여준다.</p></li>
+<li><p><code>mom_hs</code>에 대한 계수: 엄마가 고등학교를 마치지 못했고 IQ가 0인 엄마를 가진 아이들과 고등학교는 마쳤지만 IQ 수준이 0인 엄마를 가진 아이들 간 인지시험 성적의 예측값의 차이라고 할 수 있다.</p>
+<ul>
+<li>보통 IQ 수준이 0인 경우를 상정할 수 없기 때문에 쉽게 해석하기는 어렵다.</li>
+</ul></li>
+<li><p><code>mom_iq</code>에 대한 계수: 엄마가 고등학교를 마치지 못했던 아이와 고등학교를 마친 엄마를 가진 아이 간에 IQ 성적 1점 차이가 아이의 인지시험 성적 평균의 차이에 있어서 얼마만큼의 변화를 가지고 오는지를 보여준다.</p></li>
+<li><p>상호작용항에 대한 계수: 엄마가 고등학교를 마치거나 마치지 못한 아이들 간의 <code>mon_iq</code>에 대한 기울기의 차이를 보여준다.</p>
+<ul>
+<li>즉, Figure 10.4에서 두 기울기의 차이를 의미한다.</li>
+</ul></li>
+</ul>
+<p>고등학교를 마친 엄마와 그렇지 못한 엄마를 가진 아이들 각각에 대해 별도의 회귀선을 수식으로 살펴보면 다음과 같다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{mom_has = 0}:\:\text{kid_score}&amp;=-11+51\times0+1.1\times\text{mom_iq}-0.5\times0\times\text{mom_iq}\\
+&amp;=-11+1.1\times\text{mom_iq}\\
+\text{mom_has = 1}:\:\text{kid_score}&amp;=-11+51\times1+1.1\times\text{mom_iq}-0.5\times1\times\text{mom_iq}\\
+&amp;=40+0.6\times\text{mom_iq}\\
+\end{aligned}
+\]</span></p>
 <div id="when-should-we-look-for-interactions" class="section level3" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> When should we look for interactions?</h3>
 </div>
