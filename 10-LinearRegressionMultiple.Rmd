@@ -1,28 +1,308 @@
-# Simulation
+# Linear regression with multiple predictors
 
-## Simulation of discrete probability models
+단순한 모델, $y = a + bx + \text{error}$로부터 좀 더 일반적인 모델, $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \cdots + \text{error}$로 넘어가게 되면, 모델에 어떤 예측변수, $x$를 포함할 것인가, 계수값에 대한 해석을 어떻게 할 것인가, 그 결과들이 어떻게 상호작용하며 이산성(discreteness)와 비선형성(nonlinearity)을 보여주는 기존 변수로부터 새로운 예측변수를 어떻게 구성할 것인지 등을 고려해야 한다.
 
-### How many girls in 400 births?
+## Adding predictors to a model
 
-### Accounting for twins
+회귀계수는 통상적으로 여러 개의 예측변수를 해석하는 것이 더 까다롭다. 왜냐하면 주어진 계수값은 어디까지나 모델 내 다른 변수들의 영향력을 고려한 부분적인 결과물이기 때문이다.
 
-## Simulation of continuous and mixed discrete/continuous models
+  + 계수 $\beta_k$는 다른 모든 예측변수들이 동일할 때, 예측변수 $x_k$의 한 단위 변화가 나타난 두 사람을 비교했을 때의 결과 $y_k$의 평균 혹은 기대값의 차이라고 할 수 있다.
 
-### Simulation in R using custom-made functions
+  + 성인 미국 여성과 아이들에 대한 설문조사로부터 얻은 데이터를 통해 어머니의 특성들이 조건주어졌을 때, 미취학 아동들의 인지시험성적을 예측하기 위한 일련의 회귀모델들을 적합해본다고 하자.
 
-## Summarizing a set of simulations using median and median absolute deviation
+```{r, echo = T}
+file_kids <- here::here("data/ros-master/KidIQ/data/kidiq.csv") 
+kidiq <- read_csv(file_kids)
+```
 
-## Bootstrapping to simulate a sampling distribution
+### Starting with a binary predictor
 
-### Choices in defining the bootstrap distribution
+엄마가 고등학교를 졸업했냐 하지 못했냐를 보여주는 더미변수가 주어졌을 때, 아이들의 시험 성적을 모델링해보자.
 
-#### Time series
+```{r, echo = T}
+fit_1 <- stan_glm(kid_score ~ mom_hs, 
+         data=kidiq, refresh = 0)
+print(fit_1)
+```
 
-#### Multilevel structure
+위의 코드는 다음과 같이 쓸 수 있다.
 
-#### Discrete data
+$$
+\text{kid_score} = 78 + 12 \times \text{mom_hs} + \text{error}.
+$$
 
-### Limitations of bootstrapping
+이 모델은 엄마가 고등학교를 졸업한 아이들과 그렇지 않은 아이들 간의 평균 시험 성적의 차이를 보여준다. Figure 10.1은 그 회귀선이 두 집단의 평균을 지나가는지를 보여준다.
 
-## Fake-data simulation as a way of life
+```{r, fig.cap = "Child’s test score plotted versus an indicator for whether mother completed high school. Superimposed is the regression line, which runs through the average of each subpopulation defined by maternal education level. The indicator variable for high school completion has been jittered; that is, a random number has been added to each x-value so that the points do not lie on top of each other."}
+intercept <- coef(fit_1)[["(Intercept)"]]
+slope <- coef(fit_1)[["mom_hs"]]
+
+kids %>% 
+  ggplot(aes(mom_hs, kid_score)) +
+  geom_jitter(alpha = 1/4, width = 0.025) +
+  geom_abline(slope = slope, intercept = intercept) +
+  scale_x_continuous(
+    breaks = 0:1,
+    minor_breaks = NULL,
+    labels = c("No", "Yes")
+  ) +
+  scale_y_continuous(breaks = scales::breaks_width(20)) +
+  labs(
+    title = "Child test score vs. mother high school completion",
+    x = "Mother completed high school",
+    y = "Child test score",
+    size = "Count"
+  )
+```
+
+### A single continuous predictor
+
+만약 더미변수가 아니라 연속형 변수, 엄마의 IQ 점수를 예측변수로 모델에 포함하였다면, 이는 다음과 같이 다시 쓸 수 있다.
+
+$$
+\text{kid_score} = 26 + 0.6\times \text{mom_iq} + \text{error}.
+$$
+
+이 모델을 시각화하면 Figure 10.2처럼 나타낼 수 있다. Figure 10.2의 선은 엄마의 IQ 수준의 각 관측치에 따른 아이들의 예측된 인지성적을 보여준다고 이해할 수 있다.
+
+  + 만약 우리가 엄마의 IQ가 1점 다른 두 집단에서의 아이들의 인지성적 점수의 평균을 비교한다면, 엄마의 IQ가 더 높은 집단의 아이들이 평균적으로 0.6 높은 인지성적 수준을 보여줄 것이다.
+  
+  + 그리고 여기에서 절편-상수항을 이해하려면, 모든 예측변수들이 0인 상황을 가정해야 한다.
+
+```{r, fig.cap = "Child’s test score plotted versus maternal IQ with regression line superimposed. Each point on the line can be conceived of either as a predicted child test score for children  with mothers who have the corresponding IQ, or as the average score for a subpopulation of children with mothers with that IQ." }
+fit_2 <- stan_glm(kid_score ~ mom_iq, data = kids, refresh = 0)
+intercept <- coef(fit_2)[["(Intercept)"]]
+slope <- coef(fit_2)[["mom_iq"]]
+
+kids %>% 
+  ggplot(aes(mom_iq, kid_score)) +
+  geom_point(alpha = 2/3) +
+  geom_abline(slope = slope, intercept = intercept) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_y_continuous(breaks = scales::breaks_width(20)) +
+  labs(
+    title = "Child test score vs. mother IQ score",
+    x = "Mother IQ score",
+    y = "Child test score"
+  )
+```
+
+### Including both predictors
+
+이번에는 두 개의 예측변수로 아이의 시험 성적을 예측하는 선형회귀모델을 고려해보자. 이 모델은 다음과 같이 나타낼 수 있다.
+
+$$
+\text{kid_score} = 26 + 6.0 \times \text{mom_hs} +  0.6\times \text{mom_iq} +  \text{error}.
+$$
+
+```{r, echo = T}
+fit_3 <- stan_glm(kid_score ~ mom_hs + mom_iq, 
+                  data=kidiq, refresh = 0)
+print(fit_3)
+```
+
+### Understanding the fitted model
+
+```{r, fig.cap = "Child’s test score plotted versus maternal IQ. Light dots represent children whose mothers graduated from high school and dark dots represent children whose mothers did not graduate from high school. Superimposed are the lines from the regression of child’s test score on maternal IQ and maternal high school indicator (the darker line for children whose mothers did not complete high school, the lighter line for children whose mothers did complete high school)."}
+lines <- 
+  tribble(
+    ~mom_hs, ~intercept, ~slope,
+    0, coef(fit_3)[["(Intercept)"]], coef(fit_3)[["mom_iq"]],
+    1, 
+      coef(fit_3)[["(Intercept)"]] + coef(fit_3)[["mom_hs"]],
+      coef(fit_3)[["mom_iq"]]
+  )
+
+kids %>% 
+  ggplot(aes(mom_iq, kid_score, color = factor(mom_hs))) +
+  geom_point() +
+  geom_abline(
+    aes(slope = slope, intercept = intercept, color = factor(mom_hs)),
+    data = lines
+  ) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_y_continuous(breaks = scales::breaks_width(20)) +
+  scale_color_discrete(breaks = 0:1, labels = c("No", "Yes")) +
+  theme(legend.position = "bottom") +
+  labs(
+    title = "Child test score vs. mother IQ score and high school completion",
+    subtitle = "Without interaction",
+    x = "Mother IQ score",
+    y = "Child test score",
+    color = "Mother completed high school"
+  )
+```
+
+엄마의 IQ 성적이 아이들의 인지시험 성적에 미치는 효과-회귀모델의 기울기는 엄마의 교육 수준에 따라 나뉜 두 집단에 따라 동일하다. 뒤에 이어지는 Section 10.3에서는 두 선의 기울기가 달라질 수 있는 상호작용 모델을 고려해볼 것이다. 일단 여기서 모델을 해석하자면 다음과 같다.
+
+  + 절편: 만약 아이가 IQ가 0인 엄마를 가지고 있고 또한 그 엄마가 고등학교를 졸업하지 않았다면, 아이의 인지시험 성적은 26점일 것이라고 예측된다.
+  
+    + 하지만 이 예측은 유용하지 않다. 왜냐하면 현실적으로 쉽게 찾아보기 힘든 경우이기 때문이다.
+    
+  + 엄마의 고등학교 졸업에 대한 계수: 동일한 IQ의 엄마를 가졌지만 한 쪽은 고등학교를 졸업, 다른 한 쪽은 졸업하지 않은 두 아이가 있다고 할 때, 모델은 이 두 아이의 인지성적 차이가 6점일 것으로 예측한다.
+
+  + 엄마의 IQ에 대한 계수: 엄마의 고등학교 졸업 여부가 같을 때, 엄마의 IQ 수준이 1점 차이가 날 때, 아이의 시험 성적은 평균적으로 0.6점 차이가 난다고 예측한다.
+
+## Interpreting regression coefficients
+
+### It’s not always possible to change one predictor while holding all others constant
+
+우리는 다른 예측변수가 동일한 수준으로 고정되어 있을 때, 한 예측변수의 변화에 따른 개인들의 결과변수를 비교하는 것으로 회귀계수를 해석한다.
+
+### Counterfactual and predictive interpretations
+
+다중선형회귀모델에서 어떻게 계수값을 해석할 것인지를 생각해볼 때, 우리는 회귀계수에 대한 해석 방식을 두 가지로 구분한다.
+
+  + 예측적 해석(predictive interpretation)
+  
+    + 다른 모든 예측변수들이 동일할 때, 특정 예측변수의 한 단위 변화가 서로 다른 두 집단의 결과변수에 있어서 평균적으로 어떠한 차이를 가져오는지에 초점을 맞추어 해석한다.
+    
+    + 선형모델에서 계수값은 두 관측치에 있어서 $y$의 기대값의 차이라고 이해할 수 있다.
+  
+  + 반사실적 해석(counterfactual interpretation)
+  
+    + 개인들 간의 비교라기보다는 개인들 내의 변화로 이해할 수 있다.
+    
+    + 모델에서 다른 예측변수들이 변화하지 않을 때, 한 예측변수의 한 단위 변화가 $y$에 가져오는 기대값의 변화로 이해하는 것이다.
+
+  + 하지만 명확하게 말하면 데이터만 가지고는 회귀모델은 오직 단위 간의 비교만을 말할 수 있을 뿐, 단위 내의 변화에 대해서는 구분할 수 없다.
+  
+    + 따라서 비교의 맥락에서 회귀계수를 해석하는 것이 더 안전한 방법이라고 할 수 있다.
+
+## Interactions
+
+앞서서는 엄마의 IQ 점수와 고등학교 졸업 유무가 서로 독립적으로 아이의 시험성적에 영향을 미치는 것으로 모델링되었다면, 이번에는 그 둘이 서로 상호작용하는, 그래서 기울기가 실질적으로 다르게 나타나는 경우를 살펴본다: `mom_hs`와 `mom_iq` 간의 상호작용항을 포함하는 것이다.
+
+```{r, echo = T}
+fit_4 <- stan_glm(kid_score ~ mom_hs + mom_iq + 
+                    mom_hs:mom_iq, data=kidiq,
+                  refresh = 0)
+print(fit_4)
+```
+
+이러한 상호작용을 포함한 모델은 주효과(main effects)와 그 상호작용 효과, `mom_hs:mom_iq`을 포함하고, 다음과 같이 나타낼 수 있다.
+
+$$
+\text{kid_score} = −11 + 51 \times \text{mom_hs} + 1.1 \times \text{mom_iq} − 0.5 \times \text{mom_hs}\times \text{mom_iq} + \text{error},
+$$
+
+Figure 10.4a와 같이 엄마의 교육 수준에 따라 정의되는 하위 집단으로 회귀선을 각기 추정할 수 있다. 한편 Figure 10.4b는 절편을 보여주는 $x$ 축이 0까지 확장된 그래프이다.
+
+```{r, fig.width=9, fig.height=4, fig.cap="(a) Regression lines of child’s test score on mother’s IQ with different symbols for children of mothers who completed high school (light circles) and those whose mothers did not complete high school (dark dots). The interaction allows for a different slope in each group, with light and dark lines corresponding to the light and dark points. (b) Same plot but with horizontal and vertical axes extended to zero to reveal the intercepts."}
+lines <- 
+  tribble(
+    ~mom_hs, ~intercept, ~slope,
+    0, coef(fit_4)[["(Intercept)"]], coef(fit_4)[["mom_iq"]],
+    1, 
+      coef(fit_4)[["(Intercept)"]] + coef(fit_4)[["mom_hs"]],
+      coef(fit_4)[["mom_iq"]] + coef(fit_4)[["mom_hs:mom_iq"]]
+  )
+
+kids %>% 
+  ggplot(aes(mom_iq, kid_score, color = factor(mom_hs))) +
+  geom_point() +
+  geom_abline(
+    aes(slope = slope, intercept = intercept, color = factor(mom_hs)),
+    data = lines
+  ) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_y_continuous(breaks = scales::breaks_width(20)) +
+  scale_color_discrete(breaks = 0:1, labels = c("No", "Yes")) +
+  theme(legend.position = "bottom") +
+  labs(
+    title = "Child test score vs. mother IQ score and high school completion",
+    subtitle = "With interaction",
+    x = "Mother IQ score",
+    y = "Child test score",
+    color = "Mother completed high school"
+  )+ theme(plot.title = element_text(size = 10),
+            plot.subtitle = element_text(size = 9)) -> 
+  fig10.4a
+
+kids %>% 
+  ggplot(aes(mom_iq, kid_score, color = factor(mom_hs))) +
+  geom_point(size = 0.75) +
+  geom_abline(
+    aes(slope = slope, intercept = intercept, color = factor(mom_hs)),
+    data = lines
+  ) +
+  coord_cartesian(xlim = c(0, NA), ylim = c(-20, NA)) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_y_continuous(breaks = scales::breaks_width(20)) +
+  scale_color_discrete(breaks = 0:1, labels = c("No", "Yes")) +
+  theme(legend.position = "bottom") +
+  labs(
+    title = "Child test score vs. mother IQ score and high school completion",
+    subtitle = "With interaction",
+    x = "Mother IQ score",
+    y = "Child test score",
+    color = "Mother completed high school"
+  ) + theme(plot.title = element_text(size = 10),
+            plot.subtitle = element_text(size = 9)) -> fig10.4b
+
+fig10.4a + fig10.4b
+```
+
+
+### When should we look for interactions?
+
+### Interpreting regression coefficients in the presence of interactions
+
+## Indicator variables
+
+### Centering a predictor
+
+### Including a binary variable in a regression
+
+### Using indicator variables for multiple levels of a categorical predictor
+
+### Changing the baseline factor level
+
+### Using an index variable to access a group-level predictor
+
+## Formulating paired or blocked designs as a regression problem
+
+### Completely randomized experiment
+
+### Paired design
+
+### Block design
+
+## Example: uncertainty in predicting congressional elections
+
+### Background
+
+### Data issues
+
+### Fitting the model
+
+### Simulation for inferences and predictions of new data points
+
+### Predictive simulation for a nonlinear function of new data
+
+### Combining simulation and analytic calculations
+
+## Mathematical notation and statistical inference
+
+### Predictors
+
+### Regression in vector-matrix notation
+
+### Two ways of writing the model
+
+### Least squares, maximum likelihood, and Bayesian inference
+
+### Nonidentified parameters, collinearity, and the likelihood function
+
+### Hypothesis testing: why we do not like $t$ tests and $F$ tests
+
+## Weighted regression
+
+### Three models leading to weighted regression
+
+### Using a matrix of weights to account for correlated errors
+
+## Fitting the same model to many datasets
+
+### Predicting party identification
 

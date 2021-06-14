@@ -95,12 +95,12 @@ $$
 
   1. 잔차의 제곱합(residual sum of squares)에 대한 `rss`의 함수를 작성한다.
   
-    ```{r, echo = T}
-    rss <- function(x, y, a, b){ # x and y are vectors, a and b are scalars
-      resid <- y - (a + b*x)
-      return(sum(resid^2))
-      }
-    ```
+```{r, echo = T}
+rss <- function(x, y, a, b){ # x and y are vectors, a and b are scalars
+resid <- y - (a + b*x)
+return(sum(resid^2))
+  }
+```
 
 ```{r, echo = F}
 file_hibbs <- here::here("data/ros-master/ElectionsEconomy/data/hibbs.dat")
@@ -418,7 +418,7 @@ stan_glm(y ~ x, data=mydata,
 
 확률적 예측 필요없이 최대가능도 추정량만 필요하다고 하면 R의 `lm()` 함수로 추정하면 된다.
 
-```{r. echo = T, eval = F}
+```{r, echo = T, eval = F}
 lm(y ~ x, data = mydata)
 ```
 

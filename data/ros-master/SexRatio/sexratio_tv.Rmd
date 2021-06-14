@@ -220,7 +220,7 @@ sims_inform %>%
 Bayes regression line and posterior uncertainty given informative prior.
 
 ```{r}
-set.seed(264)
+set.seed(1224)
 
 n_lines <- 100
 

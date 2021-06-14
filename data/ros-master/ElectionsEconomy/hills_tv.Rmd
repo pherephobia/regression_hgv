@@ -92,7 +92,7 @@ Coefficients with ±1 standard error and coefficient likelihood.
 ```{r}
 v %>% 
   ggplot(aes(a, b)) +
-  geom_contour(aes(z = prob)) +
+#  geom_contour(aes(z = prob)) +
   annotate(
     "segment",
     x    = c(a_1 - a_1_se, a_1),
@@ -101,7 +101,8 @@ v %>%
     yend = c(b_1, b_1 + b_1_se)
   ) +
   geom_point(data = tibble(a = a_1, b = b_1), color = "red") +
-  scale_x_continuous(breaks = scales::breaks_width(1)) +
+  scale_x_continuous(breaks = c(seq(40, 52, 1)), limits=c(40, 52)) +
+  scale_y_continuous(breaks = c(seq(1, 6, 1)), limits=c(1, 6)) +
   labs(
     title = "Coefficients with ±1 standard error and coefficient likelihood"
   )

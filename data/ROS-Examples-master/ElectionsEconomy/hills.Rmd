@@ -42,16 +42,17 @@ head(hibbs)
 
 ```{r }
 M1 <- lm(vote ~ growth, data = hibbs)
-display(M1)
+arm::display(M1)
 summ <- summary(M1)
 ```
 
 #### Plot likelihood (a, b| y)
 
 ```{r eval=FALSE, include=FALSE}
-if (savefigs) pdf(root("ElectionsEconomy/figs","hill_2a.pdf"), height=4, width=5)
+if (savefigs) pdf(root("","hill_2a.pdf"), height=4, width=5)
 ```
 ```{r }
+
 # Contour plots etc of simple likelihoods
 trans3d <- function(x,y,z, pmat) {
        tr <- cbind(x,y,z,1) %*% pmat
