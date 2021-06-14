@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Simulation | Reading Notes for Regression and Other Stories</title>
-  <meta name="description" content="Chapter 13 Simulation | Reading Notes for Regression and Other Stories" />
+  <title>Chapter 14 Simulation | Reading Notes for Regression and Other Stories</title>
+  <meta name="description" content="Chapter 14 Simulation | Reading Notes for Regression and Other Stories" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Simulation | Reading Notes for Regression and Other Stories" />
+  <meta property="og:title" content="Chapter 14 Simulation | Reading Notes for Regression and Other Stories" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="pherephobia/regression_hgv" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Simulation | Reading Notes for Regression and Other Stories" />
+  <meta name="twitter:title" content="Chapter 14 Simulation | Reading Notes for Regression and Other Stories" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-06-13" />
+<meta name="date" content="2021-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,8 +55,6 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -373,278 +371,297 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#influence-of-individual-points-in-a-fitted-regression"><i class="fa fa-check"></i><b>8.2</b> Influence of individual points in a fitted regression</a></li>
 <li class="chapter" data-level="8.3" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#least-squares-slope-as-a-weighted-average-of-slopes-of-pairs"><i class="fa fa-check"></i><b>8.3</b> Least squares slope as a weighted average of slopes of pairs</a></li>
-<li class="chapter" data-level="8.4" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#comparing-two-fitting-functions-lm-and-stan_glm"><i class="fa fa-check"></i><b>8.4</b> Comparing two fitting functions: lm and stan_glm</a>
+<li class="chapter" data-level="8.4" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#comparing-two-fitting-functions-lm-and-stan_glm"><i class="fa fa-check"></i><b>8.4</b> Comparing two fitting functions: <code>lm</code> and <code>stan_glm</code></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#reproducing-maximum-likelihood-using-stan_glm-with-flat-priors-and-optimization"><i class="fa fa-check"></i><b>8.4.1</b> Reproducing maximum likelihood using stan_glm with flat priors and optimization</a></li>
-<li class="chapter" data-level="8.4.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#running-lm"><i class="fa fa-check"></i><b>8.4.2</b> Running lm</a></li>
+<li class="chapter" data-level="8.4.1" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#reproducing-maximum-likelihood-using-stan_glm-with-flat-priors-and-optimization"><i class="fa fa-check"></i><b>8.4.1</b> Reproducing maximum likelihood using <code>stan_glm</code> with flat priors and optimization</a></li>
+<li class="chapter" data-level="8.4.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#running-lm"><i class="fa fa-check"></i><b>8.4.2</b> Running <code>lm</code></a></li>
 <li class="chapter" data-level="8.4.3" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#confidence-intervals-uncertainty-intervals-compatibility-intervals"><i class="fa fa-check"></i><b>8.4.3</b> Confidence intervals, uncertainty intervals, compatibility intervals</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>9</b> Simulation</a>
+<li class="chapter" data-level="9" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html"><i class="fa fa-check"></i><b>9</b> Prediction and Bayesian inference</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>9.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="9.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#propagating-uncertainty-in-inference-using-posterior-simulations"><i class="fa fa-check"></i><b>9.1</b> Propagating uncertainty in inference using posterior simulations</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>9.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="9.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>9.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="9.1.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uncertainty-in-the-regression-coefficients-and-implied-uncertainty-in-the-regression-line"><i class="fa fa-check"></i><b>9.1.1</b> Uncertainty in the regression coefficients and implied uncertainty in the regression line</a></li>
+<li class="chapter" data-level="9.1.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#using-the-matrix-of-posterior-simulations-to-express-uncertainty-about-a-parameter-estimate-or-function-of-parameter-estimates"><i class="fa fa-check"></i><b>9.1.2</b> Using the matrix of posterior simulations to express uncertainty about a parameter estimate or function of parameter estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>9.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="9.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prediction-and-uncertainty-predict-posterior_linpred-and-posterior_predict"><i class="fa fa-check"></i><b>9.2</b> Prediction and uncertainty: predict, posterior_linpred, and posterior_predict</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>9.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="9.2.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#point-prediction-using-predict"><i class="fa fa-check"></i><b>9.2.1</b> Point prediction using predict</a></li>
+<li class="chapter" data-level="9.2.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#linear-predictor-with-uncertainty-using-posterior_linpred-or-posterior_epred"><i class="fa fa-check"></i><b>9.2.2</b> Linear predictor with uncertainty using posterior_linpred or posterior_epred</a></li>
+<li class="chapter" data-level="9.2.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#predictive-distribution-for-a-new-observation-using-posterior_predict"><i class="fa fa-check"></i><b>9.2.3</b> Predictive distribution for a new observation using posterior_predict</a></li>
+<li class="chapter" data-level="9.2.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prediction-given-a-range-of-input-values"><i class="fa fa-check"></i><b>9.2.4</b> Prediction given a range of input values</a></li>
+<li class="chapter" data-level="9.2.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#propagating-uncertainty"><i class="fa fa-check"></i><b>9.2.5</b> Propagating uncertainty</a></li>
+<li class="chapter" data-level="9.2.6" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#simulating-uncertainty-for-the-linear-predictor-and-new-observations"><i class="fa fa-check"></i><b>9.2.6</b> Simulating uncertainty for the linear predictor and new observations</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>9.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="9.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="9.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-information-and-bayesian-synthesis"><i class="fa fa-check"></i><b>9.3</b> Prior information and Bayesian synthesis</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>9.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="9.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>9.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="9.3.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#expressing-data-and-prior-information-on-the-same-scale"><i class="fa fa-check"></i><b>9.3.1</b> Expressing data and prior information on the same scale</a></li>
+<li class="chapter" data-level="9.3.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#bayesian-information-aggregation"><i class="fa fa-check"></i><b>9.3.2</b> Bayesian information aggregation</a></li>
+<li class="chapter" data-level="9.3.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#different-ways-of-assigning-prior-distributions-and-performing-bayesian-calculations"><i class="fa fa-check"></i><b>9.3.3</b> Different ways of assigning prior distributions and performing Bayesian calculations</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>9.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>10</b> Simulation</a>
+<li class="chapter" data-level="9.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#example-of-bayesian-inference-beauty-and-sex-ratio"><i class="fa fa-check"></i><b>9.4</b> Example of Bayesian inference: beauty and sex ratio</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>10.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>10.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="10.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>10.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="9.4.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-information"><i class="fa fa-check"></i><b>9.4.1</b> Prior information</a></li>
+<li class="chapter" data-level="9.4.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-estimate-and-standard-error"><i class="fa fa-check"></i><b>9.4.2</b> Prior estimate and standard error</a></li>
+<li class="chapter" data-level="9.4.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#data-estimate-and-standard-error"><i class="fa fa-check"></i><b>9.4.3</b> Data estimate and standard error</a></li>
+<li class="chapter" data-level="9.4.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#bayes-estimate"><i class="fa fa-check"></i><b>9.4.4</b> Bayes estimate</a></li>
+<li class="chapter" data-level="9.4.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#understanding-the-bayes-estimate"><i class="fa fa-check"></i><b>9.4.5</b> Understanding the Bayes estimate</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>10.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="9.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uniform-weakly-informative-and-informative-priors-in-regression"><i class="fa fa-check"></i><b>9.5</b> Uniform, weakly informative, and informative priors in regression</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>10.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="9.5.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uniform-prior-distribution"><i class="fa fa-check"></i><b>9.5.1</b> Uniform prior distribution</a></li>
+<li class="chapter" data-level="9.5.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#default-prior-distribution"><i class="fa fa-check"></i><b>9.5.2</b> Default prior distribution</a></li>
+<li class="chapter" data-level="9.5.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#weakly-informative-prior-distribution-based-on-subject-matter-knowledge"><i class="fa fa-check"></i><b>9.5.3</b> Weakly informative prior distribution based on subject-matter knowledge</a></li>
+<li class="chapter" data-level="9.5.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#example-where-an-informative-prior-makes-a-difference-beauty-and-sex-ratio"><i class="fa fa-check"></i><b>9.5.4</b> Example where an informative prior makes a difference: Beauty and sex ratio</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>10.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="10.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>10.4</b> Bootstrapping to simulate a sampling distribution</a>
+</ul></li>
+<li class="chapter" data-level="10" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>10</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>10.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="10.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>10.4.2</b> Limitations of bootstrapping</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>10.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>11</b> Simulation</a>
+<li class="chapter" data-level="10.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>10.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>11.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>11.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="11.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>11.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="10.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>10.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>10.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>11.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="10.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>10.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>11.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="10.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>10.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>11.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="11.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>11.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="10.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>10.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="10.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>10.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>11.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="11.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>11.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="10.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>10.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="10.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>10.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>11.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="10.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>10.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
+<li class="chapter" data-level="11" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>11</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="11.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>11.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="12.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>11.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="11.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>11.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="11.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>11.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="12.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="11.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>11.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="12.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="11.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>11.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="11.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>11.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="12.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="12.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="11.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>11.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="11.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>11.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="11.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>11.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
+<li class="chapter" data-level="12" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="12.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="13.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="13.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="12.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="12.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="12.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="12.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="13.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="12.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="12.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="13.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="12.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="12.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="12.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
+<li class="chapter" data-level="13" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="13.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="14.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="14.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="13.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="13.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="13.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="14.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="13.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="14.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="13.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="13.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="14.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="13.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="13.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="13.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
+<li class="chapter" data-level="14" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="14.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="15.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="14.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="14.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="14.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="15.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="14.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="15.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="14.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="14.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="15.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="14.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="14.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
+<li class="chapter" data-level="15" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="15.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="16.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="15.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="15.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="15.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="15.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="16.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="16.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="15.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="15.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="16.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="15.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="15.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="15.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
+<li class="chapter" data-level="16" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="16.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="17.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="16.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="16.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="16.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="16.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="17.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="16.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="16.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="17.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="16.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="16.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="17.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="16.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
+<li class="chapter" data-level="17" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="17.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="18.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="18.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="17.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="17.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="17.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="18.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="17.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="18.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="18.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="17.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="17.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="18.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="18.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="17.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="17.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="18.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="17.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
+<li class="chapter" data-level="18" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="18.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="19.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="19.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="18.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="18.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="19.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="18.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="19.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="18.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="19.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="18.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="18.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="19.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="18.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="18.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="18.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="simulation-12.html"><a href="simulation-12.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
+<li class="chapter" data-level="19" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-discrete-probability-models-12"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="19.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="simulation-12.html"><a href="simulation-12.html#how-many-girls-in-400-births-12"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="20.1.2" data-path="simulation-12.html"><a href="simulation-12.html#accounting-for-twins-12"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="19.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="19.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-continuous-and-mixed-discretecontinuous-models-12"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="19.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="20.2.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-in-r-using-custom-made-functions-12"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="19.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="20.3" data-path="simulation-12.html"><a href="simulation-12.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-12"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="20.4" data-path="simulation-12.html"><a href="simulation-12.html#bootstrapping-to-simulate-a-sampling-distribution-12"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="19.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="19.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="20.4.1" data-path="simulation-12.html"><a href="simulation-12.html#choices-in-defining-the-bootstrap-distribution-12"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="20.4.2" data-path="simulation-12.html"><a href="simulation-12.html#limitations-of-bootstrapping-12"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="19.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="19.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="20.5" data-path="simulation-12.html"><a href="simulation-12.html#fake-data-simulation-as-a-way-of-life-12"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="19.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="simulation-13.html"><a href="simulation-13.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<li class="chapter" data-level="20" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="simulation-13.html"><a href="simulation-13.html#simulation-of-discrete-probability-models-13"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="20.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="simulation-13.html"><a href="simulation-13.html#how-many-girls-in-400-births-13"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="21.1.2" data-path="simulation-13.html"><a href="simulation-13.html#accounting-for-twins-13"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="20.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="20.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="simulation-13.html"><a href="simulation-13.html#simulation-of-continuous-and-mixed-discretecontinuous-models-13"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="20.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="21.2.1" data-path="simulation-13.html"><a href="simulation-13.html#simulation-in-r-using-custom-made-functions-13"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="20.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="21.3" data-path="simulation-13.html"><a href="simulation-13.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-13"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="21.4" data-path="simulation-13.html"><a href="simulation-13.html#bootstrapping-to-simulate-a-sampling-distribution-13"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="20.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="20.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="21.4.1" data-path="simulation-13.html"><a href="simulation-13.html#choices-in-defining-the-bootstrap-distribution-13"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="21.4.2" data-path="simulation-13.html"><a href="simulation-13.html#limitations-of-bootstrapping-13"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="20.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="20.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="21.5" data-path="simulation-13.html"><a href="simulation-13.html#fake-data-simulation-as-a-way-of-life-13"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="20.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="simulation-14.html"><a href="simulation-14.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<li class="chapter" data-level="21" data-path="simulation-12.html"><a href="simulation-12.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="22.1" data-path="simulation-14.html"><a href="simulation-14.html#simulation-of-discrete-probability-models-14"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="21.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-discrete-probability-models-12"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="22.1.1" data-path="simulation-14.html"><a href="simulation-14.html#how-many-girls-in-400-births-14"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="22.1.2" data-path="simulation-14.html"><a href="simulation-14.html#accounting-for-twins-14"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="21.1.1" data-path="simulation-12.html"><a href="simulation-12.html#how-many-girls-in-400-births-12"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="21.1.2" data-path="simulation-12.html"><a href="simulation-12.html#accounting-for-twins-12"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="22.2" data-path="simulation-14.html"><a href="simulation-14.html#simulation-of-continuous-and-mixed-discretecontinuous-models-14"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="21.2" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-continuous-and-mixed-discretecontinuous-models-12"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="22.2.1" data-path="simulation-14.html"><a href="simulation-14.html#simulation-in-r-using-custom-made-functions-14"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="21.2.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-in-r-using-custom-made-functions-12"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="22.3" data-path="simulation-14.html"><a href="simulation-14.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-14"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="22.4" data-path="simulation-14.html"><a href="simulation-14.html#bootstrapping-to-simulate-a-sampling-distribution-14"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="21.3" data-path="simulation-12.html"><a href="simulation-12.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-12"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="21.4" data-path="simulation-12.html"><a href="simulation-12.html#bootstrapping-to-simulate-a-sampling-distribution-12"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="22.4.1" data-path="simulation-14.html"><a href="simulation-14.html#choices-in-defining-the-bootstrap-distribution-14"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="22.4.2" data-path="simulation-14.html"><a href="simulation-14.html#limitations-of-bootstrapping-14"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="21.4.1" data-path="simulation-12.html"><a href="simulation-12.html#choices-in-defining-the-bootstrap-distribution-12"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="21.4.2" data-path="simulation-12.html"><a href="simulation-12.html#limitations-of-bootstrapping-12"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="22.5" data-path="simulation-14.html"><a href="simulation-14.html#fake-data-simulation-as-a-way-of-life-14"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="21.5" data-path="simulation-12.html"><a href="simulation-12.html#fake-data-simulation-as-a-way-of-life-12"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="simulation-13.html"><a href="simulation-13.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="simulation-13.html"><a href="simulation-13.html#simulation-of-discrete-probability-models-13"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="simulation-13.html"><a href="simulation-13.html#how-many-girls-in-400-births-13"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="22.1.2" data-path="simulation-13.html"><a href="simulation-13.html#accounting-for-twins-13"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="simulation-13.html"><a href="simulation-13.html#simulation-of-continuous-and-mixed-discretecontinuous-models-13"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="simulation-13.html"><a href="simulation-13.html#simulation-in-r-using-custom-made-functions-13"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="simulation-13.html"><a href="simulation-13.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-13"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="22.4" data-path="simulation-13.html"><a href="simulation-13.html#bootstrapping-to-simulate-a-sampling-distribution-13"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="simulation-13.html"><a href="simulation-13.html#choices-in-defining-the-bootstrap-distribution-13"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="22.4.2" data-path="simulation-13.html"><a href="simulation-13.html#limitations-of-bootstrapping-13"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="simulation-13.html"><a href="simulation-13.html#fake-data-simulation-as-a-way-of-life-13"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html"><i class="fa fa-check"></i><b>23</b> Exercises of Regression and Other Stories</a>
 <ul>
@@ -697,46 +714,46 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="simulation-5" class="section level1" number="13">
-<h1><span class="header-section-number">Chapter 13</span> Simulation</h1>
-<div id="simulation-of-discrete-probability-models-5" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Simulation of discrete probability models</h2>
-<div id="how-many-girls-in-400-births-5" class="section level3" number="13.1.1">
-<h3><span class="header-section-number">13.1.1</span> How many girls in 400 births?</h3>
+<div id="simulation-5" class="section level1" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Simulation</h1>
+<div id="simulation-of-discrete-probability-models-5" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> Simulation of discrete probability models</h2>
+<div id="how-many-girls-in-400-births-5" class="section level3" number="14.1.1">
+<h3><span class="header-section-number">14.1.1</span> How many girls in 400 births?</h3>
 </div>
-<div id="accounting-for-twins-5" class="section level3" number="13.1.2">
-<h3><span class="header-section-number">13.1.2</span> Accounting for twins</h3>
-</div>
-</div>
-<div id="simulation-of-continuous-and-mixed-discretecontinuous-models-5" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> Simulation of continuous and mixed discrete/continuous models</h2>
-<div id="simulation-in-r-using-custom-made-functions-5" class="section level3" number="13.2.1">
-<h3><span class="header-section-number">13.2.1</span> Simulation in R using custom-made functions</h3>
+<div id="accounting-for-twins-5" class="section level3" number="14.1.2">
+<h3><span class="header-section-number">14.1.2</span> Accounting for twins</h3>
 </div>
 </div>
-<div id="summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> Summarizing a set of simulations using median and median absolute deviation</h2>
-</div>
-<div id="bootstrapping-to-simulate-a-sampling-distribution-5" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> Bootstrapping to simulate a sampling distribution</h2>
-<div id="choices-in-defining-the-bootstrap-distribution-5" class="section level3" number="13.4.1">
-<h3><span class="header-section-number">13.4.1</span> Choices in defining the bootstrap distribution</h3>
-<div id="time-series-5" class="section level4" number="13.4.1.1">
-<h4><span class="header-section-number">13.4.1.1</span> Time series</h4>
-</div>
-<div id="multilevel-structure-5" class="section level4" number="13.4.1.2">
-<h4><span class="header-section-number">13.4.1.2</span> Multilevel structure</h4>
-</div>
-<div id="discrete-data-5" class="section level4" number="13.4.1.3">
-<h4><span class="header-section-number">13.4.1.3</span> Discrete data</h4>
+<div id="simulation-of-continuous-and-mixed-discretecontinuous-models-5" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> Simulation of continuous and mixed discrete/continuous models</h2>
+<div id="simulation-in-r-using-custom-made-functions-5" class="section level3" number="14.2.1">
+<h3><span class="header-section-number">14.2.1</span> Simulation in R using custom-made functions</h3>
 </div>
 </div>
-<div id="limitations-of-bootstrapping-5" class="section level3" number="13.4.2">
-<h3><span class="header-section-number">13.4.2</span> Limitations of bootstrapping</h3>
+<div id="summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Summarizing a set of simulations using median and median absolute deviation</h2>
+</div>
+<div id="bootstrapping-to-simulate-a-sampling-distribution-5" class="section level2" number="14.4">
+<h2><span class="header-section-number">14.4</span> Bootstrapping to simulate a sampling distribution</h2>
+<div id="choices-in-defining-the-bootstrap-distribution-5" class="section level3" number="14.4.1">
+<h3><span class="header-section-number">14.4.1</span> Choices in defining the bootstrap distribution</h3>
+<div id="time-series-5" class="section level4" number="14.4.1.1">
+<h4><span class="header-section-number">14.4.1.1</span> Time series</h4>
+</div>
+<div id="multilevel-structure-5" class="section level4" number="14.4.1.2">
+<h4><span class="header-section-number">14.4.1.2</span> Multilevel structure</h4>
+</div>
+<div id="discrete-data-5" class="section level4" number="14.4.1.3">
+<h4><span class="header-section-number">14.4.1.3</span> Discrete data</h4>
 </div>
 </div>
-<div id="fake-data-simulation-as-a-way-of-life-5" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Fake-data simulation as a way of life</h2>
+<div id="limitations-of-bootstrapping-5" class="section level3" number="14.4.2">
+<h3><span class="header-section-number">14.4.2</span> Limitations of bootstrapping</h3>
+</div>
+</div>
+<div id="fake-data-simulation-as-a-way-of-life-5" class="section level2" number="14.5">
+<h2><span class="header-section-number">14.5</span> Fake-data simulation as a way of life</h2>
 
 </div>
 </div>
