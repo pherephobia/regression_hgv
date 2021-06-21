@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2021-06-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="statistical-inference.html"/>
 <link rel="next" href="background-on-regression-modeling.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,6 +55,8 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -476,233 +478,265 @@ div.csl-indent {
 <li class="chapter" data-level="10.9.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predicting-party-identification"><i class="fa fa-check"></i><b>10.9.1</b> Predicting party identification</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>11</b> Simulation</a>
+<li class="chapter" data-level="11" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html"><i class="fa fa-check"></i><b>11</b> Assumptions, diagnostics, and model evaluation</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>11.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="11.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#assumptions-of-regression-analysis"><i class="fa fa-check"></i><b>11.1</b> Assumptions of regression analysis</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>11.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="11.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>11.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.1.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#failures-of-the-assumptions"><i class="fa fa-check"></i><b>11.1.1</b> Failures of the assumptions</a></li>
+<li class="chapter" data-level="11.1.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#causal-inference"><i class="fa fa-check"></i><b>11.1.2</b> Causal inference</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>11.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="11.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-data-and-fitted-model"><i class="fa fa-check"></i><b>11.2</b> Plotting the data and fitted model</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>11.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="11.2.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-a-regression-line-as-a-function-of-one-input-variable"><i class="fa fa-check"></i><b>11.2.1</b> Displaying a regression line as a function of one input variable</a></li>
+<li class="chapter" data-level="11.2.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-two-fitted-regression-lines"><i class="fa fa-check"></i><b>11.2.2</b> Displaying two fitted regression lines</a></li>
+<li class="chapter" data-level="11.2.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-uncertainty-in-the-fitted-regression"><i class="fa fa-check"></i><b>11.2.3</b> Displaying uncertainty in the fitted regression</a></li>
+<li class="chapter" data-level="11.2.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-using-one-plot-for-each-input-variable"><i class="fa fa-check"></i><b>11.2.4</b> Displaying using one plot for each input variable</a></li>
+<li class="chapter" data-level="11.2.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-outcome-vs.-a-continuous-predictor"><i class="fa fa-check"></i><b>11.2.5</b> Plotting the outcome vs. a continuous predictor</a></li>
+<li class="chapter" data-level="11.2.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#forming-a-linear-predictor-from-a-multiple-regression"><i class="fa fa-check"></i><b>11.2.6</b> Forming a linear predictor from a multiple regression</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>11.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="11.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>11.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="11.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-plots"><i class="fa fa-check"></i><b>11.3</b> Residual plots</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>11.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="11.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>11.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="11.3.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#using-fake-data-simulation-to-understand-residual-plots"><i class="fa fa-check"></i><b>11.3.1</b> Using fake-data simulation to understand residual plots</a></li>
+<li class="chapter" data-level="11.3.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#a-confusing-choice-plot-residuals-vs.-predicted-values-or-residuals-vs.-observed-values"><i class="fa fa-check"></i><b>11.3.2</b> A confusing choice: plot residuals vs. predicted values, or residuals vs. observed values?</a></li>
+<li class="chapter" data-level="11.3.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#understanding-the-choice-using-fake-data-simulation"><i class="fa fa-check"></i><b>11.3.3</b> Understanding the choice using fake-data simulation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>11.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
+<li class="chapter" data-level="11.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#comparing-data-to-replications-from-a-fitted-model"><i class="fa fa-check"></i><b>11.4</b> Comparing data to replications from a fitted model</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="12.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.4.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-simulation-based-checking-of-a-fitted-normal-distribution"><i class="fa fa-check"></i><b>11.4.1</b> Example: simulation-based checking of a fitted normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="11.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-predictive-simulation-to-check-the-fit-of-a-time-series-model"><i class="fa fa-check"></i><b>11.5</b> Example: predictive simulation to check the fit of a time-series model</a>
 <ul>
-<li class="chapter" data-level="12.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="11.5.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fitting-a-first-order-autoregression-to-the-unemployment-series"><i class="fa fa-check"></i><b>11.5.1</b> Fitting a first-order autoregression to the unemployment series</a></li>
+<li class="chapter" data-level="11.5.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#simulating-replicated-datasets"><i class="fa fa-check"></i><b>11.5.2</b> Simulating replicated datasets</a></li>
+<li class="chapter" data-level="11.5.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#visual-and-numerical-comparisons-of-replicated-to-actual-data"><i class="fa fa-check"></i><b>11.5.3</b> Visual and numerical comparisons of replicated to actual data</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="12.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="11.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-standard-deviation-sigma-and-explained-variance-r2"><i class="fa fa-check"></i><b>11.6</b> Residual standard deviation <span class="math inline">\(\sigma\)</span> and explained variance <span class="math inline">\(R^2\)</span></a>
 <ul>
-<li class="chapter" data-level="12.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="12.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="11.6.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#difficulties-in-interpreting-residual-standard-deviation-and-explained-variance"><i class="fa fa-check"></i><b>11.6.1</b> Difficulties in interpreting residual standard deviation and explained variance</a></li>
+<li class="chapter" data-level="11.6.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#bayesian-r2"><i class="fa fa-check"></i><b>11.6.2</b> Bayesian <span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
+<li class="chapter" data-level="11.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#external-validation-checking-fitted-model-on-new-data"><i class="fa fa-check"></i><b>11.7</b> External validation: checking fitted model on new data</a></li>
+<li class="chapter" data-level="11.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#cross-validation"><i class="fa fa-check"></i><b>11.8</b> Cross validation</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="13.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.8.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.1</b> Leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fast-leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.2</b> Fast leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#summarizing-prediction-error-using-the-log-score-and-deviance"><i class="fa fa-check"></i><b>11.8.3</b> Summarizing prediction error using the log score and deviance</a></li>
+<li class="chapter" data-level="11.8.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#overfitting-and-aic"><i class="fa fa-check"></i><b>11.8.4</b> Overfitting and AIC</a></li>
+<li class="chapter" data-level="11.8.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#interpreting-differences-in-log-scores"><i class="fa fa-check"></i><b>11.8.5</b> Interpreting differences in log scores</a></li>
+<li class="chapter" data-level="11.8.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-adding-pure-noise-predictors-to-a-model"><i class="fa fa-check"></i><b>11.8.6</b> Demonstration of adding pure noise predictors to a model</a></li>
+<li class="chapter" data-level="11.8.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>11.8.7</b> <span class="math inline">\(K\)</span>-fold cross validation</a></li>
+<li class="chapter" data-level="11.8.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-k-fold-cross-validation-using-simulated-data"><i class="fa fa-check"></i><b>11.8.8</b> Demonstration of <span class="math inline">\(K\)</span>-fold cross validation using simulated data</a></li>
+<li class="chapter" data-level="11.8.9" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#concerns-about-model-selection"><i class="fa fa-check"></i><b>11.8.9</b> Concerns about model selection</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
-<ul>
-<li class="chapter" data-level="13.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="13.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="12" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="13.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
+<li class="chapter" data-level="12.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="14.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="12.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="12.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="12.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="14.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="12.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="14.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="12.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="12.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="14.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="12.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="12.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="12.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
+<li class="chapter" data-level="13" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="13.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="15.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="13.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="13.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="13.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="15.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="13.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="15.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="13.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="13.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="15.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="13.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="13.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="13.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
+<li class="chapter" data-level="14" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="14.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="16.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="14.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="14.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="14.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="14.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="16.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="16.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="14.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="14.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="16.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="14.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="14.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
+<li class="chapter" data-level="15" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="15.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="17.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="15.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="15.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="15.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="15.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="17.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="15.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="15.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="17.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="15.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="15.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="17.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="15.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
+<li class="chapter" data-level="16" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="16.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="18.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="18.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="16.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="16.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="16.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="18.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="16.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="18.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="18.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="16.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="16.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="18.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="18.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="16.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="16.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="18.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="16.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
+<li class="chapter" data-level="17" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="17.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="19.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="19.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="17.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="17.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="19.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="17.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="19.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="17.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="19.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="17.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="17.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="19.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="17.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="17.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="17.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
+<li class="chapter" data-level="18" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="18.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="20.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="18.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="18.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="18.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="20.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="18.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="20.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="20.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="18.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="18.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="20.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="20.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="18.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="18.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="20.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="18.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<li class="chapter" data-level="19" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="19.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="21.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="19.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="19.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="19.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="21.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="19.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="21.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="21.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="19.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="19.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="21.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="21.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="19.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="19.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="21.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="19.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="simulation-12.html"><a href="simulation-12.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<li class="chapter" data-level="20" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="22.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-discrete-probability-models-12"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="20.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="22.1.1" data-path="simulation-12.html"><a href="simulation-12.html#how-many-girls-in-400-births-12"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="22.1.2" data-path="simulation-12.html"><a href="simulation-12.html#accounting-for-twins-12"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="20.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="20.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="22.2" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-continuous-and-mixed-discretecontinuous-models-12"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="20.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="22.2.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-in-r-using-custom-made-functions-12"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="20.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="22.3" data-path="simulation-12.html"><a href="simulation-12.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-12"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="22.4" data-path="simulation-12.html"><a href="simulation-12.html#bootstrapping-to-simulate-a-sampling-distribution-12"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="20.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="20.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="22.4.1" data-path="simulation-12.html"><a href="simulation-12.html#choices-in-defining-the-bootstrap-distribution-12"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="22.4.2" data-path="simulation-12.html"><a href="simulation-12.html#limitations-of-bootstrapping-12"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="20.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="20.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="22.5" data-path="simulation-12.html"><a href="simulation-12.html#fake-data-simulation-as-a-way-of-life-12"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="20.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="21.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="21.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="21.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="21.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="21.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="22.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="22.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="22.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html"><i class="fa fa-check"></i><b>23</b> Exercises of Regression and Other Stories</a>
 <ul>
@@ -714,7 +748,7 @@ div.csl-indent {
 <li class="chapter" data-level="23.1.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#problems-of-statistics"><i class="fa fa-check"></i><b>23.1.4</b> Problems of statistics</a></li>
 <li class="chapter" data-level="23.1.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#goals-of-regression-1"><i class="fa fa-check"></i><b>23.1.5</b> Goals of regression</a></li>
 </ul></li>
-<li class="chapter" data-level="23.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#causal-inference"><i class="fa fa-check"></i><b>23.2</b> Causal inference</a></li>
+<li class="chapter" data-level="23.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#causal-inference-1"><i class="fa fa-check"></i><b>23.2</b> Causal inference</a></li>
 <li class="chapter" data-level="23.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization"><i class="fa fa-check"></i><b>23.3</b> Statistics as generalization</a></li>
 <li class="chapter" data-level="23.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization-1"><i class="fa fa-check"></i><b>23.4</b> Statistics as generalization</a></li>
 <li class="chapter" data-level="23.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#a-problem-with-linear-models"><i class="fa fa-check"></i><b>23.5</b> A problem with linear models</a>
@@ -763,23 +797,23 @@ div.csl-indent {
 <div id="how-many-girls-in-400-births" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> How many girls in 400 births?</h3>
 <p>여자아이일 확률이 약 48.8%, 남자아이일 확률이 약 51.2%고 전세계적으로 이 확률은 고정되어 있다고 하자. 이때, 한 병원에서 특정 연도에 태어난 400명의 아이들이 있다고 할 때, 그 아이들 중에서 여자아이들은 몇 명일까? <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 69</a>)</span> 는 이항분포를 이용해서 400명의 출생아이들에 대한 시뮬레이션을 수행한다.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="simulation.html#cb20-1" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">400</span>, <span class="fl">0.488</span>) <span class="co"># 이항분포에서 무작위로 추출</span></span>
-<span id="cb20-2"><a href="simulation.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n_girls)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="simulation.html#cb28-1" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">400</span>, <span class="fl">0.488</span>) <span class="co"># 이항분포에서 무작위로 추출</span></span>
+<span id="cb28-2"><a href="simulation.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n_girls)</span></code></pre></div>
 <pre><code>## [1] 205</code></pre>
 <p>위의 결과는 400명의 출생아에 대해서 발생할 수 있는 가능성을 보여준다. 실제로 “일어날 수 있는 분포”를 얻기 위해서, 우리는 이 과정을 1,000번 반복하는 시뮬레이션을 수행한다.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="simulation.html#cb22-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># 시뮬레이션 횟수 지정</span></span>
-<span id="cb22-2"><a href="simulation.html#cb22-2" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims) <span class="co"># 시뮬레이션 결과를 담을 깡통</span></span>
-<span id="cb22-3"><a href="simulation.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){       <span class="co"># 1부터 시뮬레이션 횟수까지 반복</span></span>
-<span id="cb22-4"><a href="simulation.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  n_girls[s] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">400</span>, <span class="fl">0.488</span>) <span class="co"># 깡통, n_girls의 각 요소에</span></span>
-<span id="cb22-5"><a href="simulation.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  }                                   <span class="co"># 1000번의 결과를 각각 저장</span></span>
-<span id="cb22-6"><a href="simulation.html#cb22-6" aria-hidden="true" tabindex="-1"></a>n_girls <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb22-7"><a href="simulation.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
-<span id="cb22-8"><a href="simulation.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb22-9"><a href="simulation.html#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb22-10"><a href="simulation.html#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;n_girls&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb22-11"><a href="simulation.html#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-176"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-176-1.png" alt="Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins." width="672" />
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="simulation.html#cb30-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># 시뮬레이션 횟수 지정</span></span>
+<span id="cb30-2"><a href="simulation.html#cb30-2" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims) <span class="co"># 시뮬레이션 결과를 담을 깡통</span></span>
+<span id="cb30-3"><a href="simulation.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){       <span class="co"># 1부터 시뮬레이션 횟수까지 반복</span></span>
+<span id="cb30-4"><a href="simulation.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  n_girls[s] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">400</span>, <span class="fl">0.488</span>) <span class="co"># 깡통, n_girls의 각 요소에</span></span>
+<span id="cb30-5"><a href="simulation.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  }                                   <span class="co"># 1000번의 결과를 각각 저장</span></span>
+<span id="cb30-6"><a href="simulation.html#cb30-6" aria-hidden="true" tabindex="-1"></a>n_girls <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-7"><a href="simulation.html#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
+<span id="cb30-8"><a href="simulation.html#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb30-9"><a href="simulation.html#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb30-10"><a href="simulation.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;n_girls&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb30-11"><a href="simulation.html#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-41"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-41-1.png" alt="Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins." width="672" />
 <p class="caption">
 Figure 5.1: Histogram of 1000 simulated values for the number of girls born in a hospital from 400 births, as simulated from the model that includes the possibility of twins.
 </p>
@@ -789,188 +823,188 @@ Figure 5.1: Histogram of 1000 simulated values for the number of girls born in a
 <div id="accounting-for-twins" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Accounting for twins</h3>
 <p>모델은 다양한 방식으로 확장할 수 있다. 예를 들어, 이란성 쌍둥이를 낳을 확률이 1/125이고 이때, 쌍둥이 중 하나가 여자아이일 확률이 약 49.5%라고 하자. 일란성 쌍둥이를 낳을 확률은 1/300이고, 이 쌍둥이가 여아 쌍둥이일 확률은 약 49.5%라고 할 때, 400명의 출생을 대상으로 시뮬레이션을 할 경우 아래와 같다.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="simulation.html#cb23-1" aria-hidden="true" tabindex="-1"></a>birth_type <span class="ot">&lt;-</span> </span>
-<span id="cb23-2"><a href="simulation.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;fraternal twin&quot;</span>,<span class="st">&quot;identical twin&quot;</span>,<span class="st">&quot;single birth&quot;</span>),</span>
-<span id="cb23-3"><a href="simulation.html#cb23-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">size=</span><span class="dv">400</span>, <span class="at">replace=</span><span class="cn">TRUE</span>, </span>
-<span id="cb23-4"><a href="simulation.html#cb23-4" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Pr(이란성), Pr(일란성), Pr(단일출생)</span></span>
-<span id="cb23-5"><a href="simulation.html#cb23-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">125</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>, <span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">125</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>))</span>
-<span id="cb23-6"><a href="simulation.html#cb23-6" aria-hidden="true" tabindex="-1"></a>girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">400</span>)</span>
-<span id="cb23-7"><a href="simulation.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">400</span>){</span>
-<span id="cb23-8"><a href="simulation.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>) {</span>
-<span id="cb23-9"><a href="simulation.html#cb23-9" aria-hidden="true" tabindex="-1"></a>    girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.488</span>)</span>
-<span id="cb23-10"><a href="simulation.html#cb23-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>) {</span>
-<span id="cb23-11"><a href="simulation.html#cb23-11" aria-hidden="true" tabindex="-1"></a>      girls[i] <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.495</span>) <span class="co"># 일란성이므로 성별은 동일</span></span>
-<span id="cb23-12"><a href="simulation.html#cb23-12" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;fraternal twin&quot;</span>) {</span>
-<span id="cb23-13"><a href="simulation.html#cb23-13" aria-hidden="true" tabindex="-1"></a>        girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">0.495</span>) <span class="co"># 이란성은 성별이 다를 수 있음.</span></span>
-<span id="cb23-14"><a href="simulation.html#cb23-14" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb23-15"><a href="simulation.html#cb23-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb23-16"><a href="simulation.html#cb23-16" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">sum</span>(girls)</span>
-<span id="cb23-17"><a href="simulation.html#cb23-17" aria-hidden="true" tabindex="-1"></a>n_girls <span class="co"># 400건의 모든 유형의 출산 중 여자아이의 수</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="simulation.html#cb31-1" aria-hidden="true" tabindex="-1"></a>birth_type <span class="ot">&lt;-</span> </span>
+<span id="cb31-2"><a href="simulation.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;fraternal twin&quot;</span>,<span class="st">&quot;identical twin&quot;</span>,<span class="st">&quot;single birth&quot;</span>),</span>
+<span id="cb31-3"><a href="simulation.html#cb31-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">size=</span><span class="dv">400</span>, <span class="at">replace=</span><span class="cn">TRUE</span>, </span>
+<span id="cb31-4"><a href="simulation.html#cb31-4" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Pr(이란성), Pr(일란성), Pr(단일출생)</span></span>
+<span id="cb31-5"><a href="simulation.html#cb31-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">125</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>, <span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">125</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>))</span>
+<span id="cb31-6"><a href="simulation.html#cb31-6" aria-hidden="true" tabindex="-1"></a>girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">400</span>)</span>
+<span id="cb31-7"><a href="simulation.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">400</span>){</span>
+<span id="cb31-8"><a href="simulation.html#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>) {</span>
+<span id="cb31-9"><a href="simulation.html#cb31-9" aria-hidden="true" tabindex="-1"></a>    girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.488</span>)</span>
+<span id="cb31-10"><a href="simulation.html#cb31-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>) {</span>
+<span id="cb31-11"><a href="simulation.html#cb31-11" aria-hidden="true" tabindex="-1"></a>      girls[i] <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.495</span>) <span class="co"># 일란성이므로 성별은 동일</span></span>
+<span id="cb31-12"><a href="simulation.html#cb31-12" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;fraternal twin&quot;</span>) {</span>
+<span id="cb31-13"><a href="simulation.html#cb31-13" aria-hidden="true" tabindex="-1"></a>        girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">0.495</span>) <span class="co"># 이란성은 성별이 다를 수 있음.</span></span>
+<span id="cb31-14"><a href="simulation.html#cb31-14" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb31-15"><a href="simulation.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb31-16"><a href="simulation.html#cb31-16" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">sum</span>(girls)</span>
+<span id="cb31-17"><a href="simulation.html#cb31-17" aria-hidden="true" tabindex="-1"></a>n_girls <span class="co"># 400건의 모든 유형의 출산 중 여자아이의 수</span></span></code></pre></div>
 <pre><code>## [1] 205</code></pre>
 <p>여기서 <code>girls</code>는 <code>0</code>, <code>1</code>, <code>2</code>로 이루어진 길이가 400인 벡터로 각 출생 건에 있어서 여자아이의 수를 보여준다. <code>loop</code>를 쓰지 않고도 동일한 결과를 얻을 수 있다.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="simulation.html#cb25-1" aria-hidden="true" tabindex="-1"></a>girls <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(birth_type<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>, </span>
-<span id="cb25-2"><a href="simulation.html#cb25-2" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">1</span>, <span class="fl">0.488</span>),</span>
-<span id="cb25-3"><a href="simulation.html#cb25-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">ifelse</span>(birth_type<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>, </span>
-<span id="cb25-4"><a href="simulation.html#cb25-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">1</span>, <span class="fl">0.495</span>),</span>
-<span id="cb25-5"><a href="simulation.html#cb25-5" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">2</span>, <span class="fl">0.495</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="simulation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>girls <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(birth_type<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>, </span>
+<span id="cb33-2"><a href="simulation.html#cb33-2" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">1</span>, <span class="fl">0.488</span>),</span>
+<span id="cb33-3"><a href="simulation.html#cb33-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">ifelse</span>(birth_type<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>, </span>
+<span id="cb33-4"><a href="simulation.html#cb33-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">1</span>, <span class="fl">0.495</span>),</span>
+<span id="cb33-5"><a href="simulation.html#cb33-5" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">rbinom</span>(<span class="dv">400</span>, <span class="dv">2</span>, <span class="fl">0.495</span>)))</span></code></pre></div>
 <p>400건의 출산 중 여자아이들의 수에 대한 <em>분포(distribution)</em>를 근사하기 위해서, 1000회의 시뮬레이션을 반복한다.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="simulation.html#cb26-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb26-2"><a href="simulation.html#cb26-2" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
-<span id="cb26-3"><a href="simulation.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
-<span id="cb26-4"><a href="simulation.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  birth_type <span class="ot">&lt;-</span> </span>
-<span id="cb26-5"><a href="simulation.html#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;fraternal twin&quot;</span>,</span>
-<span id="cb26-6"><a href="simulation.html#cb26-6" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;identical twin&quot;</span>,</span>
-<span id="cb26-7"><a href="simulation.html#cb26-7" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;single birth&quot;</span>),</span>
-<span id="cb26-8"><a href="simulation.html#cb26-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">400</span>, <span class="at">replace=</span><span class="cn">TRUE</span>, </span>
-<span id="cb26-9"><a href="simulation.html#cb26-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">prob=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">125</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>, <span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">125</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>))</span>
-<span id="cb26-10"><a href="simulation.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">400</span>)</span>
-<span id="cb26-11"><a href="simulation.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">400</span>) {</span>
-<span id="cb26-12"><a href="simulation.html#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>) {</span>
-<span id="cb26-13"><a href="simulation.html#cb26-13" aria-hidden="true" tabindex="-1"></a>      girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.488</span>)</span>
-<span id="cb26-14"><a href="simulation.html#cb26-14" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>) {</span>
-<span id="cb26-15"><a href="simulation.html#cb26-15" aria-hidden="true" tabindex="-1"></a>        girls[i] <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.495</span>)</span>
-<span id="cb26-16"><a href="simulation.html#cb26-16" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;fraternal twin&quot;</span>) {</span>
-<span id="cb26-17"><a href="simulation.html#cb26-17" aria-hidden="true" tabindex="-1"></a>          girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">0.495</span>)</span>
-<span id="cb26-18"><a href="simulation.html#cb26-18" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb26-19"><a href="simulation.html#cb26-19" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb26-20"><a href="simulation.html#cb26-20" aria-hidden="true" tabindex="-1"></a>  n_girls[s] <span class="ot">&lt;-</span> <span class="fu">sum</span>(girls)</span>
-<span id="cb26-21"><a href="simulation.html#cb26-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="simulation.html#cb34-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb34-2"><a href="simulation.html#cb34-2" aria-hidden="true" tabindex="-1"></a>n_girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
+<span id="cb34-3"><a href="simulation.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
+<span id="cb34-4"><a href="simulation.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  birth_type <span class="ot">&lt;-</span> </span>
+<span id="cb34-5"><a href="simulation.html#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;fraternal twin&quot;</span>,</span>
+<span id="cb34-6"><a href="simulation.html#cb34-6" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;identical twin&quot;</span>,</span>
+<span id="cb34-7"><a href="simulation.html#cb34-7" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;single birth&quot;</span>),</span>
+<span id="cb34-8"><a href="simulation.html#cb34-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">400</span>, <span class="at">replace=</span><span class="cn">TRUE</span>, </span>
+<span id="cb34-9"><a href="simulation.html#cb34-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">prob=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">125</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>, <span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">125</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">300</span>))</span>
+<span id="cb34-10"><a href="simulation.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  girls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">400</span>)</span>
+<span id="cb34-11"><a href="simulation.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">400</span>) {</span>
+<span id="cb34-12"><a href="simulation.html#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;single birth&quot;</span>) {</span>
+<span id="cb34-13"><a href="simulation.html#cb34-13" aria-hidden="true" tabindex="-1"></a>      girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.488</span>)</span>
+<span id="cb34-14"><a href="simulation.html#cb34-14" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;identical twin&quot;</span>) {</span>
+<span id="cb34-15"><a href="simulation.html#cb34-15" aria-hidden="true" tabindex="-1"></a>        girls[i] <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.495</span>)</span>
+<span id="cb34-16"><a href="simulation.html#cb34-16" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> <span class="cf">if</span> (birth_type[i]<span class="sc">==</span><span class="st">&quot;fraternal twin&quot;</span>) {</span>
+<span id="cb34-17"><a href="simulation.html#cb34-17" aria-hidden="true" tabindex="-1"></a>          girls[i] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">0.495</span>)</span>
+<span id="cb34-18"><a href="simulation.html#cb34-18" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb34-19"><a href="simulation.html#cb34-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-20"><a href="simulation.html#cb34-20" aria-hidden="true" tabindex="-1"></a>  n_girls[s] <span class="ot">&lt;-</span> <span class="fu">sum</span>(girls)</span>
+<span id="cb34-21"><a href="simulation.html#cb34-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>중첩된 루프(nested loop)는 복잡한 데이터 구조에 대한 시뮬레이션의 특성을 보여준다. Figure 5.1은 모델을 통해 얻은 출생한 여자아이의 수의 확률분포를 보여준다.</p>
 </div>
 </div>
 <div id="simulation-of-continuous-and-mixed-discretecontinuous-models" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Simulation of continuous and mixed discrete/continuous models</h2>
 <p>시뮬레이션은 모든 유형의 분포-정규(normal), 로그정규(lognormal)<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>, 이항(binomial), 포아송(Poisson) 확률분포 등에 대해서 수행할 수 있다.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="simulation.html#cb27-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb27-2"><a href="simulation.html#cb27-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, <span class="dv">3</span>, <span class="fl">0.5</span>)</span>
-<span id="cb27-3"><a href="simulation.html#cb27-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">exp</span>(y1)</span>
-<span id="cb27-4"><a href="simulation.html#cb27-4" aria-hidden="true" tabindex="-1"></a>y3 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sims, <span class="dv">20</span>, <span class="fl">0.6</span>)</span>
-<span id="cb27-5"><a href="simulation.html#cb27-5" aria-hidden="true" tabindex="-1"></a>y4 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n_sims, <span class="dv">5</span>)</span>
-<span id="cb27-6"><a href="simulation.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="simulation.html#cb27-7" aria-hidden="true" tabindex="-1"></a>distributions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb27-8"><a href="simulation.html#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">normal =</span> y1,</span>
-<span id="cb27-9"><a href="simulation.html#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">exp =</span> y2,</span>
-<span id="cb27-10"><a href="simulation.html#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">binom =</span> y3,</span>
-<span id="cb27-11"><a href="simulation.html#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">poisson =</span> y4</span>
-<span id="cb27-12"><a href="simulation.html#cb27-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb27-13"><a href="simulation.html#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-14"><a href="simulation.html#cb27-14" aria-hidden="true" tabindex="-1"></a>panel1 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
-<span id="cb27-15"><a href="simulation.html#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y1)) <span class="sc">+</span> </span>
-<span id="cb27-16"><a href="simulation.html#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-17"><a href="simulation.html#cb27-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">floor</span>(<span class="fu">min</span>(y1)), </span>
-<span id="cb27-18"><a href="simulation.html#cb27-18" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">max</span>(y1) <span class="sc">+</span> <span class="fl">0.2</span>, <span class="fl">0.4</span>)) <span class="sc">+</span> </span>
-<span id="cb27-19"><a href="simulation.html#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
-<span id="cb27-20"><a href="simulation.html#cb27-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from a normal dist. with mean 3, sd 0.5&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-21"><a href="simulation.html#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
-<span id="cb27-22"><a href="simulation.html#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-23"><a href="simulation.html#cb27-23" aria-hidden="true" tabindex="-1"></a>panel2 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
-<span id="cb27-24"><a href="simulation.html#cb27-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y2)) <span class="sc">+</span> </span>
-<span id="cb27-25"><a href="simulation.html#cb27-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-26"><a href="simulation.html#cb27-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fu">max</span>(y2) <span class="sc">+</span> <span class="dv">5</span>, <span class="dv">10</span>)) <span class="sc">+</span> </span>
-<span id="cb27-27"><a href="simulation.html#cb27-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb27-28"><a href="simulation.html#cb27-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the corresponding lognormal dist.&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-29"><a href="simulation.html#cb27-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
-<span id="cb27-30"><a href="simulation.html#cb27-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-31"><a href="simulation.html#cb27-31" aria-hidden="true" tabindex="-1"></a>panel3 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
-<span id="cb27-32"><a href="simulation.html#cb27-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y3)) <span class="sc">+</span> </span>
-<span id="cb27-33"><a href="simulation.html#cb27-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-34"><a href="simulation.html#cb27-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">20.5</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
-<span id="cb27-35"><a href="simulation.html#cb27-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
-<span id="cb27-36"><a href="simulation.html#cb27-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the binomial dist. with 20 tries, probability 0.6&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-37"><a href="simulation.html#cb27-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
-<span id="cb27-38"><a href="simulation.html#cb27-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-39"><a href="simulation.html#cb27-39" aria-hidden="true" tabindex="-1"></a>panel4 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
-<span id="cb27-40"><a href="simulation.html#cb27-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y4)) <span class="sc">+</span> </span>
-<span id="cb27-41"><a href="simulation.html#cb27-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-42"><a href="simulation.html#cb27-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fu">max</span>(y4) <span class="sc">+</span> <span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
-<span id="cb27-43"><a href="simulation.html#cb27-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb27-44"><a href="simulation.html#cb27-44" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the Poisson dist. with mean 5&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb27-45"><a href="simulation.html#cb27-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
-<span id="cb27-46"><a href="simulation.html#cb27-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-47"><a href="simulation.html#cb27-47" aria-hidden="true" tabindex="-1"></a>panel1 <span class="sc">+</span> panel2 <span class="sc">+</span> panel3 <span class="sc">+</span> panel4 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-180"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-180-1.png" alt="Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R." width="672" />
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="simulation.html#cb35-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb35-2"><a href="simulation.html#cb35-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, <span class="dv">3</span>, <span class="fl">0.5</span>)</span>
+<span id="cb35-3"><a href="simulation.html#cb35-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">exp</span>(y1)</span>
+<span id="cb35-4"><a href="simulation.html#cb35-4" aria-hidden="true" tabindex="-1"></a>y3 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_sims, <span class="dv">20</span>, <span class="fl">0.6</span>)</span>
+<span id="cb35-5"><a href="simulation.html#cb35-5" aria-hidden="true" tabindex="-1"></a>y4 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n_sims, <span class="dv">5</span>)</span>
+<span id="cb35-6"><a href="simulation.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="simulation.html#cb35-7" aria-hidden="true" tabindex="-1"></a>distributions <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb35-8"><a href="simulation.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">normal =</span> y1,</span>
+<span id="cb35-9"><a href="simulation.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">exp =</span> y2,</span>
+<span id="cb35-10"><a href="simulation.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">binom =</span> y3,</span>
+<span id="cb35-11"><a href="simulation.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">poisson =</span> y4</span>
+<span id="cb35-12"><a href="simulation.html#cb35-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-13"><a href="simulation.html#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="simulation.html#cb35-14" aria-hidden="true" tabindex="-1"></a>panel1 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
+<span id="cb35-15"><a href="simulation.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y1)) <span class="sc">+</span> </span>
+<span id="cb35-16"><a href="simulation.html#cb35-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-17"><a href="simulation.html#cb35-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">floor</span>(<span class="fu">min</span>(y1)), </span>
+<span id="cb35-18"><a href="simulation.html#cb35-18" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">max</span>(y1) <span class="sc">+</span> <span class="fl">0.2</span>, <span class="fl">0.4</span>)) <span class="sc">+</span> </span>
+<span id="cb35-19"><a href="simulation.html#cb35-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
+<span id="cb35-20"><a href="simulation.html#cb35-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from a normal dist. with mean 3, sd 0.5&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-21"><a href="simulation.html#cb35-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
+<span id="cb35-22"><a href="simulation.html#cb35-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-23"><a href="simulation.html#cb35-23" aria-hidden="true" tabindex="-1"></a>panel2 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
+<span id="cb35-24"><a href="simulation.html#cb35-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y2)) <span class="sc">+</span> </span>
+<span id="cb35-25"><a href="simulation.html#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-26"><a href="simulation.html#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fu">max</span>(y2) <span class="sc">+</span> <span class="dv">5</span>, <span class="dv">10</span>)) <span class="sc">+</span> </span>
+<span id="cb35-27"><a href="simulation.html#cb35-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb35-28"><a href="simulation.html#cb35-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the corresponding lognormal dist.&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-29"><a href="simulation.html#cb35-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
+<span id="cb35-30"><a href="simulation.html#cb35-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-31"><a href="simulation.html#cb35-31" aria-hidden="true" tabindex="-1"></a>panel3 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
+<span id="cb35-32"><a href="simulation.html#cb35-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y3)) <span class="sc">+</span> </span>
+<span id="cb35-33"><a href="simulation.html#cb35-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-34"><a href="simulation.html#cb35-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">20.5</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
+<span id="cb35-35"><a href="simulation.html#cb35-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
+<span id="cb35-36"><a href="simulation.html#cb35-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the binomial dist. with 20 tries, probability 0.6&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-37"><a href="simulation.html#cb35-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
+<span id="cb35-38"><a href="simulation.html#cb35-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-39"><a href="simulation.html#cb35-39" aria-hidden="true" tabindex="-1"></a>panel4 <span class="ot">&lt;-</span> distributions <span class="sc">%&gt;%</span> </span>
+<span id="cb35-40"><a href="simulation.html#cb35-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y4)) <span class="sc">+</span> </span>
+<span id="cb35-41"><a href="simulation.html#cb35-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-42"><a href="simulation.html#cb35-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fu">max</span>(y4) <span class="sc">+</span> <span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
+<span id="cb35-43"><a href="simulation.html#cb35-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb35-44"><a href="simulation.html#cb35-44" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;1000 draws from the Poisson dist. with mean 5&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb35-45"><a href="simulation.html#cb35-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span>
+<span id="cb35-46"><a href="simulation.html#cb35-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-47"><a href="simulation.html#cb35-47" aria-hidden="true" tabindex="-1"></a>panel1 <span class="sc">+</span> panel2 <span class="sc">+</span> panel3 <span class="sc">+</span> panel4 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-45"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-45-1.png" alt="Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R." width="672" />
 <p class="caption">
 Figure 5.2: Histograms of 1000 simulated values from four distributions, demonstrating the ability to draw from continuous and discrete random variables in R.
 </p>
 </div>
 <p>또 하나의 예제로 연속형과 이산형이 결합된 형태의 모델을 살펴보자. 미국의 성인 중 52%가 여성이고 48%가 남성이라고 해보자. 남성의 키는 평균이 69.1인치이고 표준편차 2.9인치인 정규분포에 근사한다. 여성은 평균 63.7인치, 표준편차 2.7인치인 정규분포에 근사한다고 하자. 그렇다면 무작위로 선택된 성인 중 한명의 키는 다음과 같은 코드로 구할 수 있다.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="simulation.html#cb28-1" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
-<span id="cb28-2"><a href="simulation.html#cb28-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
-<span id="cb28-3"><a href="simulation.html#cb28-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">69.1</span>, <span class="fl">2.9</span>),</span>
-<span id="cb28-4"><a href="simulation.html#cb28-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="simulation.html#cb36-1" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
+<span id="cb36-2"><a href="simulation.html#cb36-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb36-3"><a href="simulation.html#cb36-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">69.1</span>, <span class="fl">2.9</span>),</span>
+<span id="cb36-4"><a href="simulation.html#cb36-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span></code></pre></div>
 <p>만약 10 명의 성인을 무작위로 선택한다고 할 때, 그들의 평균 키는 어떻게 될까?</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="simulation.html#cb29-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb29-2"><a href="simulation.html#cb29-2" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
-<span id="cb29-3"><a href="simulation.html#cb29-3" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
-<span id="cb29-4"><a href="simulation.html#cb29-4" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
-<span id="cb29-5"><a href="simulation.html#cb29-5" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
-<span id="cb29-6"><a href="simulation.html#cb29-6" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">mean</span>(height)</span>
-<span id="cb29-7"><a href="simulation.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(avg_height)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="simulation.html#cb37-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb37-2"><a href="simulation.html#cb37-2" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
+<span id="cb37-3"><a href="simulation.html#cb37-3" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb37-4"><a href="simulation.html#cb37-4" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
+<span id="cb37-5"><a href="simulation.html#cb37-5" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
+<span id="cb37-6"><a href="simulation.html#cb37-6" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">mean</span>(height)</span>
+<span id="cb37-7"><a href="simulation.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(avg_height)</span></code></pre></div>
 <pre><code>## [1] 63.85087</code></pre>
 <p>평균 키를 보여주는 <code>avg_height</code>의 분포를 시뮬레이션하기 위해서 1000번 반복한다.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="simulation.html#cb31-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb31-2"><a href="simulation.html#cb31-2" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
-<span id="cb31-3"><a href="simulation.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
-<span id="cb31-4"><a href="simulation.html#cb31-4" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb31-5"><a href="simulation.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
-<span id="cb31-6"><a href="simulation.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
-<span id="cb31-7"><a href="simulation.html#cb31-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
-<span id="cb31-8"><a href="simulation.html#cb31-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
-<span id="cb31-9"><a href="simulation.html#cb31-9" aria-hidden="true" tabindex="-1"></a>avg_height[s] <span class="ot">&lt;-</span> <span class="fu">mean</span>(height)</span>
-<span id="cb31-10"><a href="simulation.html#cb31-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-11"><a href="simulation.html#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-12"><a href="simulation.html#cb31-12" aria-hidden="true" tabindex="-1"></a>avg_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb31-13"><a href="simulation.html#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
-<span id="cb31-14"><a href="simulation.html#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb31-15"><a href="simulation.html#cb31-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb31-16"><a href="simulation.html#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of avg height of 10 adults&quot;</span>, </span>
-<span id="cb31-17"><a href="simulation.html#cb31-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb31-18"><a href="simulation.html#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-183-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="simulation.html#cb39-1" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb39-2"><a href="simulation.html#cb39-2" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
+<span id="cb39-3"><a href="simulation.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
+<span id="cb39-4"><a href="simulation.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb39-5"><a href="simulation.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
+<span id="cb39-6"><a href="simulation.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb39-7"><a href="simulation.html#cb39-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
+<span id="cb39-8"><a href="simulation.html#cb39-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
+<span id="cb39-9"><a href="simulation.html#cb39-9" aria-hidden="true" tabindex="-1"></a>avg_height[s] <span class="ot">&lt;-</span> <span class="fu">mean</span>(height)</span>
+<span id="cb39-10"><a href="simulation.html#cb39-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-11"><a href="simulation.html#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="simulation.html#cb39-12" aria-hidden="true" tabindex="-1"></a>avg_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb39-13"><a href="simulation.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
+<span id="cb39-14"><a href="simulation.html#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb39-15"><a href="simulation.html#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb39-16"><a href="simulation.html#cb39-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of avg height of 10 adults&quot;</span>, </span>
+<span id="cb39-17"><a href="simulation.html#cb39-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb39-18"><a href="simulation.html#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-48-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>무작위로 추출한 10명의 성인 중 가장 키가 큰 사람은 몇 인치일까?</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="simulation.html#cb32-1" aria-hidden="true" tabindex="-1"></a>max_height <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
-<span id="cb32-2"><a href="simulation.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
-<span id="cb32-3"><a href="simulation.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb32-4"><a href="simulation.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
-<span id="cb32-5"><a href="simulation.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
-<span id="cb32-6"><a href="simulation.html#cb32-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
-<span id="cb32-7"><a href="simulation.html#cb32-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
-<span id="cb32-8"><a href="simulation.html#cb32-8" aria-hidden="true" tabindex="-1"></a>max_height[s] <span class="ot">&lt;-</span> <span class="fu">max</span>(height)</span>
-<span id="cb32-9"><a href="simulation.html#cb32-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-10"><a href="simulation.html#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-11"><a href="simulation.html#cb32-11" aria-hidden="true" tabindex="-1"></a>max_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb32-12"><a href="simulation.html#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
-<span id="cb32-13"><a href="simulation.html#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb32-14"><a href="simulation.html#cb32-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb32-15"><a href="simulation.html#cb32-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of max height of 10 adults&quot;</span>, </span>
-<span id="cb32-16"><a href="simulation.html#cb32-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb32-17"><a href="simulation.html#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(max_height), </span>
-<span id="cb32-18"><a href="simulation.html#cb32-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb32-19"><a href="simulation.html#cb32-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-184-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="simulation.html#cb40-1" aria-hidden="true" tabindex="-1"></a>max_height <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n_sims)</span>
+<span id="cb40-2"><a href="simulation.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_sims){</span>
+<span id="cb40-3"><a href="simulation.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb40-4"><a href="simulation.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
+<span id="cb40-5"><a href="simulation.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">if_else</span>(male <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb40-6"><a href="simulation.html#cb40-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
+<span id="cb40-7"><a href="simulation.html#cb40-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
+<span id="cb40-8"><a href="simulation.html#cb40-8" aria-hidden="true" tabindex="-1"></a>max_height[s] <span class="ot">&lt;-</span> <span class="fu">max</span>(height)</span>
+<span id="cb40-9"><a href="simulation.html#cb40-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-10"><a href="simulation.html#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="simulation.html#cb40-11" aria-hidden="true" tabindex="-1"></a>max_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb40-12"><a href="simulation.html#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
+<span id="cb40-13"><a href="simulation.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb40-14"><a href="simulation.html#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb40-15"><a href="simulation.html#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of max height of 10 adults&quot;</span>, </span>
+<span id="cb40-16"><a href="simulation.html#cb40-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb40-17"><a href="simulation.html#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(max_height), </span>
+<span id="cb40-18"><a href="simulation.html#cb40-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb40-19"><a href="simulation.html#cb40-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-49-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="simulation-in-r-using-custom-made-functions" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Simulation in R using custom-made functions</h3>
 <p>위에서 사용한 <code>loop</code> 반복문을 커스텀된 함수를 이용해서 간단하게 재현할 수 있다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 72</a>)</span> 는 <code>replicate()</code> 함수를 소개하고 있다. 먼저 우리가 특정 함수를 지정하고, 그 함수를 <code>replicate()</code>가 정해진 횟수만큼 반복하는 것이다.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="simulation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>height_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(N){</span>
-<span id="cb33-2"><a href="simulation.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
-<span id="cb33-3"><a href="simulation.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(male<span class="sc">==</span><span class="dv">1</span>, </span>
-<span id="cb33-4"><a href="simulation.html#cb33-4" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
-<span id="cb33-5"><a href="simulation.html#cb33-5" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
-<span id="cb33-6"><a href="simulation.html#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(height)</span>
-<span id="cb33-7"><a href="simulation.html#cb33-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb33-8"><a href="simulation.html#cb33-8" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">height_sim</span>(<span class="at">N=</span><span class="dv">10</span>))</span>
-<span id="cb33-9"><a href="simulation.html#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-10"><a href="simulation.html#cb33-10" aria-hidden="true" tabindex="-1"></a>avg_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb33-11"><a href="simulation.html#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
-<span id="cb33-12"><a href="simulation.html#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb33-13"><a href="simulation.html#cb33-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb33-14"><a href="simulation.html#cb33-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of average height of 10 adults&quot;</span>, </span>
-<span id="cb33-15"><a href="simulation.html#cb33-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb33-16"><a href="simulation.html#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(avg_height), </span>
-<span id="cb33-17"><a href="simulation.html#cb33-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb33-18"><a href="simulation.html#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-185-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="simulation.html#cb41-1" aria-hidden="true" tabindex="-1"></a>height_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(N){</span>
+<span id="cb41-2"><a href="simulation.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  male <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.48</span>)</span>
+<span id="cb41-3"><a href="simulation.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  height <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(male<span class="sc">==</span><span class="dv">1</span>, </span>
+<span id="cb41-4"><a href="simulation.html#cb41-4" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rnorm</span>(N, <span class="fl">69.1</span>, <span class="fl">2.9</span>), </span>
+<span id="cb41-5"><a href="simulation.html#cb41-5" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rnorm</span>(N, <span class="fl">63.7</span>, <span class="fl">2.7</span>))</span>
+<span id="cb41-6"><a href="simulation.html#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(height)</span>
+<span id="cb41-7"><a href="simulation.html#cb41-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-8"><a href="simulation.html#cb41-8" aria-hidden="true" tabindex="-1"></a>avg_height <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">height_sim</span>(<span class="at">N=</span><span class="dv">10</span>))</span>
+<span id="cb41-9"><a href="simulation.html#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="simulation.html#cb41-10" aria-hidden="true" tabindex="-1"></a>avg_height <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb41-11"><a href="simulation.html#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
+<span id="cb41-12"><a href="simulation.html#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb41-13"><a href="simulation.html#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb41-14"><a href="simulation.html#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dist of average height of 10 adults&quot;</span>, </span>
+<span id="cb41-15"><a href="simulation.html#cb41-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb41-16"><a href="simulation.html#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(avg_height), </span>
+<span id="cb41-17"><a href="simulation.html#cb41-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb41-18"><a href="simulation.html#cb41-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-50-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation" class="section level2" number="5.3">
@@ -987,11 +1021,11 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <li><p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020</a>)</span> 은 기본적으로 중앙값에 기초를 둔 요약통계치를 볼 것을 추천하는데, 그 이유는 시뮬레이션을 통해 얻은 분포는 약간의 치우침이 있을 수 있고, 그 경우 그 분포의 중심경향성을 더 잘 보여줄 수 있는 값이 중앙값이기 때문이다.</p></li>
 </ul>
 <p>평균 5, 표준편차 2의 정규분포를 10,000번 추출해보도록 하자.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="simulation.html#cb34-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb34-2"><a href="simulation.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;mean =&quot;</span>, <span class="fu">mean</span>(z), </span>
-<span id="cb34-3"><a href="simulation.html#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, median =&quot;</span>, <span class="fu">median</span>(z), </span>
-<span id="cb34-4"><a href="simulation.html#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, sd =&quot;</span>, <span class="fu">sd</span>(z), </span>
-<span id="cb34-5"><a href="simulation.html#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, mad sd =&quot;</span>, <span class="fu">mad</span>(z))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="simulation.html#cb42-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb42-2"><a href="simulation.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;mean =&quot;</span>, <span class="fu">mean</span>(z), </span>
+<span id="cb42-3"><a href="simulation.html#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, median =&quot;</span>, <span class="fu">median</span>(z), </span>
+<span id="cb42-4"><a href="simulation.html#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, sd =&quot;</span>, <span class="fu">sd</span>(z), </span>
+<span id="cb42-5"><a href="simulation.html#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, mad sd =&quot;</span>, <span class="fu">mad</span>(z))</span></code></pre></div>
 <pre><code>## mean = 4.996545 , median = 5.007528 , sd = 1.991452 , mad sd = 2.003363</code></pre>
 <p>위의 결과는 대략적으로 우리가 상정한 평균 5와 표준편차 2에 근사하며, 약간의 차이는 표집에 따른 변동성이라고 이해할 수 있다. 왜냐하면 시뮬레이션은 한정된 수의 추출을 한 것이기 때문에 시뮬레이션 횟수가 증가할수록 상정한 평균과 표준편차의 결과에 근사한 결과를 얻을 수 있겠지만 완전히 동일한 값을 얻을 수는 없다.</p>
 <p>이 리딩노트에서는 <code>stan</code> 코드를 사용하지는 않을 것이지만, 간단히 <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020</a>)</span> 이 소개하는 내용을 살펴보도록 한다. <code>stan_glm</code>을 이용해서 회귀모델을 적합하게 된다면, 각각의 회귀계수에 대한 추론은 사후분포의 중앙값이나 중앙값을 리스케일링한 <code>mad sd</code>로 요약하게 되고, 이는 각각 전통적인 방식의 회귀계수 추정값과 표준오차에 해당하게 된다.</p>
@@ -1010,57 +1044,57 @@ Figure 5.2: Histograms of 1000 simulated values from four distributions, demonst
 <li><p>부트스트랩 표본도 동일하다. 다만 그 관계가 <span class="math inline">\(x_1\)</span> <span class="math inline">\(\rightarrow\)</span> 부트스트랩 표본(<span class="math inline">\(x^{(1)}_1\cdots x^{n}_1\)</span>)으로 대체할 수 있을 뿐이다. 무작위 표본이 전제되었을 때, 우리는 <span class="math inline">\(x^{n}_1\)</span>이 원표본, <span class="math inline">\(x_1\)</span>로부터 추출되었다면 <span class="math inline">\(x_1\)</span>에 대한 대표성을 가질 것이라고 기대할 수 있다. 이때, 복원추출을 하게 되면 <span class="math inline">\(x^{n}_1\)</span>의 표본크기는 <span class="math inline">\(x_1\)</span>과 동일할 수 있지만 그 구성된 관측치는 <span class="math inline">\(x^{n}_1 \neq x_1\)</span>일 수 있으며, 그렇다고 해서 <span class="math inline">\(x^{n}_1\)</span>의 <span class="math inline">\(x_1\)</span>에 대한 대표성이 사라지는 것은 아니다.</p></li>
 </ul>
 <p>1990년에 미국 전국에 대한 설문조사 데이터를 바탕으로 남성의 중위소득 대비 여성의 중위소득의 비율을 추정하는 것이 목표라고 해보자.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="simulation.html#cb36-1" aria-hidden="true" tabindex="-1"></a>earnings <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/ros-master/Earnings/data/earnings.csv&quot;</span>)</span>
-<span id="cb36-2"><a href="simulation.html#cb36-2" aria-hidden="true" tabindex="-1"></a>earn <span class="ot">&lt;-</span> earnings<span class="sc">$</span>earn</span>
-<span id="cb36-3"><a href="simulation.html#cb36-3" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> earnings<span class="sc">$</span>male</span>
-<span id="cb36-4"><a href="simulation.html#cb36-4" aria-hidden="true" tabindex="-1"></a>medians <span class="ot">&lt;-</span> earnings <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(male) <span class="sc">%&gt;%</span></span>
-<span id="cb36-5"><a href="simulation.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Median =</span> <span class="fu">median</span>(earn))</span>
-<span id="cb36-6"><a href="simulation.html#cb36-6" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(medians[<span class="dv">1</span>,<span class="dv">2</span>]<span class="sc">/</span>medians[<span class="dv">2</span>,<span class="dv">2</span>])</span>
-<span id="cb36-7"><a href="simulation.html#cb36-7" aria-hidden="true" tabindex="-1"></a>ratio</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="simulation.html#cb44-1" aria-hidden="true" tabindex="-1"></a>earnings <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/ros-master/Earnings/data/earnings.csv&quot;</span>)</span>
+<span id="cb44-2"><a href="simulation.html#cb44-2" aria-hidden="true" tabindex="-1"></a>earn <span class="ot">&lt;-</span> earnings<span class="sc">$</span>earn</span>
+<span id="cb44-3"><a href="simulation.html#cb44-3" aria-hidden="true" tabindex="-1"></a>male <span class="ot">&lt;-</span> earnings<span class="sc">$</span>male</span>
+<span id="cb44-4"><a href="simulation.html#cb44-4" aria-hidden="true" tabindex="-1"></a>medians <span class="ot">&lt;-</span> earnings <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(male) <span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="simulation.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Median =</span> <span class="fu">median</span>(earn))</span>
+<span id="cb44-6"><a href="simulation.html#cb44-6" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(medians[<span class="dv">1</span>,<span class="dv">2</span>]<span class="sc">/</span>medians[<span class="dv">2</span>,<span class="dv">2</span>])</span>
+<span id="cb44-7"><a href="simulation.html#cb44-7" aria-hidden="true" tabindex="-1"></a>ratio</span></code></pre></div>
 <pre><code>## [1] 0.6</code></pre>
 <p>이때, <code>ratio = 0.6</code>은 남성의 중위소득에 비해 여성의 중위소득이 약 60% 정도에 불과하다는 것을 의미한다. 그러나 어디까지나 이 결과는 하나의 표본을 대상으로 추정한 것에 불과하다. 실제 모집단에 대한 추론을 위해서는 모집단-표본 간 관계에 존재할 수 있는 불확실성이 포함되어야 한다. 이 불확실성을 어떻게 얻을 수 있을까? 부트스트랩 접근법으로 보자면 표본-<code>earnings</code>로부터 약 100개의 무작위 부트스트랩 표본들을 추출한 뒤 그 부트스트랩 표본들 각각으로부터 얻은 <code>ratio</code>의 분포를 통해 이 불확실성을 추정할 수 있다.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="simulation.html#cb38-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(earnings)</span>
-<span id="cb38-2"><a href="simulation.html#cb38-2" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="fu">sample</span>(n, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="co"># sample id</span></span>
-<span id="cb38-3"><a href="simulation.html#cb38-3" aria-hidden="true" tabindex="-1"></a>earn_boot <span class="ot">&lt;-</span> earn[boot] <span class="co"># earn data point 중 boot에 따라 무작위로 추출</span></span>
-<span id="cb38-4"><a href="simulation.html#cb38-4" aria-hidden="true" tabindex="-1"></a>male_boot <span class="ot">&lt;-</span> male[boot] <span class="co"># male data point 중 boot에 따라 무작위로 추출</span></span>
-<span id="cb38-5"><a href="simulation.html#cb38-5" aria-hidden="true" tabindex="-1"></a>ratio_boot <span class="ot">&lt;-</span> </span>
-<span id="cb38-6"><a href="simulation.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">0</span>])<span class="sc">/</span></span>
-<span id="cb38-7"><a href="simulation.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb38-8"><a href="simulation.html#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-9"><a href="simulation.html#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 위의 정보로 하나의 부트스트랩을 루프로 돌려 얻을 수 있다.</span></span>
-<span id="cb38-10"><a href="simulation.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="simulation.html#cb38-11" aria-hidden="true" tabindex="-1"></a>boot_ratio <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
-<span id="cb38-12"><a href="simulation.html#cb38-12" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
-<span id="cb38-13"><a href="simulation.html#cb38-13" aria-hidden="true" tabindex="-1"></a>  boot <span class="ot">&lt;-</span> <span class="fu">sample</span>(n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-14"><a href="simulation.html#cb38-14" aria-hidden="true" tabindex="-1"></a>  earn_boot <span class="ot">&lt;-</span> data<span class="sc">$</span>earn[boot]</span>
-<span id="cb38-15"><a href="simulation.html#cb38-15" aria-hidden="true" tabindex="-1"></a>  male_boot <span class="ot">&lt;-</span> data<span class="sc">$</span>male[boot]</span>
-<span id="cb38-16"><a href="simulation.html#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">0</span>])<span class="sc">/</span></span>
-<span id="cb38-17"><a href="simulation.html#cb38-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb38-18"><a href="simulation.html#cb38-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-19"><a href="simulation.html#cb38-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-20"><a href="simulation.html#cb38-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 이러한 부트스트랩 과정을 10000회 반복한다.</span></span>
-<span id="cb38-21"><a href="simulation.html#cb38-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-22"><a href="simulation.html#cb38-22" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb38-23"><a href="simulation.html#cb38-23" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_sims, <span class="fu">boot_ratio</span>(<span class="at">data=</span>earnings))</span>
-<span id="cb38-24"><a href="simulation.html#cb38-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-25"><a href="simulation.html#cb38-25" aria-hidden="true" tabindex="-1"></a>output <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb38-26"><a href="simulation.html#cb38-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
-<span id="cb38-27"><a href="simulation.html#cb38-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb38-28"><a href="simulation.html#cb38-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb38-29"><a href="simulation.html#cb38-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">&quot;Dist of median earning ratio of 10000 Bootstrap sample&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb38-30"><a href="simulation.html#cb38-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(output), </span>
-<span id="cb38-31"><a href="simulation.html#cb38-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb38-32"><a href="simulation.html#cb38-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
-<span id="cb38-33"><a href="simulation.html#cb38-33" aria-hidden="true" tabindex="-1"></a>     <span class="at">x =</span> <span class="fu">median</span>(output) <span class="sc">-</span> <span class="fu">sd</span>(output), <span class="at">xend =</span> <span class="fu">median</span>(output),</span>
-<span id="cb38-34"><a href="simulation.html#cb38-34" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="dv">3000</span>, <span class="at">yend =</span> <span class="dv">3000</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb38-35"><a href="simulation.html#cb38-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">3300</span>, <span class="at">x =</span> <span class="fu">median</span>(output) <span class="sc">-</span> <span class="fu">sd</span>(output)<span class="sc">/</span><span class="dv">2</span>),</span>
-<span id="cb38-36"><a href="simulation.html#cb38-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;sd =&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(output), <span class="dv">2</span>)), </span>
-<span id="cb38-37"><a href="simulation.html#cb38-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb38-38"><a href="simulation.html#cb38-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">4300</span>, <span class="at">x =</span> <span class="fu">median</span>(output)),</span>
-<span id="cb38-39"><a href="simulation.html#cb38-39" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;Median =&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(output), <span class="dv">2</span>)), </span>
-<span id="cb38-40"><a href="simulation.html#cb38-40" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb38-41"><a href="simulation.html#cb38-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>))</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-188-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="simulation.html#cb46-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(earnings)</span>
+<span id="cb46-2"><a href="simulation.html#cb46-2" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="fu">sample</span>(n, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="co"># sample id</span></span>
+<span id="cb46-3"><a href="simulation.html#cb46-3" aria-hidden="true" tabindex="-1"></a>earn_boot <span class="ot">&lt;-</span> earn[boot] <span class="co"># earn data point 중 boot에 따라 무작위로 추출</span></span>
+<span id="cb46-4"><a href="simulation.html#cb46-4" aria-hidden="true" tabindex="-1"></a>male_boot <span class="ot">&lt;-</span> male[boot] <span class="co"># male data point 중 boot에 따라 무작위로 추출</span></span>
+<span id="cb46-5"><a href="simulation.html#cb46-5" aria-hidden="true" tabindex="-1"></a>ratio_boot <span class="ot">&lt;-</span> </span>
+<span id="cb46-6"><a href="simulation.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">0</span>])<span class="sc">/</span></span>
+<span id="cb46-7"><a href="simulation.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb46-8"><a href="simulation.html#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="simulation.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 위의 정보로 하나의 부트스트랩을 루프로 돌려 얻을 수 있다.</span></span>
+<span id="cb46-10"><a href="simulation.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="simulation.html#cb46-11" aria-hidden="true" tabindex="-1"></a>boot_ratio <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb46-12"><a href="simulation.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)</span>
+<span id="cb46-13"><a href="simulation.html#cb46-13" aria-hidden="true" tabindex="-1"></a>  boot <span class="ot">&lt;-</span> <span class="fu">sample</span>(n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb46-14"><a href="simulation.html#cb46-14" aria-hidden="true" tabindex="-1"></a>  earn_boot <span class="ot">&lt;-</span> data<span class="sc">$</span>earn[boot]</span>
+<span id="cb46-15"><a href="simulation.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  male_boot <span class="ot">&lt;-</span> data<span class="sc">$</span>male[boot]</span>
+<span id="cb46-16"><a href="simulation.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">0</span>])<span class="sc">/</span></span>
+<span id="cb46-17"><a href="simulation.html#cb46-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">median</span>(earn_boot[male_boot<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb46-18"><a href="simulation.html#cb46-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-19"><a href="simulation.html#cb46-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-20"><a href="simulation.html#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 이러한 부트스트랩 과정을 10000회 반복한다.</span></span>
+<span id="cb46-21"><a href="simulation.html#cb46-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-22"><a href="simulation.html#cb46-22" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb46-23"><a href="simulation.html#cb46-23" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_sims, <span class="fu">boot_ratio</span>(<span class="at">data=</span>earnings))</span>
+<span id="cb46-24"><a href="simulation.html#cb46-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-25"><a href="simulation.html#cb46-25" aria-hidden="true" tabindex="-1"></a>output <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb46-26"><a href="simulation.html#cb46-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value)) <span class="sc">+</span> </span>
+<span id="cb46-27"><a href="simulation.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb46-28"><a href="simulation.html#cb46-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb46-29"><a href="simulation.html#cb46-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">&quot;Dist of median earning ratio of 10000 Bootstrap sample&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb46-30"><a href="simulation.html#cb46-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(output), </span>
+<span id="cb46-31"><a href="simulation.html#cb46-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb46-32"><a href="simulation.html#cb46-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb46-33"><a href="simulation.html#cb46-33" aria-hidden="true" tabindex="-1"></a>     <span class="at">x =</span> <span class="fu">median</span>(output) <span class="sc">-</span> <span class="fu">sd</span>(output), <span class="at">xend =</span> <span class="fu">median</span>(output),</span>
+<span id="cb46-34"><a href="simulation.html#cb46-34" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="dv">3000</span>, <span class="at">yend =</span> <span class="dv">3000</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb46-35"><a href="simulation.html#cb46-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">3300</span>, <span class="at">x =</span> <span class="fu">median</span>(output) <span class="sc">-</span> <span class="fu">sd</span>(output)<span class="sc">/</span><span class="dv">2</span>),</span>
+<span id="cb46-36"><a href="simulation.html#cb46-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;sd =&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(output), <span class="dv">2</span>)), </span>
+<span id="cb46-37"><a href="simulation.html#cb46-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb46-38"><a href="simulation.html#cb46-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">4300</span>, <span class="at">x =</span> <span class="fu">median</span>(output)),</span>
+<span id="cb46-39"><a href="simulation.html#cb46-39" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;Median =&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(output), <span class="dv">2</span>)), </span>
+<span id="cb46-40"><a href="simulation.html#cb46-40" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb46-41"><a href="simulation.html#cb46-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>))</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-53-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>부트스트랩 분포의 표준편차는 0.03이다. 따라서 우리는 추정된 중위값의 비율이 0.6, 표준오차는 0.03이라고 말할 수 있다.</p>
 <div id="choices-in-defining-the-bootstrap-distribution" class="section level3" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Choices in defining the bootstrap distribution</h3>

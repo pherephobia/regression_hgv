@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2021-06-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="fitting-regression-models.html"/>
 <link rel="next" href="linear-regression-with-multiple-predictors.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,6 +55,8 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -476,233 +478,265 @@ div.csl-indent {
 <li class="chapter" data-level="10.9.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predicting-party-identification"><i class="fa fa-check"></i><b>10.9.1</b> Predicting party identification</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>11</b> Simulation</a>
+<li class="chapter" data-level="11" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html"><i class="fa fa-check"></i><b>11</b> Assumptions, diagnostics, and model evaluation</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>11.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="11.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#assumptions-of-regression-analysis"><i class="fa fa-check"></i><b>11.1</b> Assumptions of regression analysis</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>11.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="11.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>11.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.1.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#failures-of-the-assumptions"><i class="fa fa-check"></i><b>11.1.1</b> Failures of the assumptions</a></li>
+<li class="chapter" data-level="11.1.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#causal-inference"><i class="fa fa-check"></i><b>11.1.2</b> Causal inference</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>11.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="11.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-data-and-fitted-model"><i class="fa fa-check"></i><b>11.2</b> Plotting the data and fitted model</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>11.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="11.2.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-a-regression-line-as-a-function-of-one-input-variable"><i class="fa fa-check"></i><b>11.2.1</b> Displaying a regression line as a function of one input variable</a></li>
+<li class="chapter" data-level="11.2.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-two-fitted-regression-lines"><i class="fa fa-check"></i><b>11.2.2</b> Displaying two fitted regression lines</a></li>
+<li class="chapter" data-level="11.2.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-uncertainty-in-the-fitted-regression"><i class="fa fa-check"></i><b>11.2.3</b> Displaying uncertainty in the fitted regression</a></li>
+<li class="chapter" data-level="11.2.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-using-one-plot-for-each-input-variable"><i class="fa fa-check"></i><b>11.2.4</b> Displaying using one plot for each input variable</a></li>
+<li class="chapter" data-level="11.2.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-outcome-vs.-a-continuous-predictor"><i class="fa fa-check"></i><b>11.2.5</b> Plotting the outcome vs. a continuous predictor</a></li>
+<li class="chapter" data-level="11.2.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#forming-a-linear-predictor-from-a-multiple-regression"><i class="fa fa-check"></i><b>11.2.6</b> Forming a linear predictor from a multiple regression</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>11.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="11.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>11.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="11.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-plots"><i class="fa fa-check"></i><b>11.3</b> Residual plots</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>11.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="11.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>11.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="11.3.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#using-fake-data-simulation-to-understand-residual-plots"><i class="fa fa-check"></i><b>11.3.1</b> Using fake-data simulation to understand residual plots</a></li>
+<li class="chapter" data-level="11.3.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#a-confusing-choice-plot-residuals-vs.-predicted-values-or-residuals-vs.-observed-values"><i class="fa fa-check"></i><b>11.3.2</b> A confusing choice: plot residuals vs. predicted values, or residuals vs. observed values?</a></li>
+<li class="chapter" data-level="11.3.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#understanding-the-choice-using-fake-data-simulation"><i class="fa fa-check"></i><b>11.3.3</b> Understanding the choice using fake-data simulation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>11.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
+<li class="chapter" data-level="11.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#comparing-data-to-replications-from-a-fitted-model"><i class="fa fa-check"></i><b>11.4</b> Comparing data to replications from a fitted model</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="12.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.4.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-simulation-based-checking-of-a-fitted-normal-distribution"><i class="fa fa-check"></i><b>11.4.1</b> Example: simulation-based checking of a fitted normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="11.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-predictive-simulation-to-check-the-fit-of-a-time-series-model"><i class="fa fa-check"></i><b>11.5</b> Example: predictive simulation to check the fit of a time-series model</a>
 <ul>
-<li class="chapter" data-level="12.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="11.5.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fitting-a-first-order-autoregression-to-the-unemployment-series"><i class="fa fa-check"></i><b>11.5.1</b> Fitting a first-order autoregression to the unemployment series</a></li>
+<li class="chapter" data-level="11.5.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#simulating-replicated-datasets"><i class="fa fa-check"></i><b>11.5.2</b> Simulating replicated datasets</a></li>
+<li class="chapter" data-level="11.5.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#visual-and-numerical-comparisons-of-replicated-to-actual-data"><i class="fa fa-check"></i><b>11.5.3</b> Visual and numerical comparisons of replicated to actual data</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="12.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="11.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-standard-deviation-sigma-and-explained-variance-r2"><i class="fa fa-check"></i><b>11.6</b> Residual standard deviation <span class="math inline">\(\sigma\)</span> and explained variance <span class="math inline">\(R^2\)</span></a>
 <ul>
-<li class="chapter" data-level="12.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="12.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="11.6.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#difficulties-in-interpreting-residual-standard-deviation-and-explained-variance"><i class="fa fa-check"></i><b>11.6.1</b> Difficulties in interpreting residual standard deviation and explained variance</a></li>
+<li class="chapter" data-level="11.6.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#bayesian-r2"><i class="fa fa-check"></i><b>11.6.2</b> Bayesian <span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
+<li class="chapter" data-level="11.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#external-validation-checking-fitted-model-on-new-data"><i class="fa fa-check"></i><b>11.7</b> External validation: checking fitted model on new data</a></li>
+<li class="chapter" data-level="11.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#cross-validation"><i class="fa fa-check"></i><b>11.8</b> Cross validation</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="13.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="11.8.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.1</b> Leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fast-leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.2</b> Fast leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#summarizing-prediction-error-using-the-log-score-and-deviance"><i class="fa fa-check"></i><b>11.8.3</b> Summarizing prediction error using the log score and deviance</a></li>
+<li class="chapter" data-level="11.8.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#overfitting-and-aic"><i class="fa fa-check"></i><b>11.8.4</b> Overfitting and AIC</a></li>
+<li class="chapter" data-level="11.8.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#interpreting-differences-in-log-scores"><i class="fa fa-check"></i><b>11.8.5</b> Interpreting differences in log scores</a></li>
+<li class="chapter" data-level="11.8.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-adding-pure-noise-predictors-to-a-model"><i class="fa fa-check"></i><b>11.8.6</b> Demonstration of adding pure noise predictors to a model</a></li>
+<li class="chapter" data-level="11.8.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>11.8.7</b> <span class="math inline">\(K\)</span>-fold cross validation</a></li>
+<li class="chapter" data-level="11.8.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-k-fold-cross-validation-using-simulated-data"><i class="fa fa-check"></i><b>11.8.8</b> Demonstration of <span class="math inline">\(K\)</span>-fold cross validation using simulated data</a></li>
+<li class="chapter" data-level="11.8.9" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#concerns-about-model-selection"><i class="fa fa-check"></i><b>11.8.9</b> Concerns about model selection</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
-<ul>
-<li class="chapter" data-level="13.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="13.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="12" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>12</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="13.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
+<li class="chapter" data-level="12.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>12.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="14.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="12.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>12.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="12.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>12.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="12.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>12.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="14.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="12.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>12.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="14.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="12.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>12.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="12.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>12.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="14.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="14.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="12.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>12.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="12.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>12.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="12.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>12.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
+<li class="chapter" data-level="13" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="13.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="15.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="13.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="13.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="13.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="15.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="13.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="15.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="13.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="13.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="15.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="13.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="13.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="13.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
+<li class="chapter" data-level="14" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="14.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="16.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="14.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="14.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="14.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="14.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="16.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="16.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="14.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="14.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="16.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="14.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="14.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
+<li class="chapter" data-level="15" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="15.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="17.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="15.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="15.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="15.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="15.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="17.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="15.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="15.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="17.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="17.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="15.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="15.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="17.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="15.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
+<li class="chapter" data-level="16" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="16.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="18.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="18.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="16.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="16.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="16.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="18.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="16.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="18.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="18.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="16.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="16.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="18.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="18.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="16.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="16.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="18.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="16.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
+<li class="chapter" data-level="17" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="17.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="19.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="19.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="17.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="17.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="19.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="17.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="19.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="17.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="19.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="17.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="17.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="19.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="17.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="17.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="17.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
+<li class="chapter" data-level="18" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="18.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="20.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="18.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="18.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="18.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="20.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="18.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="20.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="20.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="18.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="18.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="20.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="20.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="18.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="18.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="20.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="18.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<li class="chapter" data-level="19" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="19.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="21.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="19.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="19.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="19.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="21.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="19.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="21.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="21.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="19.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="19.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="21.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="21.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="19.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="19.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="21.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="19.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="simulation-12.html"><a href="simulation-12.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<li class="chapter" data-level="20" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
 <ul>
-<li class="chapter" data-level="22.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-discrete-probability-models-12"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<li class="chapter" data-level="20.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
 <ul>
-<li class="chapter" data-level="22.1.1" data-path="simulation-12.html"><a href="simulation-12.html#how-many-girls-in-400-births-12"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
-<li class="chapter" data-level="22.1.2" data-path="simulation-12.html"><a href="simulation-12.html#accounting-for-twins-12"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+<li class="chapter" data-level="20.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="20.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
 </ul></li>
-<li class="chapter" data-level="22.2" data-path="simulation-12.html"><a href="simulation-12.html#simulation-of-continuous-and-mixed-discretecontinuous-models-12"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<li class="chapter" data-level="20.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
 <ul>
-<li class="chapter" data-level="22.2.1" data-path="simulation-12.html"><a href="simulation-12.html#simulation-in-r-using-custom-made-functions-12"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+<li class="chapter" data-level="20.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
 </ul></li>
-<li class="chapter" data-level="22.3" data-path="simulation-12.html"><a href="simulation-12.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-12"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
-<li class="chapter" data-level="22.4" data-path="simulation-12.html"><a href="simulation-12.html#bootstrapping-to-simulate-a-sampling-distribution-12"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<li class="chapter" data-level="20.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="20.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
 <ul>
-<li class="chapter" data-level="22.4.1" data-path="simulation-12.html"><a href="simulation-12.html#choices-in-defining-the-bootstrap-distribution-12"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
-<li class="chapter" data-level="22.4.2" data-path="simulation-12.html"><a href="simulation-12.html#limitations-of-bootstrapping-12"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+<li class="chapter" data-level="20.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="20.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
 </ul></li>
-<li class="chapter" data-level="22.5" data-path="simulation-12.html"><a href="simulation-12.html#fake-data-simulation-as-a-way-of-life-12"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
+<li class="chapter" data-level="20.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="21.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="21.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="21.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="21.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="21.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="simulation-11.html"><a href="simulation-11.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-discrete-probability-models-11"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="simulation-11.html"><a href="simulation-11.html#how-many-girls-in-400-births-11"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="22.1.2" data-path="simulation-11.html"><a href="simulation-11.html#accounting-for-twins-11"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="simulation-11.html"><a href="simulation-11.html#simulation-of-continuous-and-mixed-discretecontinuous-models-11"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="simulation-11.html"><a href="simulation-11.html#simulation-in-r-using-custom-made-functions-11"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="simulation-11.html"><a href="simulation-11.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-11"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="22.4" data-path="simulation-11.html"><a href="simulation-11.html#bootstrapping-to-simulate-a-sampling-distribution-11"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="simulation-11.html"><a href="simulation-11.html#choices-in-defining-the-bootstrap-distribution-11"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="22.4.2" data-path="simulation-11.html"><a href="simulation-11.html#limitations-of-bootstrapping-11"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="simulation-11.html"><a href="simulation-11.html#fake-data-simulation-as-a-way-of-life-11"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html"><i class="fa fa-check"></i><b>23</b> Exercises of Regression and Other Stories</a>
 <ul>
@@ -714,7 +748,7 @@ div.csl-indent {
 <li class="chapter" data-level="23.1.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#problems-of-statistics"><i class="fa fa-check"></i><b>23.1.4</b> Problems of statistics</a></li>
 <li class="chapter" data-level="23.1.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#goals-of-regression-1"><i class="fa fa-check"></i><b>23.1.5</b> Goals of regression</a></li>
 </ul></li>
-<li class="chapter" data-level="23.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#causal-inference"><i class="fa fa-check"></i><b>23.2</b> Causal inference</a></li>
+<li class="chapter" data-level="23.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#causal-inference-1"><i class="fa fa-check"></i><b>23.2</b> Causal inference</a></li>
 <li class="chapter" data-level="23.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization"><i class="fa fa-check"></i><b>23.3</b> Statistics as generalization</a></li>
 <li class="chapter" data-level="23.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization-1"><i class="fa fa-check"></i><b>23.4</b> Statistics as generalization</a></li>
 <li class="chapter" data-level="23.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#a-problem-with-linear-models"><i class="fa fa-check"></i><b>23.5</b> A problem with linear models</a>
@@ -771,8 +805,8 @@ div.csl-indent {
 <div id="propagating-uncertainty-in-inference-using-posterior-simulations" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Propagating uncertainty in inference using posterior simulations</h2>
 <p>일단은 베이지언 시뮬레이션이 추론과 예측에 있어서의 불확실성을 표현하는 하나의 방법이라고만 이해를 하자. 예를 들어, 챕터 7에서 선거와 경제 간의 관계를 살펴보았던 예제를 다시 살펴보자.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="prediction-and-bayesian-inference.html#cb104-1" aria-hidden="true" tabindex="-1"></a>M9<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, <span class="at">data =</span> hibbs, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb104-2"><a href="prediction-and-bayesian-inference.html#cb104-2" aria-hidden="true" tabindex="-1"></a>M9<span class="fl">.1</span> <span class="sc">%&gt;%</span> <span class="fu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="prediction-and-bayesian-inference.html#cb112-1" aria-hidden="true" tabindex="-1"></a>M9<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, <span class="at">data =</span> hibbs, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb112-2"><a href="prediction-and-bayesian-inference.html#cb112-2" aria-hidden="true" tabindex="-1"></a>M9<span class="fl">.1</span> <span class="sc">%&gt;%</span> <span class="fu">print</span>()</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      vote ~ growth
@@ -792,10 +826,10 @@ div.csl-indent {
 ## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <p>이 숫자들은 각각 절편/기울기/잔차의 표준편차를 나타내는 파라미터 벡터 <span class="math inline">\((a, b, \sigma)\)</span>의 서로 다른 가능한 값들을 나타내는 시뮬레이션의 행렬을 요약한 것이다. 그 결과, 단 하나의 점추정값을 제시하기보다는 모수에 대한 불확실성을 반영한 사후시뮬레이션 결과들을 갖게 된다.</p>
 <p>아래 <code>sims</code>가 시뮬레이션된 결과들을 행렬로 저장한 내용이며, 우린 이 행렬로부터 필요한 통계량을 추출할 수 있다.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="prediction-and-bayesian-inference.html#cb106-1" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(M9<span class="fl">.1</span>) <span class="co"># Simulation results</span></span>
-<span id="cb106-2"><a href="prediction-and-bayesian-inference.html#cb106-2" aria-hidden="true" tabindex="-1"></a>Median <span class="ot">&lt;-</span> <span class="fu">apply</span>(sims, <span class="dv">2</span>, median)</span>
-<span id="cb106-3"><a href="prediction-and-bayesian-inference.html#cb106-3" aria-hidden="true" tabindex="-1"></a>MAD_SD <span class="ot">&lt;-</span> <span class="fu">apply</span>(sims, <span class="dv">2</span>, mad)</span>
-<span id="cb106-4"><a href="prediction-and-bayesian-inference.html#cb106-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">cbind</span>(Median, MAD_SD))</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="prediction-and-bayesian-inference.html#cb114-1" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(M9<span class="fl">.1</span>) <span class="co"># Simulation results</span></span>
+<span id="cb114-2"><a href="prediction-and-bayesian-inference.html#cb114-2" aria-hidden="true" tabindex="-1"></a>Median <span class="ot">&lt;-</span> <span class="fu">apply</span>(sims, <span class="dv">2</span>, median)</span>
+<span id="cb114-3"><a href="prediction-and-bayesian-inference.html#cb114-3" aria-hidden="true" tabindex="-1"></a>MAD_SD <span class="ot">&lt;-</span> <span class="fu">apply</span>(sims, <span class="dv">2</span>, mad)</span>
+<span id="cb114-4"><a href="prediction-and-bayesian-inference.html#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">cbind</span>(Median, MAD_SD))</span></code></pre></div>
 <pre><code>##                Median    MAD_SD
 ## (Intercept) 46.252913 1.7292656
 ## growth       3.040811 0.7275287
@@ -804,8 +838,8 @@ div.csl-indent {
 <div id="uncertainty-in-the-regression-coefficients-and-implied-uncertainty-in-the-regression-line" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Uncertainty in the regression coefficients and implied uncertainty in the regression line</h3>
 <p>불확실성 분포에 대한 베이지언의 개념을 이해하기 위해서는 계수값의 시뮬레이션 추출을 그래프로 나타내는 것이 도움이 될 수 있다. Figure 9.1은 선거를 예측하는 모델 적합 결과에 대한 절편과 기울기의 사후 시뮬레이션 값의 히스토그램을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-241"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-241-1.png" alt="Posterior simulations of $a$ and $b$ from the regression model, $y = a + bx + \text{error}$. For each parameter, we display the simulation draws produced by `stan_glm` and also the posterior median $\pm 1$ and $2$ mad sd's." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-106"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-106-1.png" alt="Posterior simulations of $a$ and $b$ from the regression model, $y = a + bx + \text{error}$. For each parameter, we display the simulation draws produced by `stan_glm` and also the posterior median $\pm 1$ and $2$ mad sd's." width="864" />
 <p class="caption">
 Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the regression model, <span class="math inline">\(y = a + bx + \text{error}\)</span>. For each parameter, we display the simulation draws produced by <code>stan_glm</code> and also the posterior median <span class="math inline">\(\pm 1\)</span> and <span class="math inline">\(2\)</span> mad sd’s.
 </p>
@@ -815,10 +849,10 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="using-the-matrix-of-posterior-simulations-to-express-uncertainty-about-a-parameter-estimate-or-function-of-parameter-estimates" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Using the matrix of posterior simulations to express uncertainty about a parameter estimate or function of parameter estimates</h3>
 <p>시뮬레이션을 통해 추론을 요약하여 제시하는 것의 실질적인 장점은 바로 직접적으로 추론을 이끌어내기 위해 시뮬레이션한 값들을 사용할 수 있다는 것에 있다.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="prediction-and-bayesian-inference.html#cb108-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> sims[,<span class="dv">1</span>] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>()</span>
-<span id="cb108-2"><a href="prediction-and-bayesian-inference.html#cb108-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> sims[,<span class="dv">2</span>] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>()</span>
-<span id="cb108-3"><a href="prediction-and-bayesian-inference.html#cb108-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> a<span class="sc">/</span>b</span>
-<span id="cb108-4"><a href="prediction-and-bayesian-inference.html#cb108-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">median</span>(z), <span class="fu">mad</span>(z)))</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="prediction-and-bayesian-inference.html#cb116-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> sims[,<span class="dv">1</span>] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>()</span>
+<span id="cb116-2"><a href="prediction-and-bayesian-inference.html#cb116-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> sims[,<span class="dv">2</span>] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>()</span>
+<span id="cb116-3"><a href="prediction-and-bayesian-inference.html#cb116-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> a<span class="sc">/</span>b</span>
+<span id="cb116-4"><a href="prediction-and-bayesian-inference.html#cb116-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">median</span>(z), <span class="fu">mad</span>(z)))</span></code></pre></div>
 <pre><code>## [1] 15.177925  4.014095</code></pre>
 </div>
 </div>
@@ -845,17 +879,17 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="point-prediction-using-predict" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Point prediction using predict</h3>
 <p>선거와 경제 데이터를 바탕으로 경제성장률 2.0%일때의 집권당의 득표율을 예측하고자 한다고 하자. 먼저 우리는 <span class="math inline">\(x\)</span>의 가상의 값에 대한 데이터셋을 만들어야 한다.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="prediction-and-bayesian-inference.html#cb110-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">growth =</span> <span class="fl">2.0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="prediction-and-bayesian-inference.html#cb118-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">growth =</span> <span class="fl">2.0</span>)</span></code></pre></div>
 <p>그럼 이제 점예측값을 컴퓨팅할 수 있다.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="prediction-and-bayesian-inference.html#cb111-1" aria-hidden="true" tabindex="-1"></a>y_point_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
-<span id="cb111-2"><a href="prediction-and-bayesian-inference.html#cb111-2" aria-hidden="true" tabindex="-1"></a>y_point_pred</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="prediction-and-bayesian-inference.html#cb119-1" aria-hidden="true" tabindex="-1"></a>y_point_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
+<span id="cb119-2"><a href="prediction-and-bayesian-inference.html#cb119-2" aria-hidden="true" tabindex="-1"></a>y_point_pred</span></code></pre></div>
 <pre><code>##        1 
 ## 52.36415</code></pre>
 <p>마찬가지로 직접 컴퓨팅할 수도 있다.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="prediction-and-bayesian-inference.html#cb113-1" aria-hidden="true" tabindex="-1"></a>a_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(M9<span class="fl">.1</span>)[<span class="dv">1</span>]</span>
-<span id="cb113-2"><a href="prediction-and-bayesian-inference.html#cb113-2" aria-hidden="true" tabindex="-1"></a>b_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(M9<span class="fl">.1</span>)[<span class="dv">2</span>]</span>
-<span id="cb113-3"><a href="prediction-and-bayesian-inference.html#cb113-3" aria-hidden="true" tabindex="-1"></a>y_point_pred <span class="ot">&lt;-</span> a_hat <span class="sc">+</span> b_hat<span class="sc">*</span>new</span>
-<span id="cb113-4"><a href="prediction-and-bayesian-inference.html#cb113-4" aria-hidden="true" tabindex="-1"></a>y_point_pred</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="prediction-and-bayesian-inference.html#cb121-1" aria-hidden="true" tabindex="-1"></a>a_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(M9<span class="fl">.1</span>)[<span class="dv">1</span>]</span>
+<span id="cb121-2"><a href="prediction-and-bayesian-inference.html#cb121-2" aria-hidden="true" tabindex="-1"></a>b_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(M9<span class="fl">.1</span>)[<span class="dv">2</span>]</span>
+<span id="cb121-3"><a href="prediction-and-bayesian-inference.html#cb121-3" aria-hidden="true" tabindex="-1"></a>y_point_pred <span class="ot">&lt;-</span> a_hat <span class="sc">+</span> b_hat<span class="sc">*</span>new</span>
+<span id="cb121-4"><a href="prediction-and-bayesian-inference.html#cb121-4" aria-hidden="true" tabindex="-1"></a>y_point_pred</span></code></pre></div>
 <pre><code>##     growth
 ## 1 52.33453</code></pre>
 <p>두 결과 모두 <span class="math inline">\(46.3 + 3.0 \times 2 = 52.3\)</span>이라는 값을 반환한다.</p>
@@ -863,9 +897,9 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="linear-predictor-with-uncertainty-using-posterior_linpred-or-posterior_epred" class="section level3" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Linear predictor with uncertainty using posterior_linpred or posterior_epred</h3>
 <p><code>posterior_linpred</code> 함수를 이용해 적합된 회귀선의 값에 대한 불확실성을 얻을 수 있다.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="prediction-and-bayesian-inference.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use function</span></span>
-<span id="cb115-2"><a href="prediction-and-bayesian-inference.html#cb115-2" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
-<span id="cb115-3"><a href="prediction-and-bayesian-inference.html#cb115-3" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="prediction-and-bayesian-inference.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use function</span></span>
+<span id="cb123-2"><a href="prediction-and-bayesian-inference.html#cb123-2" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
+<span id="cb123-3"><a href="prediction-and-bayesian-inference.html#cb123-3" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##           
 ## iterations        1
 ##       [1,] 53.28234
@@ -888,12 +922,12 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 ##      [18,] 51.93764
 ##      [19,] 52.70163
 ##      [20,] 52.30842</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="prediction-and-bayesian-inference.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute by hand</span></span>
-<span id="cb117-2"><a href="prediction-and-bayesian-inference.html#cb117-2" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(M9<span class="fl">.1</span>)</span>
-<span id="cb117-3"><a href="prediction-and-bayesian-inference.html#cb117-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> sims[,<span class="dv">1</span>]</span>
-<span id="cb117-4"><a href="prediction-and-bayesian-inference.html#cb117-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> sims[,<span class="dv">2</span>]</span>
-<span id="cb117-5"><a href="prediction-and-bayesian-inference.html#cb117-5" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>new</span>
-<span id="cb117-6"><a href="prediction-and-bayesian-inference.html#cb117-6" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="prediction-and-bayesian-inference.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute by hand</span></span>
+<span id="cb125-2"><a href="prediction-and-bayesian-inference.html#cb125-2" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(M9<span class="fl">.1</span>)</span>
+<span id="cb125-3"><a href="prediction-and-bayesian-inference.html#cb125-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> sims[,<span class="dv">1</span>]</span>
+<span id="cb125-4"><a href="prediction-and-bayesian-inference.html#cb125-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> sims[,<span class="dv">2</span>]</span>
+<span id="cb125-5"><a href="prediction-and-bayesian-inference.html#cb125-5" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>new</span>
+<span id="cb125-6"><a href="prediction-and-bayesian-inference.html#cb125-6" aria-hidden="true" tabindex="-1"></a>y_linpred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##     growth
 ## 1 53.28234</code></pre>
 <p><code>posterior_linpred</code> 함수는 평균이 점예측치와 같고 표준편차는 적합된 모델의 불확실성을 보여주는 분포로부터 얻어진 사후 시뮬레이션의 벡터를 반환한다.</p>
@@ -902,9 +936,9 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="predictive-distribution-for-a-new-observation-using-posterior_predict" class="section level3" number="9.2.3">
 <h3><span class="header-section-number">9.2.3</span> Predictive distribution for a new observation using posterior_predict</h3>
 <p>마지막으로 어떤 한 선거에서의 예측 불확실성을 나타내는 벡터를 계산할 수 있다.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="prediction-and-bayesian-inference.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use function</span></span>
-<span id="cb119-2"><a href="prediction-and-bayesian-inference.html#cb119-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
-<span id="cb119-3"><a href="prediction-and-bayesian-inference.html#cb119-3" aria-hidden="true" tabindex="-1"></a>y_pred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="prediction-and-bayesian-inference.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use function</span></span>
+<span id="cb127-2"><a href="prediction-and-bayesian-inference.html#cb127-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new)</span>
+<span id="cb127-3"><a href="prediction-and-bayesian-inference.html#cb127-3" aria-hidden="true" tabindex="-1"></a>y_pred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##              1
 ##  [1,] 53.34335
 ##  [2,] 47.02423
@@ -926,53 +960,52 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 ## [18,] 52.44453
 ## [19,] 49.66674
 ## [20,] 48.83045</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="prediction-and-bayesian-inference.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By hand</span></span>
-<span id="cb121-2"><a href="prediction-and-bayesian-inference.html#cb121-2" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sims)</span>
-<span id="cb121-3"><a href="prediction-and-bayesian-inference.html#cb121-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> sims[,<span class="dv">3</span>]</span>
-<span id="cb121-4"><a href="prediction-and-bayesian-inference.html#cb121-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(a <span class="sc">+</span> b<span class="sc">*</span>new) <span class="sc">+</span> <span class="fu">rnorm</span>(n_sims, <span class="dv">0</span>, sigma)</span>
-<span id="cb121-5"><a href="prediction-and-bayesian-inference.html#cb121-5" aria-hidden="true" tabindex="-1"></a>y_pred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
-<pre><code>##  [1] 43.09430 58.78669 50.27444 57.70791 62.74808 54.80009 54.70959
-##  [8] 48.98187 51.49506 55.78395 54.79901 53.23100 51.02962 52.14421
-## [15] 59.38839 59.74599 51.92007 51.10829 51.82106 47.73279</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="prediction-and-bayesian-inference.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By hand</span></span>
+<span id="cb129-2"><a href="prediction-and-bayesian-inference.html#cb129-2" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sims)</span>
+<span id="cb129-3"><a href="prediction-and-bayesian-inference.html#cb129-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> sims[,<span class="dv">3</span>]</span>
+<span id="cb129-4"><a href="prediction-and-bayesian-inference.html#cb129-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(a <span class="sc">+</span> b<span class="sc">*</span>new) <span class="sc">+</span> <span class="fu">rnorm</span>(n_sims, <span class="dv">0</span>, sigma)</span>
+<span id="cb129-5"><a href="prediction-and-bayesian-inference.html#cb129-5" aria-hidden="true" tabindex="-1"></a>y_pred <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<pre><code>##  [1] 43.09430 58.78669 50.27444 57.70791 62.74808 54.80009 54.70959 48.98187 51.49506 55.78395
+## [11] 54.79901 53.23100 51.02962 52.14421 59.38839 59.74599 51.92007 51.10829 51.82106 47.73279</code></pre>
 <p>이 두 결과 모두 시각적으로 요약하여 제시할 수 있다.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="prediction-and-bayesian-inference.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y_pred)</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-249-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="prediction-and-bayesian-inference.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y_pred)</span></code></pre></div>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-114-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>또는 요약통계치를 이용하여 숫자로 보여줄 수도 있다.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="prediction-and-bayesian-inference.html#cb124-1" aria-hidden="true" tabindex="-1"></a>y_pred_median <span class="ot">&lt;-</span> <span class="fu">median</span>(y_pred)</span>
-<span id="cb124-2"><a href="prediction-and-bayesian-inference.html#cb124-2" aria-hidden="true" tabindex="-1"></a>y_pred_mad <span class="ot">&lt;-</span> <span class="fu">mad</span>(y_pred)</span>
-<span id="cb124-3"><a href="prediction-and-bayesian-inference.html#cb124-3" aria-hidden="true" tabindex="-1"></a>win_prob <span class="ot">&lt;-</span> <span class="fu">mean</span>(y_pred <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
-<span id="cb124-4"><a href="prediction-and-bayesian-inference.html#cb124-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-5"><a href="prediction-and-bayesian-inference.html#cb124-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과는 다음과 같다.</span></span>
-<span id="cb124-6"><a href="prediction-and-bayesian-inference.html#cb124-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted Clinton percentage of 2-party vote: &quot;</span>,</span>
-<span id="cb124-7"><a href="prediction-and-bayesian-inference.html#cb124-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(y_pred_median,<span class="dv">1</span>),</span>
-<span id="cb124-8"><a href="prediction-and-bayesian-inference.html#cb124-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, with s.e. &quot;</span>, <span class="fu">round</span>(y_pred_mad, <span class="dv">1</span>), </span>
-<span id="cb124-9"><a href="prediction-and-bayesian-inference.html#cb124-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Pr (Clinton win) = &quot;</span>,</span>
-<span id="cb124-10"><a href="prediction-and-bayesian-inference.html#cb124-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(win_prob, <span class="dv">2</span>),</span>
-<span id="cb124-11"><a href="prediction-and-bayesian-inference.html#cb124-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="prediction-and-bayesian-inference.html#cb132-1" aria-hidden="true" tabindex="-1"></a>y_pred_median <span class="ot">&lt;-</span> <span class="fu">median</span>(y_pred)</span>
+<span id="cb132-2"><a href="prediction-and-bayesian-inference.html#cb132-2" aria-hidden="true" tabindex="-1"></a>y_pred_mad <span class="ot">&lt;-</span> <span class="fu">mad</span>(y_pred)</span>
+<span id="cb132-3"><a href="prediction-and-bayesian-inference.html#cb132-3" aria-hidden="true" tabindex="-1"></a>win_prob <span class="ot">&lt;-</span> <span class="fu">mean</span>(y_pred <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb132-4"><a href="prediction-and-bayesian-inference.html#cb132-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-5"><a href="prediction-and-bayesian-inference.html#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과는 다음과 같다.</span></span>
+<span id="cb132-6"><a href="prediction-and-bayesian-inference.html#cb132-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted Clinton percentage of 2-party vote: &quot;</span>,</span>
+<span id="cb132-7"><a href="prediction-and-bayesian-inference.html#cb132-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(y_pred_median,<span class="dv">1</span>),</span>
+<span id="cb132-8"><a href="prediction-and-bayesian-inference.html#cb132-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, with s.e. &quot;</span>, <span class="fu">round</span>(y_pred_mad, <span class="dv">1</span>), </span>
+<span id="cb132-9"><a href="prediction-and-bayesian-inference.html#cb132-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Pr (Clinton win) = &quot;</span>,</span>
+<span id="cb132-10"><a href="prediction-and-bayesian-inference.html#cb132-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(win_prob, <span class="dv">2</span>),</span>
+<span id="cb132-11"><a href="prediction-and-bayesian-inference.html#cb132-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## Predicted Clinton percentage of 2-party vote: 53.1, with s.e. 4
 ## Pr (Clinton win) = 0.78</code></pre>
 </div>
 <div id="prediction-given-a-range-of-input-values" class="section level3" number="9.2.4">
 <h3><span class="header-section-number">9.2.4</span> Prediction given a range of input values</h3>
 <p><code>predict, posterior_linpred, posterior_predict</code>를 이용해서 예측값의 범위를 계산할 수 있다. 예를 들어, -2%부터 +4% 사이의 경제성장률의 가능한 값의 범위에서 선거 결과를 예측하는 것 등이 가능해진다.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="prediction-and-bayesian-inference.html#cb126-1" aria-hidden="true" tabindex="-1"></a>new_grid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">growth=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">2.0</span>, <span class="fl">4.0</span>, <span class="fl">0.5</span>))</span>
-<span id="cb126-2"><a href="prediction-and-bayesian-inference.html#cb126-2" aria-hidden="true" tabindex="-1"></a>y_point_pred_grid <span class="ot">&lt;-</span> <span class="fu">predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span>
-<span id="cb126-3"><a href="prediction-and-bayesian-inference.html#cb126-3" aria-hidden="true" tabindex="-1"></a>y_linpred_grid <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span>
-<span id="cb126-4"><a href="prediction-and-bayesian-inference.html#cb126-4" aria-hidden="true" tabindex="-1"></a>y_pred_grid <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="prediction-and-bayesian-inference.html#cb134-1" aria-hidden="true" tabindex="-1"></a>new_grid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">growth=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">2.0</span>, <span class="fl">4.0</span>, <span class="fl">0.5</span>))</span>
+<span id="cb134-2"><a href="prediction-and-bayesian-inference.html#cb134-2" aria-hidden="true" tabindex="-1"></a>y_point_pred_grid <span class="ot">&lt;-</span> <span class="fu">predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span>
+<span id="cb134-3"><a href="prediction-and-bayesian-inference.html#cb134-3" aria-hidden="true" tabindex="-1"></a>y_linpred_grid <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span>
+<span id="cb134-4"><a href="prediction-and-bayesian-inference.html#cb134-4" aria-hidden="true" tabindex="-1"></a>y_pred_grid <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(M9<span class="fl">.1</span>, <span class="at">newdata=</span>new_grid)</span></code></pre></div>
 <p>결과적으로 길이가 13인 벡터, <code>y_point_pred_grid</code>와 경제성장률을 보여주는 13개 각 값에 대한 예측값인 <span class="math inline">\(n_sims\times 13\)</span>인 두 행렬, <code>y_linpred_grid</code>와 <code>y_pred_grid</code>를 얻게 된다.</p>
 </div>
 <div id="propagating-uncertainty" class="section level3" number="9.2.5">
 <h3><span class="header-section-number">9.2.5</span> Propagating uncertainty</h3>
 <p>선거 결과의 불확실성은 경제성장에 대해 미리 설정된 여러 값들에 조건적으로 나타난다. 선거 전에 경제성장률이 2.0%였을 경우의 가장 최선의 추정량이 약간의 불확실성, 표준편차 0.3%의 정규분포로 나타난다고 해보자. 우리는 우리의 불확실성을 더 완벽하게 표현하는 미래의 분포를 얻기 위해 예측변수의 불확실성을 이용할 수 있다.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="prediction-and-bayesian-inference.html#cb127-1" aria-hidden="true" tabindex="-1"></a>x_new <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, <span class="fl">2.0</span>, <span class="fl">0.3</span>)</span>
-<span id="cb127-2"><a href="prediction-and-bayesian-inference.html#cb127-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, a <span class="sc">+</span> b<span class="sc">*</span>x_new, sigma)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="prediction-and-bayesian-inference.html#cb135-1" aria-hidden="true" tabindex="-1"></a>x_new <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, <span class="fl">2.0</span>, <span class="fl">0.3</span>)</span>
+<span id="cb135-2"><a href="prediction-and-bayesian-inference.html#cb135-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_sims, a <span class="sc">+</span> b<span class="sc">*</span>x_new, sigma)</span></code></pre></div>
 <p>마찬가지로 요약해보면 다음과 같다:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="prediction-and-bayesian-inference.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted Clinton percentage of 2-party vote: &quot;</span>,</span>
-<span id="cb128-2"><a href="prediction-and-bayesian-inference.html#cb128-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">median</span>(y_pred), <span class="dv">1</span>),</span>
-<span id="cb128-3"><a href="prediction-and-bayesian-inference.html#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, with s.e. &quot;</span>, <span class="fu">round</span>(<span class="fu">mad</span>(y_pred), <span class="dv">1</span>), </span>
-<span id="cb128-4"><a href="prediction-and-bayesian-inference.html#cb128-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Pr (Clinton win) = &quot;</span>,</span>
-<span id="cb128-5"><a href="prediction-and-bayesian-inference.html#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(y_pred <span class="sc">&gt;</span> <span class="dv">50</span>), <span class="dv">2</span>),</span>
-<span id="cb128-6"><a href="prediction-and-bayesian-inference.html#cb128-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="prediction-and-bayesian-inference.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Predicted Clinton percentage of 2-party vote: &quot;</span>,</span>
+<span id="cb136-2"><a href="prediction-and-bayesian-inference.html#cb136-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">median</span>(y_pred), <span class="dv">1</span>),</span>
+<span id="cb136-3"><a href="prediction-and-bayesian-inference.html#cb136-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;, with s.e. &quot;</span>, <span class="fu">round</span>(<span class="fu">mad</span>(y_pred), <span class="dv">1</span>), </span>
+<span id="cb136-4"><a href="prediction-and-bayesian-inference.html#cb136-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">Pr (Clinton win) = &quot;</span>,</span>
+<span id="cb136-5"><a href="prediction-and-bayesian-inference.html#cb136-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(y_pred <span class="sc">&gt;</span> <span class="dv">50</span>), <span class="dv">2</span>),</span>
+<span id="cb136-6"><a href="prediction-and-bayesian-inference.html#cb136-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## Predicted Clinton percentage of 2-party vote: 52.3, with s.e. 4.1
 ## Pr (Clinton win) = 0.72</code></pre>
 <p>점예측값은 52.3%로 변하지 않았지만 표준편차가 약간 높아져서 추가적인 불확실성을 반영하고 있는 것을 확인할 수 있다.</p>
@@ -980,9 +1013,9 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="simulating-uncertainty-for-the-linear-predictor-and-new-observations" class="section level3" number="9.2.6">
 <h3><span class="header-section-number">9.2.6</span> Simulating uncertainty for the linear predictor and new observations</h3>
 <p>이번에는 <code>earnings</code>라는 설문조사 결과를 가진 데이터로 키(인치)로 몸무게(파운드)를 예측하는 모델을 분석해보자.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="prediction-and-bayesian-inference.html#cb130-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> height, </span>
-<span id="cb130-2"><a href="prediction-and-bayesian-inference.html#cb130-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb130-3"><a href="prediction-and-bayesian-inference.html#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="prediction-and-bayesian-inference.html#cb138-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> height, </span>
+<span id="cb138-2"><a href="prediction-and-bayesian-inference.html#cb138-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb138-3"><a href="prediction-and-bayesian-inference.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      weight ~ height
@@ -1001,10 +1034,10 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 ## * For help interpreting the printed output see ?print.stanreg
 ## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <p>절편은 해석이 어렵다. 키가 0인치일 때의 예측되는 몸무게를 의미하기 때문이다. 현실적으로 존재하지 않는 상황이기는 하다. 따라서 다음과 같이 데이터를 좀 손을 보자.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="prediction-and-bayesian-inference.html#cb132-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>c_height <span class="ot">&lt;-</span> earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="dv">66</span></span>
-<span id="cb132-2"><a href="prediction-and-bayesian-inference.html#cb132-2" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height, </span>
-<span id="cb132-3"><a href="prediction-and-bayesian-inference.html#cb132-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb132-4"><a href="prediction-and-bayesian-inference.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="prediction-and-bayesian-inference.html#cb140-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>c_height <span class="ot">&lt;-</span> earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="dv">66</span></span>
+<span id="cb140-2"><a href="prediction-and-bayesian-inference.html#cb140-2" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> c_height, </span>
+<span id="cb140-3"><a href="prediction-and-bayesian-inference.html#cb140-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb140-4"><a href="prediction-and-bayesian-inference.html#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      weight ~ c_height
@@ -1046,14 +1079,14 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <p>복잡한 공식을 이용하기보다는 R에서 시뮬레이션을 활용해 예측 불확실성을 컵퓨팅 해볼 수 있다.</p>
 <p>적합된 회귀모델에서 표본 규모 <span class="math inline">\(n\)</span>의 크기가 커질수록, 선형 예측변수의 표준편차는 0으로 수렴한다. 반면에 예측값의 표준편차는 0이 아닌 <span class="math inline">\(\sigma\)</span>의 값에 수렴한다. 적합된 모델의 파라미터들에 대해 완벽하게 알고있다고 하더라도 새로운 데이터 관측치를 예측하는 것에 대한 불확실성이 존재한다. <code>stan_glm</code>으로 모델을 적합한 이후에 우리는 두 가지 종류의 예측값을 <code>posterior_linpred</code>와 <code>posterior_predict</code>의 사후 시뮬레이션을 얻을 수 있다.</p>
 <p>키와 몸무게 예제에서 베이지한 회귀모델 <code>fit_2</code>를 이용하여 70인치 키를 가진 사람의 몸무게를 추정해보자(키는 현재 중심화되어 4.0인치):</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="prediction-and-bayesian-inference.html#cb134-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">c_height=</span><span class="fl">4.0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="prediction-and-bayesian-inference.html#cb142-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">c_height=</span><span class="fl">4.0</span>)</span></code></pre></div>
 <p>점예측값을 컴퓨팅할 수도 있다.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="prediction-and-bayesian-inference.html#cb135-1" aria-hidden="true" tabindex="-1"></a>y_point_pred_2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_2, <span class="at">newdata=</span>new)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="prediction-and-bayesian-inference.html#cb143-1" aria-hidden="true" tabindex="-1"></a>y_point_pred_2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_2, <span class="at">newdata=</span>new)</span></code></pre></div>
 <p>그리고 선형 예측값의 시뮬레이션을 컴퓨팅할 수 있다.</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="prediction-and-bayesian-inference.html#cb136-1" aria-hidden="true" tabindex="-1"></a>y_linpred_2 <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(fit_2, <span class="at">newdata=</span>new)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="prediction-and-bayesian-inference.html#cb144-1" aria-hidden="true" tabindex="-1"></a>y_linpred_2 <span class="ot">&lt;-</span> <span class="fu">posterior_linpred</span>(fit_2, <span class="at">newdata=</span>new)</span></code></pre></div>
 <p><span class="math inline">\(a+4.0b\)</span>의 가능한 값들을 보여주는 벡터를 계수값의 사후 불확실성으로부터 오는 변동성과 함께 산출할 수 있다. 키가 70인치인 사람에 대한 사후 예측 시뮬레이션을 컴퓨팅해보자.</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="prediction-and-bayesian-inference.html#cb137-1" aria-hidden="true" tabindex="-1"></a>y_postpred_2 <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(fit_2, <span class="at">newdata=</span>new)</span>
-<span id="cb137-2"><a href="prediction-and-bayesian-inference.html#cb137-2" aria-hidden="true" tabindex="-1"></a>y_postpred_2 <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="prediction-and-bayesian-inference.html#cb145-1" aria-hidden="true" tabindex="-1"></a>y_postpred_2 <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(fit_2, <span class="at">newdata=</span>new)</span>
+<span id="cb145-2"><a href="prediction-and-bayesian-inference.html#cb145-2" aria-hidden="true" tabindex="-1"></a>y_postpred_2 <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##              1
 ##  [1,] 223.2700
 ##  [2,] 138.3257
@@ -1096,17 +1129,17 @@ Figure 9.1: Posterior simulations of <span class="math inline">\(a\)</span> and 
 <div id="bayesian-information-aggregation" class="section level3" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Bayesian information aggregation</h3>
 <p>사전 정보에 대한 값을 설정한다.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="prediction-and-bayesian-inference.html#cb139-1" aria-hidden="true" tabindex="-1"></a>theta_hat_prior <span class="ot">&lt;-</span> <span class="fl">0.524</span> </span>
-<span id="cb139-2"><a href="prediction-and-bayesian-inference.html#cb139-2" aria-hidden="true" tabindex="-1"></a>se_prior <span class="ot">&lt;-</span> <span class="fl">0.041</span></span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="prediction-and-bayesian-inference.html#cb147-1" aria-hidden="true" tabindex="-1"></a>theta_hat_prior <span class="ot">&lt;-</span> <span class="fl">0.524</span> </span>
+<span id="cb147-2"><a href="prediction-and-bayesian-inference.html#cb147-2" aria-hidden="true" tabindex="-1"></a>se_prior <span class="ot">&lt;-</span> <span class="fl">0.041</span></span></code></pre></div>
 <p>새로운 데이터 추정량을 설정한다.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="prediction-and-bayesian-inference.html#cb140-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
-<span id="cb140-2"><a href="prediction-and-bayesian-inference.html#cb140-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">190</span></span>
-<span id="cb140-3"><a href="prediction-and-bayesian-inference.html#cb140-3" aria-hidden="true" tabindex="-1"></a>theta_hat_data <span class="ot">&lt;-</span> y <span class="sc">/</span> n</span>
-<span id="cb140-4"><a href="prediction-and-bayesian-inference.html#cb140-4" aria-hidden="true" tabindex="-1"></a>se_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((y <span class="sc">/</span> n) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> y <span class="sc">/</span> n) <span class="sc">/</span> n)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="prediction-and-bayesian-inference.html#cb148-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb148-2"><a href="prediction-and-bayesian-inference.html#cb148-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">190</span></span>
+<span id="cb148-3"><a href="prediction-and-bayesian-inference.html#cb148-3" aria-hidden="true" tabindex="-1"></a>theta_hat_data <span class="ot">&lt;-</span> y <span class="sc">/</span> n</span>
+<span id="cb148-4"><a href="prediction-and-bayesian-inference.html#cb148-4" aria-hidden="true" tabindex="-1"></a>se_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((y <span class="sc">/</span> n) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> y <span class="sc">/</span> n) <span class="sc">/</span> n)</span></code></pre></div>
 <p>사전 정보와 데이터로부터 사후분포의 값을 컴퓨팅한다.</p>
 <p>Figure 9.3a는 사전 분포와 가능도(데이터로부터 얻은 정보)에 관한 내용을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-264"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-264-1.png" alt="(a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior  distribution." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-129"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-129-1.png" alt="(a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior  distribution." width="768" />
 <p class="caption">
 Figure 9.2: (a) Likelihood (distribution representing data estimate and standard error) and prior distribution for the example combining estimate from a poll (the data) with the forecast from a fitted model (the prior). In this case, the data estimate is 0.475 with standard error 0.025, and the prior estimate is 0.524 with prior standard error 0.041. (b) Bayesian inference yields the posterior distribution, which is a compromise between the likelihood and the prior. In this example, the data are more informative than the prior, and so the posterior distribution is closer to the likelihood than the prior distribution.
 </p>
@@ -1117,19 +1150,19 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 <li><p>이 예제에서 사전 분포는 과거 선거/현재 경제성과에 바탕을 둔 예측된 결과이며, 이때 예측의 불확실성은 적합된 모델의 0이 아닌 잔차로부터 유래한 것이다.</p></li>
 <li><p>더불어 이 예제에서 사전 표준오차는 4.1%이며 데이터의 표준오차는 2.5%이므로 데이터는 사전 정보보다 더 많은 정보를 담고 있다. 따라서 베이즈 추정량은 데이터에 점차 더 가까워질 것이다. 쉽계 계산해볼 수 있다.</p></li>
 </ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="prediction-and-bayesian-inference.html#cb141-1" aria-hidden="true" tabindex="-1"></a>theta_hat_prior <span class="ot">&lt;-</span> <span class="fl">0.524</span></span>
-<span id="cb141-2"><a href="prediction-and-bayesian-inference.html#cb141-2" aria-hidden="true" tabindex="-1"></a>se_prior <span class="ot">&lt;-</span> <span class="fl">0.041</span></span>
-<span id="cb141-3"><a href="prediction-and-bayesian-inference.html#cb141-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
-<span id="cb141-4"><a href="prediction-and-bayesian-inference.html#cb141-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">190</span></span>
-<span id="cb141-5"><a href="prediction-and-bayesian-inference.html#cb141-5" aria-hidden="true" tabindex="-1"></a>theta_hat_data <span class="ot">&lt;-</span> y<span class="sc">/</span>n</span>
-<span id="cb141-6"><a href="prediction-and-bayesian-inference.html#cb141-6" aria-hidden="true" tabindex="-1"></a>se_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((y<span class="sc">/</span>n)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>y<span class="sc">/</span>n)<span class="sc">/</span>n)</span>
-<span id="cb141-7"><a href="prediction-and-bayesian-inference.html#cb141-7" aria-hidden="true" tabindex="-1"></a>theta_hat_bayes <span class="ot">&lt;-</span> (theta_hat_prior<span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span></span>
-<span id="cb141-8"><a href="prediction-and-bayesian-inference.html#cb141-8" aria-hidden="true" tabindex="-1"></a>                      theta_hat_data<span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
-<span id="cb141-9"><a href="prediction-and-bayesian-inference.html#cb141-9" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span><span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb141-10"><a href="prediction-and-bayesian-inference.html#cb141-10" aria-hidden="true" tabindex="-1"></a>theta_hat_bayes</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="prediction-and-bayesian-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a>theta_hat_prior <span class="ot">&lt;-</span> <span class="fl">0.524</span></span>
+<span id="cb149-2"><a href="prediction-and-bayesian-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a>se_prior <span class="ot">&lt;-</span> <span class="fl">0.041</span></span>
+<span id="cb149-3"><a href="prediction-and-bayesian-inference.html#cb149-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb149-4"><a href="prediction-and-bayesian-inference.html#cb149-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">190</span></span>
+<span id="cb149-5"><a href="prediction-and-bayesian-inference.html#cb149-5" aria-hidden="true" tabindex="-1"></a>theta_hat_data <span class="ot">&lt;-</span> y<span class="sc">/</span>n</span>
+<span id="cb149-6"><a href="prediction-and-bayesian-inference.html#cb149-6" aria-hidden="true" tabindex="-1"></a>se_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((y<span class="sc">/</span>n)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>y<span class="sc">/</span>n)<span class="sc">/</span>n)</span>
+<span id="cb149-7"><a href="prediction-and-bayesian-inference.html#cb149-7" aria-hidden="true" tabindex="-1"></a>theta_hat_bayes <span class="ot">&lt;-</span> (theta_hat_prior<span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb149-8"><a href="prediction-and-bayesian-inference.html#cb149-8" aria-hidden="true" tabindex="-1"></a>                      theta_hat_data<span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
+<span id="cb149-9"><a href="prediction-and-bayesian-inference.html#cb149-9" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span><span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb149-10"><a href="prediction-and-bayesian-inference.html#cb149-10" aria-hidden="true" tabindex="-1"></a>theta_hat_bayes</span></code></pre></div>
 <pre><code>## [1] 0.4882564</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="prediction-and-bayesian-inference.html#cb143-1" aria-hidden="true" tabindex="-1"></a>se_bayes <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb143-2"><a href="prediction-and-bayesian-inference.html#cb143-2" aria-hidden="true" tabindex="-1"></a>se_bayes</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="prediction-and-bayesian-inference.html#cb151-1" aria-hidden="true" tabindex="-1"></a>se_bayes <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">/</span>se_prior<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>se_data<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb151-2"><a href="prediction-and-bayesian-inference.html#cb151-2" aria-hidden="true" tabindex="-1"></a>se_bayes</span></code></pre></div>
 <pre><code>## [1] 0.02132543</code></pre>
 <p><span class="math inline">\(\hat \theta_{\text{Bayes}} = 0.488\)</span>, <span class="math inline">\(\text{se}_{\text{Bayes}}=0.021\)</span>을 얻을 수 있다. 이 추정량은 사전 정보와 데이터 추정량 사이에 위치하며, 데이터 추정량에 보다 가깝다. Figure 9.3b에서 시각적으로 확인할 수 있다.</p>
 <ul>
@@ -1144,8 +1177,8 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 <div id="example-of-bayesian-inference-beauty-and-sex-ratio" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Example of Bayesian inference: beauty and sex ratio</h2>
 <p>우리는 잡음(noise)-불확실성이 존재하는 연구로부터 추정량을 조정하기 위해 사전 정보를 사용할 수 있다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 121)</span>. 이 예제는 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022519306003079">Kanazawa</a>의 연구에서 기인한 것이다. 먼저 <code>sexratio.rda</code> 데이터를 불어오자.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="prediction-and-bayesian-inference.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/ros-master/SexRatio/data/sexratio.rda&quot;</span>)</span>
-<span id="cb145-2"><a href="prediction-and-bayesian-inference.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sexratio)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="prediction-and-bayesian-inference.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/ros-master/SexRatio/data/sexratio.rda&quot;</span>)</span>
+<span id="cb153-2"><a href="prediction-and-bayesian-inference.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sexratio)</span></code></pre></div>
 <pre><code>##    x  y
 ## 1 -2 50
 ## 2 -1 44
@@ -1185,36 +1218,36 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 <div id="uniform-prior-distribution" class="section level3" number="9.5.1">
 <h3><span class="header-section-number">9.5.1</span> Uniform prior distribution</h3>
 <p><code>stan_glm()</code>를 가지고 적절한 사전정보에 대한 정의가 없음, <code>NULL</code>, 균일 사전분포(uniform priors)를 적합할 수 있다.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="prediction-and-bayesian-inference.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stan_glm</span>(<span class="at">data =</span> hibbs, </span>
-<span id="cb147-2"><a href="prediction-and-bayesian-inference.html#cb147-2" aria-hidden="true" tabindex="-1"></a>         vote <span class="sc">~</span> growth, </span>
-<span id="cb147-3"><a href="prediction-and-bayesian-inference.html#cb147-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior_intercept =</span> <span class="cn">NULL</span>, <span class="at">prior =</span> <span class="cn">NULL</span>, <span class="at">prior_aux =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="prediction-and-bayesian-inference.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stan_glm</span>(<span class="at">data =</span> hibbs, </span>
+<span id="cb155-2"><a href="prediction-and-bayesian-inference.html#cb155-2" aria-hidden="true" tabindex="-1"></a>         vote <span class="sc">~</span> growth, </span>
+<span id="cb155-3"><a href="prediction-and-bayesian-inference.html#cb155-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior_intercept =</span> <span class="cn">NULL</span>, <span class="at">prior =</span> <span class="cn">NULL</span>, <span class="at">prior_aux =</span> <span class="cn">NULL</span>)</span></code></pre></div>
 </div>
 <div id="default-prior-distribution" class="section level3" number="9.5.2">
 <h3><span class="header-section-number">9.5.2</span> Default prior distribution</h3>
 <p><code>stan_glm</code>은 기본적으로 약한 사전분포를 취한다. <code>stan_glm</code>으로 적합한 모델의 사전분포를 보고 싶다면 <code>prior_summary()</code> 함수를 이용하면 된다.</p>
 <p>디폴트 사전정보를 이해하기 위해서는 회귀계수가 예측변수 <span class="math inline">\(x\)</span>의 한 단위 변화에 따른 비교대상 두 사람의 결과, <span class="math inline">\(y\)</span>의 차이의 기대값이라는 것을 떠올릴 필요가 있다. 만약 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 모두 표준화된다면, 계수값은 <span class="math inline">\(x\)</span>의 1 표준편차 변화에 따른 <span class="math inline">\(y\)</span>의 표준편차의 기대값의 차이라고 볼 수 있다.</p>
 <p>디폴트 사전분포는 다음과 같이 특정할 수 있다:</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="prediction-and-bayesian-inference.html#cb148-1" aria-hidden="true" tabindex="-1"></a>M1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, </span>
-<span id="cb148-2"><a href="prediction-and-bayesian-inference.html#cb148-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">data=</span>hibbs, <span class="at">refresh =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="prediction-and-bayesian-inference.html#cb156-1" aria-hidden="true" tabindex="-1"></a>M1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, </span>
+<span id="cb156-2"><a href="prediction-and-bayesian-inference.html#cb156-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">data=</span>hibbs, <span class="at">refresh =</span> <span class="dv">0</span>)</span></code></pre></div>
 <p>혹은 보다 명시적으로 다음과 같은 코드로 나타낼 수 있다:</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="prediction-and-bayesian-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(hibbs<span class="sc">$</span>growth)</span>
-<span id="cb149-2"><a href="prediction-and-bayesian-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(hibbs<span class="sc">$</span>vote)</span>
-<span id="cb149-3"><a href="prediction-and-bayesian-inference.html#cb149-3" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(hibbs<span class="sc">$</span>vote)</span>
-<span id="cb149-4"><a href="prediction-and-bayesian-inference.html#cb149-4" aria-hidden="true" tabindex="-1"></a>M1a <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, </span>
-<span id="cb149-5"><a href="prediction-and-bayesian-inference.html#cb149-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>hibbs, <span class="at">prior=</span><span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">2.5</span><span class="sc">*</span>sd_y<span class="sc">/</span>sd_x),</span>
-<span id="cb149-6"><a href="prediction-and-bayesian-inference.html#cb149-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior_intercept=</span><span class="fu">normal</span>(mean_y, <span class="fl">2.5</span><span class="sc">*</span>sd_y),</span>
-<span id="cb149-7"><a href="prediction-and-bayesian-inference.html#cb149-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior_aux=</span><span class="fu">exponential</span>(<span class="dv">1</span><span class="sc">/</span>sd_y),</span>
-<span id="cb149-8"><a href="prediction-and-bayesian-inference.html#cb149-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">refresh =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="prediction-and-bayesian-inference.html#cb157-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(hibbs<span class="sc">$</span>growth)</span>
+<span id="cb157-2"><a href="prediction-and-bayesian-inference.html#cb157-2" aria-hidden="true" tabindex="-1"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(hibbs<span class="sc">$</span>vote)</span>
+<span id="cb157-3"><a href="prediction-and-bayesian-inference.html#cb157-3" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(hibbs<span class="sc">$</span>vote)</span>
+<span id="cb157-4"><a href="prediction-and-bayesian-inference.html#cb157-4" aria-hidden="true" tabindex="-1"></a>M1a <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, </span>
+<span id="cb157-5"><a href="prediction-and-bayesian-inference.html#cb157-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>hibbs, <span class="at">prior=</span><span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">2.5</span><span class="sc">*</span>sd_y<span class="sc">/</span>sd_x),</span>
+<span id="cb157-6"><a href="prediction-and-bayesian-inference.html#cb157-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior_intercept=</span><span class="fu">normal</span>(mean_y, <span class="fl">2.5</span><span class="sc">*</span>sd_y),</span>
+<span id="cb157-7"><a href="prediction-and-bayesian-inference.html#cb157-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior_aux=</span><span class="fu">exponential</span>(<span class="dv">1</span><span class="sc">/</span>sd_y),</span>
+<span id="cb157-8"><a href="prediction-and-bayesian-inference.html#cb157-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">refresh =</span> <span class="dv">0</span>)</span></code></pre></div>
 <p>위의 두 모델은 <code>M1a</code>가 사전분포를 직접적으로 특정하고 있다는 것을 제외하고는 동일하다.</p>
 </div>
 <div id="weakly-informative-prior-distribution-based-on-subject-matter-knowledge" class="section level3" number="9.5.3">
 <h3><span class="header-section-number">9.5.3</span> Weakly informative prior distribution based on subject-matter knowledge</h3>
 <p>디폴트 사전분포는 추론을 안정적으로 하게끔 하기 위한 장치이다. 많은 문제들에서 사전 정보를 그 문제에 맞게끔 특정해서 포함하는 것만으로도 더 나은 결과를 얻을 수 있다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 124)</span>. 아래는 이전 예제에서 사전 정보로 기울기는 평균 5에 표준편차 5인 정규분포, 절편은 평균 50에 표준편차 10인 정규분포를 따르고 있을 것이라는 사전 분포를 가정한 것이다.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="prediction-and-bayesian-inference.html#cb150-1" aria-hidden="true" tabindex="-1"></a>M4 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, <span class="at">data=</span>hibbs,</span>
-<span id="cb150-2"><a href="prediction-and-bayesian-inference.html#cb150-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">prior=</span><span class="fu">normal</span>(<span class="dv">5</span>, <span class="dv">5</span>), </span>
-<span id="cb150-3"><a href="prediction-and-bayesian-inference.html#cb150-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">prior_intercept=</span><span class="fu">normal</span>(<span class="dv">50</span>, <span class="dv">10</span>),</span>
-<span id="cb150-4"><a href="prediction-and-bayesian-inference.html#cb150-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb150-5"><a href="prediction-and-bayesian-inference.html#cb150-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(M4)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="prediction-and-bayesian-inference.html#cb158-1" aria-hidden="true" tabindex="-1"></a>M4 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(vote <span class="sc">~</span> growth, <span class="at">data=</span>hibbs,</span>
+<span id="cb158-2"><a href="prediction-and-bayesian-inference.html#cb158-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">prior=</span><span class="fu">normal</span>(<span class="dv">5</span>, <span class="dv">5</span>), </span>
+<span id="cb158-3"><a href="prediction-and-bayesian-inference.html#cb158-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">prior_intercept=</span><span class="fu">normal</span>(<span class="dv">50</span>, <span class="dv">10</span>),</span>
+<span id="cb158-4"><a href="prediction-and-bayesian-inference.html#cb158-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb158-5"><a href="prediction-and-bayesian-inference.html#cb158-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(M4)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      vote ~ growth
@@ -1236,9 +1269,9 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 <div id="example-where-an-informative-prior-makes-a-difference-beauty-and-sex-ratio" class="section level3" number="9.5.4">
 <h3><span class="header-section-number">9.5.4</span> Example where an informative prior makes a difference: Beauty and sex ratio</h3>
 <p>부모의 매력이 여자 아이의 출산율로 이어지는 것을 예측한 OLS 모델이 있다고 하자.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="prediction-and-bayesian-inference.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">data =</span> sexratio,</span>
-<span id="cb152-2"><a href="prediction-and-bayesian-inference.html#cb152-2" aria-hidden="true" tabindex="-1"></a>   y <span class="sc">~</span> x) <span class="sc">%&gt;%</span> </span>
-<span id="cb152-3"><a href="prediction-and-bayesian-inference.html#cb152-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="prediction-and-bayesian-inference.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">data =</span> sexratio,</span>
+<span id="cb160-2"><a href="prediction-and-bayesian-inference.html#cb160-2" aria-hidden="true" tabindex="-1"></a>   y <span class="sc">~</span> x) <span class="sc">%&gt;%</span> </span>
+<span id="cb160-3"><a href="prediction-and-bayesian-inference.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ x, data = sexratio)
@@ -1258,25 +1291,25 @@ Figure 9.2: (a) Likelihood (distribution representing data estimate and standard
 ## Multiple R-squared:  0.2841, Adjusted R-squared:  0.04545 
 ## F-statistic:  1.19 on 1 and 3 DF,  p-value: 0.355</code></pre>
 <p>데이터와 모델의 관계를 다음과 같은 그래프로 살펴보자.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-272"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-272-1.png" alt="(a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-137"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-137-1.png" alt="(a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit." width="768" />
 <p class="caption">
 Figure 9.3: (a) Data from a survey showing the percentage of girl births among parents of five different attractiveness categories; (b) data with fitted regression line. Figure 9.6 shows different expressions of uncertainty in the fit.
 </p>
 </div>
 <p>이번에는 정보량이 충분한 사전정보를 가지고 회귀모델을 적합해보자.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="prediction-and-bayesian-inference.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1224</span>)</span>
-<span id="cb154-2"><a href="prediction-and-bayesian-inference.html#cb154-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-3"><a href="prediction-and-bayesian-inference.html#cb154-3" aria-hidden="true" tabindex="-1"></a>fit_bayes_inform <span class="ot">&lt;-</span> </span>
-<span id="cb154-4"><a href="prediction-and-bayesian-inference.html#cb154-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stan_glm</span>(</span>
-<span id="cb154-5"><a href="prediction-and-bayesian-inference.html#cb154-5" aria-hidden="true" tabindex="-1"></a>    y <span class="sc">~</span> x,</span>
-<span id="cb154-6"><a href="prediction-and-bayesian-inference.html#cb154-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> sexratio,</span>
-<span id="cb154-7"><a href="prediction-and-bayesian-inference.html#cb154-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">refresh =</span> <span class="dv">0</span>,</span>
-<span id="cb154-8"><a href="prediction-and-bayesian-inference.html#cb154-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">prior =</span> <span class="fu">normal</span>(<span class="at">location =</span> <span class="dv">0</span>, <span class="at">scale =</span> <span class="fl">0.2</span>),</span>
-<span id="cb154-9"><a href="prediction-and-bayesian-inference.html#cb154-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">prior_intercept =</span> <span class="fu">normal</span>(<span class="at">location =</span> <span class="fl">48.8</span>, <span class="at">scale =</span> <span class="fl">0.5</span>)</span>
-<span id="cb154-10"><a href="prediction-and-bayesian-inference.html#cb154-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb154-11"><a href="prediction-and-bayesian-inference.html#cb154-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-12"><a href="prediction-and-bayesian-inference.html#cb154-12" aria-hidden="true" tabindex="-1"></a>fit_bayes_inform</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="prediction-and-bayesian-inference.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1224</span>)</span>
+<span id="cb162-2"><a href="prediction-and-bayesian-inference.html#cb162-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-3"><a href="prediction-and-bayesian-inference.html#cb162-3" aria-hidden="true" tabindex="-1"></a>fit_bayes_inform <span class="ot">&lt;-</span> </span>
+<span id="cb162-4"><a href="prediction-and-bayesian-inference.html#cb162-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stan_glm</span>(</span>
+<span id="cb162-5"><a href="prediction-and-bayesian-inference.html#cb162-5" aria-hidden="true" tabindex="-1"></a>    y <span class="sc">~</span> x,</span>
+<span id="cb162-6"><a href="prediction-and-bayesian-inference.html#cb162-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> sexratio,</span>
+<span id="cb162-7"><a href="prediction-and-bayesian-inference.html#cb162-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">refresh =</span> <span class="dv">0</span>,</span>
+<span id="cb162-8"><a href="prediction-and-bayesian-inference.html#cb162-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">prior =</span> <span class="fu">normal</span>(<span class="at">location =</span> <span class="dv">0</span>, <span class="at">scale =</span> <span class="fl">0.2</span>),</span>
+<span id="cb162-9"><a href="prediction-and-bayesian-inference.html#cb162-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">prior_intercept =</span> <span class="fu">normal</span>(<span class="at">location =</span> <span class="fl">48.8</span>, <span class="at">scale =</span> <span class="fl">0.5</span>)</span>
+<span id="cb162-10"><a href="prediction-and-bayesian-inference.html#cb162-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb162-11"><a href="prediction-and-bayesian-inference.html#cb162-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-12"><a href="prediction-and-bayesian-inference.html#cb162-12" aria-hidden="true" tabindex="-1"></a>fit_bayes_inform</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      y ~ x
@@ -1295,7 +1328,7 @@ Figure 9.3: (a) Data from a survey showing the percentage of girl births among p
 ## * For help interpreting the printed output see ?print.stanreg
 ## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <p>사전 분포에 대한 요약 정보는 다음과 같다:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="prediction-and-bayesian-inference.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_summary</span>(fit_bayes_inform)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="prediction-and-bayesian-inference.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prior_summary</span>(fit_bayes_inform)</span></code></pre></div>
 <pre><code>## Priors for model &#39;fit_bayes_inform&#39; 
 ## ------
 ## Intercept (after predictors centered)
@@ -1312,12 +1345,15 @@ Figure 9.3: (a) Data from a survey showing the percentage of girl births among p
 ## ------
 ## See help(&#39;prior_summary.stanreg&#39;) for more details</code></pre>
 <p>정보량이 충분한 사전분포를 가지고 사후 시뮬레이션을 돌린 결과는 다음과 같다:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-275"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-275-1.png" alt="100 posterior simulations of coefficients and regression lines, $y = a + bx$ for the beauty-and-sex ratio data from Figure 9.5, fitted given two different priors. The top row shows the wide range of parameter values and corresponding regression lines consistent with the data and default prior. The bottom row shows results for the model fit with informative prior, which greatly narrows the range of possibilities. Given this prior, the data supply almost no evidence about $a$ and $b$." width="1152" />
-<p class="caption">
-Figure 9.4: 100 posterior simulations of coefficients and regression lines, <span class="math inline">\(y = a + bx\)</span> for the beauty-and-sex ratio data from Figure 9.5, fitted given two different priors. The top row shows the wide range of parameter values and corresponding regression lines consistent with the data and default prior. The bottom row shows results for the model fit with informative prior, which greatly narrows the range of possibilities. Given this prior, the data supply almost no evidence about <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.
-</p>
-</div>
+<pre><code>## Error in validate_data(data, if_missing = environment(formula)): object &#39;sex_ratio&#39; not found</code></pre>
+<pre><code>## Error in as_tibble(fit_bayes_default): object &#39;fit_bayes_default&#39; not found</code></pre>
+<pre><code>## Error in coef(fit_bayes_default): object &#39;fit_bayes_default&#39; not found</code></pre>
+<pre><code>## Error in is.data.frame(data): object &#39;sex_ratio&#39; not found</code></pre>
+<pre><code>## Error in ggplot(., aes(`(Intercept)`, x)): object &#39;sims_default&#39; not found</code></pre>
+<pre><code>## Error in ggplot(., aes(x, y)): object &#39;sex_ratio&#39; not found</code></pre>
+<pre><code>## Error in fortify(data): object &#39;sims_default&#39; not found</code></pre>
+<pre><code>## Error in ggplot(., aes(x, y)): object &#39;sex_ratio&#39; not found</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;fig9.6a&#39; not found</code></pre>
 <p>위의 그래프는 <span class="math inline">\((a, b)\)</span>에 대한 사후 시뮬레이션 결과와 그에 따른 회귀선, <span class="math inline">\(y = a + bx\)</span>를 각각 디폴트 사전분포(default prior)/정보 사전분포(informative prior)에 따라 보여준다. 이 경우 사전분포는 데이터보다 더 많은 정보를 제공한다.</p>
 
 </div>
