@@ -10,7 +10,7 @@ library(tidyverse)
 library(patchwork)
 library(haven)
 library(sf)
-
+library(ussf)
 # Parameters
   # Human Development Index data
 file_hdi <- here::here("data/ros-master/HDI/data/hdi.dat")
@@ -21,13 +21,13 @@ hdi <-
   file_hdi %>% 
   read.table(header = TRUE) %>% 
   as_tibble() %>% 
-  select(state, hdi, hdi_rank = rank, canada_dist = canada.dist)
+  dplyr::select(state, hdi, hdi_rank = rank, canada_dist = canada.dist)
 
 income <- 
   file_income %>% 
   read_dta() %>% 
   filter(st_year == 2000) %>% 
-  select(
+  dplyr::select(
     state = st_state,
     state_abbr = st_stateabb,
     income_2000 = st_income
@@ -37,6 +37,7 @@ income <-
 hdi_income <- 
   hdi %>% 
   full_join(income, by = "state")
+
 us <- ussf::boundaries(geography = "state")
 us_hdi <- 
   us %>% 
@@ -460,7 +461,7 @@ elections <-
       inner_join(
         elections %>% 
           filter(year == .x - 2) %>% 
-          select(state_code, district_code, d_prop_prev = d_prop),
+          dplyr::select(state_code, district_code, d_prop_prev = d_prop),
         by = c("state_code", "district_code")
       )
   )
@@ -610,7 +611,7 @@ set_rates <- function(.data, rate_year) {
       .data %>% 
         filter(year == rate_year) %>% 
         mutate(rate = deaths / population * 1e5) %>% 
-        select(!c(year, deaths, population)),
+        dplyr::select(!c(year, deaths, population)),
       by = names(.data) %>% setdiff(c("year", "deaths", "population"))
     )
 }
@@ -656,7 +657,7 @@ add_weight <- function(.data, weight_year) {
     left_join(
       .data %>%
         filter(year == weight_year) %>% 
-        select(!c(year, deaths), weight = population),
+        dplyr::select(!c(year, deaths), weight = population),
       by = names(.data) %>% setdiff(c("year", "deaths", "population"))
     )
 }

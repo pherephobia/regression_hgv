@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 12 Transformations and regression | Reading Notes for Regression and Other Stories</title>
+  <meta name="description" content="Chapter 12 Transformations and regression | Reading Notes for Regression and Other Stories" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 12 Transformations and regression | Reading Notes for Regression and Other Stories" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="pherephobia/regression_hgv" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 12 Transformations and regression | Reading Notes for Regression and Other Stories" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2021-06-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="assumptions-diagnostics-and-model-evaluation.html"/>
+<link rel="next" href="simulation-1.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script async defer src="https://hypothes.is/embed.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88838732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GHV</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#the-three-challenges-of-statistics"><i class="fa fa-check"></i><b>1.1</b> The three challenges of statistics</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#why-learn-regression"><i class="fa fa-check"></i><b>1.2</b> Why learn regression?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#some-examples-of-regression"><i class="fa fa-check"></i><b>1.3</b> Some examples of regression</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#a-randomized-experiment-on-the-effect-of-an-educational-television-program"><i class="fa fa-check"></i><b>1.3.1</b> A randomized experiment on the effect of an educational television program</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#comparing-the-peacekeeping-and-gun-control-studies"><i class="fa fa-check"></i><b>1.3.2</b> Comparing the peacekeeping and gun-control studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#challenges-in-building-understanding-and-interpreting-regressions"><i class="fa fa-check"></i><b>1.4</b> Challenges in building, understanding, and interpreting regressions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#regression-to-estimate-a-relationship-of-interest"><i class="fa fa-check"></i><b>1.4.1</b> Regression to estimate a relationship of interest</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#regression-to-adjust-for-differences-between-treatment-and-control-groups"><i class="fa fa-check"></i><b>1.4.2</b> Regression to adjust for differences between treatment and control groups</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#interpreting-coefficients-in-a-predictive-model"><i class="fa fa-check"></i><b>1.4.3</b> Interpreting coefficients in a predictive model</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#building-interpreting-and-checking-regression-models"><i class="fa fa-check"></i><b>1.4.4</b> Building, interpreting, and checking regression models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#classical-and-bayesian-inference"><i class="fa fa-check"></i><b>1.5</b> Classical and Bayesian inference</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#information"><i class="fa fa-check"></i><b>1.5.1</b> Information</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#assumptions"><i class="fa fa-check"></i><b>1.5.2</b> Assumptions</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#classical-inference"><i class="fa fa-check"></i><b>1.5.3</b> Classical inference</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#bayesian-inference"><i class="fa fa-check"></i><b>1.5.4</b> Bayesian inference</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#computing-least-squares-and-bayesian-regression"><i class="fa fa-check"></i><b>1.6</b> Computing least squares and Bayesian regression</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-measurement.html"><a href="data-and-measurement.html"><i class="fa fa-check"></i><b>2</b> Data and Measurement</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-and-measurement.html"><a href="data-and-measurement.html#examining-where-data-come-from"><i class="fa fa-check"></i><b>2.1</b> Examining where data come from</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="data-and-measurement.html"><a href="data-and-measurement.html#details-of-measurement-can-be-important"><i class="fa fa-check"></i><b>2.1.1</b> Details of measurement can be important</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-and-measurement.html"><a href="data-and-measurement.html#validity-and-reliability"><i class="fa fa-check"></i><b>2.2</b> Validity and reliability</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="data-and-measurement.html"><a href="data-and-measurement.html#validity"><i class="fa fa-check"></i><b>2.2.1</b> Validity</a></li>
+<li class="chapter" data-level="2.2.2" data-path="data-and-measurement.html"><a href="data-and-measurement.html#reliability"><i class="fa fa-check"></i><b>2.2.2</b> Reliability</a></li>
+<li class="chapter" data-level="2.2.3" data-path="data-and-measurement.html"><a href="data-and-measurement.html#sample-selection"><i class="fa fa-check"></i><b>2.2.3</b> Sample selection</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-and-measurement.html"><a href="data-and-measurement.html#all-graphs-are-comparisons"><i class="fa fa-check"></i><b>2.3</b> All graphs are comparisons</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data-and-measurement.html"><a href="data-and-measurement.html#simple-scatterplots"><i class="fa fa-check"></i><b>2.3.1</b> Simple scatterplots</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data-and-measurement.html"><a href="data-and-measurement.html#displaying-more-information-on-a-graph"><i class="fa fa-check"></i><b>2.3.2</b> Displaying more information on a graph</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data-and-measurement.html"><a href="data-and-measurement.html#multiple-plots"><i class="fa fa-check"></i><b>2.3.3</b> Multiple plots</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data-and-measurement.html"><a href="data-and-measurement.html#grids-of-plots"><i class="fa fa-check"></i><b>2.3.4</b> Grids of plots</a></li>
+<li class="chapter" data-level="2.3.5" data-path="data-and-measurement.html"><a href="data-and-measurement.html#applying-graphical-principles-to-numerical-displays-and-communication-more-generally"><i class="fa fa-check"></i><b>2.3.5</b> Applying graphical principles to numerical displays and communication more generally</a></li>
+<li class="chapter" data-level="2.3.6" data-path="data-and-measurement.html"><a href="data-and-measurement.html#graphics-for-understanding-statistical-models"><i class="fa fa-check"></i><b>2.3.6</b> Graphics for understanding statistical models</a></li>
+<li class="chapter" data-level="2.3.7" data-path="data-and-measurement.html"><a href="data-and-measurement.html#graphs-as-comparisons"><i class="fa fa-check"></i><b>2.3.7</b> Graphs as comparisons</a></li>
+<li class="chapter" data-level="2.3.8" data-path="data-and-measurement.html"><a href="data-and-measurement.html#graphs-of-fitted-models"><i class="fa fa-check"></i><b>2.3.8</b> Graphs of fitted models</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-and-measurement.html"><a href="data-and-measurement.html#data-and-adjustment-trends-in-mortality-rates"><i class="fa fa-check"></i><b>2.4</b> Data and adjustment: trends in mortality rates</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html"><i class="fa fa-check"></i><b>3</b> Some Basic Methods in Mathematics and Probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#weighted-averages"><i class="fa fa-check"></i><b>3.1</b> Weighted averages</a></li>
+<li class="chapter" data-level="3.2" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#vectors-and-matrices"><i class="fa fa-check"></i><b>3.2</b> Vectors and matrices</a></li>
+<li class="chapter" data-level="3.3" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#graphing-a-line"><i class="fa fa-check"></i><b>3.3</b> Graphing a line</a></li>
+<li class="chapter" data-level="3.4" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#exponential-and-power-law-growth-and-decline-logarithmic-and-log-log-relationships"><i class="fa fa-check"></i><b>3.4</b> Exponential and power-law growth and decline; logarithmic and log-log relationships</a></li>
+<li class="chapter" data-level="3.5" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#probability-distributions"><i class="fa fa-check"></i><b>3.5</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#mean-and-standard-deviation-of-a-probability-distribution"><i class="fa fa-check"></i><b>3.5.1</b> Mean and standard deviation of a probability distribution</a></li>
+<li class="chapter" data-level="3.5.2" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#normal-distribution-mean-and-standard-deviation"><i class="fa fa-check"></i><b>3.5.2</b> Normal distribution; mean and standard deviation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#linear-transformations"><i class="fa fa-check"></i><b>3.5.3</b> Linear transformations</a></li>
+<li class="chapter" data-level="3.5.4" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#mean-and-standard-deviation-of-the-sum-of-correlated-random-variables"><i class="fa fa-check"></i><b>3.5.4</b> Mean and standard deviation of the sum of correlated random variables</a></li>
+<li class="chapter" data-level="3.5.5" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#lognormal-distribution"><i class="fa fa-check"></i><b>3.5.5</b> Lognormal distribution</a></li>
+<li class="chapter" data-level="3.5.6" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#binomial-distribution"><i class="fa fa-check"></i><b>3.5.6</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.5.7" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#poisson-distribution"><i class="fa fa-check"></i><b>3.5.7</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.5.8" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#unclassified-probability-distribution"><i class="fa fa-check"></i><b>3.5.8</b> Unclassified probability distribution</a></li>
+<li class="chapter" data-level="3.5.9" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#probability-distributions-for-error"><i class="fa fa-check"></i><b>3.5.9</b> Probability distributions for error</a></li>
+<li class="chapter" data-level="3.5.10" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#comparing-distributions"><i class="fa fa-check"></i><b>3.5.10</b> Comparing distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#probability-modeling"><i class="fa fa-check"></i><b>3.6</b> Probability modeling</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#using-an-empirical-forecast"><i class="fa fa-check"></i><b>3.6.1</b> Using an empirical forecast</a></li>
+<li class="chapter" data-level="3.6.2" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#using-an-reasonable-seeming-but-inappropriate-probability-model"><i class="fa fa-check"></i><b>3.6.2</b> Using an reasonable-seeming but inappropriate probability model</a></li>
+<li class="chapter" data-level="3.6.3" data-path="some-basic-methods-in-mathematics-and-probability.html"><a href="some-basic-methods-in-mathematics-and-probability.html#general-lessons-for-probability-modeling"><i class="fa fa-check"></i><b>3.6.3</b> General lessons for probability modeling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>4</b> Statistical Inference</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="statistical-inference.html"><a href="statistical-inference.html#sampling-distributions-and-generative-models"><i class="fa fa-check"></i><b>4.1</b> Sampling distributions and generative models</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#sampling-measurement-error-and-model-error"><i class="fa fa-check"></i><b>4.1.1</b> Sampling, measurement error, and model error</a></li>
+<li class="chapter" data-level="4.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#the-sampling-distribution"><i class="fa fa-check"></i><b>4.1.2</b> The sampling distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="statistical-inference.html"><a href="statistical-inference.html#estimates-standard-errors-and-confidence-intervals"><i class="fa fa-check"></i><b>4.2</b> Estimates, standard errors, and confidence intervals</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#parameters-estimands-and-estimates"><i class="fa fa-check"></i><b>4.2.1</b> Parameters, estimands, and estimates</a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#standard-errors-inferential-uncertainty-and-confidence-intervals"><i class="fa fa-check"></i><b>4.2.2</b> Standard errors, inferential uncertainty, and confidence intervals</a></li>
+<li class="chapter" data-level="4.2.3" data-path="statistical-inference.html"><a href="statistical-inference.html#standard-errors-and-confidence-intervals-for-average-and-proportions"><i class="fa fa-check"></i><b>4.2.3</b> Standard errors and confidence intervals for average and proportions</a></li>
+<li class="chapter" data-level="4.2.4" data-path="statistical-inference.html"><a href="statistical-inference.html#standard-error-and-confidence-interval-for-a-proportion-when-y-0-or-y-n"><i class="fa fa-check"></i><b>4.2.4</b> Standard error and confidence interval for a proportion when <span class="math inline">\(y = 0\)</span> or <span class="math inline">\(y = n\)</span></a></li>
+<li class="chapter" data-level="4.2.5" data-path="statistical-inference.html"><a href="statistical-inference.html#standard-error-for-a-comparison"><i class="fa fa-check"></i><b>4.2.5</b> Standard error for a comparison</a></li>
+<li class="chapter" data-level="4.2.6" data-path="statistical-inference.html"><a href="statistical-inference.html#sampling-distribution-of-the-sample-mean-and-standard-deviation-normal-and-chi2-distributions"><i class="fa fa-check"></i><b>4.2.6</b> Sampling distribution of the sample mean and standard deviation; normal and <span class="math inline">\(\chi^2\)</span> distributions</a></li>
+<li class="chapter" data-level="4.2.7" data-path="statistical-inference.html"><a href="statistical-inference.html#degrees-of-freedom"><i class="fa fa-check"></i><b>4.2.7</b> Degrees of freedom</a></li>
+<li class="chapter" data-level="4.2.8" data-path="statistical-inference.html"><a href="statistical-inference.html#confidence-intervals-from-the-t-distribution"><i class="fa fa-check"></i><b>4.2.8</b> Confidence intervals from the <span class="math inline">\(t\)</span> distribution</a></li>
+<li class="chapter" data-level="4.2.9" data-path="statistical-inference.html"><a href="statistical-inference.html#inference-for-discrete-data"><i class="fa fa-check"></i><b>4.2.9</b> Inference for discrete data</a></li>
+<li class="chapter" data-level="4.2.10" data-path="statistical-inference.html"><a href="statistical-inference.html#linear-transformations-1"><i class="fa fa-check"></i><b>4.2.10</b> Linear transformations</a></li>
+<li class="chapter" data-level="4.2.11" data-path="statistical-inference.html"><a href="statistical-inference.html#comparisons-visual-and-numerical"><i class="fa fa-check"></i><b>4.2.11</b> Comparisons, visual and numerical</a></li>
+<li class="chapter" data-level="4.2.12" data-path="statistical-inference.html"><a href="statistical-inference.html#weighted-averages-1"><i class="fa fa-check"></i><b>4.2.12</b> Weighted averages</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="statistical-inference.html"><a href="statistical-inference.html#bias-and-unmodeled-uncertainty"><i class="fa fa-check"></i><b>4.3</b> Bias and unmodeled uncertainty</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="statistical-inference.html"><a href="statistical-inference.html#bias-in-estimation"><i class="fa fa-check"></i><b>4.3.1</b> Bias in estimation</a></li>
+<li class="chapter" data-level="4.3.2" data-path="statistical-inference.html"><a href="statistical-inference.html#adjusting-inferences-to-account-for-bias-and-unmodeled-uncertainty"><i class="fa fa-check"></i><b>4.3.2</b> Adjusting inferences to account for bias and unmodeled uncertainty</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-significance-hypothesis-testing-and-statistical-errors"><i class="fa fa-check"></i><b>4.4</b> Statistical significance, hypothesis testing, and statistical errors</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-significance"><i class="fa fa-check"></i><b>4.4.1</b> Statistical significance</a></li>
+<li class="chapter" data-level="4.4.2" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing-for-simple-comparisons."><i class="fa fa-check"></i><b>4.4.2</b> Hypothesis testing for simple comparisons.</a></li>
+<li class="chapter" data-level="4.4.3" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing-general-formulation."><i class="fa fa-check"></i><b>4.4.3</b> Hypothesis testing: general formulation.</a></li>
+<li class="chapter" data-level="4.4.4" data-path="statistical-inference.html"><a href="statistical-inference.html#comparisons-of-parameters-to-fixed-values-and-each-other-interpreting-confidence-intervals-as-hypothesis-tests."><i class="fa fa-check"></i><b>4.4.4</b> Comparisons of parameters to fixed values and each other: interpreting confidence intervals as hypothesis tests.</a></li>
+<li class="chapter" data-level="4.4.5" data-path="statistical-inference.html"><a href="statistical-inference.html#type-1-and-type-2-errors-and-why-we-dont-like-talking-about-them."><i class="fa fa-check"></i><b>4.4.5</b> Type 1 and type 2 errors and why we don’t like talking about them.</a></li>
+<li class="chapter" data-level="4.4.6" data-path="statistical-inference.html"><a href="statistical-inference.html#type-m-magnitude-and-type-s-sign-errors."><i class="fa fa-check"></i><b>4.4.6</b> 4.4.6 Type M (magnitude) and type S (sign) errors.</a></li>
+<li class="chapter" data-level="4.4.7" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing-and-statistical-practice."><i class="fa fa-check"></i><b>4.4.7</b> Hypothesis testing and statistical practice.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="statistical-inference.html"><a href="statistical-inference.html#problems-with-the-concept-of-statistical-significance"><i class="fa fa-check"></i><b>4.5</b> Problems with the concept of statistical significance</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-significance-is-not-the-same-as-practical-importance."><i class="fa fa-check"></i><b>4.5.1</b> Statistical significance is not the same as practical importance.</a></li>
+<li class="chapter" data-level="4.5.2" data-path="statistical-inference.html"><a href="statistical-inference.html#non-significance-is-not-the-same-as-zero."><i class="fa fa-check"></i><b>4.5.2</b> Non-significance is not the same as zero.</a></li>
+<li class="chapter" data-level="4.5.3" data-path="statistical-inference.html"><a href="statistical-inference.html#the-difference-between-significant-and-not-significant-is-not-itself-statistically-significant."><i class="fa fa-check"></i><b>4.5.3</b> The difference between “significant” and “not significant” is not itself statistically significant.</a></li>
+<li class="chapter" data-level="4.5.4" data-path="statistical-inference.html"><a href="statistical-inference.html#researcher-degrees-of-freedom-p-hacking-and-forking-paths."><i class="fa fa-check"></i><b>4.5.4</b> Researcher degrees of freedom, <span class="math inline">\(p\)</span>-hacking, and forking paths.</a></li>
+<li class="chapter" data-level="4.5.5" data-path="statistical-inference.html"><a href="statistical-inference.html#the-statistical-significance-filter."><i class="fa fa-check"></i><b>4.5.5</b> The statistical significance filter.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="statistical-inference.html"><a href="statistical-inference.html#moving-beyond-hypothesis-testing"><i class="fa fa-check"></i><b>4.6</b> Moving beyond hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>5</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simulation.html"><a href="simulation.html#simulation-of-discrete-probability-models"><i class="fa fa-check"></i><b>5.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="simulation.html"><a href="simulation.html#how-many-girls-in-400-births"><i class="fa fa-check"></i><b>5.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="5.1.2" data-path="simulation.html"><a href="simulation.html#accounting-for-twins"><i class="fa fa-check"></i><b>5.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="simulation.html"><a href="simulation.html#simulation-of-continuous-and-mixed-discretecontinuous-models"><i class="fa fa-check"></i><b>5.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="simulation.html"><a href="simulation.html#simulation-in-r-using-custom-made-functions"><i class="fa fa-check"></i><b>5.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="simulation.html"><a href="simulation.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation"><i class="fa fa-check"></i><b>5.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="5.4" data-path="simulation.html"><a href="simulation.html#bootstrapping-to-simulate-a-sampling-distribution"><i class="fa fa-check"></i><b>5.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="simulation.html"><a href="simulation.html#choices-in-defining-the-bootstrap-distribution"><i class="fa fa-check"></i><b>5.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="5.4.2" data-path="simulation.html"><a href="simulation.html#limitations-of-bootstrapping"><i class="fa fa-check"></i><b>5.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="simulation.html"><a href="simulation.html#fake-data-simulation-as-a-way-of-life"><i class="fa fa-check"></i><b>5.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html"><i class="fa fa-check"></i><b>6</b> Background on regression modeling</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#regression-models"><i class="fa fa-check"></i><b>6.1</b> Regression models</a></li>
+<li class="chapter" data-level="6.2" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#fitting-a-simple-regression-to-fake-data"><i class="fa fa-check"></i><b>6.2</b> Fitting a simple regression to fake data</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#fitting-a-regression-and-displaying-the-results"><i class="fa fa-check"></i><b>6.2.1</b> Fitting a regression and displaying the results</a></li>
+<li class="chapter" data-level="6.2.2" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#comparing-estimates-to-assumed-parameter-values"><i class="fa fa-check"></i><b>6.2.2</b> Comparing estimates to assumed parameter values</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#interpret-coefficients-as-comparisons-not-effects"><i class="fa fa-check"></i><b>6.3</b> Interpret coefficients as comparisons, not effects</a></li>
+<li class="chapter" data-level="6.4" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#historical-origins-of-regression"><i class="fa fa-check"></i><b>6.4</b> Historical origins of regression</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#daughters-heights-regressing-to-the-mean"><i class="fa fa-check"></i><b>6.4.1</b> Daughters’ heights “regressing” to the mean</a></li>
+<li class="chapter" data-level="6.4.2" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#fitting-the-model-in-r"><i class="fa fa-check"></i><b>6.4.2</b> Fitting the model in R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#the-paradox-of-regression-to-the-mean"><i class="fa fa-check"></i><b>6.5</b> The paradox of regression to the mean</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#how-regression-to-the-mean-can-confuse-people-about-causal-inference-demonstration-using-fake-data"><i class="fa fa-check"></i><b>6.5.1</b> How regression to the mean can confuse people about causal inference; demonstration using fake data</a></li>
+<li class="chapter" data-level="6.5.2" data-path="background-on-regression-modeling.html"><a href="background-on-regression-modeling.html#relation-of-regression-to-the-mean-to-the-larger-themes-of-the-book"><i class="fa fa-check"></i><b>6.5.2</b> Relation of “regression to the mean” to the larger themes of the book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html"><i class="fa fa-check"></i><b>7</b> Linear regression with a single predictor</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#example-predicting-presidential-vote-share-from-the-economy"><i class="fa fa-check"></i><b>7.1</b> Example: predicting presidential vote share from the economy</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#fitting-a-linear-model-to-data"><i class="fa fa-check"></i><b>7.1.1</b> Fitting a linear model to data</a></li>
+<li class="chapter" data-level="7.1.2" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#understanding-the-fitted-model"><i class="fa fa-check"></i><b>7.1.2</b> Understanding the fitted model</a></li>
+<li class="chapter" data-level="7.1.3" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#graphing-the-fitted-regression-line"><i class="fa fa-check"></i><b>7.1.3</b> Graphing the fitted regression line</a></li>
+<li class="chapter" data-level="7.1.4" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#using-the-model-to-predict"><i class="fa fa-check"></i><b>7.1.4</b> Using the model to predict</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#checking-the-model-fitting-procedure-using-fake-data-simulation"><i class="fa fa-check"></i><b>7.2</b> Checking the model-fitting procedure using fake-data simulation</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#step-1-creating-the-pretend-world"><i class="fa fa-check"></i><b>7.2.1</b> Step 1: Creating the pretend world</a></li>
+<li class="chapter" data-level="7.2.2" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#step-2-simulating-fake-data"><i class="fa fa-check"></i><b>7.2.2</b> Step 2: Simulating fake data</a></li>
+<li class="chapter" data-level="7.2.3" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#step-3-fitting-the-model-and-comparing-fitted-to-assumed-values"><i class="fa fa-check"></i><b>7.2.3</b> Step 3: Fitting the model and comparing fitted to assumed values</a></li>
+<li class="chapter" data-level="7.2.4" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#step-4-embedding-the-simulation-in-a-loop"><i class="fa fa-check"></i><b>7.2.4</b> Step 4: Embedding the simulation in a loop</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#formulating-comparisons-as-regression-models"><i class="fa fa-check"></i><b>7.3</b> Formulating comparisons as regression models</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#estimating-the-mean-is-the-same-as-regressing-on-a-constant-term"><i class="fa fa-check"></i><b>7.3.1</b> Estimating the mean is the same as regressing on a constant term</a></li>
+<li class="chapter" data-level="7.3.2" data-path="linear-regression-with-a-single-predictor.html"><a href="linear-regression-with-a-single-predictor.html#estimating-a-difference-is-the-same-as-regressing-on-an-indicator-variable"><i class="fa fa-check"></i><b>7.3.2</b> Estimating a difference is the same as regressing on an indicator variable</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html"><i class="fa fa-check"></i><b>8</b> Fitting regression models</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#least-squares-maximum-likelihood-and-bayesian-inference"><i class="fa fa-check"></i><b>8.1</b> Least squares, maximum likelihood, and Bayesian inference</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#least-squares"><i class="fa fa-check"></i><b>8.1.1</b> Least squares</a></li>
+<li class="chapter" data-level="8.1.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#estimation-of-residual-standard-deviation-sigma"><i class="fa fa-check"></i><b>8.1.2</b> Estimation of residual standard deviation <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="8.1.3" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#computing-the-sum-of-squares-directly"><i class="fa fa-check"></i><b>8.1.3</b> Computing the sum of squares directly</a></li>
+<li class="chapter" data-level="8.1.4" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#maximum-likelihood"><i class="fa fa-check"></i><b>8.1.4</b> Maximum likelihood</a></li>
+<li class="chapter" data-level="8.1.5" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#where-do-the-standard-errors-come-from-using-the-likelihood-surface-to-assess-uncertainty-in-the-parameter-estimates"><i class="fa fa-check"></i><b>8.1.5</b> Where do the standard errors come from? Using the likelihood surface to assess uncertainty in the parameter estimates</a></li>
+<li class="chapter" data-level="8.1.6" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#bayesian-inference-1"><i class="fa fa-check"></i><b>8.1.6</b> Bayesian inference</a></li>
+<li class="chapter" data-level="8.1.7" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#point-estimate-mode-based-approximation-and-posterior-simulations"><i class="fa fa-check"></i><b>8.1.7</b> Point estimate, mode-based approximation, and posterior simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#influence-of-individual-points-in-a-fitted-regression"><i class="fa fa-check"></i><b>8.2</b> Influence of individual points in a fitted regression</a></li>
+<li class="chapter" data-level="8.3" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#least-squares-slope-as-a-weighted-average-of-slopes-of-pairs"><i class="fa fa-check"></i><b>8.3</b> Least squares slope as a weighted average of slopes of pairs</a></li>
+<li class="chapter" data-level="8.4" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#comparing-two-fitting-functions-lm-and-stan_glm"><i class="fa fa-check"></i><b>8.4</b> Comparing two fitting functions: <code>lm</code> and <code>stan_glm</code></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#reproducing-maximum-likelihood-using-stan_glm-with-flat-priors-and-optimization"><i class="fa fa-check"></i><b>8.4.1</b> Reproducing maximum likelihood using <code>stan_glm</code> with flat priors and optimization</a></li>
+<li class="chapter" data-level="8.4.2" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#running-lm"><i class="fa fa-check"></i><b>8.4.2</b> Running <code>lm</code></a></li>
+<li class="chapter" data-level="8.4.3" data-path="fitting-regression-models.html"><a href="fitting-regression-models.html#confidence-intervals-uncertainty-intervals-compatibility-intervals"><i class="fa fa-check"></i><b>8.4.3</b> Confidence intervals, uncertainty intervals, compatibility intervals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html"><i class="fa fa-check"></i><b>9</b> Prediction and Bayesian inference</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#propagating-uncertainty-in-inference-using-posterior-simulations"><i class="fa fa-check"></i><b>9.1</b> Propagating uncertainty in inference using posterior simulations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uncertainty-in-the-regression-coefficients-and-implied-uncertainty-in-the-regression-line"><i class="fa fa-check"></i><b>9.1.1</b> Uncertainty in the regression coefficients and implied uncertainty in the regression line</a></li>
+<li class="chapter" data-level="9.1.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#using-the-matrix-of-posterior-simulations-to-express-uncertainty-about-a-parameter-estimate-or-function-of-parameter-estimates"><i class="fa fa-check"></i><b>9.1.2</b> Using the matrix of posterior simulations to express uncertainty about a parameter estimate or function of parameter estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prediction-and-uncertainty-predict-posterior_linpred-and-posterior_predict"><i class="fa fa-check"></i><b>9.2</b> Prediction and uncertainty: predict, posterior_linpred, and posterior_predict</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#point-prediction-using-predict"><i class="fa fa-check"></i><b>9.2.1</b> Point prediction using predict</a></li>
+<li class="chapter" data-level="9.2.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#linear-predictor-with-uncertainty-using-posterior_linpred-or-posterior_epred"><i class="fa fa-check"></i><b>9.2.2</b> Linear predictor with uncertainty using posterior_linpred or posterior_epred</a></li>
+<li class="chapter" data-level="9.2.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#predictive-distribution-for-a-new-observation-using-posterior_predict"><i class="fa fa-check"></i><b>9.2.3</b> Predictive distribution for a new observation using posterior_predict</a></li>
+<li class="chapter" data-level="9.2.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prediction-given-a-range-of-input-values"><i class="fa fa-check"></i><b>9.2.4</b> Prediction given a range of input values</a></li>
+<li class="chapter" data-level="9.2.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#propagating-uncertainty"><i class="fa fa-check"></i><b>9.2.5</b> Propagating uncertainty</a></li>
+<li class="chapter" data-level="9.2.6" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#simulating-uncertainty-for-the-linear-predictor-and-new-observations"><i class="fa fa-check"></i><b>9.2.6</b> Simulating uncertainty for the linear predictor and new observations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-information-and-bayesian-synthesis"><i class="fa fa-check"></i><b>9.3</b> Prior information and Bayesian synthesis</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#expressing-data-and-prior-information-on-the-same-scale"><i class="fa fa-check"></i><b>9.3.1</b> Expressing data and prior information on the same scale</a></li>
+<li class="chapter" data-level="9.3.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#bayesian-information-aggregation"><i class="fa fa-check"></i><b>9.3.2</b> Bayesian information aggregation</a></li>
+<li class="chapter" data-level="9.3.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#different-ways-of-assigning-prior-distributions-and-performing-bayesian-calculations"><i class="fa fa-check"></i><b>9.3.3</b> Different ways of assigning prior distributions and performing Bayesian calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#example-of-bayesian-inference-beauty-and-sex-ratio"><i class="fa fa-check"></i><b>9.4</b> Example of Bayesian inference: beauty and sex ratio</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-information"><i class="fa fa-check"></i><b>9.4.1</b> Prior information</a></li>
+<li class="chapter" data-level="9.4.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#prior-estimate-and-standard-error"><i class="fa fa-check"></i><b>9.4.2</b> Prior estimate and standard error</a></li>
+<li class="chapter" data-level="9.4.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#data-estimate-and-standard-error"><i class="fa fa-check"></i><b>9.4.3</b> Data estimate and standard error</a></li>
+<li class="chapter" data-level="9.4.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#bayes-estimate"><i class="fa fa-check"></i><b>9.4.4</b> Bayes estimate</a></li>
+<li class="chapter" data-level="9.4.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#understanding-the-bayes-estimate"><i class="fa fa-check"></i><b>9.4.5</b> Understanding the Bayes estimate</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uniform-weakly-informative-and-informative-priors-in-regression"><i class="fa fa-check"></i><b>9.5</b> Uniform, weakly informative, and informative priors in regression</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#uniform-prior-distribution"><i class="fa fa-check"></i><b>9.5.1</b> Uniform prior distribution</a></li>
+<li class="chapter" data-level="9.5.2" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#default-prior-distribution"><i class="fa fa-check"></i><b>9.5.2</b> Default prior distribution</a></li>
+<li class="chapter" data-level="9.5.3" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#weakly-informative-prior-distribution-based-on-subject-matter-knowledge"><i class="fa fa-check"></i><b>9.5.3</b> Weakly informative prior distribution based on subject-matter knowledge</a></li>
+<li class="chapter" data-level="9.5.4" data-path="prediction-and-bayesian-inference.html"><a href="prediction-and-bayesian-inference.html#example-where-an-informative-prior-makes-a-difference-beauty-and-sex-ratio"><i class="fa fa-check"></i><b>9.5.4</b> Example where an informative prior makes a difference: Beauty and sex ratio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html"><i class="fa fa-check"></i><b>10</b> Linear regression with multiple predictors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#adding-predictors-to-a-model"><i class="fa fa-check"></i><b>10.1</b> Adding predictors to a model</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#starting-with-a-binary-predictor"><i class="fa fa-check"></i><b>10.1.1</b> Starting with a binary predictor</a></li>
+<li class="chapter" data-level="10.1.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#a-single-continuous-predictor"><i class="fa fa-check"></i><b>10.1.2</b> A single continuous predictor</a></li>
+<li class="chapter" data-level="10.1.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#including-both-predictors"><i class="fa fa-check"></i><b>10.1.3</b> Including both predictors</a></li>
+<li class="chapter" data-level="10.1.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#understanding-the-fitted-model-1"><i class="fa fa-check"></i><b>10.1.4</b> Understanding the fitted model</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#interpreting-regression-coefficients"><i class="fa fa-check"></i><b>10.2</b> Interpreting regression coefficients</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#its-not-always-possible-to-change-one-predictor-while-holding-all-others-constant"><i class="fa fa-check"></i><b>10.2.1</b> It’s not always possible to change one predictor while holding all others constant</a></li>
+<li class="chapter" data-level="10.2.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#counterfactual-and-predictive-interpretations"><i class="fa fa-check"></i><b>10.2.2</b> Counterfactual and predictive interpretations</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#interactions"><i class="fa fa-check"></i><b>10.3</b> Interactions</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#when-should-we-look-for-interactions"><i class="fa fa-check"></i><b>10.3.1</b> When should we look for interactions?</a></li>
+<li class="chapter" data-level="10.3.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#interpreting-regression-coefficients-in-the-presence-of-interactions"><i class="fa fa-check"></i><b>10.3.2</b> Interpreting regression coefficients in the presence of interactions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#indicator-variables"><i class="fa fa-check"></i><b>10.4</b> Indicator variables</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#centering-a-predictor"><i class="fa fa-check"></i><b>10.4.1</b> Centering a predictor</a></li>
+<li class="chapter" data-level="10.4.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#including-a-binary-variable-in-a-regression"><i class="fa fa-check"></i><b>10.4.2</b> Including a binary variable in a regression</a></li>
+<li class="chapter" data-level="10.4.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#using-indicator-variables-for-multiple-levels-of-a-categorical-predictor"><i class="fa fa-check"></i><b>10.4.3</b> Using indicator variables for multiple levels of a categorical predictor</a></li>
+<li class="chapter" data-level="10.4.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#changing-the-baseline-factor-level"><i class="fa fa-check"></i><b>10.4.4</b> Changing the baseline factor level</a></li>
+<li class="chapter" data-level="10.4.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#using-an-index-variable-to-access-a-group-level-predictor"><i class="fa fa-check"></i><b>10.4.5</b> Using an index variable to access a group-level predictor</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#formulating-paired-or-blocked-designs-as-a-regression-problem"><i class="fa fa-check"></i><b>10.5</b> Formulating paired or blocked designs as a regression problem</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#completely-randomized-experiment"><i class="fa fa-check"></i><b>10.5.1</b> Completely randomized experiment</a></li>
+<li class="chapter" data-level="10.5.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#paired-design"><i class="fa fa-check"></i><b>10.5.2</b> Paired design</a></li>
+<li class="chapter" data-level="10.5.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#block-design"><i class="fa fa-check"></i><b>10.5.3</b> Block design</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#example-uncertainty-in-predicting-congressional-elections"><i class="fa fa-check"></i><b>10.6</b> Example: uncertainty in predicting congressional elections</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#background"><i class="fa fa-check"></i><b>10.6.1</b> Background</a></li>
+<li class="chapter" data-level="10.6.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#data-issues"><i class="fa fa-check"></i><b>10.6.2</b> Data issues</a></li>
+<li class="chapter" data-level="10.6.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#fitting-the-model"><i class="fa fa-check"></i><b>10.6.3</b> Fitting the model</a></li>
+<li class="chapter" data-level="10.6.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#simulation-for-inferences-and-predictions-of-new-data-points"><i class="fa fa-check"></i><b>10.6.4</b> Simulation for inferences and predictions of new data points</a></li>
+<li class="chapter" data-level="10.6.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predictive-simulation-for-a-nonlinear-function-of-new-data"><i class="fa fa-check"></i><b>10.6.5</b> Predictive simulation for a nonlinear function of new data</a></li>
+<li class="chapter" data-level="10.6.6" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#combining-simulation-and-analytic-calculations"><i class="fa fa-check"></i><b>10.6.6</b> Combining simulation and analytic calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#mathematical-notation-and-statistical-inference"><i class="fa fa-check"></i><b>10.7</b> Mathematical notation and statistical inference</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predictors"><i class="fa fa-check"></i><b>10.7.1</b> Predictors</a></li>
+<li class="chapter" data-level="10.7.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#regression-in-vector-matrix-notation"><i class="fa fa-check"></i><b>10.7.2</b> Regression in vector-matrix notation</a></li>
+<li class="chapter" data-level="10.7.3" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#two-ways-of-writing-the-model"><i class="fa fa-check"></i><b>10.7.3</b> Two ways of writing the model</a></li>
+<li class="chapter" data-level="10.7.4" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#nonidentified-parameters-collinearity-and-the-likelihood-function"><i class="fa fa-check"></i><b>10.7.4</b> Nonidentified parameters, collinearity, and the likelihood function</a></li>
+<li class="chapter" data-level="10.7.5" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#hypothesis-testing-why-we-do-not-like-t-tests-and-f-tests"><i class="fa fa-check"></i><b>10.7.5</b> Hypothesis testing: why we do not like <span class="math inline">\(t\)</span> tests and <span class="math inline">\(F\)</span> tests</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#weighted-regression"><i class="fa fa-check"></i><b>10.8</b> Weighted regression</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#three-models-leading-to-weighted-regression"><i class="fa fa-check"></i><b>10.8.1</b> Three models leading to weighted regression</a></li>
+<li class="chapter" data-level="10.8.2" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#using-a-matrix-of-weights-to-account-for-correlated-errors"><i class="fa fa-check"></i><b>10.8.2</b> Using a matrix of weights to account for correlated errors</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#fitting-the-same-model-to-many-datasets"><i class="fa fa-check"></i><b>10.9</b> Fitting the same model to many datasets</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="linear-regression-with-multiple-predictors.html"><a href="linear-regression-with-multiple-predictors.html#predicting-party-identification"><i class="fa fa-check"></i><b>10.9.1</b> Predicting party identification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html"><i class="fa fa-check"></i><b>11</b> Assumptions, diagnostics, and model evaluation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#assumptions-of-regression-analysis"><i class="fa fa-check"></i><b>11.1</b> Assumptions of regression analysis</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#failures-of-the-assumptions"><i class="fa fa-check"></i><b>11.1.1</b> Failures of the assumptions</a></li>
+<li class="chapter" data-level="11.1.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#causal-inference"><i class="fa fa-check"></i><b>11.1.2</b> Causal inference</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-data-and-fitted-model"><i class="fa fa-check"></i><b>11.2</b> Plotting the data and fitted model</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-a-regression-line-as-a-function-of-one-input-variable"><i class="fa fa-check"></i><b>11.2.1</b> Displaying a regression line as a function of one input variable</a></li>
+<li class="chapter" data-level="11.2.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-two-fitted-regression-lines"><i class="fa fa-check"></i><b>11.2.2</b> Displaying two fitted regression lines</a></li>
+<li class="chapter" data-level="11.2.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-uncertainty-in-the-fitted-regression"><i class="fa fa-check"></i><b>11.2.3</b> Displaying uncertainty in the fitted regression</a></li>
+<li class="chapter" data-level="11.2.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#displaying-using-one-plot-for-each-input-variable"><i class="fa fa-check"></i><b>11.2.4</b> Displaying using one plot for each input variable</a></li>
+<li class="chapter" data-level="11.2.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#plotting-the-outcome-vs.-a-continuous-predictor"><i class="fa fa-check"></i><b>11.2.5</b> Plotting the outcome vs. a continuous predictor</a></li>
+<li class="chapter" data-level="11.2.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#forming-a-linear-predictor-from-a-multiple-regression"><i class="fa fa-check"></i><b>11.2.6</b> Forming a linear predictor from a multiple regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-plots"><i class="fa fa-check"></i><b>11.3</b> Residual plots</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#using-fake-data-simulation-to-understand-residual-plots"><i class="fa fa-check"></i><b>11.3.1</b> Using fake-data simulation to understand residual plots</a></li>
+<li class="chapter" data-level="11.3.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#a-confusing-choice-plot-residuals-vs.-predicted-values-or-residuals-vs.-observed-values"><i class="fa fa-check"></i><b>11.3.2</b> A confusing choice: plot residuals vs. predicted values, or residuals vs. observed values?</a></li>
+<li class="chapter" data-level="11.3.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#understanding-the-choice-using-fake-data-simulation"><i class="fa fa-check"></i><b>11.3.3</b> Understanding the choice using fake-data simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#comparing-data-to-replications-from-a-fitted-model"><i class="fa fa-check"></i><b>11.4</b> Comparing data to replications from a fitted model</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-simulation-based-checking-of-a-fitted-normal-distribution"><i class="fa fa-check"></i><b>11.4.1</b> Example: simulation-based checking of a fitted normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#example-predictive-simulation-to-check-the-fit-of-a-time-series-model"><i class="fa fa-check"></i><b>11.5</b> Example: predictive simulation to check the fit of a time-series model</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fitting-a-first-order-autoregression-to-the-unemployment-series"><i class="fa fa-check"></i><b>11.5.1</b> Fitting a first-order autoregression to the unemployment series</a></li>
+<li class="chapter" data-level="11.5.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#simulating-replicated-datasets"><i class="fa fa-check"></i><b>11.5.2</b> Simulating replicated datasets</a></li>
+<li class="chapter" data-level="11.5.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#visual-and-numerical-comparisons-of-replicated-to-actual-data"><i class="fa fa-check"></i><b>11.5.3</b> Visual and numerical comparisons of replicated to actual data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#residual-standard-deviation-sigma-and-explained-variance-r2"><i class="fa fa-check"></i><b>11.6</b> Residual standard deviation <span class="math inline">\(\sigma\)</span> and explained variance <span class="math inline">\(R^2\)</span></a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#difficulties-in-interpreting-residual-standard-deviation-and-explained-variance"><i class="fa fa-check"></i><b>11.6.1</b> Difficulties in interpreting residual standard deviation and explained variance</a></li>
+<li class="chapter" data-level="11.6.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#bayesian-r2"><i class="fa fa-check"></i><b>11.6.2</b> Bayesian <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#external-validation-checking-fitted-model-on-new-data"><i class="fa fa-check"></i><b>11.7</b> External validation: checking fitted model on new data</a></li>
+<li class="chapter" data-level="11.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#cross-validation"><i class="fa fa-check"></i><b>11.8</b> Cross validation</a>
+<ul>
+<li class="chapter" data-level="11.8.1" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.1</b> Leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.2" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#fast-leave-one-out-cross-validation"><i class="fa fa-check"></i><b>11.8.2</b> Fast leave-one-out cross validation</a></li>
+<li class="chapter" data-level="11.8.3" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#summarizing-prediction-error-using-the-log-score-and-deviance"><i class="fa fa-check"></i><b>11.8.3</b> Summarizing prediction error using the log score and deviance</a></li>
+<li class="chapter" data-level="11.8.4" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#overfitting-and-aic"><i class="fa fa-check"></i><b>11.8.4</b> Overfitting and AIC</a></li>
+<li class="chapter" data-level="11.8.5" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#interpreting-differences-in-log-scores"><i class="fa fa-check"></i><b>11.8.5</b> Interpreting differences in log scores</a></li>
+<li class="chapter" data-level="11.8.6" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-adding-pure-noise-predictors-to-a-model"><i class="fa fa-check"></i><b>11.8.6</b> Demonstration of adding pure noise predictors to a model</a></li>
+<li class="chapter" data-level="11.8.7" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>11.8.7</b> <span class="math inline">\(K\)</span>-fold cross validation</a></li>
+<li class="chapter" data-level="11.8.8" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#demonstration-of-k-fold-cross-validation-using-simulated-data"><i class="fa fa-check"></i><b>11.8.8</b> Demonstration of <span class="math inline">\(K\)</span>-fold cross validation using simulated data</a></li>
+<li class="chapter" data-level="11.8.9" data-path="assumptions-diagnostics-and-model-evaluation.html"><a href="assumptions-diagnostics-and-model-evaluation.html#concerns-about-model-selection"><i class="fa fa-check"></i><b>11.8.9</b> Concerns about model selection</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html"><i class="fa fa-check"></i><b>12</b> Transformations and regression</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#linear-transformations-2"><i class="fa fa-check"></i><b>12.1</b> Linear transformations</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#scaling-of-predictors-and-regression-coefficients"><i class="fa fa-check"></i><b>12.1.1</b> Scaling of predictors and regression coefficients</a></li>
+<li class="chapter" data-level="12.1.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#standardization-using-z-scores"><i class="fa fa-check"></i><b>12.1.2</b> Standardization using z-scores</a></li>
+<li class="chapter" data-level="12.1.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#standardization-using-an-externally-specified-population-distribution"><i class="fa fa-check"></i><b>12.1.3</b> Standardization using an externally specified population distribution</a></li>
+<li class="chapter" data-level="12.1.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#standardization-using-reasonable-scales"><i class="fa fa-check"></i><b>12.1.4</b> Standardization using reasonable scales</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#centering-and-standardizing-for-models-with-interactions"><i class="fa fa-check"></i><b>12.2</b> Centering and standardizing for models with interactions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#centering-by-subtracting-the-mean-of-the-data"><i class="fa fa-check"></i><b>12.2.1</b> Centering by subtracting the mean of the data</a></li>
+<li class="chapter" data-level="12.2.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#using-a-conventional-centering-point"><i class="fa fa-check"></i><b>12.2.2</b> Using a conventional centering point</a></li>
+<li class="chapter" data-level="12.2.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#standardizing-by-subtracting-the-mean-and-dividing-by-2-standard-deviations"><i class="fa fa-check"></i><b>12.2.3</b> Standardizing by subtracting the mean and dividing by 2 standard deviations</a></li>
+<li class="chapter" data-level="12.2.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#why-scale-by-2-standard-deviations"><i class="fa fa-check"></i><b>12.2.4</b> Why scale by 2 standard deviations?</a></li>
+<li class="chapter" data-level="12.2.5" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#multiplying-each-regression-coefficient-by-2-standard-deviations-of-its-predictor"><i class="fa fa-check"></i><b>12.2.5</b> Multiplying each regression coefficient by 2 standard deviations of its predictor</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#correlation-and-regression-to-the-mean"><i class="fa fa-check"></i><b>12.3</b> Correlation and “regression to the mean”</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#the-principal-component-line-and-the-regression-line"><i class="fa fa-check"></i><b>12.3.1</b> The principal component line and the regression line</a></li>
+<li class="chapter" data-level="12.3.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#regression-to-the-mean"><i class="fa fa-check"></i><b>12.3.2</b> Regression to the mean</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#logarithmic-transformations"><i class="fa fa-check"></i><b>12.4</b> Logarithmic transformations</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#earnings-and-height-example"><i class="fa fa-check"></i><b>12.4.1</b> Earnings and height example</a></li>
+<li class="chapter" data-level="12.4.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#why-we-use-natural-log-rather-than-log-base-10"><i class="fa fa-check"></i><b>12.4.2</b> Why we use natural log rather than log base 10</a></li>
+<li class="chapter" data-level="12.4.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#building-a-regression-model-on-the-log-scale"><i class="fa fa-check"></i><b>12.4.3</b> Building a regression model on the log scale</a></li>
+<li class="chapter" data-level="12.4.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#further-difficulties-in-interpretation"><i class="fa fa-check"></i><b>12.4.4</b> Further difficulties in interpretation</a></li>
+<li class="chapter" data-level="12.4.5" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#log-log-model-transforming-the-input-and-outcome-variables"><i class="fa fa-check"></i><b>12.4.5</b> Log-log model: transforming the input and outcome variables</a></li>
+<li class="chapter" data-level="12.4.6" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#taking-logarithms-even-when-not-necessary"><i class="fa fa-check"></i><b>12.4.6</b> Taking logarithms even when not necessary</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#other-transformations"><i class="fa fa-check"></i><b>12.5</b> Other transformations</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#square-root-transformations"><i class="fa fa-check"></i><b>12.5.1</b> Square root transformations</a></li>
+<li class="chapter" data-level="12.5.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#idiosyncratic-transformations"><i class="fa fa-check"></i><b>12.5.2</b> Idiosyncratic transformations</a></li>
+<li class="chapter" data-level="12.5.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#using-continuous-rather-than-discrete-predictors"><i class="fa fa-check"></i><b>12.5.3</b> Using continuous rather than discrete predictors</a></li>
+<li class="chapter" data-level="12.5.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#using-discrete-rather-than-continuous-predictors"><i class="fa fa-check"></i><b>12.5.4</b> Using discrete rather than continuous predictors</a></li>
+<li class="chapter" data-level="12.5.5" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#index-and-indicator-variables"><i class="fa fa-check"></i><b>12.5.5</b> Index and indicator variables</a></li>
+<li class="chapter" data-level="12.5.6" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#indicator-variables-identifiability-and-the-baseline-condition"><i class="fa fa-check"></i><b>12.5.6</b> Indicator variables, identifiability, and the baseline condition</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#building-and-comparing-regression-models-for-prediction"><i class="fa fa-check"></i><b>12.6</b> Building and comparing regression models for prediction</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#general-principles"><i class="fa fa-check"></i><b>12.6.1</b> General principles</a></li>
+<li class="chapter" data-level="12.6.2" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#example-predicting-the-yields-of-mesquite-bushes"><i class="fa fa-check"></i><b>12.6.2</b> Example: predicting the yields of mesquite bushes</a></li>
+<li class="chapter" data-level="12.6.3" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#using-the-jacobian-to-adjust-the-predictive-comparison-after-a-transformation"><i class="fa fa-check"></i><b>12.6.3</b> Using the Jacobian to adjust the predictive comparison after a transformation</a></li>
+<li class="chapter" data-level="12.6.4" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#constructing-a-simpler-model"><i class="fa fa-check"></i><b>12.6.4</b> Constructing a simpler model</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#models-for-regression-coefficients"><i class="fa fa-check"></i><b>12.7</b> Models for regression coefficients</a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="transformations-and-regression.html"><a href="transformations-and-regression.html#other-models-for-regression-coefficients"><i class="fa fa-check"></i><b>12.7.1</b> Other models for regression coefficients</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="simulation-1.html"><a href="simulation-1.html"><i class="fa fa-check"></i><b>13</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-discrete-probability-models-1"><i class="fa fa-check"></i><b>13.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="simulation-1.html"><a href="simulation-1.html#how-many-girls-in-400-births-1"><i class="fa fa-check"></i><b>13.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="13.1.2" data-path="simulation-1.html"><a href="simulation-1.html#accounting-for-twins-1"><i class="fa fa-check"></i><b>13.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="simulation-1.html"><a href="simulation-1.html#simulation-of-continuous-and-mixed-discretecontinuous-models-1"><i class="fa fa-check"></i><b>13.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="simulation-1.html"><a href="simulation-1.html#simulation-in-r-using-custom-made-functions-1"><i class="fa fa-check"></i><b>13.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="simulation-1.html"><a href="simulation-1.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-1"><i class="fa fa-check"></i><b>13.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="13.4" data-path="simulation-1.html"><a href="simulation-1.html#bootstrapping-to-simulate-a-sampling-distribution-1"><i class="fa fa-check"></i><b>13.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="simulation-1.html"><a href="simulation-1.html#choices-in-defining-the-bootstrap-distribution-1"><i class="fa fa-check"></i><b>13.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="13.4.2" data-path="simulation-1.html"><a href="simulation-1.html#limitations-of-bootstrapping-1"><i class="fa fa-check"></i><b>13.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="simulation-1.html"><a href="simulation-1.html#fake-data-simulation-as-a-way-of-life-1"><i class="fa fa-check"></i><b>13.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="simulation-2.html"><a href="simulation-2.html"><i class="fa fa-check"></i><b>14</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-discrete-probability-models-2"><i class="fa fa-check"></i><b>14.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="simulation-2.html"><a href="simulation-2.html#how-many-girls-in-400-births-2"><i class="fa fa-check"></i><b>14.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="14.1.2" data-path="simulation-2.html"><a href="simulation-2.html#accounting-for-twins-2"><i class="fa fa-check"></i><b>14.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="simulation-2.html"><a href="simulation-2.html#simulation-of-continuous-and-mixed-discretecontinuous-models-2"><i class="fa fa-check"></i><b>14.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="simulation-2.html"><a href="simulation-2.html#simulation-in-r-using-custom-made-functions-2"><i class="fa fa-check"></i><b>14.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="simulation-2.html"><a href="simulation-2.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-2"><i class="fa fa-check"></i><b>14.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="14.4" data-path="simulation-2.html"><a href="simulation-2.html#bootstrapping-to-simulate-a-sampling-distribution-2"><i class="fa fa-check"></i><b>14.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="simulation-2.html"><a href="simulation-2.html#choices-in-defining-the-bootstrap-distribution-2"><i class="fa fa-check"></i><b>14.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="simulation-2.html"><a href="simulation-2.html#limitations-of-bootstrapping-2"><i class="fa fa-check"></i><b>14.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="simulation-2.html"><a href="simulation-2.html#fake-data-simulation-as-a-way-of-life-2"><i class="fa fa-check"></i><b>14.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="simulation-3.html"><a href="simulation-3.html"><i class="fa fa-check"></i><b>15</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-discrete-probability-models-3"><i class="fa fa-check"></i><b>15.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="simulation-3.html"><a href="simulation-3.html#how-many-girls-in-400-births-3"><i class="fa fa-check"></i><b>15.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="15.1.2" data-path="simulation-3.html"><a href="simulation-3.html#accounting-for-twins-3"><i class="fa fa-check"></i><b>15.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="simulation-3.html"><a href="simulation-3.html#simulation-of-continuous-and-mixed-discretecontinuous-models-3"><i class="fa fa-check"></i><b>15.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="simulation-3.html"><a href="simulation-3.html#simulation-in-r-using-custom-made-functions-3"><i class="fa fa-check"></i><b>15.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="simulation-3.html"><a href="simulation-3.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-3"><i class="fa fa-check"></i><b>15.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="15.4" data-path="simulation-3.html"><a href="simulation-3.html#bootstrapping-to-simulate-a-sampling-distribution-3"><i class="fa fa-check"></i><b>15.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="simulation-3.html"><a href="simulation-3.html#choices-in-defining-the-bootstrap-distribution-3"><i class="fa fa-check"></i><b>15.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="15.4.2" data-path="simulation-3.html"><a href="simulation-3.html#limitations-of-bootstrapping-3"><i class="fa fa-check"></i><b>15.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="simulation-3.html"><a href="simulation-3.html#fake-data-simulation-as-a-way-of-life-3"><i class="fa fa-check"></i><b>15.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="simulation-4.html"><a href="simulation-4.html"><i class="fa fa-check"></i><b>16</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-discrete-probability-models-4"><i class="fa fa-check"></i><b>16.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="simulation-4.html"><a href="simulation-4.html#how-many-girls-in-400-births-4"><i class="fa fa-check"></i><b>16.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="16.1.2" data-path="simulation-4.html"><a href="simulation-4.html#accounting-for-twins-4"><i class="fa fa-check"></i><b>16.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="simulation-4.html"><a href="simulation-4.html#simulation-of-continuous-and-mixed-discretecontinuous-models-4"><i class="fa fa-check"></i><b>16.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="simulation-4.html"><a href="simulation-4.html#simulation-in-r-using-custom-made-functions-4"><i class="fa fa-check"></i><b>16.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="simulation-4.html"><a href="simulation-4.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-4"><i class="fa fa-check"></i><b>16.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="16.4" data-path="simulation-4.html"><a href="simulation-4.html#bootstrapping-to-simulate-a-sampling-distribution-4"><i class="fa fa-check"></i><b>16.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="simulation-4.html"><a href="simulation-4.html#choices-in-defining-the-bootstrap-distribution-4"><i class="fa fa-check"></i><b>16.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="16.4.2" data-path="simulation-4.html"><a href="simulation-4.html#limitations-of-bootstrapping-4"><i class="fa fa-check"></i><b>16.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="simulation-4.html"><a href="simulation-4.html#fake-data-simulation-as-a-way-of-life-4"><i class="fa fa-check"></i><b>16.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simulation-5.html"><a href="simulation-5.html"><i class="fa fa-check"></i><b>17</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-discrete-probability-models-5"><i class="fa fa-check"></i><b>17.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="simulation-5.html"><a href="simulation-5.html#how-many-girls-in-400-births-5"><i class="fa fa-check"></i><b>17.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="17.1.2" data-path="simulation-5.html"><a href="simulation-5.html#accounting-for-twins-5"><i class="fa fa-check"></i><b>17.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="simulation-5.html"><a href="simulation-5.html#simulation-of-continuous-and-mixed-discretecontinuous-models-5"><i class="fa fa-check"></i><b>17.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="simulation-5.html"><a href="simulation-5.html#simulation-in-r-using-custom-made-functions-5"><i class="fa fa-check"></i><b>17.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simulation-5.html"><a href="simulation-5.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-5"><i class="fa fa-check"></i><b>17.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="17.4" data-path="simulation-5.html"><a href="simulation-5.html#bootstrapping-to-simulate-a-sampling-distribution-5"><i class="fa fa-check"></i><b>17.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="simulation-5.html"><a href="simulation-5.html#choices-in-defining-the-bootstrap-distribution-5"><i class="fa fa-check"></i><b>17.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="17.4.2" data-path="simulation-5.html"><a href="simulation-5.html#limitations-of-bootstrapping-5"><i class="fa fa-check"></i><b>17.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="simulation-5.html"><a href="simulation-5.html#fake-data-simulation-as-a-way-of-life-5"><i class="fa fa-check"></i><b>17.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="simulation-6.html"><a href="simulation-6.html"><i class="fa fa-check"></i><b>18</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-discrete-probability-models-6"><i class="fa fa-check"></i><b>18.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="simulation-6.html"><a href="simulation-6.html#how-many-girls-in-400-births-6"><i class="fa fa-check"></i><b>18.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="18.1.2" data-path="simulation-6.html"><a href="simulation-6.html#accounting-for-twins-6"><i class="fa fa-check"></i><b>18.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="simulation-6.html"><a href="simulation-6.html#simulation-of-continuous-and-mixed-discretecontinuous-models-6"><i class="fa fa-check"></i><b>18.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="simulation-6.html"><a href="simulation-6.html#simulation-in-r-using-custom-made-functions-6"><i class="fa fa-check"></i><b>18.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="simulation-6.html"><a href="simulation-6.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-6"><i class="fa fa-check"></i><b>18.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="18.4" data-path="simulation-6.html"><a href="simulation-6.html#bootstrapping-to-simulate-a-sampling-distribution-6"><i class="fa fa-check"></i><b>18.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="simulation-6.html"><a href="simulation-6.html#choices-in-defining-the-bootstrap-distribution-6"><i class="fa fa-check"></i><b>18.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="18.4.2" data-path="simulation-6.html"><a href="simulation-6.html#limitations-of-bootstrapping-6"><i class="fa fa-check"></i><b>18.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="simulation-6.html"><a href="simulation-6.html#fake-data-simulation-as-a-way-of-life-6"><i class="fa fa-check"></i><b>18.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="simulation-7.html"><a href="simulation-7.html"><i class="fa fa-check"></i><b>19</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-discrete-probability-models-7"><i class="fa fa-check"></i><b>19.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="simulation-7.html"><a href="simulation-7.html#how-many-girls-in-400-births-7"><i class="fa fa-check"></i><b>19.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="19.1.2" data-path="simulation-7.html"><a href="simulation-7.html#accounting-for-twins-7"><i class="fa fa-check"></i><b>19.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="simulation-7.html"><a href="simulation-7.html#simulation-of-continuous-and-mixed-discretecontinuous-models-7"><i class="fa fa-check"></i><b>19.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="simulation-7.html"><a href="simulation-7.html#simulation-in-r-using-custom-made-functions-7"><i class="fa fa-check"></i><b>19.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="simulation-7.html"><a href="simulation-7.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-7"><i class="fa fa-check"></i><b>19.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="19.4" data-path="simulation-7.html"><a href="simulation-7.html#bootstrapping-to-simulate-a-sampling-distribution-7"><i class="fa fa-check"></i><b>19.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="19.4.1" data-path="simulation-7.html"><a href="simulation-7.html#choices-in-defining-the-bootstrap-distribution-7"><i class="fa fa-check"></i><b>19.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="19.4.2" data-path="simulation-7.html"><a href="simulation-7.html#limitations-of-bootstrapping-7"><i class="fa fa-check"></i><b>19.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="19.5" data-path="simulation-7.html"><a href="simulation-7.html#fake-data-simulation-as-a-way-of-life-7"><i class="fa fa-check"></i><b>19.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="simulation-8.html"><a href="simulation-8.html"><i class="fa fa-check"></i><b>20</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-discrete-probability-models-8"><i class="fa fa-check"></i><b>20.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="20.1.1" data-path="simulation-8.html"><a href="simulation-8.html#how-many-girls-in-400-births-8"><i class="fa fa-check"></i><b>20.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="20.1.2" data-path="simulation-8.html"><a href="simulation-8.html#accounting-for-twins-8"><i class="fa fa-check"></i><b>20.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="simulation-8.html"><a href="simulation-8.html#simulation-of-continuous-and-mixed-discretecontinuous-models-8"><i class="fa fa-check"></i><b>20.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="simulation-8.html"><a href="simulation-8.html#simulation-in-r-using-custom-made-functions-8"><i class="fa fa-check"></i><b>20.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="simulation-8.html"><a href="simulation-8.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-8"><i class="fa fa-check"></i><b>20.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="20.4" data-path="simulation-8.html"><a href="simulation-8.html#bootstrapping-to-simulate-a-sampling-distribution-8"><i class="fa fa-check"></i><b>20.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="simulation-8.html"><a href="simulation-8.html#choices-in-defining-the-bootstrap-distribution-8"><i class="fa fa-check"></i><b>20.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="20.4.2" data-path="simulation-8.html"><a href="simulation-8.html#limitations-of-bootstrapping-8"><i class="fa fa-check"></i><b>20.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="simulation-8.html"><a href="simulation-8.html#fake-data-simulation-as-a-way-of-life-8"><i class="fa fa-check"></i><b>20.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="simulation-9.html"><a href="simulation-9.html"><i class="fa fa-check"></i><b>21</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-discrete-probability-models-9"><i class="fa fa-check"></i><b>21.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="simulation-9.html"><a href="simulation-9.html#how-many-girls-in-400-births-9"><i class="fa fa-check"></i><b>21.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="21.1.2" data-path="simulation-9.html"><a href="simulation-9.html#accounting-for-twins-9"><i class="fa fa-check"></i><b>21.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="simulation-9.html"><a href="simulation-9.html#simulation-of-continuous-and-mixed-discretecontinuous-models-9"><i class="fa fa-check"></i><b>21.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="21.2.1" data-path="simulation-9.html"><a href="simulation-9.html#simulation-in-r-using-custom-made-functions-9"><i class="fa fa-check"></i><b>21.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="21.3" data-path="simulation-9.html"><a href="simulation-9.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-9"><i class="fa fa-check"></i><b>21.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="21.4" data-path="simulation-9.html"><a href="simulation-9.html#bootstrapping-to-simulate-a-sampling-distribution-9"><i class="fa fa-check"></i><b>21.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="simulation-9.html"><a href="simulation-9.html#choices-in-defining-the-bootstrap-distribution-9"><i class="fa fa-check"></i><b>21.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="21.4.2" data-path="simulation-9.html"><a href="simulation-9.html#limitations-of-bootstrapping-9"><i class="fa fa-check"></i><b>21.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="simulation-9.html"><a href="simulation-9.html#fake-data-simulation-as-a-way-of-life-9"><i class="fa fa-check"></i><b>21.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="simulation-10.html"><a href="simulation-10.html"><i class="fa fa-check"></i><b>22</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-discrete-probability-models-10"><i class="fa fa-check"></i><b>22.1</b> Simulation of discrete probability models</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="simulation-10.html"><a href="simulation-10.html#how-many-girls-in-400-births-10"><i class="fa fa-check"></i><b>22.1.1</b> How many girls in 400 births?</a></li>
+<li class="chapter" data-level="22.1.2" data-path="simulation-10.html"><a href="simulation-10.html#accounting-for-twins-10"><i class="fa fa-check"></i><b>22.1.2</b> Accounting for twins</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="simulation-10.html"><a href="simulation-10.html#simulation-of-continuous-and-mixed-discretecontinuous-models-10"><i class="fa fa-check"></i><b>22.2</b> Simulation of continuous and mixed discrete/continuous models</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="simulation-10.html"><a href="simulation-10.html#simulation-in-r-using-custom-made-functions-10"><i class="fa fa-check"></i><b>22.2.1</b> Simulation in R using custom-made functions</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="simulation-10.html"><a href="simulation-10.html#summarizing-a-set-of-simulations-using-median-and-median-absolute-deviation-10"><i class="fa fa-check"></i><b>22.3</b> Summarizing a set of simulations using median and median absolute deviation</a></li>
+<li class="chapter" data-level="22.4" data-path="simulation-10.html"><a href="simulation-10.html#bootstrapping-to-simulate-a-sampling-distribution-10"><i class="fa fa-check"></i><b>22.4</b> Bootstrapping to simulate a sampling distribution</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="simulation-10.html"><a href="simulation-10.html#choices-in-defining-the-bootstrap-distribution-10"><i class="fa fa-check"></i><b>22.4.1</b> Choices in defining the bootstrap distribution</a></li>
+<li class="chapter" data-level="22.4.2" data-path="simulation-10.html"><a href="simulation-10.html#limitations-of-bootstrapping-10"><i class="fa fa-check"></i><b>22.4.2</b> Limitations of bootstrapping</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="simulation-10.html"><a href="simulation-10.html#fake-data-simulation-as-a-way-of-life-10"><i class="fa fa-check"></i><b>22.5</b> Fake-data simulation as a way of life</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html"><i class="fa fa-check"></i><b>23</b> Exercises of Regression and Other Stories</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#overview-1"><i class="fa fa-check"></i><b>23.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#from-design-to-decision"><i class="fa fa-check"></i><b>23.1.1</b> From design to decision</a></li>
+<li class="chapter" data-level="23.1.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#sketching-a-regression-model-and-data"><i class="fa fa-check"></i><b>23.1.2</b> Sketching a regression model and data</a></li>
+<li class="chapter" data-level="23.1.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#goals-of-regression"><i class="fa fa-check"></i><b>23.1.3</b> Goals of regression</a></li>
+<li class="chapter" data-level="23.1.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#problems-of-statistics"><i class="fa fa-check"></i><b>23.1.4</b> Problems of statistics</a></li>
+<li class="chapter" data-level="23.1.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#goals-of-regression-1"><i class="fa fa-check"></i><b>23.1.5</b> Goals of regression</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#causal-inference-1"><i class="fa fa-check"></i><b>23.2</b> Causal inference</a></li>
+<li class="chapter" data-level="23.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization"><i class="fa fa-check"></i><b>23.3</b> Statistics as generalization</a></li>
+<li class="chapter" data-level="23.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#statistics-as-generalization-1"><i class="fa fa-check"></i><b>23.4</b> Statistics as generalization</a></li>
+<li class="chapter" data-level="23.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#a-problem-with-linear-models"><i class="fa fa-check"></i><b>23.5</b> A problem with linear models</a>
+<ul>
+<li class="chapter" data-level="23.5.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example"><i class="fa fa-check"></i><b>23.5.1</b> Working through your own example</a></li>
+</ul></li>
+<li class="chapter" data-level="23.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#some-basic-methods-in-mathematics-and-probability-1"><i class="fa fa-check"></i><b>23.6</b> Some basic methods in mathematics and probability</a>
+<ul>
+<li class="chapter" data-level="23.6.1" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-2"><i class="fa fa-check"></i><b>23.6.1</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.2" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#weighted-averages-3"><i class="fa fa-check"></i><b>23.6.2</b> Weighted averages</a></li>
+<li class="chapter" data-level="23.6.3" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-1"><i class="fa fa-check"></i><b>23.6.3</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.4" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-2"><i class="fa fa-check"></i><b>23.6.4</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.5" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#probability-distributions-3"><i class="fa fa-check"></i><b>23.6.5</b> Probability distributions</a></li>
+<li class="chapter" data-level="23.6.6" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-3"><i class="fa fa-check"></i><b>23.6.6</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.7" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#linear-transformations-4"><i class="fa fa-check"></i><b>23.6.7</b> Linear transformations</a></li>
+<li class="chapter" data-level="23.6.8" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#correlated-random-variables"><i class="fa fa-check"></i><b>23.6.8</b> Correlated random variables</a></li>
+<li class="chapter" data-level="23.6.9" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#comparison-of-distributions"><i class="fa fa-check"></i><b>23.6.9</b> Comparison of distributions</a></li>
+<li class="chapter" data-level="23.6.10" data-path="exercises-of-regression-and-other-stories.html"><a href="exercises-of-regression-and-other-stories.html#working-through-your-own-example-1"><i class="fa fa-check"></i><b>23.6.10</b> Working through your own example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reading Notes for Regression and Other Stories</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="transformations-and-regression" class="section level1" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Transformations and regression</h1>
+<p>데이터를 원 자료 그대로 회귀모델에 적합하는 것이 항상 최선인 것은 아니다. 따라서 데이터를 어떤 식으로든 변형을 해주는 작업이 요구될 수 있는데, 이러한 변환은 실제 적용에 있어서 회귀모델의 구축과 비교에 대해 보다 일반적인 접근이 가능하게 하며, 더 많은 사례들을 설명할 수 있도록 한다.</p>
+<div id="linear-transformations-2" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Linear transformations</h2>
+<div id="scaling-of-predictors-and-regression-coefficients" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Scaling of predictors and regression coefficients</h3>
+<p>계수 <span class="math inline">\(\beta_j\)</span>는 다른 예측변수들이 모두 일정할 때, <span class="math inline">\(j\)</span>번째 예측변수의 한 단위 변화에 따라 <span class="math inline">\(y\)</span>의 평균적인 변화가 어떠한지를 나타낸다. 하지만 때로 <span class="math inline">\(x\)</span>의 한 단위 증가라는 것이 적절한 비교를 보여주지 못할 수 있다.</p>
+<p><span class="math display">\[
+\text{earnings} = −85 000 + 1600 ∗ \text{height} + \text{error},
+\]</span></p>
+<p>선형모델은 이 문제를 풀기에 가장 적절한 방법이라고 보기에는 힘들다. 왜냐하면 이 결과를 곧이곧대로 해석하게 된다면 우리는 절편값 -85,000을 키가 0인 사람의 예측 소득이라고 이해해야 하기 때문이다.</p>
+<p>하지만 모델의 형태를 조금 바꾸어보면 어떻게 될까?</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\text{earnings} = −85 000 + 63 \times \text{height (in millimeters)} + \text{error},\\
+&amp;\text{earnings} = −85 000 + 101 000 000 \times \text{height (in miles)} + \text{error}.
+\end{aligned}
+\]</span></p>
+<p>자, 이제는 키가 얼마나 중요한 요인인가? $63은 그다지 중요해보이지 않지만 $101000000은 매우 커 보인다. 일견 달라보이는 이 두 수식은 앞선 모델과 똑같은 정보를 내포하고 있다.</p>
+<p>선형관계를 유지한 채로 예측변수와 결과변수에 변형을 가하는 것은 예측 결과나 모델 적합에 영향을 미치지 않는다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 184</a>)</span> 참고.</p>
+</div>
+<div id="standardization-using-z-scores" class="section level3" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Standardization using z-scores</h3>
+<p>계수값의 척도를 조정하는 작업, 스케일링(scaling)에는 또 다른 방법이 있는데, 바로 예측변수로부터 평균을 빼고 표준편차로 나누어주는 이른바 <strong>표준화(standardize)</strong>하여 “z-score”를 계산하는 것이다. 이 경우 표준화된 예측변수의 계수값은 예측변수의 표준편차에 따른 변화로 해석할 수 있다.</p>
+<ul>
+<li><p>표준편차는 일종의 실질적인 유의성을 가진 측정지표라는 점에서 유용하다.</p>
+<ul>
+<li>예측변수의 1 표준편차 변화는 평균과 무작위로 뽑은 관측치 사이의 차이를 대략적으로 반영하고 있는, 유의미한 차이이기 때문이다.</li>
+</ul></li>
+<li><p>예측변수를 z-scores를 이용해 표준화하는 것은 절편의 해석은 모든 예측변수의 값을 평균에 고정하였을 때의 <span class="math inline">\(y\)</span>의 평균으로 바뀌게 된다(원래는 다른 모든 값이 0일 때 <span class="math inline">\(y\)</span>의 평균).</p></li>
+</ul>
+<p>예측변수의 표본평균과 표준편차를 이용하여 표준화를 하는 것은 관측치의 수가 충분히 담보되었을 때에야 그 추정량의 안정성을 확보할 수 있다. <strong><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 184</a>)</span> 는 표본의 규모가 작을 때에는 모집단 분포를 특정하거나 다른 합당한 스케일에 따라서 표준화를 할 것을 추천하고 있다</strong>.</p>
+<ul>
+<li><p>어찌보면 당연한게, 표본의 규모가 작을수록 그 분포는 매우 치우칠(skewed) 가능성이 크고 편차가 크게 나타날 가능성이 높으므로 표준화가 유용하지 않을 수 있다.</p></li>
+<li><p>아니, 그 경우에는 통계적 접근 자체가 유용하지 않을 수도.</p></li>
+</ul>
+</div>
+<div id="standardization-using-an-externally-specified-population-distribution" class="section level3" number="12.1.3">
+<h3><span class="header-section-number">12.1.3</span> Standardization using an externally specified population distribution</h3>
+<p>데이터 밖의 기준을 바탕으로 스케일링을 하는 접근법에 대해서도 알아보자. 예를 들어, 시험 성적을 분석할 때, 성적을 내야 하는 모든 학생들을 대상으로 시험 성적의 표준편차로 스케일링을 해서 추정량을 나타내는 것이 일반적이다. 시험이 0-100점 척도라고 한다면, 4학년의 전국 평균이 평균 55에 표준편차 18이라고 하자. 그렇다면 개별 학교의 4학년들의 시험 성적도 그 전국 기준에 맞추어서 스케일링을 하는 것이다. 단순하게 얘기하면 모의고사 보면 전국편차 나오는 것과 같다. 개별 학교들이 표본이겠지만(각 학교가 접근할 수 있는 데이터), 스케일링은 전국 단위의 외부 데이터를 바탕으로 이루어지는 것이다. 이같이 고정된 값으로 스케일링을 할 경우에 개별 데이터셋을 따로따로 표준화하는 것보다 더 직접적으로 추정량을 비교할 수 있다는 장점이 있다.</p>
+</div>
+<div id="standardization-using-reasonable-scales" class="section level3" number="12.1.4">
+<h3><span class="header-section-number">12.1.4</span> Standardization using reasonable scales</h3>
+<p>단위에 따라서 예측변수를 조정하거나 리스케일링하는 것도 계수값을 이해하는 데 도움을 준다. 예를 들어, 소득을 $10,000 단위로 설정한다거나, 나이를 10년 씩 구분해주는 것 등이다.</p>
+</div>
+</div>
+<div id="centering-and-standardizing-for-models-with-interactions" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Centering and standardizing for models with interactions</h2>
+<p>중심화(centering)은 예측변수의 평균을 뺀 값을 대체변수로 이용하는 접근법이다. 엄마의 IQ와 고등학교 졸업 여부, 그리고 그 상호작용이 아이의 시험성적에 미치는 영향을 보는 예제를 다시 떠올려보자.</p>
+<ul>
+<li><p>그 예제를 원변수 그대로 분석한다면 각각 다른 예측변수가 고정되어 있을 때, 엄마가 졸업했는지 여부에 따른 아이의 시험성적 차이나 혹은 엄마의 IQ에 따른 아이의 시험성적 차이를 확인할 수 있다.</p>
+<ul>
+<li><p>하지만 <code>mom_iq = 0</code>, 엄마의 IQ가 0일 때 아이 엄마의 고등학교 졸업 여부가 아이의 시험성적에 미치는 영향을 본다는 것은 실질적으로 의미가 없다. 왜냐하면 IQ가 0인 엄마를 실제로 찾아볼 수 없기 때문이다.</p></li>
+<li><p>때문에 그 예제에서 <code>mom_iq</code>의 계수값 0.9라는 결과도 해석이 와닿지 않는다. 왜냐하면 그 기울기란 결국 엄마가 <code>mom_hs=0</code>인 아이들에 대한 주효과(main effect)이기 때문이다. 그러나 <code>mom_hs = 0</code>이란 데이터의 끝단에 위치한 극단적인 값이기 때문에 그로부터 얻은 계수값을 전체 모집단에 대한 평균으로 해석할 수는 없다.</p></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="transformations-and-regression.html#cb260-1" aria-hidden="true" tabindex="-1"></a>fit_kid <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> mom_hs <span class="sc">+</span> mom_iq <span class="sc">+</span> </span>
+<span id="cb260-2"><a href="transformations-and-regression.html#cb260-2" aria-hidden="true" tabindex="-1"></a>                      mom_hs<span class="sc">:</span>mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb260-3"><a href="transformations-and-regression.html#cb260-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      kid_score ~ mom_hs + mom_iq + mom_hs:mom_iq
+##  observations: 434
+##  predictors:   4
+## ------
+##               Median MAD_SD
+## (Intercept)   -10.9   13.0 
+## mom_hs         50.3   14.9 
+## mom_iq          1.0    0.1 
+## mom_hs:mom_iq  -0.5    0.2 
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 18.0    0.6  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<div id="centering-by-subtracting-the-mean-of-the-data" class="section level3" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> Centering by subtracting the mean of the data</h3>
+<p>그렇다면 투입된 예측변수들로부터 평균을 빼고 다시 회귀분석을 수행한 뒤 해석해보자.</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="transformations-and-regression.html#cb262-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs)</span>
+<span id="cb262-2"><a href="transformations-and-regression.html#cb262-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq)</span></code></pre></div>
+<p>이 경우 각각의 주효과(상호작용이 아닌)는 다른 변수의 평균값이 고정되어 있는 상태에서의 예측 차이를 보여주게 된다:</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="transformations-and-regression.html#cb263-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> c_mom_hs <span class="sc">+</span> c_mom_iq <span class="sc">+</span> </span>
+<span id="cb263-2"><a href="transformations-and-regression.html#cb263-2" aria-hidden="true" tabindex="-1"></a>                      c_mom_hs<span class="sc">:</span>c_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb263-3"><a href="transformations-and-regression.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      kid_score ~ c_mom_hs + c_mom_iq + c_mom_hs:c_mom_iq
+##  observations: 434
+##  predictors:   4
+## ------
+##                   Median MAD_SD
+## (Intercept)       87.6    0.9  
+## c_mom_hs           2.8    2.4  
+## c_mom_iq           0.6    0.1  
+## c_mom_hs:c_mom_iq -0.5    0.2  
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 18.0    0.6  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>하지만 모델 자체의 함의는 변한 것이 없기 때문에 잔차의 표준편차는 변하지 않는다. 예측변수들의 선형변환은 모델의 적합도에 영향을 미치지 않는다. 상호작용에 대한 계수값과 표준오차도 변하지 않는다. 변하는 것은 단지 주효과와 절편값일 뿐이고, 이들은 각기 데이터의 평균에 비교하여 해석할 수 있게 된다.</p>
+</div>
+<div id="using-a-conventional-centering-point" class="section level3" number="12.2.2">
+<h3><span class="header-section-number">12.2.2</span> Using a conventional centering point</h3>
+<p>중심화를 하는 또 하나의 선택지는 바로 <code>mom_hs</code>의 범주의 중간 지점이나 모집단 평균 IQ와 같은 납득할 수 있는 기준점을 이용하는 것이다.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="transformations-and-regression.html#cb265-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fl">0.5</span></span>
+<span id="cb265-2"><a href="transformations-and-regression.html#cb265-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="dv">100</span></span></code></pre></div>
+<p>여기에서 <code>c2_mom_hs</code>는 <code>mom_iq = 100</code>인 아이들 중에서 <code>mom_hs = 1</code>인 아이와 <code>mom_hs = 0</code>인 아이 사이의 평균 예측 차이를 보여준다. 마찬가지로 <code>c2_mom_iq</code>는 <code>mom_hs=0.5</code>인 조건에서의 아이들 성적의 예측차이를 보여준다.</p>
+</div>
+<div id="standardizing-by-subtracting-the-mean-and-dividing-by-2-standard-deviations" class="section level3" number="12.2.3">
+<h3><span class="header-section-number">12.2.3</span> Standardizing by subtracting the mean and dividing by 2 standard deviations</h3>
+<p>중심화는 회귀모델에서 주효과를 해석하는 데 도움을 주지만 여전히 스케일링의 문제는 남아있다. <code>mom_hs</code>의 계수값은 <code>mom_iq</code>보다 훨씬 더 크기 때문에 우리가 각 변수들의 효과를 다른 변수와 비교해서 설명하기가 어렵다는 것이다.</p>
+<p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 186</a>)</span> 은 예측변수들을 2 표준편차로 나누어주는 표준화에 대해서 제안한다. 왜냐하면 그렇게 표준화할 경우 리스케일링된 예측변수의 한 단위 변화는 평균으로부터 위로 1 표준편차, 아래로 1표준편차에 따른 차이를 보여줄 수 있기 때문이다.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="transformations-and-regression.html#cb266-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_hs <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_hs))</span>
+<span id="cb266-2"><a href="transformations-and-regression.html#cb266-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_iq <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_iq))</span></code></pre></div>
+<p>이제 우리는 계수값을 거의 동일한 척도 선상에서 해석할 수 있게 된다.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="transformations-and-regression.html#cb267-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> z_mom_hs <span class="sc">+</span> z_mom_iq <span class="sc">+</span> </span>
+<span id="cb267-2"><a href="transformations-and-regression.html#cb267-2" aria-hidden="true" tabindex="-1"></a>                      z_mom_hs<span class="sc">:</span>z_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb267-3"><a href="transformations-and-regression.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      kid_score ~ c_mom_hs + c_mom_iq + c_mom_hs:c_mom_iq
+##  observations: 434
+##  predictors:   4
+## ------
+##                   Median MAD_SD
+## (Intercept)       87.6    0.9  
+## c_mom_hs           2.8    2.4  
+## c_mom_iq           0.6    0.1  
+## c_mom_hs:c_mom_iq -0.5    0.2  
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 18.0    0.6  
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+</div>
+<div id="why-scale-by-2-standard-deviations" class="section level3" number="12.2.4">
+<h3><span class="header-section-number">12.2.4</span> Why scale by 2 standard deviations?</h3>
+<p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 187</a>)</span> 이 1 표준편차가 아니라 2 표준편차로 표준화를 해줄 것을 제안하는 이유는, 2 표준편차로 나누었을 경우에 이항변수로 예측변수를 투입하더라도 일관된 결과를 얻을 수 있기 때문이다.</p>
+<ul>
+<li><p>이항변수 <span class="math inline">\(x\)</span>가 있다고 하고, 그 이항변수의 확률이 0.5라고 하자.</p></li>
+<li><p>이때 <span class="math inline">\(x\)</span>의 표준편차는 <span class="math inline">\(\sqrt{0.5\times 0.5} = 0.5\)</span>가 되며, 표준화된 변수는 <span class="math inline">\((x-\mu_x)/(2\sigma_x)\)</span>로 나타낼 수 있다. 이는 <span class="math inline">\(\pm 0.5\)</span>로 <span class="math inline">\(x=0\)</span>일 때와 <span class="math inline">\(x=1\)</span>일 때 사이의 계수값 비교를 보여주게 된다.</p></li>
+<li><p>반면에 1 표준편차로 스케일링을 하게 될 경우에는 <span class="math inline">\(\pm 1\)</span>로 계수값은 <span class="math inline">\(x\)</span>가 실제로 취할 수 있는 값에 따른 예측 결과의 차이를 절반밖에 보여주지 못하게 된다.</p></li>
+</ul>
+</div>
+<div id="multiplying-each-regression-coefficient-by-2-standard-deviations-of-its-predictor" class="section level3" number="12.2.5">
+<h3><span class="header-section-number">12.2.5</span> Multiplying each regression coefficient by 2 standard deviations of its predictor</h3>
+<p>상호작용항이 없는 모델일 경우에 중심화를 하는 것과 변수를 리스케일링을 하는 것은 원자료로 회귀계수를 추정한 뒤 각 <span class="math inline">\(\beta\)</span>에 <span class="math inline">\(x\)</span>의 2 표준편차를 곱하는 결과와 같다.</p>
+</div>
+</div>
+<div id="correlation-and-regression-to-the-mean" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Correlation and “regression to the mean”</h2>
+<p>단순선형회귀모델 <span class="math inline">\(y = a + bx + \text{error}\)</span>가 있다고 하자. 만약 두 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 표준화된 변수라면, 즉 <code>x &lt;- (x - mean(x))/sd(x)</code>이고 <code>y &lt;- (y - mean(y))/sd(y)</code>라면, 회귀모델에서 절편은 0이며 기울기는 단순히 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 상관관계만을 보여주게 될 것이다.</p>
+<p>따라서 두 표준화된 변수의 회귀계수 기울기 값은 반드시 -1과 1 사이에 위치하게 되며, 만약 이 기울기의 절대값이 1을 넘는다면 그것은 <span class="math inline">\(y\)</span>의 분산이 <span class="math inline">\(x\)</span>의 분산을 초과하기 때문이라고 이해할 수 있다.</p>
+<p>일반적으로 하나의 예측변수에 대한 회귀계수의 기울기값은 <span class="math inline">\(b = \rho \sigma_y / \sigma_x\)</span>로 나타낼 수 있으며, <span class="math inline">\(rho\)</span>는 두 변수 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 상관관계이며, <span class="math inline">\(\sigma_x\)</span>, <span class="math inline">\(\sigma_y\)</span>는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 표준편차이다.</p>
+<div id="the-principal-component-line-and-the-regression-line" class="section level3" number="12.3.1">
+<h3><span class="header-section-number">12.3.1</span> The principal component line and the regression line</h3>
+<p>아래의 그래프는 상관계수 0.5로 표준화된 변수들을 가지고 시뮬레이션한 예제이다. 첫 번째 패널은 관측치들에 가장 가까운 주성분선(<em>principal component line</em>)을 보여준다. 즉, 이 선은 선과 각 관측치 간 제곱합된 거리가 가장 최소화된 선이다. 이 예제에서 이 선은 <span class="math inline">\(y = x\)</span>라고 할 수 있다.</p>
+<p>두 번째 패널은 회귀선(<em>regression line</em>)을 보여준다. 이는 선과 각 관측치로부터의 수직 거리(<em>vertical distances</em>)의 제곱합이 가장 작은 선을 말하며, 우리가 일반적으로 말하는 최소자승으로 계산한 선이다: <span class="math inline">\(y = \hat a + \hat b x\)</span>. 이때, <span class="math inline">\(\hat a, \hat b\)</span>는 <span class="math inline">\(\sum^n_{i=1}(y_i-(\hat a + \hat b x_i))^2\)</span>을 최소화하는 값이다. 이 예제에서는 <span class="math inline">\(\hat a = 0\)</span>, <span class="math inline">\(\hat b = 0.5\)</span>가 된다. 따라서 회귀선의 기울기도 0.5이다.</p>
+<p>두 패널 모두 정의 관계를 보여주지만 두 번째 패널 쪽이 <span class="math inline">\(x\)</span>로부터 <span class="math inline">\(y\)</span>를 예측하고자 할 때, 주어진 <span class="math inline">\(x\)</span>의 값에 따른 <span class="math inline">\(y\)</span>의 평균 값을 추정함으로써 더 나은 함의를 제공한다. 왜냐하면 주성분선 같은 경우에는 낮은 <span class="math inline">\(x\)</span>값에 대한 <span class="math inline">\(y\)</span>를 과소예측할 수 있기 때문이다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-242"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-242-1.png" alt="Data simulated from a bivariate normal distribution with correlation 0.5. (a) The principal component line goes closest through the cloud of points. (b) The regression line, which represents the best prediction of y given x, has half the slope of the principal component line." width="768" />
+<p class="caption">
+Figure 12.1: Data simulated from a bivariate normal distribution with correlation 0.5. (a) The principal component line goes closest through the cloud of points. (b) The regression line, which represents the best prediction of y given x, has half the slope of the principal component line.
+</p>
+</div>
+</div>
+<div id="regression-to-the-mean" class="section level3" number="12.3.2">
+<h3><span class="header-section-number">12.3.2</span> Regression to the mean</h3>
+<p><span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 표준화되어 있을 때, 회귀선은 항상 1보다 작은 기울기를 가지게 된다. 따라서 <span class="math inline">\(x\)</span>가 평균보다 1 표준편차 위에 있다면, <span class="math inline">\(y\)</span>의 예측값은 0과 평균보다 1 표준편차 위의 값 그 사이 어딘가에 위치하게 된다. 이처럼 선형모델에서 <span class="math inline">\(x\)</span>보다 <span class="math inline">\(y\)</span>가 평균에 가깝게 예측되는 양상은 “평균으로의 회귀(<em>regression to the mean</em>)”라고도 불린다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 188–89</a>)</span>는 엄마의 키로 딸의 키를 예측하는 예제를 통해 평균으로의 회귀를 보여준다.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="transformations-and-regression.html#cb269-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span></span>
+<span id="cb269-2"><a href="transformations-and-regression.html#cb269-2" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
+<span id="cb269-3"><a href="transformations-and-regression.html#cb269-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mom_height      =</span> x,</span>
+<span id="cb269-4"><a href="transformations-and-regression.html#cb269-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">daughter_height =</span> y)</span>
+<span id="cb269-5"><a href="transformations-and-regression.html#cb269-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d)</span></code></pre></div>
+<pre><code>##              x          y   mom_height daughter_height
+## 1 -1.021916981  1.1402296 -1.021916981       1.1402296
+## 2 -1.162259081 -1.1362805 -1.162259081      -1.1362805
+## 3 -2.000049495 -0.7800456 -2.000049495      -0.7800456
+## 4 -0.467207885 -0.6884662 -0.467207885      -0.6884662
+## 5  0.007942166  0.3858757  0.007942166       0.3858757
+## 6 -1.086100811 -1.4510830 -1.086100811      -1.4510830</code></pre>
+<p>다음과 같은 모델을 적합해보자: <span class="math inline">\(\text{daughter_height}_i = \beta_0 + \beta_1 \text{mom_height}_i + \text{error}_i\)</span>. 두 변수 모두 표준화된 변수이다.</p>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      daughter_height ~ mom_height
+##  observations: 1000
+##  predictors:   2
+## ------
+##             Median MAD_SD
+## (Intercept) 0.0    0.0   
+## mom_height  0.5    0.0   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.8    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>0.5란 결과는 시간이 지날수록 딸들의 키는 평균 키에 수렴하게 되는(1보다 작으니까 점점 줄어드는 것) 것을 확인할 수 있다.</p>
+</div>
+</div>
+<div id="logarithmic-transformations" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Logarithmic transformations</h2>
+<p>결과변수가 모두 양수일 때, 로그값을 취하는 것이 일반적이다. 왜냐면 음수에 로그값을 취하면 값을 얻을 수 없으니까. 만약 변수에 로그값을 취하고 모델을 분석하고 로그 척도로 예측값을 산출한다면, 그 결과를 다시 지수화(exponentiating)하여 예측값이 <span class="math inline">\(\exp(a) &gt; 0\)</span>인 모든 값 <span class="math inline">\(a\)</span>에 대하여 반드시 양수가 되도록 결과를 제시해야 한다.</p>
+<p>다음과 같은 선형회귀모델이 있다고 하자.</p>
+<p><span class="math display">\[\log y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \epsilon_i\]</span></p>
+<p>이 모델의 양 변을 지수화하면 다음과 같다.</p>
+<p><span class="math display">\[y_i = e^{\beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \epsilon_i}\]</span></p>
+<p>즉, <span class="math inline">\(B_0 = e^{b_0}, B_1 = e^{b_1}, B_2 = e^{b_2}\)</span>는 모두 지수화된 회귀계수 값으로 양수이며, <span class="math inline">\(E_i = e^{\epsilon_i}\)</span>는 지수화된 오차항이다(마찬가지로 양수). 원변수 <span class="math inline">\(y_i\)</span>의 척도에서 <span class="math inline">\(X_{i1}, X_{i2}\)</span>는 곱셉으로 이루어져 있다.</p>
+<div id="earnings-and-height-example" class="section level3" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> Earnings and height example</h3>
+<p>키로 소득을 예측하는 모델을 통해서 로그값을 취한 회귀모델을 살펴보자.</p>
+<div id="direct-interpretation-of-small-coefficients-on-the-log-scale" class="section level4" number="12.4.1.1">
+<h4><span class="header-section-number">12.4.1.1</span> Direct interpretation of small coefficients on the log scale</h4>
+<p>소득에 로그값을 취해 모델을 돌려보자.</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="transformations-and-regression.html#cb272-1" aria-hidden="true" tabindex="-1"></a>logmodel_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height, </span>
+<span id="cb272-2"><a href="transformations-and-regression.html#cb272-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb272-3"><a href="transformations-and-regression.html#cb272-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb272-4"><a href="transformations-and-regression.html#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_1)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(earn) ~ height
+##  observations: 1629
+##  predictors:   2
+## ------
+##             Median MAD_SD
+## (Intercept) 5.9    0.4   
+## height      0.1    0.0   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>아래의 그래프는 실제 데이터와 적합된 회귀선을 로그 척도와 선형 척도 각각으로 나타내 보여준 것이다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-246"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-246-1.png" alt="Regression of earnings on log(height), with curves showing uncertainty the model, $\log(earnings) = a + b &lt;U+2217&gt; height$, fit to data with positive earnings. The data and fit are plotted on the logarithmic and original scales. Compare to the linear model, shown in Figure 12.1a. To improve resolution, a data point at earnings of \$400 000 has been excluded from the original-scale graph." width="768" />
+<p class="caption">
+Figure 12.2: Regression of earnings on log(height), with curves showing uncertainty the model, <span class="math inline">\(\log(earnings) = a + b &lt;U+2217&gt; height\)</span>, fit to data with positive earnings. The data and fit are plotted on the logarithmic and original scales. Compare to the linear model, shown in Figure 12.1a. To improve resolution, a data point at earnings of $400 000 has been excluded from the original-scale graph.
+</p>
+</div>
+<p>한편 계수값 크기가 증가함에 따라서 로그값을 풀었을 때 나타나는 변화를 시각화해보았다. (-1, 1)로 범위를 한정한 이유는 로그 척도에서 회귀계수는 대개 1보다 작기 때문이다. 로그 척도에서 회귀계수의 1은 예측변수의 한 단위 변화가 결과변수의 <span class="math inline">\(\exp(1)\)</span> 변화로 이어진다는 것을 의미한다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-247"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-247-1.png" alt="Interpretation of exponentiated coefficients in a logarithmic regression model as relative difference (curved upper line), and the approximation $\exp(x) = 1 + x$, which is valid for small coefficients $x$ (straight line)." width="672" />
+<p class="caption">
+Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regression model as relative difference (curved upper line), and the approximation <span class="math inline">\(\exp(x) = 1 + x\)</span>, which is valid for small coefficients <span class="math inline">\(x\)</span> (straight line).
+</p>
+</div>
+</div>
+<div id="predictive-checking" class="section level4" number="12.4.1.2">
+<h4><span class="header-section-number">12.4.1.2</span> Predictive checking</h4>
+<p>적합된 모델로부터 재현된 데이터셋을 시뮬레이션한 뒤 재 적합해 관측된 데이터와 비교해보도록 하자. 먼저 새로운 데이터를 시뮬레이션 한다.</p>
+<p>각각 예측변수에 로그값을 취한 경우와 취하지 않고 원변수로 분석한 결과에 대해 시뮬레이션을 한 다음 그 계수값의 표집분포를 밀도 그래프로 보여주는 것이다.</p>
+<p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 191</a>)</span> 는 어떤 식으로든 모델에 변형을 가했을 시, 우리는 적합도의 다른 측면을 평가하기 위해 예측 확인을 수행할 필요가 있다고 제안하고 있다.</p>
+<p>물론 베이지안식 접근법이라 시뮬레이션 안 할거면 안 해도 된다.</p>
+</div>
+</div>
+<div id="why-we-use-natural-log-rather-than-log-base-10" class="section level3" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> Why we use natural log rather than log base 10</h3>
+<p>밑수가 10이나 2인 로그가 아니라 자연로그(<span class="math inline">\(e\)</span>를 밑수로 하는)를 취하는 이유는 자연로그값을 취한 계수값이 보다 직접적으로 비율 차이로 근사할 수 있는 해석이 가능하기 때문이다. 예를 들어서 자연로그를 취했을 때, 0.05의 계수값은 <span class="math inline">\(x\)</span>의 한 단위 변화가 <span class="math inline">\(y\)</span>의 약 5% 차이로 이어진다고 해석할 수 있다.</p>
+<p><span class="math inline">\(\log_{10}\)</span>과 <span class="math inline">\(\log\)</span> 간의 관계는 다음과 같이 나타낼 수 있다: <span class="math inline">\(\log_{10}(x) = \log(x)/\log(10) = \log(x)/2.3\)</span>.</p>
+<p><span class="math inline">\(\log_{10}\)</span>을 취할 경우의 장점은 예측값 자체가 해석이 쉬워진다는 것에 있다. 예를 들어, 소득을 회귀분석한 이전의 예제를 생각해볼 때, <span class="math inline">\(\log_{10}10000 = 4\)</span>, <span class="math inline">\(\log_{10}(100000)=5\)</span>로 값들을 대략적으로 환산하기가 용이하다. 반면에 단점은 계수값을 직접적으로 해석하기가 어렵다는 것이다.</p>
+</div>
+<div id="building-a-regression-model-on-the-log-scale" class="section level3" number="12.4.3">
+<h3><span class="header-section-number">12.4.3</span> Building a regression model on the log scale</h3>
+<div id="adding-another-predictor" class="section level4" number="12.4.3.1">
+<h4><span class="header-section-number">12.4.3.1</span> Adding another predictor</h4>
+<p>키 1인치 차이가 소득의 약 6% 차이와 관련이 있다는 것을 얼핏 보기에는 큰 차이같지만 남성이 대개 여성보다 키가 크기 때문에 남성이 더 많은 소득을 가질 수 있다는 것을 고려해야한다. 즉, 6%의 예측차이는 성별의 차이 때문일 수도 있다는 것이다. 성별이 같은 경우에서도 키가 더 큰 사람이 평균적으로 키가 더 작은 사람보다 더 높은 소득을 가질까?</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="transformations-and-regression.html#cb274-1" aria-hidden="true" tabindex="-1"></a>logmodel_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male, </span>
+<span id="cb274-2"><a href="transformations-and-regression.html#cb274-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb274-3"><a href="transformations-and-regression.html#cb274-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb274-4"><a href="transformations-and-regression.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_2)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(earn) ~ height + male
+##  observations: 1629
+##  predictors:   3
+## ------
+##             Median MAD_SD
+## (Intercept) 8.0    0.5   
+## height      0.0    0.0   
+## male        0.4    0.1   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>성별을 통제하자, 키의 1인치 차이는 약 2%의 추정된 예측차이를 보여준다: 이 모델에서 성별이 같은 두 사람은 키 1인치 차이에 따라 평균적으로 소득에 있어서 2%의 차이를 가지는 것이다. 하지만 성별에 대한 예측비교는 더 큰 결과를 보여준다. 남성과 여성이 동일한 키를 가지고 있을 때, 남성의 소득은 <span class="math inline">\(exp(0.37)=1.45\)</span>로 남성이 여성보다 약 45% 정도 더 높은 소득을 가지는 것으로 나타난다.</p>
+</div>
+<div id="naming-inputs" class="section level4" number="12.4.3.2">
+<h4><span class="header-section-number">12.4.3.2</span> Naming inputs</h4>
+<p>더미변수를 집어넣을 때, 각 카테고리에 대해 1과 0의 값을 갖는 이항변수로 데이터셋에 넣을 수도 있고, 혹은 두 카테고리를 각각 레이블을 갖는 카테고리 변수로 만들 수 있다.</p>
+<p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 192</a>)</span> 의 팁은 이항변수로 코딩해서 데이터셋에 집어넣는 것이 편하고, 이때 1의 값에 대응하는 카테고리를 변수명으로 설정하라는 것이다. 예를 들어, 성별 변수의 경우 <code>male</code>이라고 이름짓고, 남성일 경우에 1의 값을 부여하는 것.</p>
+</div>
+<div id="residual-standard-deviation-and-r2" class="section level4" number="12.4.3.3">
+<h4><span class="header-section-number">12.4.3.3</span> Residual standard deviation and <span class="math inline">\(R^2\)</span></h4>
+<p>회귀모델은 잔차의 표준편차 <span class="math inline">\(\sigma = 0.87\)</span>을 갖는데, 이는 약 68%의 로그값을 취한 소득이 예측값의 0.87 내에 위치한다는 것을 보여준다. 한편, <span class="math inline">\(R^2 = 0.08\)</span>은 이 모델이 로그 변환을 취한 결과변수의 분산의 약 8%만을 설명해준다는 것을 의미한다.</p>
+</div>
+<div id="including-an-interaction" class="section level4" number="12.4.3.4">
+<h4><span class="header-section-number">12.4.3.4</span> Including an interaction</h4>
+<p>키와 성별 간의 상호작용을 포함한 모델을 고려해보자. 이때 키에 대한 예측비교는 남성과 여성에 따라 달라질 수 있다.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="transformations-and-regression.html#cb276-1" aria-hidden="true" tabindex="-1"></a>logmodel_3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male <span class="sc">+</span> height<span class="sc">:</span>male,</span>
+<span id="cb276-2"><a href="transformations-and-regression.html#cb276-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb276-3"><a href="transformations-and-regression.html#cb276-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb276-4"><a href="transformations-and-regression.html#cb276-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(earn) ~ height + male + height:male
+##  observations: 1629
+##  predictors:   4
+## ------
+##             Median MAD_SD
+## (Intercept)  8.5    0.7  
+## height       0.0    0.0  
+## male        -0.8    1.0  
+## height:male  0.0    0.0  
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>이 모델은 다음과 같이 나타낼 수 있다:</p>
+<p><span class="math display">\[
+\log(\text{earnings}) = 8.48 + 0.02\times \text{height} - 0.76\times \text{male} + 0.02\times \text{height} \times \text{male}.
+\]</span></p>
+<p>모델의 각 계수값들을 해석해보자.</p>
+<ul>
+<li><p>절편(intercept): <code>height</code>와 <code>male</code> 모두가 0일 때의 로그값을 취한 소득의 예측값. 키가 0일 경우가 없기 때문에 절편의 직접적인 해석에는 의미가 없다.</p></li>
+<li><p><code>height</code>의 계수값</p>
+<ul>
+<li><p><code>male</code>이 0일 때, 키의 1인치 차이가 로그값을 취한 소득의 예측값 차이와 가지는 관계를 보여준다.</p></li>
+<li><p>키 1인치에 따른 추정된 예측 차이는 여성에 대해 약 2%, 그 추정량의 불확실성은 표준오차 0.01로 나타난다.</p></li>
+</ul></li>
+<li><p><code>male</code>의 계수값</p>
+<ul>
+<li><code>height</code>가 0일 때, 남성과 여성 간의 로그값을 취한 소득의 예측된 차이를 보여준다. 키가 0일 경우가 없기 때문에 <code>male</code>의 계수값을 직접적으로 해석하지는 않는다.</li>
+</ul></li>
+<li><p><code>height:male</code>의 계수값</p>
+<ul>
+<li><p>남성과 여성을 비교해서 키가 로그값을 취한 소득을 예측하는 데 나타나는 기울기의 차이를 보여준다.</p></li>
+<li><p>여성에 비해 남성의 로그값을 취한 소득 차이는 키가 1인치 증가할 때 2% 증가하는 것으로 나타나며, 남성들 사이에서는 키 1인치의 차이는 추정된 로그값을 취한 소득의 예측값에 대해 <span class="math inline">\(2\% + 2\% = 4\%\)</span>라고 할 수 있다.</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="linear-transformation-to-make-coefficients-more-interpretable" class="section level4" number="12.4.3.5">
+<h4><span class="header-section-number">12.4.3.5</span> Linear transformation to make coefficients more interpretable</h4>
+<p>상호작용 모델에서 예측변수 키에 대해 평균 0, 표준편차 1을 갖도록 리스케일링을 함으로써 해석을 더 직관적으로 할 수 있다.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="transformations-and-regression.html#cb278-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>z_height <span class="ot">&lt;-</span> </span>
+<span id="cb278-2"><a href="transformations-and-regression.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  (earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="fu">mean</span>(earnings<span class="sc">$</span>height))<span class="sc">/</span><span class="fu">sd</span>(earnings<span class="sc">$</span>height)</span></code></pre></div>
+<p>이 데이터에서 키의 평균과 표준편차는 각각 66.6인치와 3.8인치이다. 표준화한 키 변수를 상호작용모델에 원래의 키를 대체해서 집어넣으면 다음과 같은 결과를 얻을 수 있다.</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="transformations-and-regression.html#cb279-1" aria-hidden="true" tabindex="-1"></a>logmodel_3z <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> z_height <span class="sc">+</span> male <span class="sc">+</span> z_height<span class="sc">:</span>male,</span>
+<span id="cb279-2"><a href="transformations-and-regression.html#cb279-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb279-3"><a href="transformations-and-regression.html#cb279-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb279-4"><a href="transformations-and-regression.html#cb279-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3z)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(earn) ~ z_height + male + z_height:male
+##  observations: 1629
+##  predictors:   4
+## ------
+##               Median MAD_SD
+## (Intercept)   9.5    0.0   
+## z_height      0.1    0.0   
+## male          0.4    0.1   
+## z_height:male 0.1    0.1   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>이 경우에 표준화된 키 변수는 <code>male</code>이 0일 때, 키의 1 표준편차만큼의 차이가 로그값을 취한 소득의 예측 차이를 보여준다. 상호작용함수의 경우에는 키가 3.8인치 다른 두 남성을 비교할 때, 로그값을 취한 소득에 있어서 <span class="math inline">\(0.06 + 0.08 = 0.14\)</span>, 그리고 지수값을 취해서 로그를 풀어내면 <span class="math inline">\(\exp(0.14) = 1.15\)</span>, 약 15% 차이를 확인할 수 있다.</p>
+</div>
+</div>
+<div id="further-difficulties-in-interpretation" class="section level3" number="12.4.4">
+<h3><span class="header-section-number">12.4.4</span> Further difficulties in interpretation</h3>
+<p>모델의 예측변수들이 늘어나면 늘어날수록 비교를 위해서 우리가 고정시켜야 하는 것들이 늘어난다. 또한 변수를 변형할수록 그 해석에도 유의할 필요가 있다.</p>
+</div>
+<div id="log-log-model-transforming-the-input-and-outcome-variables" class="section level3" number="12.4.5">
+<h3><span class="header-section-number">12.4.5</span> Log-log model: transforming the input and outcome variables</h3>
+<p>결과변수뿐 아니라 예측변수에도 로그 변환을 취할 경우에, 계수값은 <span class="math inline">\(x\)</span>의 비율적 차이에 따른 <span class="math inline">\(y\)</span>의 기대된 비율적 차이로 해석할 수 있다.</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="transformations-and-regression.html#cb281-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>log_height <span class="ot">&lt;-</span> <span class="fu">log</span>(earnings<span class="sc">$</span>height)</span>
+<span id="cb281-2"><a href="transformations-and-regression.html#cb281-2" aria-hidden="true" tabindex="-1"></a>logmodel_5 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> log_height <span class="sc">+</span> male, </span>
+<span id="cb281-3"><a href="transformations-and-regression.html#cb281-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb281-4"><a href="transformations-and-regression.html#cb281-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb281-5"><a href="transformations-and-regression.html#cb281-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_5)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(earn) ~ log_height + male
+##  observations: 1629
+##  predictors:   3
+## ------
+##             Median MAD_SD
+## (Intercept) 2.8    2.2   
+## log_height  1.6    0.5   
+## male        0.4    0.1   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>키의 1% 차이가 소득에 있어서 1.62%의 예측 차이로 나타난다. <code>male</code>은 카테고리칼 변수이므로 로그값을 취하는 것이 적절치 않다.</p>
+</div>
+<div id="taking-logarithms-even-when-not-necessary" class="section level3" number="12.4.6">
+<h3><span class="header-section-number">12.4.6</span> Taking logarithms even when not necessary</h3>
+<p>변수의 분포가 매우 치우쳐 있거나 극단적인 값을 가지고 있을 때, 로그값을 취하고는 한다. 로그값을 취하던 취하지 않던 회귀모델의 적합도에는 큰 차이를 보이지 않는다. 로그값을 취하거나 혹은 스케일링을 하는 이유는 해석가능성을 높이기 위해서이므로, 본인의 모델이 무엇을 분석하고자 하는지 명확하게 인지하고 그 계수값을 좀 더 상식선 상에서 직관적으로 이해할 수 있도록 변환하는 노력이 필요하다.</p>
+</div>
+</div>
+<div id="other-transformations" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Other transformations</h2>
+<div id="square-root-transformations" class="section level3" number="12.5.1">
+<h3><span class="header-section-number">12.5.1</span> Square root transformations</h3>
+<p>제곱근 변형은 극단적으로 큰 값의 영향력을 제약하고자 할 때 용이하다. 로그값을 취하는 것과 비슷한데, 로그값보다도 더 극단적인 값들의 효과를 억제한다고 볼 수 있을 것이다. 하지만 원변수 모델이나 로그변환 모델에서 확인할 수 있는 명확한 해석이 불가능하다는 단점이 있다.</p>
+</div>
+<div id="idiosyncratic-transformations" class="section level3" number="12.5.2">
+<h3><span class="header-section-number">12.5.2</span> Idiosyncratic transformations</h3>
+<p>때로 특정한 문제에 맞춘 변형 방식을 발전시키는 것도 유용하다.</p>
+</div>
+<div id="using-continuous-rather-than-discrete-predictors" class="section level3" number="12.5.3">
+<h3><span class="header-section-number">12.5.3</span> Using continuous rather than discrete predictors</h3>
+<p>이항 또는 이산형으로 나타나는 많은 변수들이 연속형처럼 유용하게 간주될 수 있다. 하지만 <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 196</a>)</span> 은 연속형 변수를 이산형으로 바꾸는 것을 추천하지 않는다. 연속형 변수를 이산형으로 바꾸었을 때 생기는 문제는 정보량의 유실과 더불어 세부적인 경향성을 놓칠 수 있다는 데 있다.</p>
+</div>
+<div id="using-discrete-rather-than-continuous-predictors" class="section level3" number="12.5.4">
+<h3><span class="header-section-number">12.5.4</span> Using discrete rather than continuous predictors</h3>
+<p>하지만 단순한 모수적 관계가 적절치 않아 보일 때는 어떤 경우에는 연속형 변수를 이산형 변수로 만들어 사용하는 것이 편할 수 있다. 예를 들어, 연령을 원변수 그대로 쓰는 것이 아니라 특정 구간으로 나누어 10대, 20대, 30대 등으로 만드는 것이다.</p>
+</div>
+<div id="index-and-indicator-variables" class="section level3" number="12.5.5">
+<h3><span class="header-section-number">12.5.5</span> Index and indicator variables</h3>
+<p>하나의 변수 안에 이항값을 포함한 <em>더미변수</em>(<span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 196</a>)</span>에서는 index variables라고 하는)는 모집단을 일단의 카테고리로 나눈다:</p>
+<ul>
+<li><p><code>male = 1</code>: 남성이 1, 여성은 0으로 코딩</p></li>
+<li><p><code>age = 1</code>: 18-29세는 1, 30-44세는 2, 45-64세는 3, 65세 이상은 4로 코딩</p></li>
+<li><p><code>state = 1</code>: 알라바마는 1, … , 50은 와이오밍으로 코딩</p></li>
+<li><p><code>county = 1</code>: 미국의 3082개 카운티를 코딩.</p></li>
+</ul>
+<p>카테고리에 따라 여러 개로 쪼갠 <em>더미변수</em>(<span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 196</a>)</span>에서는 indicator variables라고 하는)는 앞의 더미변수에 기초해서 0/1로 예측변수들을 나눈다.</p>
+<ul>
+<li><p><code>sex_1 = 1</code>: 여성은 1, 그 이외의 경우는 모두 0으로 코딩 <br><code>sex_2 = 1</code>: 남성은 1, 그 이외의 모든 경우는 모두 0으로 코딩</p></li>
+<li><p><code>age_1 = 1</code>: 18-29세이면 1, 아니면 모두 0으로 코딩 <br> <code>age_2 = 1</code>: 30-44세이면 1, 아니면 모두 0으로 코딩 <br> <code>age_3 = 1</code>: 45-64세이면 1, 아니면 모두 0으로 코딩 <br> <code>age_4 = 1</code>: 65세 이상이면 1, 아니면 0으로 코딩</p></li>
+<li><p><code>state</code>에 대한 50개 지표</p></li>
+<li><p><code>county</code>에 대한 3082개 지표</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-253"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-253-1.png" alt="Support for same-sex marriage as a function of age, from a national survey taken in 2004. Fits are shown from two linear regression: (a) using age as a predictor, (b) using indicators for age, discretized into categories." width="864" />
+<p class="caption">
+Figure 12.4: Support for same-sex marriage as a function of age, from a national survey taken in 2004. Fits are shown from two linear regression: (a) using age as a predictor, (b) using indicators for age, discretized into categories.
+</p>
+</div>
+</div>
+<div id="indicator-variables-identifiability-and-the-baseline-condition" class="section level3" number="12.5.6">
+<h3><span class="header-section-number">12.5.6</span> Indicator variables, identifiability, and the baseline condition</h3>
+<p>더미변수는 기준이 되는 카테고리를 제외한 나머지 변수들을 모델에 포함한다.</p>
+<ul>
+<li><p>만약 <span class="math inline">\(J\)</span>개의 요인이 있다고 한다면, 우리는 <span class="math inline">\(J\)</span>개의 더미변수를 만들 수 있다.</p></li>
+<li><p>그리고 모델에는 절편을 보여주는 상수항과 <span class="math inline">\(J-1\)</span>개의 더미변수를 포함한다.</p></li>
+</ul>
+</div>
+</div>
+<div id="building-and-comparing-regression-models-for-prediction" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> Building and comparing regression models for prediction</h2>
+<p>데이터 분석을 수행하기 전에 이론적 모델을 가지고 있다면 더할나위 없겠지만, 대개 실제 데이터 분석은 간단한 모델에서 복잡한 모델로 발전시켜 나아가는 과정을 거친다.</p>
+<p>모델들은 데이터 수집 방식 또는 어떤 추론을 하고자 하는지에 따라 달라질 수 있다. 어떤 예측변수들을 모델에 포함할 것인지, 어떻게 변수들을 변형할 것인지 등은 중요한 선택이다. 이 섹션에서는 예측을 위한 모델 수립에 있어서 나타날 수 있는 문제들에 초점을 맞춘다.</p>
+<div id="general-principles" class="section level3" number="12.6.1">
+<h3><span class="header-section-number">12.6.1</span> General principles</h3>
+<p>예측을 위한 회귀모델 구축의 일반적인 원칙들은 다음과 같다:</p>
+<ol style="list-style-type: decimal">
+<li><p>실질적으로 필요한 모든 예측변수들을 모델에 포함하는 것은 결과를 예측하는 데 있어서 중요하다.</p></li>
+<li><p>이 모든 예측변수들을 반드시 별개의 예측변수로 포함해야만 하는 것은 아니다. 우리는 변수들을 하나로 합쳐 하나의 예측변수로 만들어 모델에 포함할 수도 있다.</p></li>
+<li><p>큰 효과를 가지는 예측변수에 대해서는 상호작용의 가능성을 고려해볼 수 있다.</p></li>
+<li><p>모수 추정량에 있어 불확실성을 이해하기 위해서 표준오차를 사용한다. 새로운 데이터가 모델에 추가될 경우에는 그 추정량 또한 변할 수 있다.</p></li>
+<li><p>예측변수를 추가 또는 제외하는 결정은 일련의 맥락적 이해(사전 지식), 데이터, 그리고 어떤 회귀모델을 사용할 것인지에 기초한다.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>만약 예측변수의 계수값이 정확히 추정된다면(작은 표준오차), 일반적으로 모델에 포함시키는 것이 예측을 개선시킨다.</p></li>
+<li><p>만약 계수의 표준오차가 크고, 그 변수가 모델에 포함되어야 할 실질적 이유를 갖지 못한다면, 그 변수를 모델에서 제외하는 것도 필요하다. 왜냐하면 그 변수가 모델에 포함됨으로써 다른 예측변수들의 추정된 계수값을 불안정하게 하고 예측 오차를 더 높일 수 있기 때문이다.</p></li>
+<li><p>만약 어떤 예측변수가 문제를 푸는 데 중요하다면, 그 계수값이 작거나 혹은 표준오차가 크고 통계적 유의성을 갖지 못하더라도 모델에 남겨두는 것ㅇ르 권한다.</p></li>
+<li><p>만약 어떤 계수가 상식적으로 말이 안 되는 결과를 보여준다면, 왜 그런 결과가 나타났는지를 이해하기 위해 노력할 필요가 있다. 만약 표준오차가 크다면, 그 추정량은 무작위 변동량으로 설명될 수도 있다. 만약 표준오차가 작다면, 그 계수를 이해하기 위해 더 노력할 필요가 있다.</p></li>
+</ol></li>
+</ol>
+<p>위의 전략들이 우리의 문제를 완전히 해결해주는 것은 아니지만 중요한 정보를 버린다던가 하는 실수를 저지르지 않는 데는 도움을 줄 수 있다.</p>
+</div>
+<div id="example-predicting-the-yields-of-mesquite-bushes" class="section level3" number="12.6.2">
+<h3><span class="header-section-number">12.6.2</span> Example: predicting the yields of mesquite bushes</h3>
+<p>예제를 통해 살펴보자. 실제로 수확하기 전에 측정된 식물과 관련된 자료를 통해 메스키트(mesquite)의 총생산을 추정하려 한다고 하자. 측정은 두 가지로 이루어진다. 첫 번째는 26개 메스키트로 이루어진 집단이며, 다른 하나는 또 다른 20개의 메스키트인데 햇수가 다르게 측정된 집단이다. 모든 데이터는 동일한 지리적 위치(ranch)에서 획득되었지만, 엄밀히 말하면 무작위 표본은 아니다.</p>
+<p>결과변수는 실제로 수확하는 데에서 얻은 광합성 물질의 총 무게(in grams)이며, 예측변수는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Inputs
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+diam1:
+</td>
+<td style="text-align:left;">
+diameter of the canopy (the leafy area of the bush) in meters, measured along the longer axis of the bush
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+diam2:
+</td>
+<td style="text-align:left;">
+canopy diameter measured along the shorter axis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+conopy_height:
+</td>
+<td style="text-align:left;">
+height of the canopy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_height:
+</td>
+<td style="text-align:left;">
+total height of the bush
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+density:
+</td>
+<td style="text-align:left;">
+plant unit density (# of primary stems per plant unit)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+group:
+</td>
+<td style="text-align:left;">
+group of measurements (0 for the first group, 1 for the second)
+</td>
+</tr>
+</tbody>
+</table>
+<p>회귀모델을 이용해서 잎의 무게를 예측해볼만 하다. 여기서는 간단히 <code>weight</code>를 결과변수로 하고 나머지 예측변수들을 모두 포함한 모델을 구축한다.</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="transformations-and-regression.html#cb283-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> weight <span class="sc">~</span> diam1 <span class="sc">+</span> diam2 <span class="sc">+</span> canopy_height <span class="sc">+</span></span>
+<span id="cb283-2"><a href="transformations-and-regression.html#cb283-2" aria-hidden="true" tabindex="-1"></a>                    total_height <span class="sc">+</span> density <span class="sc">+</span> group,</span>
+<span id="cb283-3"><a href="transformations-and-regression.html#cb283-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>mesquite, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb283-4"><a href="transformations-and-regression.html#cb283-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      weight ~ diam1 + diam2 + canopy_height + total_height + density + 
+##     group
+##  observations: 46
+##  predictors:   7
+## ------
+##               Median  MAD_SD 
+## (Intercept)   -1089.4   173.1
+## diam1           192.5   110.2
+## diam2           369.5   124.9
+## canopy_height   348.9   211.8
+## total_height    -96.9   190.3
+## density         132.3    36.1
+## groupMCD        359.9   101.2
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 273.3   31.6 
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>이 모델의 결과를 LOO 교차 타당화를 통해서 평가할 수 있다.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="transformations-and-regression.html#cb285-1" aria-hidden="true" tabindex="-1"></a>(loo_1 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_1))</span></code></pre></div>
+<pre><code>## 
+## Computed from 4000 by 46 log-likelihood matrix
+## 
+##          Estimate   SE
+## elpd_loo   -335.4 13.6
+## p_loo        17.2  9.6
+## looic       670.8 27.3
+## ------
+## Monte Carlo SE of elpd_loo is NA.
+## 
+## Pareto k diagnostic values:
+##                          Count Pct.    Min. n_eff
+## (-Inf, 0.5]   (good)     42    91.3%   922       
+##  (0.5, 0.7]   (ok)        1     2.2%   1459      
+##    (0.7, 1]   (bad)       2     4.3%   13        
+##    (1, Inf)   (very bad)  1     2.2%   2         
+## See help(&#39;pareto-k-diagnostic&#39;) for details.</code></pre>
+<p>진단 통계량은 LOO 컴퓨테이션이 불안정하다는 것을 보여준다. 그렇다면 K-fold 교차 타당화를 사용해볼 수 있다.</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="transformations-and-regression.html#cb287-1" aria-hidden="true" tabindex="-1"></a>(kfold_1 <span class="ot">&lt;-</span> <span class="fu">kfold</span>(fit_1, <span class="at">K=</span><span class="dv">10</span>))</span></code></pre></div>
+<pre><code>## 
+## Based on 10-fold cross-validation
+## 
+##            Estimate   SE
+## elpd_kfold   -345.7 27.4
+## p_kfold          NA   NA
+## kfoldic       691.5 54.7</code></pre>
+<p><code>loo</code> 진단 통계량은 정확하게 문제를 보여주며, <code>kfold</code> 추정량은 더 회의적인 결과를 보여준다.</p>
+<p>각 예측변수의 중요성을 이해하기 위해서, 각 변수들의 범주에 대해서 알 필요가 있다.</p>
+<pre><code>##               vars  n   mean     sd median trimmed    mad   min    max   range  skew kurtosis    se
+## obs              1 46  23.50  13.42  23.50   23.50  17.05  1.00   46.0   45.00  0.00    -1.28  1.98
+## group*           2 46   1.57   0.50   2.00    1.58   0.00  1.00    2.0    1.00 -0.25    -1.98  0.07
+## diam1            3 46   2.10   0.88   1.95    2.00   0.82  0.80    5.2    4.40  1.24     1.90  0.13
+## diam2            4 46   1.57   0.80   1.52    1.50   0.78  0.40    4.0    3.60  0.97     0.95  0.12
+## total_height     5 46   1.48   0.47   1.50    1.47   0.44  0.65    3.0    2.35  0.47     0.65  0.07
+## canopy_height    6 46   1.11   0.38   1.10    1.09   0.32  0.50    2.5    2.00  0.93     1.99  0.06
+## density          7 46   1.67   1.59   1.00    1.29   0.00  1.00    9.0    8.00  3.11     9.93  0.23
+## weight           8 46 559.66 642.83 361.85  454.09 326.84 60.20 4052.0 3991.80  3.60    16.33 94.78</code></pre>
+<p>이번에는 모델의 변수에 로그값을 취해 적합해보도록 하자. 이 경우, 그 효과는 가산적(additive)이라기 보다는 곱셈의 결과(multiplicative)라고 할 수 있다.</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="transformations-and-regression.html#cb290-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> <span class="fu">log</span>(weight) <span class="sc">~</span> <span class="fu">log</span>(diam1) <span class="sc">+</span> <span class="fu">log</span>(diam2) <span class="sc">+</span> </span>
+<span id="cb290-2"><a href="transformations-and-regression.html#cb290-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(canopy_height) <span class="sc">+</span></span>
+<span id="cb290-3"><a href="transformations-and-regression.html#cb290-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(total_height) <span class="sc">+</span> <span class="fu">log</span>(density) <span class="sc">+</span> </span>
+<span id="cb290-4"><a href="transformations-and-regression.html#cb290-4" aria-hidden="true" tabindex="-1"></a>                    group, <span class="at">data=</span>mesquite,</span>
+<span id="cb290-5"><a href="transformations-and-regression.html#cb290-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb290-6"><a href="transformations-and-regression.html#cb290-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      log(weight) ~ log(diam1) + log(diam2) + log(canopy_height) + 
+##     log(total_height) + log(density) + group
+##  observations: 46
+##  predictors:   7
+## ------
+##                    Median MAD_SD
+## (Intercept)        4.8    0.2   
+## log(diam1)         0.4    0.3   
+## log(diam2)         1.2    0.2   
+## log(canopy_height) 0.4    0.3   
+## log(total_height)  0.4    0.3   
+## log(density)       0.1    0.1   
+## groupMCD           0.6    0.1   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 0.3    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<p>이 결과 우리는 캐노피 높이의 <span class="math inline">\(x\)</span>% 차이가 잎 무게의 약 0.4<span class="math inline">\(x\)</span>% 만큼의 양의 차이(positive difference)와 관계가 있다고 진술할 수 있다.<br />
+</p>
+<p>예측모델 비교에서 우리는 LOO 교차 타당화를 해볼 수 있다.</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="transformations-and-regression.html#cb292-1" aria-hidden="true" tabindex="-1"></a>(loo_2 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_2))</span></code></pre></div>
+<pre><code>## 
+## Computed from 4000 by 46 log-likelihood matrix
+## 
+##          Estimate   SE
+## elpd_loo    -19.4  5.4
+## p_loo         7.6  1.5
+## looic        38.9 10.7
+## ------
+## Monte Carlo SE of elpd_loo is 0.1.
+## 
+## Pareto k diagnostic values:
+##                          Count Pct.    Min. n_eff
+## (-Inf, 0.5]   (good)     43    93.5%   601       
+##  (0.5, 0.7]   (ok)        3     6.5%   341       
+##    (0.7, 1]   (bad)       0     0.0%   &lt;NA&gt;      
+##    (1, Inf)   (very bad)  0     0.0%   &lt;NA&gt;      
+## 
+## All Pareto k estimates are ok (k &lt; 0.7).
+## See help(&#39;pareto-k-diagnostic&#39;) for details.</code></pre>
+<p>진단 통계량은 LOO 컴퓨테이션이 안정적이라는 것을 보여준다.</p>
+</div>
+<div id="using-the-jacobian-to-adjust-the-predictive-comparison-after-a-transformation" class="section level3" number="12.6.3">
+<h3><span class="header-section-number">12.6.3</span> Using the Jacobian to adjust the predictive comparison after a transformation</h3>
+<p>이 파트는 딱히 다룰 필요는 없을 것 같다. 그냥 서로 다른 변환 방법을 사용해서 모델을 추정하였을 경우, 그 결과의 불확실성을 포착하고 비교 및 분석할 필요가 있다는 정도의 개념만 가지고 가면 될 듯하다.</p>
+</div>
+<div id="constructing-a-simpler-model" class="section level3" number="12.6.4">
+<h3><span class="header-section-number">12.6.4</span> Constructing a simpler model</h3>
+<blockquote>
+<p>단순한 모델에서 얻을 수 있는 더 나은 성과와 이해는 우리가 모든 회귀계수들에 대해 약한 사전 분포를 가지고 적합한다는 것에 있다. 약한 사전 분포를 가지고 데이터에서 추론을 이끌어내며, 표본의 규모가 작거나 예측변수가 서로 매우 상관되어 있는 경우, 계수값은 잘 식별되지 않고 추정량 또한 잡음이 많아진다. 변수를 제외하거나 혹은 결합하는 것은 예측력을 많이 잃지 않으면서도 쉽게 해석할 수 있도록 하는, 안정적인 추정량을 얻기 위한 방법이다. 또 다른 접근법은 모델의 모든 예측변수들을 유지하되 추정량을 안정화시키기 위해 계수값에 대한 강한 사전분포를 가지는 것이다<span class="citation">(<a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari 2020</a>: 206)</span>.</p>
+</blockquote>
+</div>
+</div>
+<div id="models-for-regression-coefficients" class="section level2" number="12.7">
+<h2><span class="header-section-number">12.7</span> Models for regression coefficients</h2>
+<p>빈도주의적 접근법으로 계수와 표준오차에 대한 점추정량으로 신뢰구간만 보여주는 것보다 베이지언을 이용해 시뮬레이션된 실제 데이터로 계수를 둘러싼 불확실성을 일종의 표집분포로 보여주는 것의 장점에 대해 논의하고 있는 파트이다. 베이지언을 사용할게 아니라면 자세히 볼 필요는 없고 이런 것이 있구나 하고 넘어가면 될 듯하다.</p>
+<div id="other-models-for-regression-coefficients" class="section level3" number="12.7.1">
+<h3><span class="header-section-number">12.7.1</span> Other models for regression coefficients</h3>
+<p>결국은 이전에 가중치에 대해 논의했던 것처럼, 계수값을 왜곡시키는 요인이 어떤 것인지 식별하고 그것에 대한 가중치/제약을 부여하여 보다 안정적이고 신뢰할 수 있는 계수값을 추정하고자 하는 노력들이 필요하다는 것을 주장하는 파트이다. 여기서는 Lasso 회귀모델과 같은 종류의 회귀모델을 예제로 들고 있다.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ghv2020" class="csl-entry">
+Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. <em>Regression and Other Stories</em>. Cambridge University Press.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="assumptions-diagnostics-and-model-evaluation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simulation-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
