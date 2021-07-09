@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -906,9 +906,9 @@ div.csl-indent {
 <li><p>때문에 그 예제에서 <code>mom_iq</code>의 계수값 0.9라는 결과도 해석이 와닿지 않는다. 왜냐하면 그 기울기란 결국 엄마가 <code>mom_hs=0</code>인 아이들에 대한 주효과(main effect)이기 때문이다. 그러나 <code>mom_hs = 0</code>이란 데이터의 끝단에 위치한 극단적인 값이기 때문에 그로부터 얻은 계수값을 전체 모집단에 대한 평균으로 해석할 수는 없다.</p></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="transformations-and-regression.html#cb260-1" aria-hidden="true" tabindex="-1"></a>fit_kid <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> mom_hs <span class="sc">+</span> mom_iq <span class="sc">+</span> </span>
-<span id="cb260-2"><a href="transformations-and-regression.html#cb260-2" aria-hidden="true" tabindex="-1"></a>                      mom_hs<span class="sc">:</span>mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb260-3"><a href="transformations-and-regression.html#cb260-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="transformations-and-regression.html#cb255-1" aria-hidden="true" tabindex="-1"></a>fit_kid <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> mom_hs <span class="sc">+</span> mom_iq <span class="sc">+</span> </span>
+<span id="cb255-2"><a href="transformations-and-regression.html#cb255-2" aria-hidden="true" tabindex="-1"></a>                      mom_hs<span class="sc">:</span>mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb255-3"><a href="transformations-and-regression.html#cb255-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      kid_score ~ mom_hs + mom_iq + mom_hs:mom_iq
@@ -931,12 +931,12 @@ div.csl-indent {
 <div id="centering-by-subtracting-the-mean-of-the-data" class="section level3" number="12.2.1">
 <h3><span class="header-section-number">12.2.1</span> Centering by subtracting the mean of the data</h3>
 <p>그렇다면 투입된 예측변수들로부터 평균을 빼고 다시 회귀분석을 수행한 뒤 해석해보자.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="transformations-and-regression.html#cb262-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs)</span>
-<span id="cb262-2"><a href="transformations-and-regression.html#cb262-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="transformations-and-regression.html#cb257-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs)</span>
+<span id="cb257-2"><a href="transformations-and-regression.html#cb257-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq)</span></code></pre></div>
 <p>이 경우 각각의 주효과(상호작용이 아닌)는 다른 변수의 평균값이 고정되어 있는 상태에서의 예측 차이를 보여주게 된다:</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="transformations-and-regression.html#cb263-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> c_mom_hs <span class="sc">+</span> c_mom_iq <span class="sc">+</span> </span>
-<span id="cb263-2"><a href="transformations-and-regression.html#cb263-2" aria-hidden="true" tabindex="-1"></a>                      c_mom_hs<span class="sc">:</span>c_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb263-3"><a href="transformations-and-regression.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="transformations-and-regression.html#cb258-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> c_mom_hs <span class="sc">+</span> c_mom_iq <span class="sc">+</span> </span>
+<span id="cb258-2"><a href="transformations-and-regression.html#cb258-2" aria-hidden="true" tabindex="-1"></a>                      c_mom_hs<span class="sc">:</span>c_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb258-3"><a href="transformations-and-regression.html#cb258-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      kid_score ~ c_mom_hs + c_mom_iq + c_mom_hs:c_mom_iq
@@ -961,20 +961,20 @@ div.csl-indent {
 <div id="using-a-conventional-centering-point" class="section level3" number="12.2.2">
 <h3><span class="header-section-number">12.2.2</span> Using a conventional centering point</h3>
 <p>중심화를 하는 또 하나의 선택지는 바로 <code>mom_hs</code>의 범주의 중간 지점이나 모집단 평균 IQ와 같은 납득할 수 있는 기준점을 이용하는 것이다.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="transformations-and-regression.html#cb265-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fl">0.5</span></span>
-<span id="cb265-2"><a href="transformations-and-regression.html#cb265-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="transformations-and-regression.html#cb260-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_hs <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fl">0.5</span></span>
+<span id="cb260-2"><a href="transformations-and-regression.html#cb260-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>c2_mom_iq <span class="ot">&lt;-</span> kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="dv">100</span></span></code></pre></div>
 <p>여기에서 <code>c2_mom_hs</code>는 <code>mom_iq = 100</code>인 아이들 중에서 <code>mom_hs = 1</code>인 아이와 <code>mom_hs = 0</code>인 아이 사이의 평균 예측 차이를 보여준다. 마찬가지로 <code>c2_mom_iq</code>는 <code>mom_hs=0.5</code>인 조건에서의 아이들 성적의 예측차이를 보여준다.</p>
 </div>
 <div id="standardizing-by-subtracting-the-mean-and-dividing-by-2-standard-deviations" class="section level3" number="12.2.3">
 <h3><span class="header-section-number">12.2.3</span> Standardizing by subtracting the mean and dividing by 2 standard deviations</h3>
 <p>중심화는 회귀모델에서 주효과를 해석하는 데 도움을 주지만 여전히 스케일링의 문제는 남아있다. <code>mom_hs</code>의 계수값은 <code>mom_iq</code>보다 훨씬 더 크기 때문에 우리가 각 변수들의 효과를 다른 변수와 비교해서 설명하기가 어렵다는 것이다.</p>
 <p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 186</a>)</span> 은 예측변수들을 2 표준편차로 나누어주는 표준화에 대해서 제안한다. 왜냐하면 그렇게 표준화할 경우 리스케일링된 예측변수의 한 단위 변화는 평균으로부터 위로 1 표준편차, 아래로 1표준편차에 따른 차이를 보여줄 수 있기 때문이다.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="transformations-and-regression.html#cb266-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_hs <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_hs))</span>
-<span id="cb266-2"><a href="transformations-and-regression.html#cb266-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_iq <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_iq))</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="transformations-and-regression.html#cb261-1" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_hs <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_hs <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_hs))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_hs))</span>
+<span id="cb261-2"><a href="transformations-and-regression.html#cb261-2" aria-hidden="true" tabindex="-1"></a>kidiq<span class="sc">$</span>z_mom_iq <span class="ot">&lt;-</span> (kidiq<span class="sc">$</span>mom_iq <span class="sc">-</span> <span class="fu">mean</span>(kidiq<span class="sc">$</span>mom_iq))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sd</span>(kidiq<span class="sc">$</span>mom_iq))</span></code></pre></div>
 <p>이제 우리는 계수값을 거의 동일한 척도 선상에서 해석할 수 있게 된다.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="transformations-and-regression.html#cb267-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> z_mom_hs <span class="sc">+</span> z_mom_iq <span class="sc">+</span> </span>
-<span id="cb267-2"><a href="transformations-and-regression.html#cb267-2" aria-hidden="true" tabindex="-1"></a>                      z_mom_hs<span class="sc">:</span>z_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb267-3"><a href="transformations-and-regression.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="transformations-and-regression.html#cb262-1" aria-hidden="true" tabindex="-1"></a>fit_kid_c2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(kid_score <span class="sc">~</span> z_mom_hs <span class="sc">+</span> z_mom_iq <span class="sc">+</span> </span>
+<span id="cb262-2"><a href="transformations-and-regression.html#cb262-2" aria-hidden="true" tabindex="-1"></a>                      z_mom_hs<span class="sc">:</span>z_mom_iq, <span class="at">data =</span> kidiq, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb262-3"><a href="transformations-and-regression.html#cb262-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_kid_c)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      kid_score ~ c_mom_hs + c_mom_iq + c_mom_hs:c_mom_iq
@@ -1019,8 +1019,8 @@ div.csl-indent {
 <p>아래의 그래프는 상관계수 0.5로 표준화된 변수들을 가지고 시뮬레이션한 예제이다. 첫 번째 패널은 관측치들에 가장 가까운 주성분선(<em>principal component line</em>)을 보여준다. 즉, 이 선은 선과 각 관측치 간 제곱합된 거리가 가장 최소화된 선이다. 이 예제에서 이 선은 <span class="math inline">\(y = x\)</span>라고 할 수 있다.</p>
 <p>두 번째 패널은 회귀선(<em>regression line</em>)을 보여준다. 이는 선과 각 관측치로부터의 수직 거리(<em>vertical distances</em>)의 제곱합이 가장 작은 선을 말하며, 우리가 일반적으로 말하는 최소자승으로 계산한 선이다: <span class="math inline">\(y = \hat a + \hat b x\)</span>. 이때, <span class="math inline">\(\hat a, \hat b\)</span>는 <span class="math inline">\(\sum^n_{i=1}(y_i-(\hat a + \hat b x_i))^2\)</span>을 최소화하는 값이다. 이 예제에서는 <span class="math inline">\(\hat a = 0\)</span>, <span class="math inline">\(\hat b = 0.5\)</span>가 된다. 따라서 회귀선의 기울기도 0.5이다.</p>
 <p>두 패널 모두 정의 관계를 보여주지만 두 번째 패널 쪽이 <span class="math inline">\(x\)</span>로부터 <span class="math inline">\(y\)</span>를 예측하고자 할 때, 주어진 <span class="math inline">\(x\)</span>의 값에 따른 <span class="math inline">\(y\)</span>의 평균 값을 추정함으로써 더 나은 함의를 제공한다. 왜냐하면 주성분선 같은 경우에는 낮은 <span class="math inline">\(x\)</span>값에 대한 <span class="math inline">\(y\)</span>를 과소예측할 수 있기 때문이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-459"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-459-1.png" alt="Data simulated from a bivariate normal distribution with correlation 0.5. (a) The principal component line goes closest through the cloud of points. (b) The regression line, which represents the best prediction of y given x, has half the slope of the principal component line." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-243"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-243-1.png" alt="Data simulated from a bivariate normal distribution with correlation 0.5. (a) The principal component line goes closest through the cloud of points. (b) The regression line, which represents the best prediction of y given x, has half the slope of the principal component line." width="768" />
 <p class="caption">
 Figure 12.1: Data simulated from a bivariate normal distribution with correlation 0.5. (a) The principal component line goes closest through the cloud of points. (b) The regression line, which represents the best prediction of y given x, has half the slope of the principal component line.
 </p>
@@ -1029,11 +1029,11 @@ Figure 12.1: Data simulated from a bivariate normal distribution with correlatio
 <div id="regression-to-the-mean" class="section level3" number="12.3.2">
 <h3><span class="header-section-number">12.3.2</span> Regression to the mean</h3>
 <p><span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 표준화되어 있을 때, 회귀선은 항상 1보다 작은 기울기를 가지게 된다. 따라서 <span class="math inline">\(x\)</span>가 평균보다 1 표준편차 위에 있다면, <span class="math inline">\(y\)</span>의 예측값은 0과 평균보다 1 표준편차 위의 값 그 사이 어딘가에 위치하게 된다. 이처럼 선형모델에서 <span class="math inline">\(x\)</span>보다 <span class="math inline">\(y\)</span>가 평균에 가깝게 예측되는 양상은 “평균으로의 회귀(<em>regression to the mean</em>)”라고도 불린다. <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 188–89</a>)</span>는 엄마의 키로 딸의 키를 예측하는 예제를 통해 평균으로의 회귀를 보여준다.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="transformations-and-regression.html#cb269-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span></span>
-<span id="cb269-2"><a href="transformations-and-regression.html#cb269-2" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
-<span id="cb269-3"><a href="transformations-and-regression.html#cb269-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mom_height      =</span> x,</span>
-<span id="cb269-4"><a href="transformations-and-regression.html#cb269-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">daughter_height =</span> y)</span>
-<span id="cb269-5"><a href="transformations-and-regression.html#cb269-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="transformations-and-regression.html#cb264-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span></span>
+<span id="cb264-2"><a href="transformations-and-regression.html#cb264-2" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
+<span id="cb264-3"><a href="transformations-and-regression.html#cb264-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mom_height      =</span> x,</span>
+<span id="cb264-4"><a href="transformations-and-regression.html#cb264-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">daughter_height =</span> y)</span>
+<span id="cb264-5"><a href="transformations-and-regression.html#cb264-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d)</span></code></pre></div>
 <pre><code>##              x          y   mom_height daughter_height
 ## 1 -1.021916981  1.1402296 -1.021916981       1.1402296
 ## 2 -1.162259081 -1.1362805 -1.162259081      -1.1362805
@@ -1076,10 +1076,10 @@ Figure 12.1: Data simulated from a bivariate normal distribution with correlatio
 <div id="direct-interpretation-of-small-coefficients-on-the-log-scale" class="section level4" number="12.4.1.1">
 <h4><span class="header-section-number">12.4.1.1</span> Direct interpretation of small coefficients on the log scale</h4>
 <p>소득에 로그값을 취해 모델을 돌려보자.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="transformations-and-regression.html#cb272-1" aria-hidden="true" tabindex="-1"></a>logmodel_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height, </span>
-<span id="cb272-2"><a href="transformations-and-regression.html#cb272-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
-<span id="cb272-3"><a href="transformations-and-regression.html#cb272-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb272-4"><a href="transformations-and-regression.html#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_1)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="transformations-and-regression.html#cb267-1" aria-hidden="true" tabindex="-1"></a>logmodel_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height, </span>
+<span id="cb267-2"><a href="transformations-and-regression.html#cb267-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb267-3"><a href="transformations-and-regression.html#cb267-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb267-4"><a href="transformations-and-regression.html#cb267-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_1)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(earn) ~ height
@@ -1098,15 +1098,15 @@ Figure 12.1: Data simulated from a bivariate normal distribution with correlatio
 ## * For help interpreting the printed output see ?print.stanreg
 ## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <p>아래의 그래프는 실제 데이터와 적합된 회귀선을 로그 척도와 선형 척도 각각으로 나타내 보여준 것이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-463"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-463-1.png" alt="Regression of earnings on log(height), with curves showing uncertainty the model, $\log(earnings) = a + b &lt;U+2217&gt; height$, fit to data with positive earnings. The data and fit are plotted on the logarithmic and original scales. Compare to the linear model, shown in Figure 12.1a. To improve resolution, a data point at earnings of \$400 000 has been excluded from the original-scale graph." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-247"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-247-1.png" alt="Regression of earnings on log(height), with curves showing uncertainty the model, $\log(earnings) = a + b &lt;U+2217&gt; height$, fit to data with positive earnings. The data and fit are plotted on the logarithmic and original scales. Compare to the linear model, shown in Figure 12.1a. To improve resolution, a data point at earnings of \$400 000 has been excluded from the original-scale graph." width="768" />
 <p class="caption">
 Figure 12.2: Regression of earnings on log(height), with curves showing uncertainty the model, <span class="math inline">\(\log(earnings) = a + b &lt;U+2217&gt; height\)</span>, fit to data with positive earnings. The data and fit are plotted on the logarithmic and original scales. Compare to the linear model, shown in Figure 12.1a. To improve resolution, a data point at earnings of $400 000 has been excluded from the original-scale graph.
 </p>
 </div>
 <p>한편 계수값 크기가 증가함에 따라서 로그값을 풀었을 때 나타나는 변화를 시각화해보았다. (-1, 1)로 범위를 한정한 이유는 로그 척도에서 회귀계수는 대개 1보다 작기 때문이다. 로그 척도에서 회귀계수의 1은 예측변수의 한 단위 변화가 결과변수의 <span class="math inline">\(\exp(1)\)</span> 변화로 이어진다는 것을 의미한다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-464"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-464-1.png" alt="Interpretation of exponentiated coefficients in a logarithmic regression model as relative difference (curved upper line), and the approximation $\exp(x) = 1 + x$, which is valid for small coefficients $x$ (straight line)." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-248"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-248-1.png" alt="Interpretation of exponentiated coefficients in a logarithmic regression model as relative difference (curved upper line), and the approximation $\exp(x) = 1 + x$, which is valid for small coefficients $x$ (straight line)." width="672" />
 <p class="caption">
 Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regression model as relative difference (curved upper line), and the approximation <span class="math inline">\(\exp(x) = 1 + x\)</span>, which is valid for small coefficients <span class="math inline">\(x\)</span> (straight line).
 </p>
@@ -1131,10 +1131,10 @@ Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regre
 <div id="adding-another-predictor" class="section level4" number="12.4.3.1">
 <h4><span class="header-section-number">12.4.3.1</span> Adding another predictor</h4>
 <p>키 1인치 차이가 소득의 약 6% 차이와 관련이 있다는 것을 얼핏 보기에는 큰 차이같지만 남성이 대개 여성보다 키가 크기 때문에 남성이 더 많은 소득을 가질 수 있다는 것을 고려해야한다. 즉, 6%의 예측차이는 성별의 차이 때문일 수도 있다는 것이다. 성별이 같은 경우에서도 키가 더 큰 사람이 평균적으로 키가 더 작은 사람보다 더 높은 소득을 가질까?</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="transformations-and-regression.html#cb274-1" aria-hidden="true" tabindex="-1"></a>logmodel_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male, </span>
-<span id="cb274-2"><a href="transformations-and-regression.html#cb274-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
-<span id="cb274-3"><a href="transformations-and-regression.html#cb274-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb274-4"><a href="transformations-and-regression.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_2)</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="transformations-and-regression.html#cb269-1" aria-hidden="true" tabindex="-1"></a>logmodel_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male, </span>
+<span id="cb269-2"><a href="transformations-and-regression.html#cb269-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb269-3"><a href="transformations-and-regression.html#cb269-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb269-4"><a href="transformations-and-regression.html#cb269-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_2)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(earn) ~ height + male
@@ -1167,10 +1167,10 @@ Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regre
 <div id="including-an-interaction" class="section level4" number="12.4.3.4">
 <h4><span class="header-section-number">12.4.3.4</span> Including an interaction</h4>
 <p>키와 성별 간의 상호작용을 포함한 모델을 고려해보자. 이때 키에 대한 예측비교는 남성과 여성에 따라 달라질 수 있다.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="transformations-and-regression.html#cb276-1" aria-hidden="true" tabindex="-1"></a>logmodel_3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male <span class="sc">+</span> height<span class="sc">:</span>male,</span>
-<span id="cb276-2"><a href="transformations-and-regression.html#cb276-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
-<span id="cb276-3"><a href="transformations-and-regression.html#cb276-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb276-4"><a href="transformations-and-regression.html#cb276-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="transformations-and-regression.html#cb271-1" aria-hidden="true" tabindex="-1"></a>logmodel_3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> height <span class="sc">+</span> male <span class="sc">+</span> height<span class="sc">:</span>male,</span>
+<span id="cb271-2"><a href="transformations-and-regression.html#cb271-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb271-3"><a href="transformations-and-regression.html#cb271-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb271-4"><a href="transformations-and-regression.html#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(earn) ~ height + male + height:male
@@ -1216,13 +1216,13 @@ Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regre
 <div id="linear-transformation-to-make-coefficients-more-interpretable" class="section level4" number="12.4.3.5">
 <h4><span class="header-section-number">12.4.3.5</span> Linear transformation to make coefficients more interpretable</h4>
 <p>상호작용 모델에서 예측변수 키에 대해 평균 0, 표준편차 1을 갖도록 리스케일링을 함으로써 해석을 더 직관적으로 할 수 있다.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="transformations-and-regression.html#cb278-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>z_height <span class="ot">&lt;-</span> </span>
-<span id="cb278-2"><a href="transformations-and-regression.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  (earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="fu">mean</span>(earnings<span class="sc">$</span>height))<span class="sc">/</span><span class="fu">sd</span>(earnings<span class="sc">$</span>height)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="transformations-and-regression.html#cb273-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>z_height <span class="ot">&lt;-</span> </span>
+<span id="cb273-2"><a href="transformations-and-regression.html#cb273-2" aria-hidden="true" tabindex="-1"></a>  (earnings<span class="sc">$</span>height <span class="sc">-</span> <span class="fu">mean</span>(earnings<span class="sc">$</span>height))<span class="sc">/</span><span class="fu">sd</span>(earnings<span class="sc">$</span>height)</span></code></pre></div>
 <p>이 데이터에서 키의 평균과 표준편차는 각각 66.6인치와 3.8인치이다. 표준화한 키 변수를 상호작용모델에 원래의 키를 대체해서 집어넣으면 다음과 같은 결과를 얻을 수 있다.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="transformations-and-regression.html#cb279-1" aria-hidden="true" tabindex="-1"></a>logmodel_3z <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> z_height <span class="sc">+</span> male <span class="sc">+</span> z_height<span class="sc">:</span>male,</span>
-<span id="cb279-2"><a href="transformations-and-regression.html#cb279-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
-<span id="cb279-3"><a href="transformations-and-regression.html#cb279-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb279-4"><a href="transformations-and-regression.html#cb279-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3z)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="transformations-and-regression.html#cb274-1" aria-hidden="true" tabindex="-1"></a>logmodel_3z <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> z_height <span class="sc">+</span> male <span class="sc">+</span> z_height<span class="sc">:</span>male,</span>
+<span id="cb274-2"><a href="transformations-and-regression.html#cb274-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb274-3"><a href="transformations-and-regression.html#cb274-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb274-4"><a href="transformations-and-regression.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_3z)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(earn) ~ z_height + male + z_height:male
@@ -1252,11 +1252,11 @@ Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regre
 <div id="log-log-model-transforming-the-input-and-outcome-variables" class="section level3" number="12.4.5">
 <h3><span class="header-section-number">12.4.5</span> Log-log model: transforming the input and outcome variables</h3>
 <p>결과변수뿐 아니라 예측변수에도 로그 변환을 취할 경우에, 계수값은 <span class="math inline">\(x\)</span>의 비율적 차이에 따른 <span class="math inline">\(y\)</span>의 기대된 비율적 차이로 해석할 수 있다.</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="transformations-and-regression.html#cb281-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>log_height <span class="ot">&lt;-</span> <span class="fu">log</span>(earnings<span class="sc">$</span>height)</span>
-<span id="cb281-2"><a href="transformations-and-regression.html#cb281-2" aria-hidden="true" tabindex="-1"></a>logmodel_5 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> log_height <span class="sc">+</span> male, </span>
-<span id="cb281-3"><a href="transformations-and-regression.html#cb281-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
-<span id="cb281-4"><a href="transformations-and-regression.html#cb281-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb281-5"><a href="transformations-and-regression.html#cb281-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_5)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="transformations-and-regression.html#cb276-1" aria-hidden="true" tabindex="-1"></a>earnings<span class="sc">$</span>log_height <span class="ot">&lt;-</span> <span class="fu">log</span>(earnings<span class="sc">$</span>height)</span>
+<span id="cb276-2"><a href="transformations-and-regression.html#cb276-2" aria-hidden="true" tabindex="-1"></a>logmodel_5 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="fu">log</span>(earn) <span class="sc">~</span> log_height <span class="sc">+</span> male, </span>
+<span id="cb276-3"><a href="transformations-and-regression.html#cb276-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data=</span>earnings <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(earn<span class="sc">&gt;</span><span class="dv">0</span>),</span>
+<span id="cb276-4"><a href="transformations-and-regression.html#cb276-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb276-5"><a href="transformations-and-regression.html#cb276-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(logmodel_5)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(earn) ~ log_height + male
@@ -1316,8 +1316,8 @@ Figure 12.3: Interpretation of exponentiated coefficients in a logarithmic regre
 <li><p><code>state</code>에 대한 50개 지표</p></li>
 <li><p><code>county</code>에 대한 3082개 지표</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-470"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-470-1.png" alt="Support for same-sex marriage as a function of age, from a national survey taken in 2004. Fits are shown from two linear regression: (a) using age as a predictor, (b) using indicators for age, discretized into categories." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-254"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-254-1.png" alt="Support for same-sex marriage as a function of age, from a national survey taken in 2004. Fits are shown from two linear regression: (a) using age as a predictor, (b) using indicators for age, discretized into categories." width="864" />
 <p class="caption">
 Figure 12.4: Support for same-sex marriage as a function of age, from a national survey taken in 2004. Fits are shown from two linear regression: (a) using age as a predictor, (b) using indicators for age, discretized into categories.
 </p>
@@ -1421,10 +1421,10 @@ group of measurements (0 for the first group, 1 for the second)
 </tbody>
 </table>
 <p>회귀모델을 이용해서 잎의 무게를 예측해볼만 하다. 여기서는 간단히 <code>weight</code>를 결과변수로 하고 나머지 예측변수들을 모두 포함한 모델을 구축한다.</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="transformations-and-regression.html#cb283-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> weight <span class="sc">~</span> diam1 <span class="sc">+</span> diam2 <span class="sc">+</span> canopy_height <span class="sc">+</span></span>
-<span id="cb283-2"><a href="transformations-and-regression.html#cb283-2" aria-hidden="true" tabindex="-1"></a>                    total_height <span class="sc">+</span> density <span class="sc">+</span> group,</span>
-<span id="cb283-3"><a href="transformations-and-regression.html#cb283-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>mesquite, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb283-4"><a href="transformations-and-regression.html#cb283-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="transformations-and-regression.html#cb278-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> weight <span class="sc">~</span> diam1 <span class="sc">+</span> diam2 <span class="sc">+</span> canopy_height <span class="sc">+</span></span>
+<span id="cb278-2"><a href="transformations-and-regression.html#cb278-2" aria-hidden="true" tabindex="-1"></a>                    total_height <span class="sc">+</span> density <span class="sc">+</span> group,</span>
+<span id="cb278-3"><a href="transformations-and-regression.html#cb278-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>mesquite, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb278-4"><a href="transformations-and-regression.html#cb278-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      weight ~ diam1 + diam2 + canopy_height + total_height + density + 
@@ -1433,76 +1433,76 @@ group of measurements (0 for the first group, 1 for the second)
 ##  predictors:   7
 ## ------
 ##               Median  MAD_SD 
-## (Intercept)   -1089.4   173.1
-## diam1           192.5   110.2
-## diam2           369.5   124.9
-## canopy_height   348.9   211.8
-## total_height    -96.9   190.3
-## density         132.3    36.1
-## groupMCD        359.9   101.2
+## (Intercept)   -1093.4   185.3
+## diam1           194.1   116.9
+## diam2           371.5   127.1
+## canopy_height   352.6   205.1
+## total_height   -103.7   185.9
+## density         131.8    35.5
+## groupMCD        365.0   103.3
 ## 
 ## Auxiliary parameter(s):
 ##       Median MAD_SD
-## sigma 273.3   31.6 
+## sigma 273.4   29.9 
 ## 
 ## ------
 ## * For help interpreting the printed output see ?print.stanreg
 ## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <p>이 모델의 결과를 LOO 교차 타당화를 통해서 평가할 수 있다.</p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="transformations-and-regression.html#cb285-1" aria-hidden="true" tabindex="-1"></a>(loo_1 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_1))</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="transformations-and-regression.html#cb280-1" aria-hidden="true" tabindex="-1"></a>(loo_1 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_1))</span></code></pre></div>
 <pre><code>## 
 ## Computed from 4000 by 46 log-likelihood matrix
 ## 
 ##          Estimate   SE
-## elpd_loo   -335.4 13.6
-## p_loo        17.2  9.6
-## looic       670.8 27.3
+## elpd_loo   -335.1 13.2
+## p_loo        16.8  9.2
+## looic       670.1 26.4
 ## ------
 ## Monte Carlo SE of elpd_loo is NA.
 ## 
 ## Pareto k diagnostic values:
 ##                          Count Pct.    Min. n_eff
-## (-Inf, 0.5]   (good)     42    91.3%   922       
-##  (0.5, 0.7]   (ok)        1     2.2%   1459      
-##    (0.7, 1]   (bad)       2     4.3%   13        
-##    (1, Inf)   (very bad)  1     2.2%   2         
+## (-Inf, 0.5]   (good)     42    91.3%   784       
+##  (0.5, 0.7]   (ok)        1     2.2%   1959      
+##    (0.7, 1]   (bad)       2     4.3%   21        
+##    (1, Inf)   (very bad)  1     2.2%   3         
 ## See help(&#39;pareto-k-diagnostic&#39;) for details.</code></pre>
 <p>진단 통계량은 LOO 컴퓨테이션이 불안정하다는 것을 보여준다. 그렇다면 K-fold 교차 타당화를 사용해볼 수 있다.</p>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="transformations-and-regression.html#cb287-1" aria-hidden="true" tabindex="-1"></a>(kfold_1 <span class="ot">&lt;-</span> <span class="fu">kfold</span>(fit_1, <span class="at">K=</span><span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="transformations-and-regression.html#cb282-1" aria-hidden="true" tabindex="-1"></a>(kfold_1 <span class="ot">&lt;-</span> <span class="fu">kfold</span>(fit_1, <span class="at">K=</span><span class="dv">10</span>))</span></code></pre></div>
 <pre><code>## 
 ## Based on 10-fold cross-validation
 ## 
 ##            Estimate   SE
-## elpd_kfold   -345.7 27.4
+## elpd_kfold   -367.1 41.2
 ## p_kfold          NA   NA
-## kfoldic       691.5 54.7</code></pre>
+## kfoldic       734.3 82.5</code></pre>
 <p><code>loo</code> 진단 통계량은 정확하게 문제를 보여주며, <code>kfold</code> 추정량은 더 회의적인 결과를 보여준다.</p>
 <p>각 예측변수의 중요성을 이해하기 위해서, 각 변수들의 범주에 대해서 알 필요가 있다.</p>
-<pre><code>##               vars  n   mean     sd median trimmed    mad   min    max   range  skew
-## obs              1 46  23.50  13.42  23.50   23.50  17.05  1.00   46.0   45.00  0.00
-## group*           2 46   1.57   0.50   2.00    1.58   0.00  1.00    2.0    1.00 -0.25
-## diam1            3 46   2.10   0.88   1.95    2.00   0.82  0.80    5.2    4.40  1.24
-## diam2            4 46   1.57   0.80   1.52    1.50   0.78  0.40    4.0    3.60  0.97
-## total_height     5 46   1.48   0.47   1.50    1.47   0.44  0.65    3.0    2.35  0.47
-## canopy_height    6 46   1.11   0.38   1.10    1.09   0.32  0.50    2.5    2.00  0.93
-## density          7 46   1.67   1.59   1.00    1.29   0.00  1.00    9.0    8.00  3.11
-## weight           8 46 559.66 642.83 361.85  454.09 326.84 60.20 4052.0 3991.80  3.60
-##               kurtosis    se
-## obs              -1.28  1.98
-## group*           -1.98  0.07
-## diam1             1.90  0.13
-## diam2             0.95  0.12
-## total_height      0.65  0.07
-## canopy_height     1.99  0.06
-## density           9.93  0.23
-## weight           16.33 94.78</code></pre>
+<pre><code>##               vars  n   mean     sd median trimmed    mad   min    max   range
+## obs              1 46  23.50  13.42  23.50   23.50  17.05  1.00   46.0   45.00
+## group*           2 46   1.57   0.50   2.00    1.58   0.00  1.00    2.0    1.00
+## diam1            3 46   2.10   0.88   1.95    2.00   0.82  0.80    5.2    4.40
+## diam2            4 46   1.57   0.80   1.52    1.50   0.78  0.40    4.0    3.60
+## total_height     5 46   1.48   0.47   1.50    1.47   0.44  0.65    3.0    2.35
+## canopy_height    6 46   1.11   0.38   1.10    1.09   0.32  0.50    2.5    2.00
+## density          7 46   1.67   1.59   1.00    1.29   0.00  1.00    9.0    8.00
+## weight           8 46 559.66 642.83 361.85  454.09 326.84 60.20 4052.0 3991.80
+##                skew kurtosis    se
+## obs            0.00    -1.28  1.98
+## group*        -0.25    -1.98  0.07
+## diam1          1.24     1.90  0.13
+## diam2          0.97     0.95  0.12
+## total_height   0.47     0.65  0.07
+## canopy_height  0.93     1.99  0.06
+## density        3.11     9.93  0.23
+## weight         3.60    16.33 94.78</code></pre>
 <p>이번에는 모델의 변수에 로그값을 취해 적합해보도록 하자. 이 경우, 그 효과는 가산적(additive)이라기 보다는 곱셈의 결과(multiplicative)라고 할 수 있다.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="transformations-and-regression.html#cb290-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> <span class="fu">log</span>(weight) <span class="sc">~</span> <span class="fu">log</span>(diam1) <span class="sc">+</span> <span class="fu">log</span>(diam2) <span class="sc">+</span> </span>
-<span id="cb290-2"><a href="transformations-and-regression.html#cb290-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(canopy_height) <span class="sc">+</span></span>
-<span id="cb290-3"><a href="transformations-and-regression.html#cb290-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(total_height) <span class="sc">+</span> <span class="fu">log</span>(density) <span class="sc">+</span> </span>
-<span id="cb290-4"><a href="transformations-and-regression.html#cb290-4" aria-hidden="true" tabindex="-1"></a>                    group, <span class="at">data=</span>mesquite,</span>
-<span id="cb290-5"><a href="transformations-and-regression.html#cb290-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb290-6"><a href="transformations-and-regression.html#cb290-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="transformations-and-regression.html#cb285-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(<span class="at">formula =</span> <span class="fu">log</span>(weight) <span class="sc">~</span> <span class="fu">log</span>(diam1) <span class="sc">+</span> <span class="fu">log</span>(diam2) <span class="sc">+</span> </span>
+<span id="cb285-2"><a href="transformations-and-regression.html#cb285-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(canopy_height) <span class="sc">+</span></span>
+<span id="cb285-3"><a href="transformations-and-regression.html#cb285-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">log</span>(total_height) <span class="sc">+</span> <span class="fu">log</span>(density) <span class="sc">+</span> </span>
+<span id="cb285-4"><a href="transformations-and-regression.html#cb285-4" aria-hidden="true" tabindex="-1"></a>                    group, <span class="at">data=</span>mesquite,</span>
+<span id="cb285-5"><a href="transformations-and-regression.html#cb285-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb285-6"><a href="transformations-and-regression.html#cb285-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       gaussian [identity]
 ##  formula:      log(weight) ~ log(diam1) + log(diam2) + log(canopy_height) + 
@@ -1529,7 +1529,7 @@ group of measurements (0 for the first group, 1 for the second)
 <p>이 결과 우리는 캐노피 높이의 <span class="math inline">\(x\)</span>% 차이가 잎 무게의 약 0.4<span class="math inline">\(x\)</span>% 만큼의 양의 차이(positive difference)와 관계가 있다고 진술할 수 있다.<br />
 </p>
 <p>예측모델 비교에서 우리는 LOO 교차 타당화를 해볼 수 있다.</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="transformations-and-regression.html#cb292-1" aria-hidden="true" tabindex="-1"></a>(loo_2 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_2))</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="transformations-and-regression.html#cb287-1" aria-hidden="true" tabindex="-1"></a>(loo_2 <span class="ot">&lt;-</span> <span class="fu">loo</span>(fit_2))</span></code></pre></div>
 <pre><code>## 
 ## Computed from 4000 by 46 log-likelihood matrix
 ## 

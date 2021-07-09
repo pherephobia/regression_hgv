@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -874,8 +874,8 @@ div.csl-indent {
 ##  predictors:   2
 ## ------
 ##             Median MAD_SD
-## (Intercept) 77.5    2.1  
-## mom_hs      11.8    2.4  
+## (Intercept) 77.6    2.1  
+## mom_hs      11.7    2.3  
 ## 
 ## Auxiliary parameter(s):
 ##       Median MAD_SD
@@ -1059,8 +1059,9 @@ div.csl-indent {
 ##  8     64    125     0  9000     9 White            15               15
 ##  9     62    200     0 29000    29 White            12               12
 ## 10     73    230     1 32000    32 White            17               17
-## # ... with 9 more variables: father_education &lt;dbl&gt;, walk &lt;dbl&gt;, exercise &lt;dbl&gt;,
-## #   smokenow &lt;dbl&gt;, tense &lt;dbl&gt;, angry &lt;dbl&gt;, age &lt;dbl&gt;, sex &lt;chr&gt;, c_height &lt;dbl&gt;</code></pre>
+## # ... with 9 more variables: father_education &lt;dbl&gt;, walk &lt;dbl&gt;,
+## #   exercise &lt;dbl&gt;, smokenow &lt;dbl&gt;, tense &lt;dbl&gt;, angry &lt;dbl&gt;, age &lt;dbl&gt;,
+## #   sex &lt;chr&gt;, c_height &lt;dbl&gt;</code></pre>
 <p>일단 몸무게(파운드)로 키(인치)를 예측해보자.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="linear-regression-with-multiple-predictors.html#cb181-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(weight <span class="sc">~</span> height, </span>
 <span id="cb181-2"><a href="linear-regression-with-multiple-predictors.html#cb181-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> earnings, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
@@ -1361,8 +1362,8 @@ White
 <div id="background" class="section level3" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Background</h3>
 <p>미국은 435개 지역구로 나뉘어 있고, 결과변수 <span class="math inline">\(y_i, \: i = 1, \dots, n = 435\)</span>는 1988년 지역구 <span class="math inline">\(i\)</span>에서의 두 정당의 득표 대비 민주당의 정당득표율을 보여준다. Figure 10.5는 데이터 <span class="math inline">\(y\)</span>에 대한 히스토그램을 보여준다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-399"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-399-1.png" alt="Histogram of congressional election data from 1988. The spikes at the left and right ends represent uncontested Republicans and Democrats, respectively." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-183"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-183-1.png" alt="Histogram of congressional election data from 1988. The spikes at the left and right ends represent uncontested Republicans and Democrats, respectively." width="480" />
 <p class="caption">
 Figure 10.1: Histogram of congressional election data from 1988. The spikes at the left and right ends represent uncontested Republicans and Democrats, respectively.
 </p>
@@ -1375,8 +1376,8 @@ Figure 10.1: Histogram of congressional election data from 1988. The spikes at t
 </ul>
 <p>현직-재선 예측변수는 카테고리칼이다. 따라서 우리는 하나의 산포도에 민주당 현직자와 공화당 현직자, 둘 모두가 다 아닌 경를 각각 다르게 마킹해서 산포도로 그릴 수 있다. Figure 10.6a가 바로 그것이다.</p>
 <p>선형회귀모델을 적합한다고 할 때, 이 변수는 이산형 변수이지만 각 지역구에서의 득표율은 연속형 변수이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-400"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-400-1.png" alt="(a) Congressional election data from 1986 and 1988. Crosses correspond to elections with Republican incumbents running in 1988, dots correspond to Democratic incumbents, and open circles correspond to open seats. The “incumbency” predictor in the regression model equals 0 for the circles, +1 for the dots, and &lt;U+2212&gt;1 for the crosses. Uncontested election outcomes (at 0 and 1) have been jittered slightly. (b) Data for the regression analysis, with uncontested 1988 elections removed and uncontested 1986 election values replaced by 0.25 and 0.75. The $y = x$ line is included as a comparison on both plots." width="960" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-184"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-184-1.png" alt="(a) Congressional election data from 1986 and 1988. Crosses correspond to elections with Republican incumbents running in 1988, dots correspond to Democratic incumbents, and open circles correspond to open seats. The “incumbency” predictor in the regression model equals 0 for the circles, +1 for the dots, and &lt;U+2212&gt;1 for the crosses. Uncontested election outcomes (at 0 and 1) have been jittered slightly. (b) Data for the regression analysis, with uncontested 1988 elections removed and uncontested 1986 election values replaced by 0.25 and 0.75. The $y = x$ line is included as a comparison on both plots." width="960" />
 <p class="caption">
 Figure 10.2: (a) Congressional election data from 1986 and 1988. Crosses correspond to elections with Republican incumbents running in 1988, dots correspond to Democratic incumbents, and open circles correspond to open seats. The “incumbency” predictor in the regression model equals 0 for the circles, +1 for the dots, and &lt;U+2212&gt;1 for the crosses. Uncontested election outcomes (at 0 and 1) have been jittered slightly. (b) Data for the regression analysis, with uncontested 1988 elections removed and uncontested 1986 election values replaced by 0.25 and 0.75. The <span class="math inline">\(y = x\)</span> line is included as a comparison on both plots.
 </p>
@@ -1426,7 +1427,7 @@ Figure 10.2: (a) Congressional election data from 1986 and 1988. Crosses corresp
 <pre><code>## Error in validate_data(data, if_missing = environment(formula)): object &#39;data_88&#39; not found</code></pre>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-402">Table 10.1: </span>Simulation results for the congressional election forecasting model. The predicted values <span class="math inline">\(\tilde y_i\)</span> correspond to the 1990 election.
+<span id="tab:unnamed-chunk-186">Table 10.1: </span>Simulation results for the congressional election forecasting model. The predicted values <span class="math inline">\(\tilde y_i\)</span> correspond to the 1990 election.
 </caption>
 <thead>
 <tr>
@@ -1828,7 +1829,7 @@ Figure 10.2: (a) Congressional election data from 1986 and 1988. Crosses corresp
 <h3><span class="header-section-number">10.7.2</span> Regression in vector-matrix notation</h3>
 <p>회귀분석은 벡터-행렬로도 나타낼 수 있다.<span class="math inline">\(y_i\)</span>의 <span class="math inline">\(i^{\text{th}}\)</span> 관측치는 결정주의적 예측으로는 <span class="math inline">\(X_i\beta = \beta_1X_{i1}+\cdots+\beta_kX_{ik}\)</span>로 나타낼 수 있다. 일단 <span class="math inline">\(X_{i1}\)</span>은 상수항으로 절편값을 의미한다.</p>
 <p><span class="math inline">\(\epsilon_i\)</span>은 평균 0에 표준편차 <span class="math inline">\(\sigma\)</span>인 정규분포를 따르며, 오차를 의미한다. 즉, <span class="math inline">\(\mathrm{N}(0, \sigma^2)\)</span>로 나타낼 수 있다. 잔차는 실제 관측치와 추정된 예측값 간의 차이를 보여준다: <span class="math inline">\(y - X \hat \beta\)</span>. 주어진 예측변수의 데이터 <span class="math inline">\(\tilde X\)</span>일 때, 모델로부터 얻은 예측값 <span class="math inline">\(\tilde y\)</span>는 Figure 10.7로 확인할 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-407"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-191"></span>
 <img src="fig/fig10.png" alt="Notation for regression modeling. The model is fit to the observed outcomes $y$ given predictors $X$. As described in the text, the model can then be applied to predict unobserved outcomes $\tilde y$ (indicated by small question marks), given predictors on new data $\tilde X$." width="410" />
 <p class="caption">
 Figure 10.3: Notation for regression modeling. The model is fit to the observed outcomes <span class="math inline">\(y\)</span> given predictors <span class="math inline">\(X\)</span>. As described in the text, the model can then be applied to predict unobserved outcomes <span class="math inline">\(\tilde y\)</span> (indicated by small question marks), given predictors on new data <span class="math inline">\(\tilde X\)</span>.
@@ -1928,11 +1929,12 @@ y \sim \mathrm{N}(X\beta,\sigma^2I).
 <h3><span class="header-section-number">10.9.1</span> Predicting party identification</h3>
 <p>Figure 10.9는 시간에 따라 추적한 추정된 계수값의 변환을 보여준다. 이념과 인종이 가장 중요하고 그 그 둘의 계수값은 시간이 바뀔 때마 마찬가지로 변화해왔다.</p>
 <p>Figure 10.9는 여러 모델을 추정하는 것이 어떻게 유용한지를 보여준다. 여러 예측변수에 기초해서 모델을 쪼개어보는 결과, 각 패널마다의 평균적인 경향성이 드러나는 것을 확인할 수 있기 때문이다.</p>
-<pre><code>## Error in select(., year, partyid7, real_ideo, race_adj, age_discrete, : unused arguments (year, partyid7, real_ideo, race_adj, age_discrete, educ1, female, income)</code></pre>
-<pre><code>## Error in select(., !age_discrete): unused argument (!age_discrete)</code></pre>
-<pre><code>## Error in select(., !c(data, fit)): unused argument (!c(data, fit))</code></pre>
-<pre><code>## Error in select(., !c(data, fit)): unused argument (!c(data, fit))</code></pre>
-<pre><code>## Error in mutate(., var = fct_inorder(var), q_25 = qnorm(0.25, mean = coef, : object &#39;coefs&#39; not found</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-193"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-193-1.png" alt="Estimated coefficients $\pm 0.67$ standard errors (thus, 50% intervals) for the regression of party identification on political ideology, ethnicity, and other predictors, as fit separately to poll data from each presidential election campaign from 1976 through 2000. The plots are on different scales, with the predictors ordered roughly in declining order of the magnitudes of their coefficients. The set of plots illustrates the display of inferences from a series of regressions." width="672" />
+<p class="caption">
+Figure 10.4: Estimated coefficients <span class="math inline">\(\pm 0.67\)</span> standard errors (thus, 50% intervals) for the regression of party identification on political ideology, ethnicity, and other predictors, as fit separately to poll data from each presidential election campaign from 1976 through 2000. The plots are on different scales, with the predictors ordered roughly in declining order of the magnitudes of their coefficients. The set of plots illustrates the display of inferences from a series of regressions.
+</p>
+</div>
 
 </div>
 </div>

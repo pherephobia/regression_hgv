@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -871,8 +871,8 @@ div.csl-indent {
 \text{logit}^{-1}(x) = \frac{e^x}{1+e^x}.
 \]</span></p>
 <p>R에서는 로지스틱 분포를 이용해 이와 같은 로지스틱 함수를 확인할 수 있다.</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="logistic-regression.html#cb294-1" aria-hidden="true" tabindex="-1"></a>logit <span class="ot">&lt;-</span> qlogis</span>
-<span id="cb294-2"><a href="logistic-regression.html#cb294-2" aria-hidden="true" tabindex="-1"></a>invlogit <span class="ot">&lt;-</span> plogis</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="logistic-regression.html#cb289-1" aria-hidden="true" tabindex="-1"></a>logit <span class="ot">&lt;-</span> qlogis</span>
+<span id="cb289-2"><a href="logistic-regression.html#cb289-2" aria-hidden="true" tabindex="-1"></a>invlogit <span class="ot">&lt;-</span> plogis</span></code></pre></div>
 <p>이항변수를 모델링하는 데 있어 로지스틱 변환의 용법에 대해 살펴보자.</p>
 <div id="example-modeling-political-preference-given-income" class="section level3" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> Example: modeling political preference given income</h3>
@@ -881,15 +881,14 @@ div.csl-indent {
 <li><p>NES 설문조사에서 각 응답자 <span class="math inline">\(i\)</span>에 대해, 응답자가 조지 부시를 선호할 경우에는 <span class="math inline">\(y_i=1\)</span>, 응답자가 빌 클린턴을 선호할 경우에는 <span class="math inline">\(y_i = 0\)</span>으로 코딩하며 다른 후보자에 대한 선호나 의견은 제외하였다.</p></li>
 <li><p>예측변수는 응답자의 소득 수준으로 5점 척도로 측정되었다.</p></li>
 </ul>
-<pre><code>## Error in select(dat, Coast, Income = Per.capita.income): unused arguments (Coast, Income = Per.capita.income)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-481"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-481-1.png" alt="(a) Inverse logit function $\text{logit}^{&lt;U+2212&gt;1}(x)$ from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: $y = \text{logit}^{&lt;U+2212&gt;1}(&lt;U+2212&gt;1.40 + 0.33x)$. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at $\text{logit}(0.5) = 0$; in graph (b), the halfway point is where $&lt;U+2212&gt;1.40 + 0.33x = 0$, which is $x = 1.40/0.33 = 4.2$. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for $y = \text{logit}^{&lt;U+2212&gt;1}(x)$ and $0.33/4$ for $y = \text{logit}^{&lt;U+2212&gt;1}(&lt;U+2212&gt;1.40 + 0.33x)$. The slope of the logistic regression curve is steepest at this halfway point." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-265"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-265-1.png" alt="(a) Inverse logit function $\text{logit}^{-1}(x)$ from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: $y = \text{logit}^{-1}(-1.40 + 0.33x)$. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at $\text{logit}(0.5) = 0$; in graph (b), the halfway point is where $-1.40 + 0.33x = 0$, which is $x = 1.40/0.33 = 4.2$. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for $y = \text{logit}^{-1}(x)$ and $0.33/4$ for $y = \text{logit}^{-1}(-1.40 + 0.33x)$. The slope of the logistic regression curve is steepest at this halfway point." width="864" />
 <p class="caption">
-Figure 13.1: (a) Inverse logit function <span class="math inline">\(\text{logit}^{&lt;U+2212&gt;1}(x)\)</span> from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: <span class="math inline">\(y = \text{logit}^{&lt;U+2212&gt;1}(&lt;U+2212&gt;1.40 + 0.33x)\)</span>. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at <span class="math inline">\(\text{logit}(0.5) = 0\)</span>; in graph (b), the halfway point is where <span class="math inline">\(&lt;U+2212&gt;1.40 + 0.33x = 0\)</span>, which is <span class="math inline">\(x = 1.40/0.33 = 4.2\)</span>. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for <span class="math inline">\(y = \text{logit}^{&lt;U+2212&gt;1}(x)\)</span> and <span class="math inline">\(0.33/4\)</span> for <span class="math inline">\(y = \text{logit}^{&lt;U+2212&gt;1}(&lt;U+2212&gt;1.40 + 0.33x)\)</span>. The slope of the logistic regression curve is steepest at this halfway point.
+Figure 13.1: (a) Inverse logit function <span class="math inline">\(\text{logit}^{-1}(x)\)</span> from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: <span class="math inline">\(y = \text{logit}^{-1}(-1.40 + 0.33x)\)</span>. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at <span class="math inline">\(\text{logit}(0.5) = 0\)</span>; in graph (b), the halfway point is where <span class="math inline">\(-1.40 + 0.33x = 0\)</span>, which is <span class="math inline">\(x = 1.40/0.33 = 4.2\)</span>. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for <span class="math inline">\(y = \text{logit}^{-1}(x)\)</span> and <span class="math inline">\(0.33/4\)</span> for <span class="math inline">\(y = \text{logit}^{-1}(-1.40 + 0.33x)\)</span>. The slope of the logistic regression curve is steepest at this halfway point.
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-482"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-482-1.png" alt="Logistic regression estimating the probability of supporting George Bush in the 1992 presidential election, as a function of discretized income level. Survey data are indicated by jittered dots. In this example, little is revealed by these jittered points, but we want to emphasize here that the data and fitted model can be put on a common scale. (a) Fitted logistic regression: the thick line indicates the curve in the range of the data; the thinner lines at the ends show how the logistic curve approaches 0 and 1 in the limits. (b) In the range of the data, the solid line shows the best-fit logistic regression, and the light lines show uncertainty in the fit." width="864" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-266"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-266-1.png" alt="Logistic regression estimating the probability of supporting George Bush in the 1992 presidential election, as a function of discretized income level. Survey data are indicated by jittered dots. In this example, little is revealed by these jittered points, but we want to emphasize here that the data and fitted model can be put on a common scale. (a) Fitted logistic regression: the thick line indicates the curve in the range of the data; the thinner lines at the ends show how the logistic curve approaches 0 and 1 in the limits. (b) In the range of the data, the solid line shows the best-fit logistic regression, and the light lines show uncertainty in the fit." width="864" />
 <p class="caption">
 Figure 13.2: Logistic regression estimating the probability of supporting George Bush in the 1992 presidential election, as a function of discretized income level. Survey data are indicated by jittered dots. In this example, little is revealed by these jittered points, but we want to emphasize here that the data and fitted model can be put on a common scale. (a) Fitted logistic regression: the thick line indicates the curve in the range of the data; the thinner lines at the ends show how the logistic curve approaches 0 and 1 in the limits. (b) In the range of the data, the solid line shows the best-fit logistic regression, and the light lines show uncertainty in the fit.
 </p>
@@ -921,13 +920,13 @@ Figure 13.2: Logistic regression estimating the probability of supporting George
 <div id="fitting-the-model-using-stan_glm-and-displaying-uncertainty-in-the-fitted-model" class="section level3" number="13.1.3">
 <h3><span class="header-section-number">13.1.3</span> Fitting the model using stan_glm and displaying uncertainty in the fitted model</h3>
 <p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 219</a>)</span>는 예측 불확실성을 보여주기 위해서 <code>stan_glm</code>을 이용해서 시뮬레이션을 하지만, 이 리딩노트에서는 기존의 <code>glm</code>으로 추정한 계수 결과를 <code>mvtnorm</code> 패키지의 <code>rmvnorm</code>을 이용해 시뮬레이션하는 접근법을 취하고자 한다. 결과는 <code>stan_glm</code>과 다르지 않다. 계수값의 불확실성을 모수적 시뮬레이션을 이용해 무작위 추출한 표집분포로 보여주는 것이다.</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="logistic-regression.html#cb296-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(rvote <span class="sc">~</span> income, </span>
-<span id="cb296-2"><a href="logistic-regression.html#cb296-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>), <span class="at">data =</span> nes_1992)</span>
-<span id="cb296-3"><a href="logistic-regression.html#cb296-3" aria-hidden="true" tabindex="-1"></a>sims_1 <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">20</span>, <span class="at">mu =</span> <span class="fu">coef</span>(fit_1), <span class="at">Sigma =</span> <span class="fu">vcov</span>(fit_1))</span>
-<span id="cb296-4"><a href="logistic-regression.html#cb296-4" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sims_1)</span>
-<span id="cb296-5"><a href="logistic-regression.html#cb296-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">sample</span>(n_sims, <span class="dv">20</span>)){</span>
-<span id="cb296-6"><a href="logistic-regression.html#cb296-6" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">invlogit</span>(sims_1[j,<span class="dv">1</span>] <span class="sc">+</span> sims_1[j,<span class="dv">2</span>]<span class="sc">*</span>x), <span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">add=</span><span class="cn">TRUE</span>)</span>
-<span id="cb296-7"><a href="logistic-regression.html#cb296-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="logistic-regression.html#cb290-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(rvote <span class="sc">~</span> income, </span>
+<span id="cb290-2"><a href="logistic-regression.html#cb290-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>), <span class="at">data =</span> nes_1992)</span>
+<span id="cb290-3"><a href="logistic-regression.html#cb290-3" aria-hidden="true" tabindex="-1"></a>sims_1 <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">20</span>, <span class="at">mu =</span> <span class="fu">coef</span>(fit_1), <span class="at">Sigma =</span> <span class="fu">vcov</span>(fit_1))</span>
+<span id="cb290-4"><a href="logistic-regression.html#cb290-4" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">nrow</span>(sims_1)</span>
+<span id="cb290-5"><a href="logistic-regression.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">sample</span>(n_sims, <span class="dv">20</span>)){</span>
+<span id="cb290-6"><a href="logistic-regression.html#cb290-6" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">invlogit</span>(sims_1[j,<span class="dv">1</span>] <span class="sc">+</span> sims_1[j,<span class="dv">2</span>]<span class="sc">*</span>x), <span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">add=</span><span class="cn">TRUE</span>)</span>
+<span id="cb290-7"><a href="logistic-regression.html#cb290-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Error in plot.xy(xy.coords(x, y), type = type, ...): plot.new has not been called yet</code></pre>
 </div>
 </div>
@@ -941,7 +940,7 @@ Figure 13.2: Logistic regression estimating the probability of supporting George
 <li><p>선형회귀모델처럼, 절편은 다른 모든 예측변수들이 0일 경우를 가정한 값으로 해석할 수 있다.</p></li>
 <li><p>예를 들어, 아래의 코드는 응답자의 소득 수준이 평균이며, 다른 모든 예측변수들이 0일 경우에 부시를 지지할 확률을 보여준다고 할 수 있다.</p></li>
 </ul>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="logistic-regression.html#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invlogit</span>(<span class="fu">coef</span>(fit_1)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(fit_1)[<span class="dv">2</span>]<span class="sc">*</span><span class="fu">mean</span>(nes_1992<span class="sc">$</span>income))</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="logistic-regression.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invlogit</span>(<span class="fu">coef</span>(fit_1)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(fit_1)[<span class="dv">2</span>]<span class="sc">*</span><span class="fu">mean</span>(nes_1992<span class="sc">$</span>income))</span></code></pre></div>
 <pre><code>## (Intercept) 
 ##   0.3433863</code></pre>
 <ul>
@@ -978,8 +977,8 @@ Figure 13.2: Logistic regression estimating the probability of supporting George
 <div id="coefficient-estimates-and-standard-errors" class="section level3" number="13.2.4">
 <h3><span class="header-section-number">13.2.4</span> Coefficient estimates and standard errors</h3>
 <p>전통적인 로지스틱 회귀분석의 계수는 최대가능도를 사용해 주청되며, 그 표준오차는 추정량의 불확실성을 나타낸다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-485"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-485-1.png" alt="Distribution representing uncertainty in an estimated regression coefficient (repeated from Figure 4.1). The range of this distribution corresponds to the possible values of $\beta$ that are consistent with the data. When using this as an uncertainty distribution, we assign an approximate 68% chance that $\beta$ will lie within 1 standard error of the point estimate, $\hat \beta$, and an approximate 95% chance that β will lie within 2 standard errors. Assuming the regression model is correct, it should happen only about 5% of the time that the estimate, $\hat \beta$, falls more than 2 standard errors away from the true $\beta$." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-269"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-269-1.png" alt="Distribution representing uncertainty in an estimated regression coefficient (repeated from Figure 4.1). The range of this distribution corresponds to the possible values of $\beta$ that are consistent with the data. When using this as an uncertainty distribution, we assign an approximate 68% chance that $\beta$ will lie within 1 standard error of the point estimate, $\hat \beta$, and an approximate 95% chance that β will lie within 2 standard errors. Assuming the regression model is correct, it should happen only about 5% of the time that the estimate, $\hat \beta$, falls more than 2 standard errors away from the true $\beta$." width="672" />
 <p class="caption">
 Figure 13.3: Distribution representing uncertainty in an estimated regression coefficient (repeated from Figure 4.1). The range of this distribution corresponds to the possible values of <span class="math inline">\(\beta\)</span> that are consistent with the data. When using this as an uncertainty distribution, we assign an approximate 68% chance that <span class="math inline">\(\beta\)</span> will lie within 1 standard error of the point estimate, <span class="math inline">\(\hat \beta\)</span>, and an approximate 95% chance that β will lie within 2 standard errors. Assuming the regression model is correct, it should happen only about 5% of the time that the estimate, <span class="math inline">\(\hat \beta\)</span>, falls more than 2 standard errors away from the true <span class="math inline">\(\beta\)</span>.
 </p>
@@ -996,8 +995,8 @@ Figure 13.3: Distribution representing uncertainty in an estimated regression co
 <div id="displaying-the-results-of-several-logistic-regressions" class="section level3" number="13.2.6">
 <h3><span class="header-section-number">13.2.6</span> Displaying the results of several logistic regressions</h3>
 <p>아래의 그래프는 1952년부터 2000년까지의 사전 설문조사로 집계한 대통령 후보자 선호에 대한 소득의 계수 추정량에 대한 <span class="math inline">\(\pm\)</span> 1 표준오차를 보여준다. 소득 수준이 높은 응답자일수록 공화당 후보를 지지할 가능성을 일관되게 높은 것을 확인할 수 있다. 그러나 그 관계는 시간이 흐를 수록 더욱 강해지는 것 또한 확인할 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-486"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-486-1.png" alt="Coefficient of income (on a 1&lt;U+2013&gt;5 scale) with $\pm 1$ standard-error bounds in logistic regressions predicting Republican preference for president, as estimated separately from surveys in the second half of the twentieth century. The pattern of richer voters supporting Republicans has increased since 1970. The data used in the estimate for 1992 appear in Figure 13.2." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-270"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-270-1.png" alt="Coefficient of income (on a 1&lt;U+2013&gt;5 scale) with $\pm 1$ standard-error bounds in logistic regressions predicting Republican preference for president, as estimated separately from surveys in the second half of the twentieth century. The pattern of richer voters supporting Republicans has increased since 1970. The data used in the estimate for 1992 appear in Figure 13.2." width="768" />
 <p class="caption">
 Figure 13.4: Coefficient of income (on a 1&lt;U+2013&gt;5 scale) with <span class="math inline">\(\pm 1\)</span> standard-error bounds in logistic regressions predicting Republican preference for president, as estimated separately from surveys in the second half of the twentieth century. The pattern of richer voters supporting Republicans has increased since 1970. The data used in the estimate for 1992 appear in Figure 13.2.
 </p>
@@ -1013,9 +1012,9 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <div id="point-prediction-using-predict-1" class="section level3" number="13.3.1">
 <h3><span class="header-section-number">13.3.1</span> Point prediction using <code>predict</code></h3>
 <p>소득 수준이 5점 척도 중에서 5점인 사람들의 투표 선호도를 예측하고자 한다고 할 때, 우리는 <code>predict</code> 함수를 이용하여 추정된 확률을 컴퓨팅할 수 있다.</p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="logistic-regression.html#cb300-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income =</span> <span class="dv">5</span>)</span>
-<span id="cb300-2"><a href="logistic-regression.html#cb300-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_1, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>, <span class="at">newdata =</span> new)</span>
-<span id="cb300-3"><a href="logistic-regression.html#cb300-3" aria-hidden="true" tabindex="-1"></a>pred</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="logistic-regression.html#cb294-1" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income =</span> <span class="dv">5</span>)</span>
+<span id="cb294-2"><a href="logistic-regression.html#cb294-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_1, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>, <span class="at">newdata =</span> new)</span>
+<span id="cb294-3"><a href="logistic-regression.html#cb294-3" aria-hidden="true" tabindex="-1"></a>pred</span></code></pre></div>
 <pre><code>##         1 
 ## 0.4703885</code></pre>
 <p><code>predict</code> 함수에서 <code>type="response</code>를 설정하면 확률 척도로 예측값을 구할 수 있다. 만약 <code>type="link"</code>로 설정할 경우에는 로짓 척도로 선형확률을 구할 수 있다.</p>
@@ -1029,10 +1028,10 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <div id="expected-outcome-with-uncertainty-using-posterior_epred" class="section level3" number="13.3.3">
 <h3><span class="header-section-number">13.3.3</span> Expected outcome with uncertainty using <code>posterior_epred</code></h3>
 <p><span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 223</a>)</span>에서는 <code>posterior_epred</code> 함수를 사용할 것을 권하고 있지만, 이 리딩노트에서는 <code>mvrnorm</code>로 얻은 결과의 로그를 풀어주는, <code>exp()</code>로 동일한 결과를 얻고자 한다.</p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="logistic-regression.html#cb302-1" aria-hidden="true" tabindex="-1"></a>epred <span class="ot">&lt;-</span> <span class="fu">exp</span>(linpred_out)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(linpred_out))</span>
-<span id="cb302-2"><a href="logistic-regression.html#cb302-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">mean</span>(epred), <span class="fu">sd</span>(epred)))</span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="logistic-regression.html#cb296-1" aria-hidden="true" tabindex="-1"></a>epred <span class="ot">&lt;-</span> <span class="fu">exp</span>(linpred_out)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(linpred_out))</span>
+<span id="cb296-2"><a href="logistic-regression.html#cb296-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">mean</span>(epred), <span class="fu">sd</span>(epred)))</span></code></pre></div>
 <pre><code>## [1] 0.46986695 0.02848966</code></pre>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="logistic-regression.html#cb304-1" aria-hidden="true" tabindex="-1"></a>pred</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="logistic-regression.html#cb298-1" aria-hidden="true" tabindex="-1"></a>pred</span></code></pre></div>
 <pre><code>##         1 
 ## 0.4703885</code></pre>
 <p><code>prediction</code> 함수로 구한 <code>pred=0.470</code>과 시뮬레이션으로 구한 결과, <code>mean(epred)=0.469</code>가 거의 일치하는 것을 확인할 수 있다.</p>
@@ -1044,11 +1043,11 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <div id="prediction-given-a-range-of-input-values-1" class="section level3" number="13.3.5">
 <h3><span class="header-section-number">13.3.5</span> Prediction given a range of input values</h3>
 <p>앞서는 소득 수준이 5일 때의 예측값을 구했지만, 새로운 관측치의 벡터에 대한 예측값 역시 구하는 것이 가능하다.</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="logistic-regression.html#cb306-1" aria-hidden="true" tabindex="-1"></a>new_five <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb306-2"><a href="logistic-regression.html#cb306-2" aria-hidden="true" tabindex="-1"></a>pred_five <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_1, <span class="at">type=</span><span class="st">&quot;response&quot;</span>, <span class="at">newdata=</span>new)</span>
-<span id="cb306-3"><a href="logistic-regression.html#cb306-3" aria-hidden="true" tabindex="-1"></a>linpred_fiveout <span class="ot">&lt;-</span> linpred <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">cbind</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)))</span>
-<span id="cb306-4"><a href="logistic-regression.html#cb306-4" aria-hidden="true" tabindex="-1"></a>epred_five <span class="ot">&lt;-</span> <span class="fu">exp</span>(linpred_fiveout)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(linpred_fiveout))</span>
-<span id="cb306-5"><a href="logistic-regression.html#cb306-5" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(epred_five, <span class="dv">2</span>, mean);<span class="fu">apply</span>(epred_five, <span class="dv">2</span>, sd)</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="logistic-regression.html#cb300-1" aria-hidden="true" tabindex="-1"></a>new_five <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb300-2"><a href="logistic-regression.html#cb300-2" aria-hidden="true" tabindex="-1"></a>pred_five <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_1, <span class="at">type=</span><span class="st">&quot;response&quot;</span>, <span class="at">newdata=</span>new)</span>
+<span id="cb300-3"><a href="logistic-regression.html#cb300-3" aria-hidden="true" tabindex="-1"></a>linpred_fiveout <span class="ot">&lt;-</span> linpred <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">cbind</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)))</span>
+<span id="cb300-4"><a href="logistic-regression.html#cb300-4" aria-hidden="true" tabindex="-1"></a>epred_five <span class="ot">&lt;-</span> <span class="fu">exp</span>(linpred_fiveout)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(linpred_fiveout))</span>
+<span id="cb300-5"><a href="logistic-regression.html#cb300-5" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(epred_five, <span class="dv">2</span>, mean);<span class="fu">apply</span>(epred_five, <span class="dv">2</span>, sd)</span></code></pre></div>
 <pre><code>## [1] 0.2352525 0.2856796 0.3425540 0.4046141 0.4698670</code></pre>
 <pre><code>## [1] 0.02449276 0.01810651 0.01301085 0.01716431 0.02848966</code></pre>
 <p>각 소득 수준에 따른 예측확률을 구할 수 있다.</p>
@@ -1057,10 +1056,10 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <h3><span class="header-section-number">13.3.6</span> Logistic regression with just an intercept</h3>
 <p>절편만 가지고 선형회귀모델을 돌릴 경우에는 평균을오 추정하는 것과 같다. 만약 단 하나의 이항 예측변수를 가지고 선형회귀모델을 분석하면 그 결과는 각 이항 값에 따른 평균의 차이를 추정하는 것과 같다. 마찬가지로 절편만 가지고 로지스틱 회귀모델을 분석할 경우는 비율에 대한 추정과 같다.</p>
 <p>50명의 피험자들에 대한 무작위 표본이 있고, 이중 10명이 특정 질병에 걸렸다고 하자. 이때, 질병에 걸릴 확률은 0.2라고 할 수 있고 표준오차는 <span class="math inline">\(\sqrt{0.2\times 0.8/50}=0.06\)</span>이 된다. 따라서 이 로지스틱 회귀모델을 다음과 같이 수립할 수 있다.</p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="logistic-regression.html#cb309-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">10</span>))</span>
-<span id="cb309-2"><a href="logistic-regression.html#cb309-2" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
-<span id="cb309-3"><a href="logistic-regression.html#cb309-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
-<span id="cb309-4"><a href="logistic-regression.html#cb309-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="logistic-regression.html#cb303-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">10</span>))</span>
+<span id="cb303-2"><a href="logistic-regression.html#cb303-2" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
+<span id="cb303-3"><a href="logistic-regression.html#cb303-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
+<span id="cb303-4"><a href="logistic-regression.html#cb303-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = y ~ 1, family = binomial(link = &quot;logit&quot;), data = simple)
@@ -1086,10 +1085,10 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <div id="data-on-the-boundary" class="section level4" number="13.3.6.1">
 <h4><span class="header-section-number">13.3.6.1</span> Data on the boundary</h4>
 <p><span class="math inline">\(y=0\)</span>이거나 <span class="math inline">\(y=n\)</span>일 경우는 어떻게 될까? <span class="citation"><a href="#ref-ghv2020" role="doc-biblioref">Gelman, Hill, and Vehtari</a> (<a href="#ref-ghv2020" role="doc-biblioref">2020, 52</a>)</span>에서 논의한 바와 같이 전통적인 표준오차 공식에 따르면 극단적인 경우 0이 산출된다. 따라서 우리는 대신 <span class="math inline">\(\hat p = (y+2)/(n+4)\)</span>일 때, 95% 신뢰구간, <span class="math inline">\(\hat p \pm \sqrt{\hat p(1-\hat p)/(n +4)}\)</span>을 구할 수 있다. 다음의 예제를 보자.</p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="logistic-regression.html#cb311-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">0</span>))</span>
-<span id="cb311-2"><a href="logistic-regression.html#cb311-2" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
-<span id="cb311-3"><a href="logistic-regression.html#cb311-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
-<span id="cb311-4"><a href="logistic-regression.html#cb311-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="logistic-regression.html#cb305-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">0</span>))</span>
+<span id="cb305-2"><a href="logistic-regression.html#cb305-2" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
+<span id="cb305-3"><a href="logistic-regression.html#cb305-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
+<span id="cb305-4"><a href="logistic-regression.html#cb305-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = y ~ 1, family = binomial(link = &quot;logit&quot;), data = simple)
@@ -1110,9 +1109,9 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 ## 
 ## Number of Fisher Scoring iterations: 25</code></pre>
 <p>전통적인 방식으로 표준오차를 계산하게 되면 터무니없는 결과가 나오게 된다. 그렇다면 시뮬레이션을 이용하면 어떻게 될까?</p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="logistic-regression.html#cb313-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), </span>
-<span id="cb313-2"><a href="logistic-regression.html#cb313-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>simple, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb313-3"><a href="logistic-regression.html#cb313-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="logistic-regression.html#cb307-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), </span>
+<span id="cb307-2"><a href="logistic-regression.html#cb307-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>simple, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb307-3"><a href="logistic-regression.html#cb307-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit)</span></code></pre></div>
 <pre><code>## stan_glm
 ##  family:       binomial [logit]
 ##  formula:      y ~ 1
@@ -1131,11 +1130,11 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 <div id="logistic-regression-with-a-single-binary-predictor" class="section level3" number="13.3.7">
 <h3><span class="header-section-number">13.3.7</span> Logistic regression with a single binary predictor</h3>
 <p>하나의 더미변수를 갖는 로지스틱 회귀모델의 경우 비율을 비교하는 것과 같다. 예를 들면 모집단 A의 50명 중에서 양성이 10명일 확률인 표본의 비율과 모집단 B의 60명 중에서 20명이 양성일 확률인 표본의 비율을 비교하는 것이다.</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="logistic-regression.html#cb315-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>))</span>
-<span id="cb315-2"><a href="logistic-regression.html#cb315-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">20</span>))</span>
-<span id="cb315-3"><a href="logistic-regression.html#cb315-3" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
-<span id="cb315-4"><a href="logistic-regression.html#cb315-4" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
-<span id="cb315-5"><a href="logistic-regression.html#cb315-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="logistic-regression.html#cb309-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>))</span>
+<span id="cb309-2"><a href="logistic-regression.html#cb309-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">20</span>))</span>
+<span id="cb309-3"><a href="logistic-regression.html#cb309-3" aria-hidden="true" tabindex="-1"></a>simple <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb309-4"><a href="logistic-regression.html#cb309-4" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>simple)</span>
+<span id="cb309-5"><a href="logistic-regression.html#cb309-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = y ~ x, family = binomial(link = &quot;logit&quot;), data = simple)
@@ -1159,11 +1158,11 @@ p^{new}_i = \Pr(y^{new}_i = 1) = \text{logit}^{-1}(X^{new}_i\beta),
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <p>비율 차이에 대한 추론을 도출하려면 더미의 값, 0과 1에 대한 확률 척도의 예측값을 비교해보면 된다.</p>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="logistic-regression.html#cb317-1" aria-hidden="true" tabindex="-1"></a>sim_coef <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">1000</span>, <span class="at">mu =</span> <span class="fu">coef</span>(fit), <span class="at">Sigma =</span> <span class="fu">vcov</span>(fit))</span>
-<span id="cb317-2"><a href="logistic-regression.html#cb317-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> sim_coef <span class="sc">%*%</span> <span class="fu">cbind</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb317-3"><a href="logistic-regression.html#cb317-3" aria-hidden="true" tabindex="-1"></a>epred <span class="ot">&lt;-</span> <span class="fu">exp</span>(pred)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(pred))</span>
-<span id="cb317-4"><a href="logistic-regression.html#cb317-4" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> epred[,<span class="dv">2</span>] <span class="sc">-</span> epred[,<span class="dv">1</span>]</span>
-<span id="cb317-5"><a href="logistic-regression.html#cb317-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(diff);<span class="fu">sd</span>(diff)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="logistic-regression.html#cb311-1" aria-hidden="true" tabindex="-1"></a>sim_coef <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(<span class="dv">1000</span>, <span class="at">mu =</span> <span class="fu">coef</span>(fit), <span class="at">Sigma =</span> <span class="fu">vcov</span>(fit))</span>
+<span id="cb311-2"><a href="logistic-regression.html#cb311-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> sim_coef <span class="sc">%*%</span> <span class="fu">cbind</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb311-3"><a href="logistic-regression.html#cb311-3" aria-hidden="true" tabindex="-1"></a>epred <span class="ot">&lt;-</span> <span class="fu">exp</span>(pred)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(pred))</span>
+<span id="cb311-4"><a href="logistic-regression.html#cb311-4" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> epred[,<span class="dv">2</span>] <span class="sc">-</span> epred[,<span class="dv">1</span>]</span>
+<span id="cb311-5"><a href="logistic-regression.html#cb311-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(diff);<span class="fu">sd</span>(diff)</span></code></pre></div>
 <pre><code>## [1] 0.3234994</code></pre>
 <pre><code>## [1] 0.07591516</code></pre>
 </div>
@@ -1179,8 +1178,8 @@ y_{i} =
   \end{cases}
 z_i= X_i\beta + \epsilon_i
 \]</span></p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-496"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-496-1.png" alt="The probability density function of the logistic distribution, which is used for the error term in the latent-data formulation (13.5) of logistic regression. The logistic curve in Figure 13.1a is the cumulative distribution function of this density. The maximum of the density is 0.25, which corresponds to the maximum slope of 0.25 in the inverse logit function of Figure 13.1a." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-280"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-280-1.png" alt="The probability density function of the logistic distribution, which is used for the error term in the latent-data formulation (13.5) of logistic regression. The logistic curve in Figure 13.1a is the cumulative distribution function of this density. The maximum of the density is 0.25, which corresponds to the maximum slope of 0.25 in the inverse logit function of Figure 13.1a." width="768" />
 <p class="caption">
 Figure 13.5: The probability density function of the logistic distribution, which is used for the error term in the latent-data formulation (13.5) of logistic regression. The logistic curve in Figure 13.1a is the cumulative distribution function of this density. The maximum of the density is 0.25, which corresponds to the maximum slope of 0.25 in the inverse logit function of Figure 13.1a.
 </p>
@@ -1191,8 +1190,8 @@ Figure 13.5: The probability density function of the logistic distribution, whic
 \]</span></p>
 <p>따라서 <span class="math inline">\(\Pr(y_i = 1) = \Pr(z_i &gt; 0) = \Pr(\epsilon_i &gt; -X_i\beta) = \text{logit}^{-1}(X_i\beta)\)</span>라고 할 수 있다.</p>
 <p>다음의 그래프는 소득 수준, <span class="math inline">\(x_i = 1\)</span>인 관측치 <span class="math inline">\(i\)</span>의 선형예측값, <span class="math inline">\(X_i\beta\)</span>를 설명하고 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-497"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-497-1.png" alt="The probability density function of the latent variable $z_i$ in model (13.5) if the linear predictor, $X_i\beta$, has the value &lt;U+2212&gt;1.07. The shaded area indicates the probability that $z_i &gt; 0$, so that $y_i = 1$ in the logistic regression." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-281"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-281-1.png" alt="The probability density function of the latent variable $z_i$ in model (13.5) if the linear predictor, $X_i\beta$, has the value &lt;U+2212&gt;1.07. The shaded area indicates the probability that $z_i &gt; 0$, so that $y_i = 1$ in the logistic regression." width="768" />
 <p class="caption">
 Figure 13.6: The probability density function of the latent variable <span class="math inline">\(z_i\)</span> in model (13.5) if the linear predictor, <span class="math inline">\(X_i\beta\)</span>, has the value &lt;U+2212&gt;1.07. The shaded area indicates the probability that <span class="math inline">\(z_i &gt; 0\)</span>, so that <span class="math inline">\(y_i = 1\)</span> in the logistic regression.
 </p>
@@ -1246,24 +1245,24 @@ p(y|\beta, X) = \prod^n_{i=1}\Big(\text{logit}^{-1}(X_i\beta)\Big)^{y_i}\Big(1-\
 <div id="comparing-maximum-likelihood-and-bayesian-inference-using-a-simulation-study" class="section level3" number="13.5.5">
 <h3><span class="header-section-number">13.5.5</span> Comparing maximum likelihood and Bayesian inference using a simulation study</h3>
 <p>사전분포의 역할을 이해하기 위해서 몇 가지 시나리오를 생각해보자. 진짜 모수의 값이 <span class="math inline">\(a = -2\)</span>이고 <span class="math inline">\(b=0.8\)</span>이라고 가정하고 데이터가 -1과 1 사이의 단일분포로부터 추출된 <span class="math inline">\(x\)</span>의 값으로 이루어진 실험으로부터 얻어진 데이터라고 하자.</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="logistic-regression.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;arm&quot;</span>, <span class="st">&quot;rstanarm&quot;</span>)</span>
-<span id="cb320-2"><a href="logistic-regression.html#cb320-2" aria-hidden="true" tabindex="-1"></a>bayes_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">a=</span><span class="sc">-</span><span class="dv">2</span>, <span class="at">b=</span><span class="fl">0.8</span>){</span>
-<span id="cb320-3"><a href="logistic-regression.html#cb320-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb320-4"><a href="logistic-regression.html#cb320-4" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">rlogis</span>(n, a <span class="sc">+</span> b<span class="sc">*</span>x, <span class="dv">1</span>)</span>
-<span id="cb320-5"><a href="logistic-regression.html#cb320-5" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(z<span class="sc">&gt;</span><span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb320-6"><a href="logistic-regression.html#cb320-6" aria-hidden="true" tabindex="-1"></a>  fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y, z)</span>
-<span id="cb320-7"><a href="logistic-regression.html#cb320-7" aria-hidden="true" tabindex="-1"></a>  glm_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>fake)</span>
-<span id="cb320-8"><a href="logistic-regression.html#cb320-8" aria-hidden="true" tabindex="-1"></a>  stan_glm_fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>fake,</span>
-<span id="cb320-9"><a href="logistic-regression.html#cb320-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">prior=</span><span class="fu">normal</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb320-10"><a href="logistic-regression.html#cb320-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">display</span>(glm_fit, <span class="at">digits=</span><span class="dv">1</span>)</span>
-<span id="cb320-11"><a href="logistic-regression.html#cb320-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(stan_glm_fit, <span class="at">digits=</span><span class="dv">1</span>)</span>
-<span id="cb320-12"><a href="logistic-regression.html#cb320-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="logistic-regression.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;arm&quot;</span>, <span class="st">&quot;rstanarm&quot;</span>)</span>
+<span id="cb314-2"><a href="logistic-regression.html#cb314-2" aria-hidden="true" tabindex="-1"></a>bayes_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">a=</span><span class="sc">-</span><span class="dv">2</span>, <span class="at">b=</span><span class="fl">0.8</span>){</span>
+<span id="cb314-3"><a href="logistic-regression.html#cb314-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb314-4"><a href="logistic-regression.html#cb314-4" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">rlogis</span>(n, a <span class="sc">+</span> b<span class="sc">*</span>x, <span class="dv">1</span>)</span>
+<span id="cb314-5"><a href="logistic-regression.html#cb314-5" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(z<span class="sc">&gt;</span><span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb314-6"><a href="logistic-regression.html#cb314-6" aria-hidden="true" tabindex="-1"></a>  fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y, z)</span>
+<span id="cb314-7"><a href="logistic-regression.html#cb314-7" aria-hidden="true" tabindex="-1"></a>  glm_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>fake)</span>
+<span id="cb314-8"><a href="logistic-regression.html#cb314-8" aria-hidden="true" tabindex="-1"></a>  stan_glm_fit <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(y <span class="sc">~</span> x, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>), <span class="at">data=</span>fake,</span>
+<span id="cb314-9"><a href="logistic-regression.html#cb314-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">prior=</span><span class="fu">normal</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb314-10"><a href="logistic-regression.html#cb314-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">display</span>(glm_fit, <span class="at">digits=</span><span class="dv">1</span>)</span>
+<span id="cb314-11"><a href="logistic-regression.html#cb314-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(stan_glm_fit, <span class="at">digits=</span><span class="dv">1</span>)</span>
+<span id="cb314-12"><a href="logistic-regression.html#cb314-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>표본규모를 이용해 시뮬레이션을 하고 <span class="math inline">\(b\)</span>에 대한 추론에 집중해보자:</p>
 <ul>
 <li><p><span class="math inline">\(n=0\)</span>. 전혀 새로운 데이터가 없을 때, 위의 함수는 돌아가지 않는다. 이때 사후분포는 사전분포와 똑같이 평균 0.5, 표준편차 0.5가 된다.</p></li>
 <li><p><span class="math inline">\(n=10\)</span>. 10개의 관측치만 가지고 있을 때, MLE에는 잡음이 많고 우리는 베이지언 사후분포가 사전분포에 근접할 것이라고 기대하게 된다. 이때 베이즈 추정량은 0.7로 사전 분포의 평균인 0.5와 가깝게 나타난다. MLE는 2.1로 사전분포와 비교할 때, 꽤 잡음이 많이 포함된 것을 확인할 수 있다.</p></li>
 </ul>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="logistic-regression.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="logistic-regression.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## glm(formula = y ~ x, family = binomial(link = &quot;logit&quot;), data = fake)
 ##             coef.est coef.se
 ## (Intercept) -2.7      1.6   
@@ -1287,7 +1286,7 @@ p(y|\beta, X) = \prod^n_{i=1}\Big(\text{logit}^{-1}(X_i\beta)\Big)^{y_i}\Big(1-\
 <ul>
 <li><span class="math inline">\(n=100\)</span>. <code>bayes_sim(100)</code>이라고 하자. 이 경우 MLE 추정량은 다시 1.2로 꽤 극단적인 값을 보여준다. 하지만 베이즈 추정량은 사전분포의 평균 0.5에 근접한 것을 확인할 수 있다.</li>
 </ul>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="logistic-regression.html#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="logistic-regression.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">100</span>)</span></code></pre></div>
 <pre><code>## glm(formula = y ~ x, family = binomial(link = &quot;logit&quot;), data = fake)
 ##             coef.est coef.se
 ## (Intercept) -2.4      0.4   
@@ -1311,7 +1310,7 @@ p(y|\beta, X) = \prod^n_{i=1}\Big(\text{logit}^{-1}(X_i\beta)\Big)^{y_i}\Big(1-\
 <ul>
 <li><span class="math inline">\(n=1000\)</span>. 마지막으로 1,000개의 관측치를 가진 실험을 시뮬레이션한다고 하자. 이 정도면 가능도 추정량도 꽤 믿을만하다고 볼 수 있을 것이다. 아래의 코드 결과는 베이즈 추정량과 MLE가 거의 차이가 없다는 것을 보여준다.</li>
 </ul>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="logistic-regression.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="logistic-regression.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bayes_sim</span>(<span class="dv">1000</span>)</span></code></pre></div>
 <pre><code>## glm(formula = y ~ x, family = binomial(link = &quot;logit&quot;), data = fake)
 ##             coef.est coef.se
 ## (Intercept) -1.9      0.1   

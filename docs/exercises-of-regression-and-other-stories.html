@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -867,48 +867,48 @@ After practicing, we decided to switch jobs. It worked better with Yee timing an
 2 – 1 – GO.</p>
 </blockquote>
 <p>Your instructor will hand out 25 half-sheets of paper and 2 paper clips to each group of students. The body width will be one-third of the width of the sheets, so the wing width can be anywhere from <span class="math inline">\(\frac{1}{6}\)</span> to <span class="math inline">\(\frac{1}{2}\)</span> of the body width; see Figure 1.9a. The body length will be specified by the instructor. For example, if the sheets are U.S.-sized (<span class="math inline">\(8.5\times5.5\)</span> inches) and the body length is set to 3 inches, then the wing width could be anywhere from 0.91 to 2.75 inches and the wing length could be anywhere from 0 to 5.5 inches. In this assignment you can experiment using your 25 half-sheets and 10 paper clips. You can make each half-sheet into only one helicopter. But you are allowed to design sequentially, setting the wing width and body length for each helicopter given the data you have already recorded. Take a few measurements using each helicopter, each time dropping it from the required height and timing how long it takes to land.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-503"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-287"></span>
 <img src="fig/exercise1_fig1.9.jpg" alt="(a) Diagram for making a “helicopter” from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped. (b) Data file showing flight times, in seconds, for 5 flights each of two identical helicopters with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From Gelman and Nolan (2017)." width="714" />
 <p class="caption">
 Figure 23.1: (a) Diagram for making a “helicopter” from half a sheet of paper and a paper clip. The long segments on the left and right are folded toward the middle, and the resulting long 3-ply strip is held together by a paper clip. One of the two segments at the top is folded forward and the other backward. The helicopter spins in the air when dropped. (b) Data file showing flight times, in seconds, for 5 flights each of two identical helicopters with wing width 1.8 inches and wing length 3.2 inches dropped from a height of approximately 8 feet. From Gelman and Nolan (2017).
 </p>
 </div>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="exercises-of-regression-and-other-stories.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb327-2"><a href="exercises-of-regression-and-other-stories.html#cb327-2" aria-hidden="true" tabindex="-1"></a>file_helicopters <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/ros-master/Helicopters/data/helicopters.txt&quot;</span>)</span>
-<span id="cb327-3"><a href="exercises-of-regression-and-other-stories.html#cb327-3" aria-hidden="true" tabindex="-1"></a>helicopters <span class="ot">&lt;-</span> </span>
-<span id="cb327-4"><a href="exercises-of-regression-and-other-stories.html#cb327-4" aria-hidden="true" tabindex="-1"></a>  file_helicopters <span class="sc">%&gt;%</span> </span>
-<span id="cb327-5"><a href="exercises-of-regression-and-other-stories.html#cb327-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.table</span>(<span class="at">header =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb327-6"><a href="exercises-of-regression-and-other-stories.html#cb327-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> str_to_lower)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="exercises-of-regression-and-other-stories.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb321-2"><a href="exercises-of-regression-and-other-stories.html#cb321-2" aria-hidden="true" tabindex="-1"></a>file_helicopters <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/ros-master/Helicopters/data/helicopters.txt&quot;</span>)</span>
+<span id="cb321-3"><a href="exercises-of-regression-and-other-stories.html#cb321-3" aria-hidden="true" tabindex="-1"></a>helicopters <span class="ot">&lt;-</span> </span>
+<span id="cb321-4"><a href="exercises-of-regression-and-other-stories.html#cb321-4" aria-hidden="true" tabindex="-1"></a>  file_helicopters <span class="sc">%&gt;%</span> </span>
+<span id="cb321-5"><a href="exercises-of-regression-and-other-stories.html#cb321-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.table</span>(<span class="at">header =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb321-6"><a href="exercises-of-regression-and-other-stories.html#cb321-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> str_to_lower)</span></code></pre></div>
 <div id="a" class="section level4" number="23.1.1.1">
 <h4><span class="header-section-number">23.1.1.1</span> (a)</h4>
 <p>Record the wing width and body length for each of your 25 helicopters along with your time measurements, all in a file in which each observation is in its own row, following the pattern of <code>helicopters.txt</code> in the folder Helicopters, also shown in Figure 1.9b.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="exercises-of-regression-and-other-stories.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The wing length and the wing width of the helicopter are the only two design variables, that is, the only two measurements on the helicopter that can be changed. The body width and length must remain the same for all helicopters. </span></span>
-<span id="cb328-2"><a href="exercises-of-regression-and-other-stories.html#cb328-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb328-3"><a href="exercises-of-regression-and-other-stories.html#cb328-3" aria-hidden="true" tabindex="-1"></a><span class="co"># wing width 4.6 centimeters and wing length 8.2 centimeters</span></span>
-<span id="cb328-4"><a href="exercises-of-regression-and-other-stories.html#cb328-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb328-5"><a href="exercises-of-regression-and-other-stories.html#cb328-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb328-6"><a href="exercises-of-regression-and-other-stories.html#cb328-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb328-7"><a href="exercises-of-regression-and-other-stories.html#cb328-7" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(time_sec) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb328-8"><a href="exercises-of-regression-and-other-stories.html#cb328-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_width =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fl">0.91</span>, <span class="fl">2.75</span>, <span class="fl">0.1</span>), <span class="fl">2.75</span>),</span>
-<span id="cb328-9"><a href="exercises-of-regression-and-other-stories.html#cb328-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_length =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="fl">5.5</span>, <span class="dv">20</span>, <span class="at">replace=</span><span class="cn">TRUE</span>),</span>
-<span id="cb328-10"><a href="exercises-of-regression-and-other-stories.html#cb328-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">body_length =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb328-11"><a href="exercises-of-regression-and-other-stories.html#cb328-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(helicopter_id, time_sec, wing_width, </span>
-<span id="cb328-12"><a href="exercises-of-regression-and-other-stories.html#cb328-12" aria-hidden="true" tabindex="-1"></a>         body_length, <span class="fu">everything</span>())<span class="ot">-&gt;</span> helicopters</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="exercises-of-regression-and-other-stories.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The wing length and the wing width of the helicopter are the only two design variables, that is, the only two measurements on the helicopter that can be changed. The body width and length must remain the same for all helicopters. </span></span>
+<span id="cb322-2"><a href="exercises-of-regression-and-other-stories.html#cb322-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-3"><a href="exercises-of-regression-and-other-stories.html#cb322-3" aria-hidden="true" tabindex="-1"></a><span class="co"># wing width 4.6 centimeters and wing length 8.2 centimeters</span></span>
+<span id="cb322-4"><a href="exercises-of-regression-and-other-stories.html#cb322-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-5"><a href="exercises-of-regression-and-other-stories.html#cb322-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-6"><a href="exercises-of-regression-and-other-stories.html#cb322-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-7"><a href="exercises-of-regression-and-other-stories.html#cb322-7" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(time_sec) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb322-8"><a href="exercises-of-regression-and-other-stories.html#cb322-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_width =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fl">0.91</span>, <span class="fl">2.75</span>, <span class="fl">0.1</span>), <span class="fl">2.75</span>),</span>
+<span id="cb322-9"><a href="exercises-of-regression-and-other-stories.html#cb322-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">wing_length =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="fl">5.5</span>, <span class="dv">20</span>, <span class="at">replace=</span><span class="cn">TRUE</span>),</span>
+<span id="cb322-10"><a href="exercises-of-regression-and-other-stories.html#cb322-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">body_length =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb322-11"><a href="exercises-of-regression-and-other-stories.html#cb322-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(helicopter_id, time_sec, wing_width, </span>
+<span id="cb322-12"><a href="exercises-of-regression-and-other-stories.html#cb322-12" aria-hidden="true" tabindex="-1"></a>         body_length, <span class="fu">everything</span>())<span class="ot">-&gt;</span> helicopters</span></code></pre></div>
 <pre><code>## Error in select(., helicopter_id, time_sec, wing_width, body_length, everything()): unused arguments (helicopter_id, time_sec, wing_width, body_length, everything())</code></pre>
 </div>
 <div id="b" class="section level4" number="23.1.1.2">
 <h4><span class="header-section-number">23.1.1.2</span> (b)</h4>
 <p>Graph your data in a way that seems reasonable to you.</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="exercises-of-regression-and-other-stories.html#cb330-1" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb330-2"><a href="exercises-of-regression-and-other-stories.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">helicopter_id =</span> <span class="fu">as.factor</span>(helicopter_id)) <span class="sc">%&gt;%</span></span>
-<span id="cb330-3"><a href="exercises-of-regression-and-other-stories.html#cb330-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> time_sec, <span class="at">x =</span>  wing_width,</span>
-<span id="cb330-4"><a href="exercises-of-regression-and-other-stories.html#cb330-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> helicopter_id,</span>
-<span id="cb330-5"><a href="exercises-of-regression-and-other-stories.html#cb330-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> helicopter_id, </span>
-<span id="cb330-6"><a href="exercises-of-regression-and-other-stories.html#cb330-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> helicopter_id)) <span class="sc">+</span> </span>
-<span id="cb330-7"><a href="exercises-of-regression-and-other-stories.html#cb330-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb330-8"><a href="exercises-of-regression-and-other-stories.html#cb330-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="exercises-of-regression-and-other-stories.html#cb324-1" aria-hidden="true" tabindex="-1"></a>helicopters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb324-2"><a href="exercises-of-regression-and-other-stories.html#cb324-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">helicopter_id =</span> <span class="fu">as.factor</span>(helicopter_id)) <span class="sc">%&gt;%</span></span>
+<span id="cb324-3"><a href="exercises-of-regression-and-other-stories.html#cb324-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> time_sec, <span class="at">x =</span>  wing_width,</span>
+<span id="cb324-4"><a href="exercises-of-regression-and-other-stories.html#cb324-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> helicopter_id,</span>
+<span id="cb324-5"><a href="exercises-of-regression-and-other-stories.html#cb324-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> helicopter_id, </span>
+<span id="cb324-6"><a href="exercises-of-regression-and-other-stories.html#cb324-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> helicopter_id)) <span class="sc">+</span> </span>
+<span id="cb324-7"><a href="exercises-of-regression-and-other-stories.html#cb324-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb324-8"><a href="exercises-of-regression-and-other-stories.html#cb324-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in FUN(X[[i]], ...): object &#39;wing_width&#39; not found</code></pre>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-506-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-290-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="c" class="section level4" number="23.1.1.3">
 <h4><span class="header-section-number">23.1.1.3</span> (c)</h4>
@@ -1106,17 +1106,17 @@ Figure 23.1: (a) Diagram for making a “helicopter” from half a sheet of pape
 <div id="probability-distributions-1" class="section level3" number="23.6.3">
 <h3><span class="header-section-number">23.6.3</span> Probability distributions</h3>
 <p>Using R, graph probability densities for the normal distribution, plotting several different curves corresponding to different choices of mean and standard deviation parameters.</p>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-513-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-297-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="probability-distributions-2" class="section level3" number="23.6.4">
 <h3><span class="header-section-number">23.6.4</span> Probability distributions</h3>
 <p>Using a bar plot in R, graph the Poisson distribution with parameter 3.5.</p>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-514-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-298-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="probability-distributions-3" class="section level3" number="23.6.5">
 <h3><span class="header-section-number">23.6.5</span> Probability distributions</h3>
 <p>Using a bar plot in R, graph the binomial distribution with n = 20 and p = 0.3.</p>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-515-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-299-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="linear-transformations-3" class="section level3" number="23.6.6">
 <h3><span class="header-section-number">23.6.6</span> Linear transformations</h3>

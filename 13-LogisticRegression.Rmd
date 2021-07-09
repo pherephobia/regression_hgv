@@ -51,11 +51,11 @@ fit <- stan_glm(rvote ~ income,
 
 + 예측변수는 응답자의 소득 수준으로 5점 척도로 측정되었다.
 
-```{r, fig.width=9, fig.height=3, fig.cap = "(a) Inverse logit function $\\text{logit}^{−1}(x)$ from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: $y = \\text{logit}^{−1}(−1.40 + 0.33x)$. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at $\\text{logit}(0.5) = 0$; in graph (b), the halfway point is where $−1.40 + 0.33x = 0$, which is $x = 1.40/0.33 = 4.2$. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for $y = \\text{logit}^{−1}(x)$ and $0.33/4$ for $y = \\text{logit}^{−1}(−1.40 + 0.33x)$. The slope of the logistic regression curve is steepest at this halfway point."}
+```{r, fig.width=9, fig.height=3, fig.cap = "(a) Inverse logit function $\\text{logit}^{-1}(x)$ from (13.1): the transformation from linear predictors to probabilities that is used in logistic regression. (b) An example of the predicted probabilities from a logistic regression model: $y = \\text{logit}^{-1}(-1.40 + 0.33x)$. The shape of the curve is the same, but its location and scale have changed; compare the x-axes on the two graphs. On each graph, the vertical dotted line shows where the predicted probability is 0.5: in graph (a), this is at $\\text{logit}(0.5) = 0$; in graph (b), the halfway point is where $-1.40 + 0.33x = 0$, which is $x = 1.40/0.33 = 4.2$. As discussed in Section 13.2, the slope of the curve at the halfway point is the logistic regression coefficient divided by 4, thus 1/4 for $y = \\text{logit}^{-1}(x)$ and $0.33/4$ for $y = \\text{logit}^{-1}(-1.40 + 0.33x)$. The slope of the logistic regression curve is steepest at this halfway point."}
 dat <- read.csv("http://mgimond.github.io/Stats-in-R/Data/Income_and_education.csv")
 
 # Limit the dataset to the two columns of interest
-df <- select(dat, Coast, Income = Per.capita.income )
+df <- dat %>% dplyr::select(Coast, Income = Per.capita.income)
 
 M1 <- glm(as.factor(Coast) ~ Income, df, family = binomial)
 
@@ -183,7 +183,7 @@ $$
 
 @ghv2020[219]는 예측 불확실성을 보여주기 위해서 `stan_glm`을 이용해서 시뮬레이션을 하지만, 이 리딩노트에서는 기존의 `glm`으로 추정한 계수 결과를 `mvtnorm` 패키지의 `rmvnorm`을 이용해 시뮬레이션하는 접근법을 취하고자 한다. 결과는 `stan_glm`과 다르지 않다. 계수값의 불확실성을 모수적 시뮬레이션을 이용해 무작위 추출한 표집분포로 보여주는 것이다.
 
-```{r, echo = T}
+```{r, echo = T, warning=FALSE}
 fit_1 <- glm(rvote ~ income, 
            family = binomial(link = "logit"), data = nes_1992)
 sims_1 <- MASS::mvrnorm(20, mu = coef(fit_1), Sigma = vcov(fit_1))

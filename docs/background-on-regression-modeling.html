@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -943,8 +943,8 @@ div.csl-indent {
 <span id="cb40-11"><a href="background-on-regression-modeling.html#cb40-11" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">round</span>(b_hat, <span class="dv">2</span>), <span class="st">&quot;* x&quot;</span>)) <span class="sc">+</span> </span>
 <span id="cb40-12"><a href="background-on-regression-modeling.html#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">1</span>))) <span class="sc">+</span> </span>
 <span id="cb40-13"><a href="background-on-regression-modeling.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-292"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-292-1.png" alt="Simple example of a regression line fit to fake data. The 20 data points were simulated from the model, $y = 0.2 + 0.3x + \text{error}$, with errors that were independent and normally distributed with mean 0 and standard deviation 0.5." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-76-1.png" alt="Simple example of a regression line fit to fake data. The 20 data points were simulated from the model, $y = 0.2 + 0.3x + \text{error}$, with errors that were independent and normally distributed with mean 0 and standard deviation 0.5." width="672" />
 <p class="caption">
 Figure 6.1: Simple example of a regression line fit to fake data. The 20 data points were simulated from the model, <span class="math inline">\(y = 0.2 + 0.3x + \text{error}\)</span>, with errors that were independent and normally distributed with mean 0 and standard deviation 0.5.
 </p>
@@ -955,7 +955,7 @@ Figure 6.1: Simple example of a regression line fit to fake data. The 20 data po
 <p>페이크데이터에 모델을 적합하면, 모수에 대한 추정치와 가정된 값 간의 비교가 가능하다. 이 리딩노트에서는 <code>stan</code>을 이용한 시뮬레이션을 수행한 것이 아니기 때문에 <span class="math inline">\(\sigma\)</span>에 대한 불확실성은 추정되지 않는다.</p>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-293">Table 6.1: </span>After simulating 20 fake data points from a simple linear regression, <span class="math inline">\(y_i = a + b x_i + \epsilon_i\)</span> , with errors <span class="math inline">\(\epsilon_i\)</span> drawn from a normal distribution with mean 0 and standard deviation <span class="math inline">\(\sigma\)</span>, we then fit a linear regression to these data and obtain estimates and uncertainties for the three parameters from the model. We can then see that the estimates are roughly consistent with the specified parameter values
+<span id="tab:unnamed-chunk-77">Table 6.1: </span>After simulating 20 fake data points from a simple linear regression, <span class="math inline">\(y_i = a + b x_i + \epsilon_i\)</span> , with errors <span class="math inline">\(\epsilon_i\)</span> drawn from a normal distribution with mean 0 and standard deviation <span class="math inline">\(\sigma\)</span>, we then fit a linear regression to these data and obtain estimates and uncertainties for the three parameters from the model. We can then see that the estimates are roughly consistent with the specified parameter values
 </caption>
 <thead>
 <tr>
@@ -1070,16 +1070,16 @@ NA
 <div id="daughters-heights-regressing-to-the-mean" class="section level3" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> Daughters’ heights “regressing” to the mean</h3>
 <p>1903년 Karl Pearson과 Alice Lee의 유전에 관한 고전적 연구를 살펴보자.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-296"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-296-1.png" alt="(a) Scatterplot adapted from data from Pearson and Lee (1903) of the heights of mothers and their adult daughters, along with the regression line predicting daughters’ from mothers’ heights. (b) The  regression line by itself, just to make the pattern easier to see. The line automatically goes through the mean of the data, and it has a slope of 0.54, implying that, on average, the difference of a daughter’s height from the average (mean) of women’s heights is only about half the difference of her mother’s height from the average." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-80-1.png" alt="(a) Scatterplot adapted from data from Pearson and Lee (1903) of the heights of mothers and their adult daughters, along with the regression line predicting daughters’ from mothers’ heights. (b) The  regression line by itself, just to make the pattern easier to see. The line automatically goes through the mean of the data, and it has a slope of 0.54, implying that, on average, the difference of a daughter’s height from the average (mean) of women’s heights is only about half the difference of her mother’s height from the average." width="672" />
 <p class="caption">
 Figure 6.2: (a) Scatterplot adapted from data from Pearson and Lee (1903) of the heights of mothers and their adult daughters, along with the regression line predicting daughters’ from mothers’ heights. (b) The regression line by itself, just to make the pattern easier to see. The line automatically goes through the mean of the data, and it has a slope of 0.54, implying that, on average, the difference of a daughter’s height from the average (mean) of women’s heights is only about half the difference of her mother’s height from the average.
 </p>
 </div>
 <p>Figure 6.2a는 엄마와 딸의 키에 대한 데이터를 엄마의 키로부터 딸의 키를 예측하는 가장 잘 맞는 선-회귀선(<em>regression line</em>)에 따라서 배열한 것이다. 회귀선은 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 평균을 지나간다.</p>
 <p>Figure 6.2b는 회귀선, <span class="math inline">\(y = 30 + 0.54x\)</span>만을 보여준다. <span class="math inline">\(y = 30 + 0.54x + \text{error}\)</span>라고도 쓸 수 있다. 여기서 오차를 포함하는 이유는 모델이 각각의 관측치들에 완벽하게 들어맞지는 않는다는 것을 강조하기 위함이다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-297"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-297-1.png" alt="(a) Fitted regression line, $y = 30 + 0.54 x$, graphed using intercept and slope. (b) Difficulty of the intercept-slope formulation in the context of the data in the height example. The intercept of 30 inches corresponds to the predicted height of a daughter whose mother is a meaningless 0 inches tall." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-81-1.png" alt="(a) Fitted regression line, $y = 30 + 0.54 x$, graphed using intercept and slope. (b) Difficulty of the intercept-slope formulation in the context of the data in the height example. The intercept of 30 inches corresponds to the predicted height of a daughter whose mother is a meaningless 0 inches tall." width="672" />
 <p class="caption">
 Figure 6.3: (a) Fitted regression line, <span class="math inline">\(y = 30 + 0.54 x\)</span>, graphed using intercept and slope. (b) Difficulty of the intercept-slope formulation in the context of the data in the height example. The intercept of 30 inches corresponds to the predicted height of a daughter whose mother is a meaningless 0 inches tall.
 </p>
@@ -1189,7 +1189,7 @@ mother_height
 <span id="cb46-4"><a href="background-on-regression-modeling.html#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">runif</span>(n, <span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>),</span>
 <span id="cb46-5"><a href="background-on-regression-modeling.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">daughter_height_jitt =</span> heights<span class="sc">$</span>daughter_height <span class="sc">+</span> </span>
 <span id="cb46-6"><a href="background-on-regression-modeling.html#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">runif</span>(n, <span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>))</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-301-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-85-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>여기에다가 회귀모델에서 계수들을 추출해서 예측선을 플롯에 더해주면 된다.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="background-on-regression-modeling.html#cb47-1" aria-hidden="true" tabindex="-1"></a>a_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit_1)[<span class="dv">1</span>]</span>
 <span id="cb47-2"><a href="background-on-regression-modeling.html#cb47-2" aria-hidden="true" tabindex="-1"></a>b_hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit_1)[<span class="dv">2</span>]</span>
@@ -1201,7 +1201,7 @@ mother_height
 <span id="cb47-8"><a href="background-on-regression-modeling.html#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Mother&#39;s height (inches)&quot;</span>,</span>
 <span id="cb47-9"><a href="background-on-regression-modeling.html#cb47-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Adult daughter&#39;s height (inches)&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb47-10"><a href="background-on-regression-modeling.html#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="regression-ghv_files/figure-html/unnamed-chunk-302-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="regression-ghv_files/figure-html/unnamed-chunk-86-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>이 결과는 위의 Figure 6.2a와 동일하다.</p>
 </div>
 </div>
@@ -1234,8 +1234,8 @@ mother_height
 <span id="cb48-11"><a href="background-on-regression-modeling.html#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">final =</span> true_ability <span class="sc">+</span> noise_2</span>
 <span id="cb48-12"><a href="background-on-regression-modeling.html#cb48-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>그리고 이제 데이터의 분포를 산포도를 통해 보여주고, 동시에 적합된 회귀선을 그려보자.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-304"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-304-1.png" alt="Scatterplot of simulated midterm and final exam scores with fitted regression line, which has a slope of 0.45, implying that if a student performs well on the midterm, he or she is expected to do not so well on the final, and if a student performs poorly on the midterm, he or she is expected to improve on the final; thus, regression to the mean." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-88"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-88-1.png" alt="Scatterplot of simulated midterm and final exam scores with fitted regression line, which has a slope of 0.45, implying that if a student performs well on the midterm, he or she is expected to do not so well on the final, and if a student performs poorly on the midterm, he or she is expected to improve on the final; thus, regression to the mean." width="672" />
 <p class="caption">
 Figure 6.4: Scatterplot of simulated midterm and final exam scores with fitted regression line, which has a slope of 0.45, implying that if a student performs well on the midterm, he or she is expected to do not so well on the final, and if a student performs poorly on the midterm, he or she is expected to improve on the final; thus, regression to the mean.
 </p>

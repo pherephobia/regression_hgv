@@ -24,7 +24,7 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2021-07-04" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -853,7 +853,7 @@ div.csl-indent {
 <h1 class="title">Reading Notes for Regression and Other Stories</h1>
 <h2 class="subtitle"><em>by Andrew Gelman, Jeniffer Hill and Aki Vehtari</em></h2>
 <p class="author"><em>Sanghoon Park</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-07-04</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-07-08</em></p>
 </div>
 <div id="overview" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Overview</h1>
@@ -882,8 +882,8 @@ div.csl-indent {
 </div>
 <div id="why-learn-regression" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Why learn regression?</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-237"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-237-1.png" alt="Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-21"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-21-1.png" alt="Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x." width="672" />
 <p class="caption">
 Figure 1.1: Predicting elections from the economy: (a) the data, (b) the linear fit, y = 46.3 + 3.0x.
 </p>
@@ -902,8 +902,8 @@ Figure 1.1: Predicting elections from the economy: (a) the data, (b) the linear 
 <h2><span class="header-section-number">1.3</span> Some examples of regression</h2>
 <div id="a-randomized-experiment-on-the-effect-of-an-educational-television-program" class="section level3" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> A randomized experiment on the effect of an educational television program</h3>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-238"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-238-1.png" alt="Post-treatment classroom-average test scores from an experiment measuring the effect of an educational television program, The Electric Company, on children’s reading abilities. The dark vertical line in each histogram shows the average for the corresponding group of classrooms." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-22"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-22-1.png" alt="Post-treatment classroom-average test scores from an experiment measuring the effect of an educational television program, The Electric Company, on children’s reading abilities. The dark vertical line in each histogram shows the average for the corresponding group of classrooms." width="672" />
 <p class="caption">
 Figure 1.2: Post-treatment classroom-average test scores from an experiment measuring the effect of an educational television program, The Electric Company, on children’s reading abilities. The dark vertical line in each histogram shows the average for the corresponding group of classrooms.
 </p>
@@ -936,14 +936,14 @@ Figure 1.2: Post-treatment classroom-average test scores from an experiment meas
 <div id="regression-to-estimate-a-relationship-of-interest" class="section level3" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> Regression to estimate a relationship of interest</h3>
 <p>어떤 처치군과 통제군을 비교한다고 가정해보자. 일단 첫 번째 생각해야할 조건은 처치군과 통제군에 들어갈 사람들이 무작위로 배정되었는지(randomly assigned)에 대한, <em>“무작위화”(randomization)</em>이다. 혹은 배정이 두 집단 간의 균형을 고려한 보다 복잡한 설계를 바탕으로 이루어졌을 수도 있다. 처치군과 통제군을 대략적으로(완벽하게 동일한 개체가 될 수는 없으니까) 비교가능한 집단으로 만드는 것과 이 두 집단 간에 알려진, 혹은 모델에 포함된 차이를 조정하는 방법은 다양하게 존재한다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-240"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-240-1.png" alt="Regression to estimate a causal effect with (a) simple comparison of treatment and control, or (b) a range of treatment levels." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-24"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-24-1.png" alt="Regression to estimate a causal effect with (a) simple comparison of treatment and control, or (b) a range of treatment levels." width="768" />
 <p class="caption">
 Figure 1.3: Regression to estimate a causal effect with (a) simple comparison of treatment and control, or (b) a range of treatment levels.
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-241"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-241-1.png" alt="(a) Hypothetical data in which the causal effect is a nonlinear function of the treatment level; (b) same data with a linear effect estimated. It is always possible to estimate a linear model, even if it does not fit the data." width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-25"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-25-1.png" alt="(a) Hypothetical data in which the causal effect is a nonlinear function of the treatment level; (b) same data with a linear effect estimated. It is always possible to estimate a linear model, even if it does not fit the data." width="768" />
 <p class="caption">
 Figure 1.4: (a) Hypothetical data in which the causal effect is a nonlinear function of the treatment level; (b) same data with a linear effect estimated. It is always possible to estimate a linear model, even if it does not fit the data.
 </p>
@@ -953,8 +953,8 @@ Figure 1.4: (a) Hypothetical data in which the causal effect is a nonlinear func
 <p>실험방법을 통해 두 집단 간의 비교가능성이 확보된 상황이라면 주어진 처치에 대해 결과를 예측한 회귀분석 결과는 인과효과(causal effect)를 직접적으로 추정한 것이라고 할 수 있다.</p>
 <p>하지만 데이터를 더 잘 설명하기 위해, 혹은 더 정확하게 예측하기 위해 더 정교한 모델링을 할 수도 있다. 예를 들어, 연속형 변수의 처치효과가 결과에 비선형적인 관계를 가지는 경우를 생각해볼 수 있다. Figure 1.4a가 바로 그런 경우이다. Figure 1.4a와 Figure 1.4b 모두 같은 데이터를 예측하지만 처치 효과의 관계가 선형적이냐, 비선형적이냐에 따라 다른 기대를 가지고 있는 모델이다.</p>
 <p>혹은 모델 내 서로 다른 예측변수들 간의 함수적 관계에 따라 처치효과가 다르게 나타나는 상호작용(interactions)을 모델에 포함할 것을 고려해볼 수 있다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-242"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-242-1.png" alt="Lifetime added risk of lung cancer for men, as a function of average radon exposure in picocuries per liter (pCi/L). The relation between cancer rate and radon is different for smokers and nonsmokers." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-26"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-26-1.png" alt="Lifetime added risk of lung cancer for men, as a function of average radon exposure in picocuries per liter (pCi/L). The relation between cancer rate and radon is different for smokers and nonsmokers." width="672" />
 <p class="caption">
 Figure 1.5: Lifetime added risk of lung cancer for men, as a function of average radon exposure in picocuries per liter (pCi/L). The relation between cancer rate and radon is different for smokers and nonsmokers.
 </p>
@@ -968,8 +968,8 @@ Figure 1.5: Lifetime added risk of lung cancer for men, as a function of average
 <p>처치를 받은 단위의 평균은 <span class="math inline">\(\bar{y}=31.7\)</span>로 통제된 단위의 평균인 <span class="math inline">\(\bar{y}=25.5\)</span>에 비해 4.8 포인트 높았다. 그러나 두 집단은 처치가 이루어지기 이전의 예측변수에 있어서 차이를 보였다: 예측변수, <span class="math inline">\(x\)</span>의 평균인 <span class="math inline">\(\bar{x}\)</span>는 처치군에서는 0.4였고, 통제군에서는 1.2였다. 이러한 차이를 조정한 이후에는 처치효과가 10.0이라고 추정할 수 있었다.</p>
 </blockquote>
 <p>따라서 주요 예측변수에 있어서 처치/통제 단위 간 불균형(imbalance)이 존재한다고 할 때에는 그 불균형을 어느 정도 조정(adjustment) 해주는 것이 필요하다.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-243"></span>
-<img src="regression-ghv_files/figure-html/unnamed-chunk-243-1.png" alt="Hypothetical data with a binary treatment and a continuous pre-treatment variable. Treated units are displayed with circles on the scatterplot, and controls are shown with dots. Overlaid is a fitted regression predicting the outcome given treatment and background variable, with the estimated treatment effect being the difference between the two lines." width="672" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-27"></span>
+<img src="regression-ghv_files/figure-html/unnamed-chunk-27-1.png" alt="Hypothetical data with a binary treatment and a continuous pre-treatment variable. Treated units are displayed with circles on the scatterplot, and controls are shown with dots. Overlaid is a fitted regression predicting the outcome given treatment and background variable, with the estimated treatment effect being the difference between the two lines." width="672" />
 <p class="caption">
 Figure 1.6: Hypothetical data with a binary treatment and a continuous pre-treatment variable. Treated units are displayed with circles on the scatterplot, and controls are shown with dots. Overlaid is a fitted regression predicting the outcome given treatment and background variable, with the estimated treatment effect being the difference between the two lines.
 </p>
